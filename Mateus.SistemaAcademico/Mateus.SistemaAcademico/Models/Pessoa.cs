@@ -9,13 +9,18 @@ namespace Mateus.SistemaAcademico.Models
     {
         public int PessoaId { get; set; }
         public string Nome { get; set; }
-        public int Telefones { get; set; }
-        public string Endereco { get; set; }
-        public string CPF { get; set; }
+        public Telefones[] telefones { get; set; }
+        public Endereco endereco { get; set; }
+        public CPF cpf { get; set; }
+        public Telefones telefone { get; set; }
+        public string cPF { get; set; }
 
-        public override string ToString()
+        public Pessoa(string cPF, string nome, Endereco endereco, Telefones telefone)
         {
-            return $"Pessoa: {this.Nome}, {this.Telefones}, {this.Endereco}, {this.CPF}";
+            this.cPF = cPF;
+            Nome = nome;
+            this.endereco = endereco;
+            this.telefone = telefone;
         }
     }
 }

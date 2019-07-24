@@ -8,7 +8,7 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class SistemaContext : DbContext
     {
-        public DbSet<Pessoa> Pessoas { get; set; }
+        public DbSet<Alunos> Alunos { get; set; }
 
         public SistemaContext()
         {
@@ -26,6 +26,21 @@ namespace Mateus.SistemaAcademico.Models
             {
                 optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=SistemaAcademico;Trusted_Connection=true;");
             }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CPF>()
+               .HasKey(c => c.Valor);
+
+            modelBuilder.Entity<Endereco>()
+               .HasKey(c => c.EnderecoId);
+
+            modelBuilder.Entity<Pessoa>()
+               .HasKey(c => c.PessoaId);
+
+            modelBuilder.Entity<Telefones>()
+               .HasKey(c => c.TelfoneId);
         }
     }
 }

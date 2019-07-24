@@ -7,6 +7,7 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Telefones
     {
+        public int TelfoneId { get; set; }
         public int Valor;
 
         public Pessoa Pessoa;

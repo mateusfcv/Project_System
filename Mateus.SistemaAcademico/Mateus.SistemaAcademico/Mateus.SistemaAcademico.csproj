@@ -662,11 +662,11 @@
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Frequencia.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\IPessoaDAO.cs" />
+    <Compile Include="Models\IAlunosDAO.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Notas.cs" />
     <Compile Include="Models\Pessoa.cs" />
-    <Compile Include="Models\PessoaDAOEntity.cs" />
+    <Compile Include="Models\AlunosDAOEntity.cs" />
     <Compile Include="Models\Professor.cs" />
     <Compile Include="Models\Responsavel.cs" />
     <Compile Include="Models\SistemaContext.cs" />
