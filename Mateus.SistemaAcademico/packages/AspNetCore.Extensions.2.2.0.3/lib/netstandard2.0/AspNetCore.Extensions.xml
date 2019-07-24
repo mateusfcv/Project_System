@@ -1,0 +1,2830 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetCore.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:System.ApiAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.ApiAttribute.#ctor(System.Int32,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="order">api显示在doc里的顺序</param>
+            <param name="parentType">api的父级(用在class上且为controller)</param>
+        </member>
+        <member name="P:System.ApiAttribute.Order">
+            <summary>
+            api显示在doc里的顺序
+            </summary>
+        </member>
+        <member name="P:System.ApiAttribute.Parent">
+            <summary>
+            api的父级
+            </summary>
+        </member>
+        <member name="T:System.CheckAttribute">
+            <summary>
+            参数检查
+            </summary>
+        </member>
+        <member name="M:System.CheckAttribute.#ctor(System.Boolean)">
+            <summary>
+            ctor.
+            </summary>
+            <param name="required"></param>
+        </member>
+        <member name="M:System.CheckAttribute.#ctor(System.Boolean,System.String)">
+            <summary>
+            ctor. 
+            </summary>
+            <param name="required"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:System.CheckAttribute.#ctor(System.Boolean,System.String,System.CheckType)">
+            <summary>
+            
+            </summary>
+            <param name="required"></param>
+            <param name="message"></param>
+            <param name="checkType"></param>
+        </member>
+        <member name="M:System.CheckAttribute.#ctor(System.Boolean,System.CheckType)">
+            <summary>
+            
+            </summary>
+            <param name="required"></param>
+            <param name="checkType"></param>
+        </member>
+        <member name="P:System.CheckAttribute.CheckType">
+            <summary>
+            使用默认检查方式
+            </summary>
+        </member>
+        <member name="P:System.CheckAttribute.IsRequired">
+            <summary>
+            是否可空
+            </summary>
+        </member>
+        <member name="P:System.CheckAttribute.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.CheckAttribute.IsValid``1(``0,System.String@)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:System.ChineseDayOfWeek">
+            <summary>
+            中国星期表示
+            </summary>
+        </member>
+        <member name="F:System.ChineseDayOfWeek.Monday">
+            <summary>
+            星期一
+            </summary>
+        </member>
+        <member name="F:System.ChineseDayOfWeek.Tuesday">
+            <summary>
+            星期二
+            </summary>
+        </member>
+        <member name="F:System.ChineseDayOfWeek.Wednesday">
+            <summary>
+            星期三
+            </summary>
+        </member>
+        <member name="F:System.ChineseDayOfWeek.Thursday">
+            <summary>
+            星期四
+            </summary>
+        </member>
+        <member name="F:System.ChineseDayOfWeek.Friday">
+            <summary>
+            星期五
+            </summary>
+        </member>
+        <member name="F:System.ChineseDayOfWeek.Saturday">
+            <summary>
+            星期六
+            </summary>
+        </member>
+        <member name="F:System.ChineseDayOfWeek.Sunday">
+            <summary>
+            星期日
+            </summary>
+        </member>
+        <member name="T:System.Extensions.DateTimeExtensions">
+            <summary>
+            时间扩展
+            </summary>
+        </member>
+        <member name="M:System.Extensions.DateTimeExtensions.ToTicket(System.DateTime)">
+            <summary>
+            获取1970年以来的秒数
+            </summary>
+            <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.DateTimeExtensions.FromTicket(System.Int64)">
+            <summary>
+            将1970年以来秒数转换为时间
+            </summary>
+            <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.DateTimeExtensions.FromTicketAsLocalTime(System.Int64)">
+            <summary>
+            将1970年以来数值转换为时间
+            </summary>
+            <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.DateTimeExtensions.DayOfChineseWeek(System.DateTime)">
+            <summary>
+            获取中国星期表示(周一为每周的第一天)
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.DateTimeExtensions.ChineseWeekOfYear(System.DateTime)">
+            <summary>
+            获取<paramref name="dateTime"/>在当年中的第几周
+            (周一为每周的第一天)
+            </summary>
+            <param name="dateTime">当前日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.DateTimeExtensions.ChineseWeekOfYear(System.Nullable{System.DateTime})">
+            <summary>
+            获取<paramref name="dateTime"/>在当年中的第几周
+            (周一为每周的第一天)
+            </summary>
+            <param name="dateTime">当前日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.DateTimeExtensions.WeekOfYear(System.DateTime)">
+            <summary>
+            获取<paramref name="dateTime"/>在当年中的第几周
+            (周六为每周的第一天)
+            </summary>
+            <param name="dateTime">当前日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.DateTimeExtensions.WeekOfYear(System.Nullable{System.DateTime})">
+            <summary>
+            获取<paramref name="dateTime"/>在当年中的第几周
+            (周六为每周的第一天)
+            </summary>
+            <param name="dateTime">当前日期</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.XmlDoc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.XmlDoc.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.XmlDoc.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.XmlDoc.AssemblyName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.XmlDoc.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:System.Extensions.EnumExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.EnumExtensions.GetNumberString``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="_enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.EnumExtensions.GetNumber``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="_enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.EnumExtensions.GetString``1(``0)">
+            <summary>
+            
+            </summary>
+            <param name="_enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.EnumExtensions.GetStrings``1">
+            <summary>
+            format enum to strings
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.EnumExtensions.GetStrings(System.Type)">
+            <summary>
+            format enum to strings
+            </summary>
+            <param name="enumType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.ExpressionExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.ExpressionExtensions.GetDebugView(System.Linq.Expressions.Expression)">
+            <summary>
+            
+            </summary>
+            <param name="expr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.HttpContextExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.HttpContextExtensions.FullPath(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.HttpContextExtensions.RemoteIP(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.HttpContextExtensions.WebRoot(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.HttpContextExtensions.FullPathUri(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.HttpContextExtensions.IsFile(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.HttpContextExtensions.ReadBodyString(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.HttpContextExtensions.ReadBodyCollectionAsync(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.HttpContextExtensions.GetJToken(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.HttpContextExtensions.GetJTokenAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.HttpContextExtensions.RegisterForDispose(Microsoft.AspNetCore.Http.HttpContext,System.Action)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="action"></param>
+        </member>
+        <member name="T:System.Extensions.JsonExtensions">
+            <summary>
+            json extensions
+            </summary>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.SetDefaultJsonSettings(Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            
+            </summary>
+            <param name="jsonSerializer"></param>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.GetDefaultSettings">
+            <summary>
+             get  default JsonSerializerSettings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.ToJson(System.Object)">
+            <summary>
+            Serializer object to json string 
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.ToJson(System.Object,System.Action{Newtonsoft.Json.JsonSerializer})">
+            <summary>
+            Serializer object to json string 
+            </summary>
+            <param name="obj"></param>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.ToModel(System.String,System.Type,System.String,System.Boolean,System.Action{Newtonsoft.Json.JsonSerializer})">
+            <summary>
+            format string to object
+            </summary>
+            <param name="json">json 字符串</param>
+            <param name="path">json路径</param>
+            <param name="validate">检查json合法性</param>
+            <param name="type"></param>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.ToModel``1(System.String)">
+            <summary>
+            Deserialize json string to T
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.ToModel``1(System.String,System.String,System.Boolean,System.Action{Newtonsoft.Json.JsonSerializer})">
+            <summary>
+            Deserialize json string to T
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <param name="path">json路径</param>
+            <param name="validate">检查json合法性</param>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.ToModel``1(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            JToken to model
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="token"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.ToModel(Newtonsoft.Json.Linq.JToken,System.Type,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            JToken to model
+            </summary>
+            <param name="token"></param>
+            <param name="type"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.ToModels``1(System.String,System.String,System.Boolean,System.Action{Newtonsoft.Json.JsonSerializerSettings})">
+            <summary>
+            Deserialize json string to List&lt;T&gt;
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="input"></param>
+            <param name="path">json路径</param>
+            <param name="validate">检查json合法性</param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.FormatJson(System.String)">
+            <summary>
+            Format string to Json
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.FormatXmlToJson(System.String)">
+            <summary>
+            Format Xml To Json
+            </summary>
+            <param name="xml"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.AddValue(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Extensions.Primitives.StringValues}})">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.GetToken(Newtonsoft.Json.Linq.JToken,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="jToken"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.JsonExtensions.GetValue(Newtonsoft.Json.Linq.JToken,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="jToken"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.LinqExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.LinqExtensions.PageQuery``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+             query paging
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query">query</param>
+            <param name="pageIndex">current page index</param>
+            <param name="pageSize">page size</param>
+            <param name="limitPage">限制总页数,默认不限制</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.LinqExtensions.PageResult``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Func{System.Linq.IQueryable{``0},System.Object},System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="data"></param>
+            <param name="limitPage"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.MappingExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.MappingExtensions.MapTo``2(``0,System.Func{``0,``1})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="source"></param>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.MappingExtensions.MapTo``1(System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.MappingExtensions.MapTo``1(System.Object,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="source"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.ReflectExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:System.Extensions.ReflectExtensions.NON_PUBLIC_FLAGS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:System.Extensions.ReflectExtensions.ALL_FLAGS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.IsClasses(System.Type)">
+            <summary>
+            Is Classes
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.IsAnonymousClass(System.Type)">
+            <summary>
+            Is Anonymous Class
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.IsNullableType(System.Type)">
+            <summary>
+            Is Nullable Type
+            </summary>
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.IsInherit(System.Type,System.Type)">
+            <summary>
+            the <paramref name="type"/> is inherit from <paramref name="_type"/> or equals <paramref name="_type"/>
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="_type">the type</param>
+            <param name="type">current type</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.IsEnumerable(System.Type)">
+             <summary>
+             包含array或继承自IEnumerable&lt;T&gt;. 
+            <para>string类型除外</para>  
+             </summary>
+             <param name="type"></param>
+             <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.IsEnumerable(System.Type,System.Type@)">
+            <summary>
+            包含array或继承自IEnumerable. string类型除外
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="type">current type</param>
+            <param name="elementType">the element type</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.Value``1(``0,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="current"></param>
+            <param name="property"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.Value``1(System.Object,System.String)">
+            <summary>
+             Use Reflect get <typeparamref name="T"/> of current <paramref name="value"/> by <paramref name="name"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="name">field or property
+            <para>e.g.: 'a.b.c'</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.Value(System.Object,System.String)">
+            <summary>
+            Use Reflect get value of current <paramref name="value"/> by <paramref name="name"/>
+            </summary>
+            <param name="value">current value</param>
+            <param name="name">field or property
+            <para>e.g.: 'a.b.c'</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.Value(System.Object,System.String,System.Object)">
+            <summary>
+             Use Reflect set <paramref name="setValue"/> to <paramref name="value"/> by <paramref name="name"/>
+            </summary>
+            <param name="value">current value</param>
+            <param name="name">field or property
+            <para>e.g.: 'a.b.c'</para>
+            </param>
+            <param name="setValue">put value</param>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.Field``1(System.Object,System.String,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+            Get the <paramref name="fieldName"/> of <paramref name="obj"/>'s value
+            (Need optimization)
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="fieldName"></param>
+            <param name="flags"></param>
+            <returns></returns>       
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.Field(System.Object,System.String,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+            Get the <paramref name="fieldName"/> of <paramref name="obj"/>'s value
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="obj"></param>
+            <param name="fieldName"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.SetField(System.Object,System.String,System.Object,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+            Set the <paramref name="fieldName"/> of <paramref name="obj"/>'s <paramref name="value"/>
+            (Need optimization)
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="obj"></param>
+            <param name="fieldName"></param>
+            <param name="value"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.FieldInfo(System.Object,System.String,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="fieldName"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.Fields(System.Object,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+            get all fields of current object
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="value"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.InternalGetAllFields(System.Type,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+            
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="type"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.Property``1(System.Object,System.String,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+            Get the <paramref name="propertyName"/> of <paramref name="obj"/>'s value
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.Property(System.Object,System.String,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+            Get the <paramref name="propertyName"/> of <paramref name="obj"/>'s value
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.SetProperty(System.Object,System.String,System.Object,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+            Set the <paramref name="propertyName"/> of <paramref name="obj"/>'s value      
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <param name="value"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.PropertyInfo(System.Object,System.String,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+            GET PropertyInfo
+            </summary>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.Properties(System.Object,System.Nullable{System.Reflection.BindingFlags})">
+            <summary>
+            GET Properties
+            </summary>
+            <param name="value"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.GetFullName(System.Reflection.MethodInfo)">
+            <summary>
+            
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.TryInvoke``1(System.Object,System.String,System.Object[])">
+            <summary>
+            Invoke
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="methodName"></param>
+            <param name="params"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.TryInvoke``1(System.Object,System.String,System.Type[],System.Object[])">
+            <summary>
+            Invoke
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="methodName"></param>
+            <param name="types"></param>
+            <param name="params"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.TryInvoke(System.Object,System.String,System.Object[])">
+            <summary>
+            Invoke
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="obj"></param>
+            <param name="methodName"></param>
+            <param name="params"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.TryInvoke(System.Object,System.String,System.Type[],System.Object[])">
+            <summary>
+            Invoke
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="obj"></param>
+            <param name="methodName"></param>
+            <param name="params"></param>
+            <param name="types"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.CloneObject(System.Object)">
+            <summary>
+            internal CloneObject
+            </summary>
+            <param name="current"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ReflectExtensions.Clone``1(``0)">
+            <summary>
+            Clone current entity to a new entity.
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="current"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.ServiceProviderExtensions">
+            <summary>
+            Extension methods for adding services to an <see cref="T:Microsoft.Extensions.DependencyInjection.ServiceProvider" />.
+            </summary>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.CreateLogger``1(System.IServiceProvider)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="serviceProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.CreateLogger(System.IServiceProvider,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="serviceProvider"></param>
+            <param name="categoryName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddTransient(System.IServiceProvider,System.Type,System.Type)">
+            <summary>
+            If not exists.
+            Adds a transient service of the type specified in <paramref name="serviceType"/> with an
+            implementation of the type specified in <paramref name="implementationType"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <param name="serviceType">The type of the service to register.</param>
+            <param name="implementationType">The implementation type of the service.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Transient"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddTransient``2(System.IServiceProvider)">
+            <summary>
+            if not exists.
+            Adds a transient service of the type specified in <typeparamref name="TService"/> with an
+            implementation type specified in <typeparamref name="TImplementation"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <typeparam name="TService">The type of the service to add.</typeparam>
+            <typeparam name="TImplementation">The type of the implementation to use.</typeparam>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Transient"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddTransient(System.IServiceProvider,System.Type)">
+            <summary>
+            if not exists.
+            Adds a transient service of the type specified in <paramref name="serviceType"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <param name="serviceType">The type of the service to register and the implementation to use.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Transient"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddTransient``1(System.IServiceProvider)">
+            <summary>
+            if not exists.
+            Adds a transient service of the type specified in <typeparamref name="TService"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <typeparam name="TService">The type of the service to add.</typeparam>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Transient"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddScoped(System.IServiceProvider,System.Type,System.Type)">
+            <summary>
+            if not exists.
+            Adds a scoped service of the type specified in <paramref name="serviceType"/> with an
+            implementation of the type specified in <paramref name="implementationType"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <param name="serviceType">The type of the service to register.</param>
+            <param name="implementationType">The implementation type of the service.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddScoped``2(System.IServiceProvider)">
+            <summary>
+            if not exists.
+            Adds a scoped service of the type specified in <typeparamref name="TService"/> with an
+            implementation type specified in <typeparamref name="TImplementation"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <typeparam name="TService">The type of the service to add.</typeparam>
+            <typeparam name="TImplementation">The type of the implementation to use.</typeparam>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddScoped(System.IServiceProvider,System.Type)">
+            <summary>
+            if not exists.
+            Adds a scoped service of the type specified in <paramref name="serviceType"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <param name="serviceType">The type of the service to register and the implementation to use.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddScoped``1(System.IServiceProvider)">
+            <summary>
+            if not exists.
+            Adds a scoped service of the type specified in <typeparamref name="TService"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <typeparam name="TService">The type of the service to add.</typeparam>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddSingleton(System.IServiceProvider,System.Type,System.Type)">
+            <summary>
+            if not exists.
+            Adds a singleton service of the type specified in <paramref name="serviceType"/> with an
+            implementation of the type specified in <paramref name="implementationType"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <param name="serviceType">The type of the service to register.</param>
+            <param name="implementationType">The implementation type of the service.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddSingleton``2(System.IServiceProvider)">
+            <summary>
+            if not exists.
+            Adds a singleton service of the type specified in <typeparamref name="TService"/> with an
+            implementation type specified in <typeparamref name="TImplementation"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <typeparam name="TService">The type of the service to add.</typeparam>
+            <typeparam name="TImplementation">The type of the implementation to use.</typeparam>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddSingleton(System.IServiceProvider,System.Type)">
+            <summary>
+            if not exists.
+            Adds a singleton service of the type specified in <paramref name="serviceType"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <param name="serviceType">The type of the service to register and the implementation to use.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddSingleton``1(System.IServiceProvider)">
+            <summary>
+            if not exists.
+            Adds a singleton service of the type specified in <typeparamref name="TService"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <typeparam name="TService">The type of the service to add.</typeparam>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddSingleton(System.IServiceProvider,System.Type,System.Object)">
+            <summary>
+            if not exists.
+            Adds a singleton service of the type specified in <paramref name="serviceType"/> with an
+            instance specified in <paramref name="implementationInstance"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <param name="serviceType">The type of the service to register.</param>
+            <param name="implementationInstance">The instance of the service.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.TryAddSingleton``1(System.IServiceProvider,``0)">
+            <summary>
+            if not exists.
+            Adds a singleton service of the type specified in <typeparamref name="TService" /> with an
+            instance specified in <paramref name="implementationInstance"/> to the
+            specified <see cref="T:System.IServiceProvider"/>.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to add the service to.</param>
+            <param name="implementationInstance">The instance of the service.</param>
+            <returns>A reference to this instance after the operation has completed.</returns>
+            <seealso cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.GetServiceDescriptors(System.IServiceProvider)">
+            <summary>
+            
+            </summary>
+            <param name="serviceProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.ServiceProviderExtensions.Contains(System.IServiceProvider,System.Type)">
+            <summary>
+            contains instance service
+            </summary>
+            <param name="serviceProvider"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.StringExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.StringExtensions.ToMD5(System.String)">
+            <summary>
+            字符串MD5 加密
+            </summary>
+            <param name="stringValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.StringExtensions.ToGuidString(System.Object)">
+            <summary>
+            将字符串MD5加密后转化为GUID格式字符串
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.StringExtensions.IsMobile(System.String)">
+            <summary>
+            是否为有效的手机号
+            https://github.com/zengzhan/qqzeng-ip
+            </summary>
+            <param name="mobile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.StringExtensions.IsIDCard(System.String)">
+            <summary>
+            是否为有效的身份证号
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.StringExtensions.IsEmail(System.String)">
+            <summary>
+            是否为email
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.StringExtensions.ToUrlEncode(System.String)">
+            <summary>
+            Url Encode
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.SystemExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.SystemExtensions.NewGuid(System.Object)">
+            <summary>
+            Create New Sequential Guid
+            in database is newsequentialid()
+            </summary>
+            <param name="obj">never use it</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.SystemExtensions.IsNotNull``1(``0,System.Func{``0,System.Boolean})">
+             <summary>
+             是否有值
+            <para>默认:</para>
+             1.字符 不为null且长度大于0
+             <para>2.数值 不为null且>0</para>
+             3. Guid 不为null且不为Guid.Empty
+             <para>4.时间 不为null且年份大于等于1900</para>
+             5. 数组 不为null且个数大于0
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="value">要检测的对象</param>
+             <param name="predicate">条件</param>
+             <returns></returns>
+        </member>
+        <member name="M:System.Extensions.SystemExtensions.IsNull``1(``0,System.Func{``0,System.Boolean})">
+             <summary>
+             是否有值
+            <para>默认:</para>
+             1.字符 为null或长度大于0
+             <para>2.数值 为null或>=0</para>
+             3. Guid 为null或为Guid.Empty
+             <para>4.时间 为null或年份小于1900</para>
+             5. 数组 为null或个数等于0
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="value">要检测的对象</param>
+             <param name="predicate">条件</param>
+             <returns></returns>
+        </member>
+        <member name="M:System.Extensions.SystemExtensions.IsNull``1(``0,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="compareValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.SystemExtensions.ConvertTo(System.Object,System.Type,System.Object)">
+            <summary>
+            basic data types 
+            convert value to type with default value
+            </summary>
+            <param name="value"></param>
+            <param name="type"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.SystemExtensions.ConvertTo``1(System.Object,System.Object)">
+            <summary>
+            basic data types convert
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.SystemExtensions.ConvertTo``1(System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.SystemExtensions.GetDefaultValue(System.Type,System.Boolean)">
+            <summary>
+            get default value of the 'type'
+            <para><see cref="T:System.Extensions.ReflectExtensions"/></para>
+            </summary>
+            <param name="type"></param>
+            <param name="keepNullable">if set true, when the type is Nullable, return null.
+            <para>default value is 'true'</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.TypeExtensions">
+            <summary>
+            Type Extensions
+            </summary>
+        </member>
+        <member name="M:System.Extensions.TypeExtensions.AsList(System.Type)">
+            <summary>
+            convert type to a list type
+            <para>
+            e.g. string to List&lt;string&gt;
+            string[] to List&lt;string&gt;
+            </para>
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.TypeExtensions.AsArray(System.Type)">
+            <summary>
+            convert type to a array type
+            <para>
+            e.g. string to string[]
+            List&lt;string&gt; to string[]
+            </para>
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.MappingValue.GetValue``2(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TOuter"></typeparam>
+            <typeparam name="TInner"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.Mapping`1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.Mapping`1.#ctor(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="P:System.Extensions.Mapping`1.Current">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.Mapping`1.IsArray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.Mapping`1.SourceType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.Mapping`1.DestinationType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.Mapping`1.SourceToDestination">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.Mapping`1.MappMembers">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.Mapping`1.CreateFactory(System.Delegate)">
+            <summary>
+            
+            </summary>
+            <param name="_delegate"></param>
+        </member>
+        <member name="M:System.Extensions.Mapping`1.ToList">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.Mapping`1.ToArray">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.Mapping`1.Single">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.Mapping`1.GetHashCode(System.Type,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type1"></param>
+            <param name="type2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Extensions.Mapping`1.GetMembers(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Extensions.RuntimeMember">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.RuntimeMember.#ctor(System.Reflection.MemberInfo,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="member"></param>
+            <param name="name"></param>
+            <param name="realName"></param>
+        </member>
+        <member name="P:System.Extensions.RuntimeMember.IsUniqued">
+            <summary>
+            IsUniqued
+            </summary>
+        </member>
+        <member name="P:System.Extensions.RuntimeMember.IsProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.RuntimeMember.MemberInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.RuntimeMember.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.RuntimeMember.RealName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.RuntimeMember.CanRead">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.RuntimeMember.CanWrite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.RuntimeMember.MemberType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Extensions.RuntimeMember.RealType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Extensions.RuntimeMember.CanConvertTo(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Globals">
+            <summary>
+            Globals
+            <para>
+            public void ConfigureServices(IServiceCollection services)
+            {            
+                services.AddExtensions();           
+            }
+            </para>
+            </summary>
+        </member>
+        <member name="M:System.Globals.Configure(System.Action{Microsoft.AspNetCore.Builder.IApplicationBuilder})">
+            <summary>
+            Configure ApplicationBuilder
+            </summary>
+            <param name="builderAction"></param>
+        </member>
+        <member name="M:System.Globals.Configure(System.Action{Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Object},System.Object)">
+            <summary>
+            Configure ApplicationBuilder
+            </summary>
+            <param name="builderAction"></param>
+            <param name="state"></param>
+        </member>
+        <member name="P:System.Globals.ServiceCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Globals.ServiceProvider(System.ServiceProviderType)">
+            <summary>
+            Get Service Provider
+            </summary>
+            <param name="providerType">use new scope.</param>
+            <returns></returns>
+        </member>
+        <member name="P:System.Globals.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Globals.HostingEnvironment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Globals.RemoteIP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Globals.HttpContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Globals.CurrentCulture">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Globals.CompileLibraries">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Globals.WebRootUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Globals.CreateInstance(System.Type,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globals.CreateInstance``1(System.Object[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globals.GetServices``1(System.ServiceProviderType)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="providerType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globals.GetServices(System.Type,System.ServiceProviderType)">
+            <summary>
+            
+            </summary>
+            <param name="serviceType"></param>
+            <param name="providerType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globals.GetService(System.Type,System.ServiceProviderType)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="providerType">create new ServiceProvider</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globals.GetService``1(System.ServiceProviderType)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globals.GetService``1(System.IServiceProvider)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globals.GetService(System.IServiceProvider,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="serviceProvider"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globals.FromConfig``1(System.String)">
+            <summary>
+            get <typeparamref name="TConfig"/> from IConfiguration
+            </summary>
+            <typeparam name="TConfig">the T to active</typeparam>
+            <param name="key">key of path</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globals.FromConfig(System.Type,System.String)">
+            <summary>
+            get <paramref name="type"/> from IConfiguration
+            </summary>
+            <param name="type">the type to active</param>
+            <param name="key">key of path</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globals.GetConfig``1">
+            <summary>
+            get or add config from or to json file
+            dotnot modify the <typeparamref name="TConfig"/> value
+            </summary>
+            <typeparam name="TConfig"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Globals.SaveConfig``1(``0)">
+            <summary>
+            save config value to json file.
+            </summary>
+            <typeparam name="TConfig"></typeparam>
+            <param name="value"></param>
+        </member>
+        <member name="M:System.Globals.OnConfigChanged``1(System.Action{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TConfig"></typeparam>
+            <param name="changedAction"></param>
+        </member>
+        <member name="P:System.Globals.ActionDescriptors">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:System.ICheck">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.ICheck.IsValid(System.Object,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.CheckType">
+            <summary>
+            parameter's check type
+            </summary>
+        </member>
+        <member name="F:System.CheckType.None">
+            <summary>
+            none
+            </summary>
+        </member>
+        <member name="F:System.CheckType.Mobile">
+            <summary>
+            mobile
+            </summary>
+        </member>
+        <member name="F:System.CheckType.IDCard">
+            <summary>
+            ID card
+            </summary>
+        </member>
+        <member name="F:System.CheckType.Uri">
+            <summary>
+            uri
+            </summary>
+        </member>
+        <member name="F:System.CheckType.Email">
+            <summary>
+            email
+            </summary>
+        </member>
+        <member name="F:System.CheckType.NumberLessZero">
+            <summary>
+            数值小于0
+            </summary>
+        </member>
+        <member name="F:System.CheckType.NumberLessOne">
+            <summary>
+            数值小于1
+            </summary>
+        </member>
+        <member name="T:System.Text.IndentedBuilder">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.#ctor">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.#ctor(System.Text.IndentedBuilder)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:System.Text.IndentedBuilder.Length">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.Append(System.Object)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.AppendLine">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.AppendLine(System.Object)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.AppendLines(System.Object,System.Boolean)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.Clear">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.IncrementIndent">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.IncrementIndent(System.Boolean)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.DisconnectCurrentNode">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.SuspendCurrentNode">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.ReconnectCurrentNode">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.DecrementIndent">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.Indent">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:System.Text.IndentedBuilder.ToString">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:System.Inject`1">
+            <summary>
+            auto inject service and excute
+            </summary>
+            <typeparam name="TService"></typeparam>
+        </member>
+        <member name="M:System.Inject`1.Invoke``1(System.Func{`0,``0},System.ServiceProviderType)">
+            <summary>
+            Invoke func
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="func"></param>
+            <param name="providerType">new Scope for ServiceProvider</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Inject`1.InvokeAsync``1(System.Func{`0,``0},System.ServiceProviderType)">
+            <summary>
+            Invoke func
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="func"></param>
+            <param name="providerType">new Scope for ServiceProvider</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Inject`1.Invoke(System.Action{`0},System.ServiceProviderType)">
+            <summary>
+            Invoke action
+            </summary>
+            <param name="providerType">new Scope for ServiceProvider</param>
+            <param name="action"></param>
+        </member>
+        <member name="M:System.Inject`1.InvokeAsync(System.Action{`0},System.ServiceProviderType)">
+            <summary>
+            Invoke action
+            </summary>
+            <param name="func"></param>
+            <param name="providerType">new Scope for ServiceProvider</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.JsonConfig">
+            <summary>
+            the config in json file
+            </summary>
+        </member>
+        <member name="F:System.JsonConfig._fileProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.JsonConfig.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.JsonConfig.Watch(System.JsonConfig)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="T:System.JsonConfig`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:System.JsonConfig`1.#ctor(System.String,Microsoft.Extensions.FileProviders.IFileProvider)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.JsonConfig`1.Value">
+            <summary>
+            Allways return from json file
+            <para>
+            must be declare a local paramenter to use.
+            </para>
+            </summary>
+        </member>
+        <member name="P:System.JsonConfig`1.Value1">
+            <summary>
+            deprecated
+            </summary>
+        </member>
+        <member name="M:System.JsonConfig`1.Watch(System.JsonConfig)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:System.JsonConfig`1.OnChanged(System.Action{`0})">
+            <summary>
+            on json file changed
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="T:System.ObjectFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.ObjectFactory.GetValueFromReader``1(System.Data.Common.DbDataReader,System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader"></param>
+            <param name="ordinal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.ObjectFactory.CreateFromReader``1(System.Data.Common.DbDataReader)">
+            <summary>
+            Create <typeparamref name="TEntity"/> from <see cref="T:System.Data.Common.DbDataReader"/>
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.ObjectFactory.CreateFromReader(System.Data.Common.DbDataReader)">
+            <summary>
+            Create object from <see cref="T:System.Data.Common.DbDataReader"/>
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.ObjectFactory.CreateFactory``1">
+            <summary>
+             Create ObjectFactory of <typeparamref name="TEntity"/>
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.ObjectFactory.CreateFactory(System.Type)">
+            <summary>
+            Create ObjectFactory of <paramref name="type"/>
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.NullCheck">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.NullCheck.NotNull``1(``0,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NullCheck.NotEmpty``1(System.Collections.Generic.IReadOnlyList{``0},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NullCheck.NotEmpty(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NullCheck.NullButNotEmpty(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.NullCheck.HasNoNulls``1(System.Collections.Generic.IReadOnlyList{``0},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="parameterName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.PagerResult">
+            <summary>
+            Api Pager Result
+            </summary>
+        </member>
+        <member name="P:System.PagerResult.Default">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.PagerResult.Total">
+            <summary>
+            the record count for paging
+            </summary>
+        </member>
+        <member name="P:System.PagerResult.PageCount">
+            <summary>
+            the page count for paging
+            </summary>
+        </member>
+        <member name="P:System.PagerResult.PageIndex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:System.PagerResult.PageSize">
+            <summary>
+            页大小
+            </summary>
+        </member>
+        <member name="T:System.Result">
+            <summary>
+            Api Result
+            </summary>
+        </member>
+        <member name="P:System.Result.Default">
+            <summary>
+            The default
+            </summary>
+        </member>
+        <member name="M:System.Result.#ctor">
+            <summary>
+            初始化 返回成功
+            </summary>
+        </member>
+        <member name="M:System.Result.#ctor(System.Int32)">
+            <summary>
+            初始化
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:System.Result.#ctor(System.Enum)">
+            <summary>
+            初始化
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:System.Result.#ctor(System.String)">
+            <summary>
+            初始化 返回自定义成功消息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:System.Result.#ctor(System.Exception)">
+            <summary>
+            初始化 返回失败消息
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="M:System.Result.#ctor(System.Int32,System.String,System.Exception)">
+            <summary>
+            初始化 返回自定义错误消息
+            </summary>
+            <param name="message">消息</param>
+            <param name="status">状态</param>
+            <param name="ex">错误</param>
+        </member>
+        <member name="P:System.Result.Status">
+            <summary>
+            e.g. 200:success; 500:system error; 404:not found; 401:Unauthorized
+            <para>Reference resources <see cref="T:System.Net.HttpStatusCode"/></para>
+            </summary>
+        </member>
+        <member name="P:System.Result.Data">
+            <summary>
+            the data
+            </summary>
+        </member>
+        <member name="P:System.Result.Message">
+            <summary>
+            the message
+            </summary>
+        </member>
+        <member name="P:System.Result.Success">
+            <summary>
+            if the status Equals <see cref="F:System.Result.DefaultStatus"/> return 'true'
+            </summary>
+        </member>
+        <member name="M:System.Result.Ok(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Result.Error(System.Exception,System.Boolean)">
+            <summary>
+            set error , empty data
+            the status = 500
+            the message is Exception.Message
+            </summary>
+            <param name="exception">Exception</param>
+            <param name="showStackTrace">是否显示错误详细内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Result.Error(System.String,System.Object)">
+            <summary>
+            错误/失败
+            </summary>
+            <param name="message"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Result.SetStatus(System.Enum,System.String,System.Object)">
+            <summary>
+            set extend status and set message
+            This is the best way to use.
+            if message is not set, then use the enum's discription attribute
+            </summary>
+            <param name="status">200 is success
+            <para>Reference resources <seealso cref="T:System.Net.HttpStatusCode"/></para>
+            </param>
+            <param name="message">自定义消息</param>
+            <param name="data">返回数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Result.SetStatus(System.Int32,System.String,System.Object)">
+            <summary>
+            set extend status and set message
+            </summary>
+            <param name="status">200 is success
+            <para>Reference resources <seealso cref="T:System.Net.HttpStatusCode"/></para>
+            </param>
+            <param name="message">自定义消息</param>
+            <param name="data">返回数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.ServiceProviderType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:System.ServiceProviderType.Current">
+            <summary>
+            current RequestServices
+            </summary>
+        </member>
+        <member name="F:System.ServiceProviderType.NewScope">
+            <summary>
+            ApplicationServices
+            </summary>
+        </member>
+        <member name="F:System.ServiceProviderType.RootScope">
+            <summary>
+            Root Services
+            </summary>
+        </member>
+        <member name="T:System.TypeCreater">
+            <summary>
+            Dynamic create type
+            </summary>
+        </member>
+        <member name="M:System.TypeCreater.WithProperties(System.String,System.Collections.Generic.Dictionary{System.String,System.Type})">
+            <summary>
+            create type with properties
+            </summary>
+            <param name="typeName"></param>
+            <param name="namedTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.TypeCreater.WithFields(System.String,System.Collections.Generic.Dictionary{System.String,System.Type})">
+            <summary>
+            create type with fields
+            </summary>
+            <param name="typeName"></param>
+            <param name="namedTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.HttpMethod">
+            <summary>
+            HttpMethod
+            </summary>
+        </member>
+        <member name="F:System.Web.HttpMethod.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:System.Web.HttpMethod.Delete">
+            <summary>
+            Delete
+            </summary>
+        </member>
+        <member name="F:System.Web.HttpMethod.Get">
+            <summary>
+            Get
+            </summary>
+        </member>
+        <member name="F:System.Web.HttpMethod.Head">
+            <summary>
+            Head
+            </summary>
+        </member>
+        <member name="F:System.Web.HttpMethod.Options">
+            <summary>
+            Options
+            </summary>
+        </member>
+        <member name="F:System.Web.HttpMethod.Patch">
+            <summary>
+            Patch
+            </summary>
+        </member>
+        <member name="F:System.Web.HttpMethod.Post">
+            <summary>
+            Post
+            </summary>
+        </member>
+        <member name="F:System.Web.HttpMethod.Put">
+            <summary>
+            Put
+            </summary>
+        </member>
+        <member name="F:System.Web.HttpMethod.Trace">
+            <summary>
+            Trace
+            </summary>
+        </member>
+        <member name="T:System.HttpUtility">
+            <summary>
+            Http Web Utility
+            </summary>
+        </member>
+        <member name="F:System.HttpUtility.ClientTimeCookieName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.HttpUtility.Instance">
+            <summary>
+            Instance of <see cref="T:System.HttpUtility"/>
+            </summary>
+        </member>
+        <member name="P:System.HttpUtility.WebRootPath">
+            <summary>
+            The physical root path of web site resources
+            <para>default physical path: {application path}\\wwwroot 
+            </para>
+            </summary>
+        </member>
+        <member name="P:System.HttpUtility.ContentRootPath">
+            <summary>
+            The physical root path of web site resources
+            <para>default physical path: {application path} </para>
+            </summary>
+        </member>
+        <member name="P:System.HttpUtility.VirtualUrl">
+            <summary>
+            The virtual root path of web site
+            </summary>
+        </member>
+        <member name="P:System.HttpUtility.AbsoluteUrl">
+            <summary>
+            the absolute url: http(s)://..
+            </summary>
+        </member>
+        <member name="M:System.HttpUtility.MapPath(System.String)">
+            <summary>
+            Returns the physical file path that corresponds to the specified virtual path.
+            </summary>
+            <param name="path">The virtual path in the Web application.</param>
+            <returns>The physical file path on the Web server that corresponds to</returns>
+            <exception cref="T:System.NullReferenceException">The HttpUtility.Instance is null.</exception>
+            <exception cref="T:System.ArgumentNullException">The path is null or empty.</exception>
+        </member>
+        <member name="M:System.HttpUtility.CombineUrl(System.String[])">
+            <summary>
+            Combines an array of strings into a uri path.
+            </summary>
+            <param name="urls"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.HttpUtility.CombineWithRoot(System.String[])">
+            <summary>
+            Combines an array of strings into a absolute uri path.
+            </summary>
+            <param name="urls"></param>
+            <returns></returns>
+            <exception cref="T:System.NullReferenceException">The HttpUtility.Instance is null.</exception>
+        </member>
+        <member name="M:System.HttpUtility.HtmlDecode(System.String)">
+            <summary>
+            Converts a string that has been HTML-encoded for HTTP transmission into a decoded
+            </summary>
+            <param name="html">The string to decode.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.HttpUtility.HtmlEncode(System.String)">
+            <summary>
+            Converts a string to an HTML-encoded string.
+            </summary>
+            <param name="html">The string to encode.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.HttpUtility.UrlDecode(System.String)">
+            <summary>
+            Converts a string that has been encoded for transmission in a URL into a decoded string.
+            </summary>
+            <param name="str">The string to decode.</param>
+            <returns> A decoded string.</returns>
+        </member>
+        <member name="M:System.HttpUtility.UrlDecode(System.String,System.Text.Encoding)">
+            <summary>
+            Converts a URL-encoded string into a decoded string, using the specified encoding object.
+            </summary>
+            <param name="str">The string to decode.</param>
+            <param name="encoding">The System.Text.Encoding that specifies the decoding scheme.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.HttpUtility.UrlDecode(System.Byte[],System.Text.Encoding)">
+            <summary>
+            Converts a URL-encoded byte array into a decoded string using the specified decoding object.
+            </summary>
+            <param name="bytes">The array of bytes to decode.</param>
+            <param name="encoding">The System.Text.Encoding that specifies the decoding scheme.</param>
+            <returns> A decoded string.</returns>
+        </member>
+        <member name="M:System.HttpUtility.UrlEncode(System.String)">
+            <summary>
+             Encodes a URL string.
+            </summary>
+            <param name="str">The text to encode.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.HttpUtility.UrlEncode(System.String,System.Text.Encoding)">
+            <summary>
+             Encodes a URL string using the specified encoding object.
+            </summary>
+            <param name="str">The text to encode.</param>
+            <param name="encoding">The System.Text.Encoding that specifies the decoding scheme.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.HttpUtility.UrlEncode(System.Byte[])">
+            <summary>
+            Converts a byte array into an encoded URL string.
+            </summary>
+            <param name="bytes">The array of bytes to encode.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.HttpUtility.Escape(System.String)">
+            <summary>
+            Encodes a string.
+            </summary>
+            <param name="str">A string to encode.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.HttpUtility.Unescape(System.String)">
+            <summary>
+            Encodes a string.
+            </summary>
+            <param name="str">A string to encode.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.HttpUtility.AppendCookie(System.String,System.String,System.Boolean,System.Action{Microsoft.AspNetCore.Http.CookieOptions})">
+            <summary>
+            add or modify cookie
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="appendScheme"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:System.HttpUtility.RemoveCookie(System.String,System.Boolean,System.String)">
+            <summary>
+            remove cookie
+            </summary>
+            <param name="name"></param>
+            <param name="appendScheme"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:System.HttpUtility.GetCookie(System.String,System.Boolean)">
+            <summary>
+            get cookie
+            </summary>
+            <param name="name"></param>
+            <param name="appendScheme"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Utility">
+            <summary>
+            Utility
+            </summary>
+        </member>
+        <member name="M:System.Utility.Choice(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Utility.Join(System.String,System.String[])">
+            <summary>
+            join without empty elements
+            </summary>
+            <param name="separator"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Utility.ToMD5(System.String)">
+            <summary>
+            MD5加密 字符串
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Utility.ToGuidString(System.Object)">
+            <summary>
+            将字符串MD5加密后转化为GUID格式字符串
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Utility.GetNumberString``1">
+            <summary>
+            get the enum <typeparamref name="T"/>'s number string
+            <para>
+            e.g. "0,1,2,4"
+            </para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>"0,1,2,4"</returns>
+        </member>
+        <member name="M:System.Utility.GetNumbers``1">
+            <summary>
+            get the enum <typeparamref name="T"/>'s numbers
+            <para>
+            e.g. [0,1,2,4]
+            </para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>[0,1,2,4]</returns>
+        </member>
+        <member name="M:System.Utility.GetNumber``1(``0)">
+            <summary>
+            get the enum <typeparamref name="T"/>'s number value
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="_enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Utility.GetStrings``1">
+            <summary>
+            get name and value with <typeparamref name="T"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Utility.Split``1(``0,System.Boolean)">
+            <summary>
+            get the <typeparamref name="TEnum"/>[] of the <paramref name="_enum"/> include
+            <para>
+            e.g. var <paramref name="_enum"/> = (<see cref="T:System.Reflection.BindingFlags"/>)133;
+            </para>
+            <para>
+            when <paramref name="defined"/> is false, the result is [1,4,128]
+            </para>
+            <para>
+            when <paramref name="defined"/> is true, the result is [1,4], 
+            because 128 not declared in <see cref="T:System.Reflection.BindingFlags"/>
+            </para>
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="_enum"></param>
+            <param name="defined">only included the defined</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Utility.NewGuid">
+            <summary>
+            get sequential Guid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.ExtensionsServiceExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Microsoft.Extensions.DependencyInjection.ExtensionsServiceExtensions.KeyPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Microsoft.Extensions.DependencyInjection.ExtensionsServiceExtensions.RootPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ExtensionsServiceExtensions.OnRequest(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Func{Microsoft.AspNetCore.Http.HttpContext,System.Globalization.CultureInfo})">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <param name="localization"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ExtensionsServiceExtensions.AddExtensions(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{AspNetCore.FileLog.LogOptions})">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <param name="logOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ExtensionsServiceExtensions.AddJsonConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.Action{Microsoft.Extensions.DependencyInjection.JsonConfigOptions})">
+            <summary>
+             set json filepath,regist json config
+            </summary>
+            <param name="services"></param>
+            <param name="configDirectory"></param>
+            <param name="action"></param>
+            <remarks>
+            <code>
+            var settings = Globals.GetConfiglt;WebSettings&gt;();
+            如果原值为: "123456"
+            settings.ResourceWebsite = "asdf";
+            var settings1 = Globals.GetConfig&lt;WebSettings&gt;();
+            </code>
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.ServiceExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceExtensions.GetInstanceFromCollection``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceExtensions.GetInstancesFromCollection``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceExtensions.GetServiceDescriptorsFromCollection``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="services"></param>        
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceExtensions.GetServiceDescriptorsFromCollection(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type)">
+            <summary>
+            
+            </summary>       
+            <param name="services"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceExtensions.ExistsInCollection``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceExtensions.GetImplementationType(Microsoft.Extensions.DependencyInjection.ServiceDescriptor)">
+            <summary>
+            
+            </summary>
+            <param name="descriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.JsonConfigOptions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.JsonConfigOptions.AddConfig``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.LoggerOptions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Microsoft.Extensions.DependencyInjection.LoggerOptions.Directory">
+            <summary>
+            Directory of logs. default is '.Logs' in application's path
+            </summary>
+        </member>
+        <member name="P:Microsoft.Extensions.DependencyInjection.LoggerOptions.BrowsePath">
+            <summary>
+            Browse logs path. default is '/_Logs_'
+            </summary>
+        </member>
+        <member name="P:Microsoft.Extensions.DependencyInjection.LoggerOptions.SettingsPath">
+            <summary>
+            logs settings path. default is '/_Settings_'
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.Primitives.FileChangeToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Primitives.FileChangeToken.#ctor(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="P:Microsoft.Extensions.Primitives.FileChangeToken.ChangeType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Mvc.MvcActionDescriptor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.MvcActionDescriptor.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.MvcActionDescriptor.Url">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.MvcActionDescriptor.DescriptorType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.MvcActionDescriptor.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.MvcActionDescriptor.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.MvcActionDescriptor.Parent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.MvcActionDescriptor.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Mvc.DescriptorType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Mvc.DescriptorType.ControllerActionDescriptor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Mvc.DescriptorType.CompiledPageActionDescriptor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Mvc.DescriptorType.PageActionDescriptor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Extensions.Internal._HtmlDirectoryFormatter">
+            <summary>
+            Generates an HTML view for a directory.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._HtmlDirectoryFormatter.GenerateContentAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{Microsoft.Extensions.FileProviders.IFileInfo})">
+            <summary>
+            Generates an HTML view for a directory.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFileProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of a PhysicalFileProvider at the given root directory.
+            </summary>
+            <param name="root">The root directory. This should be an absolute path.</param>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFileProvider.#ctor(System.String,Microsoft.Extensions.FileProviders.Physical.ExclusionFilters)">
+            <summary>
+            Initializes a new instance of a PhysicalFileProvider at the given root directory.
+            </summary>
+            <param name="root">The root directory. This should be an absolute path.</param>
+            <param name="filters">Specifies which files or directories are excluded.</param>
+        </member>
+        <member name="P:AspNetCore.Extensions.Internal._PhysicalFileProvider.UsePollingFileWatcher">
+            <summary>
+            Gets or sets a value that determines if this instance of <see cref="T:AspNetCore.Extensions.Internal._PhysicalFileProvider"/>
+            uses polling to determine file changes.
+            <para>
+            By default, <see cref="T:AspNetCore.Extensions.Internal._PhysicalFileProvider"/>  uses <see cref="T:System.IO.FileSystemWatcher"/> to listen to file change events
+            for <see cref="M:AspNetCore.Extensions.Internal._PhysicalFileProvider.Watch(System.String)"/>. <see cref="T:System.IO.FileSystemWatcher"/> is ineffective in some scenarios such as mounted drives.
+            Polling is required to effectively watch for file changes.
+            </para>
+            <seealso cref="P:AspNetCore.Extensions.Internal._PhysicalFileProvider.UseActivePolling"/>.
+            </summary>
+            <value>
+            The default value of this property is determined by the value of environment variable named <c>DOTNET_USE_POLLING_FILE_WATCHER</c>.
+            When <c>true</c> or <c>1</c>, this property defaults to <c>true</c>; otherwise false.
+            </value>
+        </member>
+        <member name="P:AspNetCore.Extensions.Internal._PhysicalFileProvider.UseActivePolling">
+            <summary>
+            Gets or sets a value that determines if this instance of <see cref="T:AspNetCore.Extensions.Internal._PhysicalFileProvider"/>
+            actively polls for file changes.
+            <para>
+            When <see langword="true"/>, <see cref="T:Microsoft.Extensions.Primitives.IChangeToken"/> returned by <see cref="M:AspNetCore.Extensions.Internal._PhysicalFileProvider.Watch(System.String)"/> will actively poll for file changes
+            (<see cref="P:Microsoft.Extensions.Primitives.IChangeToken.ActiveChangeCallbacks"/> will be <see langword="true"/>) instead of being passive.
+            </para>
+            <para>
+            This property is only effective when <see cref="P:AspNetCore.Extensions.Internal._PhysicalFileProvider.UsePollingFileWatcher"/> is set.
+            </para>
+            </summary>
+            <value>
+            The default value of this property is determined by the value of environment variable named <c>DOTNET_USE_POLLING_FILE_WATCHER</c>.
+            When <c>true</c> or <c>1</c>, this property defaults to <c>true</c>; otherwise false.
+            </value>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFileProvider.Dispose">
+            <summary>
+            Disposes the provider. Change tokens may not trigger after the provider is disposed.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFileProvider.Dispose(System.Boolean)">
+            <summary>
+            Disposes the provider.
+            </summary>
+            <param name="disposing"><c>true</c> is invoked from <see cref="M:System.IDisposable.Dispose"/>.</param>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFileProvider.Finalize">
+            <summary>
+            Destructor for <see cref="T:AspNetCore.Extensions.Internal._PhysicalFileProvider"/>.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Extensions.Internal._PhysicalFileProvider.Root">
+            <summary>
+            The root directory for this instance.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFileProvider.GetFileInfo(System.String)">
+            <summary>
+            Locate a file at the given path by directly mapping path segments to physical directories.
+            </summary>
+            <param name="subpath">A path under the root directory</param>
+            <returns>The file information. Caller must check <see cref="P:Microsoft.Extensions.FileProviders.IFileInfo.Exists"/> property. </returns>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFileProvider.GetDirectoryContents(System.String)">
+            <summary>
+            Enumerate a directory at the given path, if any.
+            </summary>
+            <param name="subpath">A path under the root directory. Leading slashes are ignored.</param>
+            <returns>
+            Contents of the directory. Caller must check <see cref="P:Microsoft.Extensions.FileProviders.IDirectoryContents.Exists"/> property. <see cref="T:Microsoft.Extensions.FileProviders.NotFoundDirectoryContents" /> if
+            <paramref name="subpath" /> is absolute, if the directory does not exist, or <paramref name="subpath" /> has invalid
+            characters.
+            </returns>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFileProvider.Watch(System.String)">
+            <summary>
+                <para>Creates a <see cref="T:Microsoft.Extensions.Primitives.IChangeToken" /> for the specified <paramref name="filter" />.</para>
+                <para>Globbing patterns are interpreted by <seealso cref="T:Microsoft.Extensions.FileSystemGlobbing.Matcher" />.</para>
+            </summary>
+            <param name="filter">
+            Filter string used to determine what files or folders to monitor. Example: **/*.cs, *.*,
+            subFolder/**/*.cshtml.
+            </param>
+            <returns>
+            An <see cref="T:Microsoft.Extensions.Primitives.IChangeToken" /> that is notified when a file matching <paramref name="filter" /> is added,
+            modified or deleted. Returns a <see cref="T:Microsoft.Extensions.FileProviders.NullChangeToken" /> if <paramref name="filter" /> has invalid filter
+            characters or if <paramref name="filter" /> is an absolute path or outside the root directory specified in the
+            constructor <seealso cref="M:AspNetCore.Extensions.Internal._PhysicalFileProvider.#ctor(System.String)" />.
+            </returns>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFilesWatcher.#ctor(System.String,System.IO.FileSystemWatcher,System.Boolean)">
+            <summary>
+            Initializes an instance of <see cref="T:Microsoft.Extensions.FileProviders.Physical.PhysicalFilesWatcher" /> that watches files in <paramref name="root" />.
+            Wraps an instance of <see cref="T:System.IO.FileSystemWatcher" />
+            </summary>
+            <param name="root">Root directory for the watcher</param>
+            <param name="fileSystemWatcher">The wrapped watcher that is watching <paramref name="root" /></param>
+            <param name="pollForChanges">
+            True when the watcher should use polling to trigger instances of
+            <see cref="T:Microsoft.Extensions.Primitives.IChangeToken" /> created by <see cref="M:AspNetCore.Extensions.Internal._PhysicalFilesWatcher.CreateFileChangeToken(System.String)" />
+            </param>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFilesWatcher.#ctor(System.String,System.IO.FileSystemWatcher,System.Boolean,Microsoft.Extensions.FileProviders.Physical.ExclusionFilters)">
+            <summary>
+            Initializes an instance of <see cref="T:Microsoft.Extensions.FileProviders.Physical.PhysicalFilesWatcher" /> that watches files in <paramref name="root" />.
+            Wraps an instance of <see cref="T:System.IO.FileSystemWatcher" />
+            </summary>
+            <param name="root">Root directory for the watcher</param>
+            <param name="fileSystemWatcher">The wrapped watcher that is watching <paramref name="root" /></param>
+            <param name="pollForChanges">
+            True when the watcher should use polling to trigger instances of
+            <see cref="T:Microsoft.Extensions.Primitives.IChangeToken" /> created by <see cref="M:AspNetCore.Extensions.Internal._PhysicalFilesWatcher.CreateFileChangeToken(System.String)" />
+            </param>
+            <param name="filters">Specifies which files or directories are excluded. Notifications of changes to are not raised to these.</param>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFilesWatcher.CreateFileChangeToken(System.String)">
+            <summary>
+                <para>
+                Creates an instance of <see cref="T:Microsoft.Extensions.Primitives.IChangeToken" /> for all files and directories that match the
+                <paramref name="filter" />
+                </para>
+                <para>
+                Globbing patterns are relative to the root directory given in the constructor
+                <seealso cref="M:Microsoft.Extensions.FileProviders.Physical.PhysicalFilesWatcher.#ctor(System.String,System.IO.FileSystemWatcher,System.Boolean)" />. Globbing patterns
+                are interpreted by <seealso cref="T:Microsoft.Extensions.FileSystemGlobbing.Matcher" />.
+                </para>
+            </summary>
+            <param name="filter">A globbing pattern for files and directories to watch</param>
+            <returns>A change token for all files that match the filter</returns>
+            <exception cref="T:System.ArgumentNullException">When <paramref name="filter" /> is null</exception>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFilesWatcher.Dispose">
+            <summary>
+            Disposes the provider. Change tokens may not trigger after the provider is disposed.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFilesWatcher.Dispose(System.Boolean)">
+            <summary>
+            Disposes the provider.
+            </summary>
+            <param name="disposing"><c>true</c> is invoked from <see cref="M:System.IDisposable.Dispose"/>.</param>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PhysicalFilesWatcher.Finalize">
+            <summary>
+            Destructor for <see cref="T:Microsoft.Extensions.FileProviders.Physical.PhysicalFilesWatcher"/>.
+            </summary>
+        </member>
+        <member name="T:AspNetCore.Extensions.Internal._PollingFileChangeToken">
+            <summary>
+                <para>
+                A change token that polls for file system changes.
+                </para>
+                <para>
+                This change token does not raise any change callbacks. Callers should watch for <see cref="P:AspNetCore.Extensions.Internal._PollingFileChangeToken.HasChanged" /> to turn
+                from false to true
+                and dispose the token after this happens.
+                </para>
+            </summary>
+            <remarks>
+            Polling occurs every 4 seconds.
+            </remarks>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PollingFileChangeToken.#ctor(System.IO.FileInfo)">
+            <summary>
+            Initializes a new instance of <see cref="T:AspNetCore.Extensions.Internal._PollingFileChangeToken" /> that polls the specified file for changes as
+            determined by <see cref="P:System.IO.FileSystemInfo.LastWriteTimeUtc" />.
+            </summary>
+            <param name="fileInfo">The <see cref="T:System.IO.FileInfo"/> to poll</param>
+        </member>
+        <member name="P:AspNetCore.Extensions.Internal._PollingFileChangeToken.ActiveChangeCallbacks">
+            <summary>
+            Always false.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.Extensions.Internal._PollingFileChangeToken.HasChanged">
+            <summary>
+            True when the file has changed since the change token was created. Once the file changes, this value is always true
+            </summary>
+            <remarks>
+            Once true, the value will always be true. Change tokens should not re-used once expired. The caller should discard this
+            instance once it sees <see cref="P:AspNetCore.Extensions.Internal._PollingFileChangeToken.HasChanged" /> is true.
+            </remarks>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PollingFileChangeToken.RegisterChangeCallback(System.Action{System.Object},System.Object)">
+            <summary>
+            Does not actually register callbacks.
+            </summary>
+            <param name="callback">This parameter is ignored</param>
+            <param name="state">This parameter is ignored</param>
+            <returns>A disposable object that noops when disposed</returns>
+        </member>
+        <member name="T:AspNetCore.Extensions.Internal._PollingWildCardChangeToken">
+            <summary>
+            A polling based <see cref="T:Microsoft.Extensions.Primitives.IChangeToken"/> for wildcard patterns.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PollingWildCardChangeToken.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:AspNetCore.Extensions.Internal._PollingWildCardChangeToken"/>.
+            </summary>
+            <param name="root">The root of the file system.</param>
+            <param name="pattern">The pattern to watch.</param>
+        </member>
+        <member name="P:AspNetCore.Extensions.Internal._PollingWildCardChangeToken.ActiveChangeCallbacks">
+            <inheritdoc />
+        </member>
+        <member name="P:AspNetCore.Extensions.Internal._PollingWildCardChangeToken.HasChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:AspNetCore.Extensions.Internal._PollingWildCardChangeToken.GetLastWriteUtc(System.String)">
+            <summary>
+            Gets the last write time of the file at the specified <paramref name="path"/>.
+            </summary>
+            <param name="path">The root relative path.</param>
+            <returns>The <see cref="T:System.DateTime"/> that the file was last modified.</returns>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.ReflectionUtils.GetMemberUnderlyingType(System.Reflection.MemberInfo)">
+            <summary>
+            Gets the member's underlying type.
+            </summary>
+            <param name="member">The member.</param>
+            <returns>The underlying type of the member.</returns>
+        </member>
+        <member name="T:Newtonsoft.Json.Serialization.SortedContractResolver">
+            <summary>
+            sorted properties of the object's json string
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.SortedContractResolver.#ctor">
+            <summary>
+            .cotr
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.SortedContractResolver.GetSerializableMembers(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="objectType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.SortedContractResolver.CreateDictionaryContract(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="objectType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.SortedContractResolver.CreateProperty(System.Reflection.MemberInfo,Newtonsoft.Json.MemberSerialization)">
+            <summary>
+            
+            </summary>
+            <param name="member"></param>
+            <param name="memberSerialization"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

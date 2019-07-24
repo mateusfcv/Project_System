@@ -1,0 +1,586 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetCore.FileLog</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Extensions.DependencyInjection.LoggerExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.LoggerExtensions.SetFileLogFormat(Microsoft.Extensions.DependencyInjection.IServiceCollection,AspNetCore.FileLog.Format)">
+            <summary>
+            set file format for logs
+            </summary>
+            <param name="services"></param>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.LoggerExtensions.AddFileLog(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{AspNetCore.FileLog.LogOptions})">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <param name="logAction">logAction</param>
+            <para>e.g. .Logs or wwwroor/logs or C:/wwwroot/logs</para>
+        </member>
+        <member name="T:AspNetCore.FileLog.FileBufferingReadStream">
+            <summary>
+            A Stream that wraps another stream and enables rewinding by buffering the content as it is read.
+            The content is buffered in memory up to a certain size and then spooled to a temp file on disk.
+            The temp file will be deleted on Dispose.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.#ctor(System.IO.Stream,System.Int32,System.Nullable{System.Int64},System.Func{System.String})">
+            <summary>
+            
+            </summary>
+            <param name="inner"></param>
+            <param name="memoryThreshold"></param>
+            <param name="bufferLimit"></param>
+            <param name="tempFileDirectoryAccessor"></param>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.#ctor(System.IO.Stream,System.Int32,System.Nullable{System.Int64},System.Func{System.String},System.Buffers.ArrayPool{System.Byte})">
+            <summary>
+            
+            </summary>
+            <param name="inner"></param>
+            <param name="memoryThreshold"></param>
+            <param name="bufferLimit"></param>
+            <param name="tempFileDirectoryAccessor"></param>
+            <param name="bytePool"></param>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.#ctor(System.IO.Stream,System.Int32,System.Nullable{System.Int64},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="inner"></param>
+            <param name="memoryThreshold"></param>
+            <param name="bufferLimit"></param>
+            <param name="tempFileDirectory"></param>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.#ctor(System.IO.Stream,System.Int32,System.Nullable{System.Int64},System.String,System.Buffers.ArrayPool{System.Byte})">
+            <summary>
+            
+            </summary>
+            <param name="inner"></param>
+            <param name="memoryThreshold"></param>
+            <param name="bufferLimit"></param>
+            <param name="tempFileDirectory"></param>
+            <param name="bytePool"></param>
+        </member>
+        <member name="P:AspNetCore.FileLog.FileBufferingReadStream.InMemory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.FileBufferingReadStream.TempFileName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.FileBufferingReadStream.CanRead">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.FileBufferingReadStream.CanSeek">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.FileBufferingReadStream.CanWrite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.FileBufferingReadStream.Length">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.FileBufferingReadStream.Position">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            
+            </summary>
+            <param name="offset"></param>
+            <param name="origin"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AspNetCore.FileLog.FileBufferingReadStream.IsDisposed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.SetLength(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.Flush">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileBufferingReadStream.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:AspNetCore.FileLog.FileLogAdapter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileLogAdapter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.FileLogAdapter.FileDirectory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileLogAdapter.Log(System.String,System.String,Microsoft.Extensions.Logging.LogLevel,AspNetCore.FileLog.Format,System.String,System.Diagnostics.StackFrame[],System.Exception,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="category"></param>
+            <param name="eventName"></param>
+            <param name="logLevel"></param>
+            <param name="stackFrames"></param>
+            <param name="message"></param>
+            <param name="exception"></param>
+            <param name="context"></param>
+            <param name="format"></param>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileLogAdapter.LogTxt(System.String,System.String,Microsoft.Extensions.Logging.LogLevel,System.String,System.Diagnostics.StackFrame[],System.Exception,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="category"></param>
+            <param name="eventName"></param>
+            <param name="logLevel"></param>
+            <param name="stackFrames"></param>
+            <param name="message"></param>
+            <param name="exception"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:AspNetCore.FileLog.FileLogAdapter.LogMarkdown(System.String,System.String,Microsoft.Extensions.Logging.LogLevel,System.String,System.Diagnostics.StackFrame[],System.Exception,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="category"></param>
+            <param name="eventName"></param>
+            <param name="logLevel"></param>
+            <param name="stackFrames"></param>
+            <param name="message"></param>
+            <param name="exception"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:AspNetCore.FileLog.HtmlDirectoryFormatter.GenerateContentAsync(Microsoft.AspNetCore.Http.HttpContext,System.Collections.Generic.IEnumerable{Microsoft.Extensions.FileProviders.IFileInfo})">
+            <summary>
+            Generates an HTML view for a directory.
+            </summary>
+        </member>
+        <member name="T:AspNetCore.FileLog.ILogAdapter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.ILogAdapter.FileDirectory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AspNetCore.FileLog.ILogAdapter.Log(System.String,System.String,Microsoft.Extensions.Logging.LogLevel,AspNetCore.FileLog.Format,System.String,System.Diagnostics.StackFrame[],System.Exception,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="category"></param>
+            <param name="eventName"></param>
+            <param name="logLevel"></param>
+            <param name="stackFrames"></param>
+            <param name="message"></param>
+            <param name="exception"></param>
+            <param name="context"></param>
+            <param name="format"></param>
+        </member>
+        <member name="M:AspNetCore.FileLog.LoggerFactory.CheckDisposed">
+            <summary>
+            Check if the factory has been disposed.
+            </summary>
+            <returns>True when <see cref="M:AspNetCore.FileLog.LoggerFactory.Dispose"/> as been called</returns>
+        </member>
+        <member name="T:AspNetCore.FileLog.LogOptions">
+            <summary>
+            log options
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.LogOptions.LogRequestPath">
+            <summary>
+            request url
+            <para>
+            default: "/_Logs_"
+            </para>
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.LogOptions.SettingsPath">
+            <summary>
+            settings url
+            <para>
+            default: "/_Settings_"
+            </para>
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.LogOptions.LogDirectory">
+            <summary>
+            Log file physical directory
+            <para>
+            default: ".Logs" of application path
+            </para>
+            </summary>
+        </member>
+        <member name="P:AspNetCore.FileLog.LogOptions.Format">
+            <summary>
+            log file saved format
+            <para>
+            default: <see cref="F:AspNetCore.FileLog.Format.Txt"/>
+            </para>
+            </summary>
+        </member>
+        <member name="T:AspNetCore.FileLog.LogType">
+            <summary>
+            LogType
+            </summary>
+        </member>
+        <member name="F:AspNetCore.FileLog.LogType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:AspNetCore.FileLog.LogType.HttpContext">
+            <summary>
+            Contains http request information
+            </summary>
+        </member>
+        <member name="F:AspNetCore.FileLog.LogType.Trace">
+            <summary>
+            Contains stack trace information
+            </summary>
+        </member>
+        <member name="F:AspNetCore.FileLog.LogType.All">
+            <summary>
+            Contains all information
+            </summary>
+        </member>
+        <member name="T:AspNetCore.FileLog.Format">
+            <summary>
+            Format
+            </summary>
+        </member>
+        <member name="F:AspNetCore.FileLog.Format.Txt">
+            <summary>
+            Txt
+            </summary>
+        </member>
+        <member name="F:AspNetCore.FileLog.Format.Markdown">
+            <summary>
+            Markdown
+            </summary>
+        </member>
+        <member name="M:AspNetCore.FileLog.SystemExtensions.Value(System.Object,System.String)">
+            <summary>
+            Use Reflect get value of current <paramref name="value"/> by <paramref name="name"/>
+            </summary>
+            <param name="value">current value</param>
+            <param name="name">field or property
+            <para>e.g.: 'a.b.c'</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.FileLog.SystemExtensions.IsFile(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.FileLog.SystemExtensions.GetFrames(System.Diagnostics.StackTrace,System.Int32,System.Func{System.Diagnostics.StackFrame,System.Reflection.MethodBase,System.Boolean})">
+            <summary>
+            
+            </summary>
+            <param name="stackTrace"></param>
+            <param name="maxCount"></param>
+            <param name="needSkip"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Logger">
+            <summary>
+            Logger
+            </summary>
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="M:System.Logger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TState"></typeparam>
+            <param name="logLevel"></param>
+            <param name="eventId"></param>
+            <param name="state"></param>
+            <param name="exception"></param>
+            <param name="formatter"></param>
+        </member>
+        <member name="M:System.Logger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            
+            </summary>
+            <param name="logLevel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Logger.BeginScope``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TState"></typeparam>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Logger.Trace``1(System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            writes a trace log message.
+            <para>Level: 1</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="M:System.Logger.Trace(System.String,System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            writes a trace log message.
+            <para>Level: 1</para>
+            </summary>
+            <param name="categoryName">log category name</param>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="M:System.Logger.Debug``1(System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            Formats and writes a debug log message.
+            <para>Level: 1</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="M:System.Logger.Debug(System.String,System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            Formats and writes a debug log message.
+            <para>Level: 1</para>
+            </summary>
+            <param name="categoryName"></param>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="M:System.Logger.Information``1(System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            writes an informational log message.
+            <para>Level: 2</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="M:System.Logger.Information(System.String,System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            writes an informational log message.
+            <para>Level: 2</para>
+            </summary>
+            <param name="categoryName"></param>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="M:System.Logger.Warning``1(System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            writes a warning log message.
+            <para>Level: 3</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="M:System.Logger.Warning(System.String,System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            writes a warning log message.
+            <para>Level: 3</para>
+            </summary>
+            <param name="categoryName"></param>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="M:System.Logger.Error``1(System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            writes an error log message.
+            <para>Level: 4</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="M:System.Logger.Error(System.String,System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            writes an error log message.
+            <para>Level: 4</para>
+            </summary>
+            <param name="categoryName"></param>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="M:System.Logger.Critical``1(System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            writes a critical log message.
+            <para>Level: 5</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="M:System.Logger.Critical(System.String,System.String,System.Exception,Microsoft.Extensions.Logging.EventId)">
+            <summary>
+            writes a critical log message.
+            <para>Level: 5</para>
+            </summary>
+            <param name="categoryName"></param>
+            <param name="message">message</param>
+            <param name="exception"><see cref="T:System.Exception"/></param>
+            <param name="eventId"><see cref="T:Microsoft.Extensions.Logging.EventId"/></param>
+        </member>
+        <member name="T:System.ExceptionType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:System.ExceptionType.All">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:System.ExceptionType.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:System.ExceptionType.Details">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:System.ExceptionExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.ExceptionExtensions.GetString(System.Exception,System.ExceptionType)">
+            <summary>
+            
+            </summary>
+            <param name="exception"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.ExceptionExtensions.Log(System.Exception,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="exception"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.ExceptionExtensions.Log``1(System.Exception,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="exception"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.HttpContextExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.HttpContextExtensions.ReadBody(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:System.HttpContextExtensions.TempDirectory">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

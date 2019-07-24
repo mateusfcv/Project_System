@@ -1,0 +1,1374 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetCore.EFCore.SqlServer</name>
+    </assembly>
+    <members>
+        <member name="T:AspNetCore.EFCore.ConnectionManager">
+            <summary>
+            数据库连接管理
+            </summary>
+        </member>
+        <member name="T:AspNetCore.EFCore.ConnectionValue">
+            <summary>
+            ConnectionString
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.ConnectionValue.Default">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.ConnectionValue.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.ConnectionValue.IsActived">
+            <summary>
+            该链接是否可用
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.ConnectionValue.IsEmpty">
+            <summary>
+            是否为空
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.ConnectionValue.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.ConnectionValue.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:AspNetCore.EFCore.ConnectionValue.op_Implicit(System.String)~AspNetCore.EFCore.ConnectionValue">
+            <summary>
+                Implicitly converts a <see cref="T:System.String" /> to a <see cref="T:AspNetCore.EFCore.ConnectionValue" />
+            </summary>
+            <param name="connectionString"> The string. </param>
+        </member>
+        <member name="M:AspNetCore.EFCore.ConnectionValue.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.ConnectionValue.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.ConnectionValue.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AspNetCore.EFCore.IConnectionManager">
+            <summary>
+            数据库连接管理
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.IConnectionManager.GetConnection(AspNetCore.EFCore.ConnectionValue[],System.Boolean)">
+            <summary>
+            reading connnections
+            </summary>
+            <param name="connectionStrings">the connections</param>
+            <param name="isMaster">Is for master</param>
+            <returns>if has connectionString</returns>
+        </member>
+        <member name="T:AspNetCore.EFCore.ConnectionType">
+            <summary>
+            数据连接类型
+            </summary>
+        </member>
+        <member name="F:AspNetCore.EFCore.ConnectionType.Read">
+            <summary>
+            只读
+            </summary>
+        </member>
+        <member name="F:AspNetCore.EFCore.ConnectionType.Write">
+            <summary>
+            只写
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommand.#ctor(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger{Microsoft.EntityFrameworkCore.DbLoggerCategory.Database.Command},System.String,System.Collections.Generic.IReadOnlyList{Microsoft.EntityFrameworkCore.Storage.IRelationalParameter})">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.Internal.RelationalCommand.Logger">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.Internal.RelationalCommand.CommandText">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.Internal.RelationalCommand.Parameters">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommand.ExecuteNonQuery(Microsoft.EntityFrameworkCore.Storage.IRelationalConnection,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommand.ExecuteNonQueryAsync(Microsoft.EntityFrameworkCore.Storage.IRelationalConnection,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommand.ExecuteScalar(Microsoft.EntityFrameworkCore.Storage.IRelationalConnection,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommand.ExecuteScalarAsync(Microsoft.EntityFrameworkCore.Storage.IRelationalConnection,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommand.ExecuteReader(Microsoft.EntityFrameworkCore.Storage.IRelationalConnection,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommand.ExecuteReaderAsync(Microsoft.EntityFrameworkCore.Storage.IRelationalConnection,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommand.Execute(Microsoft.EntityFrameworkCore.Storage.IRelationalConnection,Microsoft.EntityFrameworkCore.Diagnostics.DbCommandMethod,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommand.ExecuteAsync(Microsoft.EntityFrameworkCore.Storage.IRelationalConnection,Microsoft.EntityFrameworkCore.Diagnostics.DbCommandMethod,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:AspNetCore.EFCore.Internal.RelationalCommandBuilder">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommandBuilder.#ctor(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger{Microsoft.EntityFrameworkCore.DbLoggerCategory.Database.Command},Microsoft.EntityFrameworkCore.Storage.IRelationalTypeMappingSource)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.Internal.RelationalCommandBuilder.ParameterBuilder">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommandBuilder.Build">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommandBuilder.BuildCore(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger{Microsoft.EntityFrameworkCore.DbLoggerCategory.Database.Command},System.String,System.Collections.Generic.IReadOnlyList{Microsoft.EntityFrameworkCore.Storage.IRelationalParameter})">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommandBuilder.ToString">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommandBuilderFactory.#ctor(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger{Microsoft.EntityFrameworkCore.DbLoggerCategory.Database.Command},Microsoft.EntityFrameworkCore.Storage.IRelationalTypeMappingSource)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommandBuilderFactory.Create">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.RelationalCommandBuilderFactory.CreateCore(Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger{Microsoft.EntityFrameworkCore.DbLoggerCategory.Database.Command},Microsoft.EntityFrameworkCore.Storage.IRelationalTypeMappingSource)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatch">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatch.#ctor(Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory,Microsoft.EntityFrameworkCore.Storage.ISqlGenerationHelper,Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.ISqlServerUpdateSqlGenerator,Microsoft.EntityFrameworkCore.Storage.IRelationalValueBufferFactoryFactory,System.Nullable{System.Int32})">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatch.UpdateSqlGenerator">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatch.CanAddCommand(Microsoft.EntityFrameworkCore.Update.ModificationCommand)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatch.IsCommandTextValid">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatch.GetParameterCount">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatch.ResetCommandText">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatch.GetCommandText">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatch.UpdateCachedCommandText(System.Int32)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatch.CreateStoreCommand">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatch.ConsumeResultSetWithoutPropagation(System.Int32,Microsoft.EntityFrameworkCore.Storage.RelationalDataReader)">
+            <summary>
+                Consumes the data reader created by <see cref="M:Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(Microsoft.EntityFrameworkCore.Storage.IRelationalConnection)" />
+                without propagating values back into the <see cref="T:Microsoft.EntityFrameworkCore.Update.ModificationCommand" />.
+            </summary>
+            <param name="commandIndex"> The ordinal of the command being consumed. </param>
+            <param name="reader"> The data reader. </param>
+            <returns> The ordinal of the next command that must be consumed. </returns>
+        </member>
+        <member name="T:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatchFactory">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatchFactory.#ctor(Microsoft.EntityFrameworkCore.Storage.IRelationalCommandBuilderFactory,Microsoft.EntityFrameworkCore.Storage.ISqlGenerationHelper,Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.ISqlServerUpdateSqlGenerator,Microsoft.EntityFrameworkCore.Storage.IRelationalValueBufferFactoryFactory,Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal.SqlServerModificationCommandBatchFactory.Create">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal._RelationalEntityQueryableExpressionVisitorFactory.#ctor(Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.RelationalEntityQueryableExpressionVisitorDependencies)">
+            <summary>
+                Creates a new instance of <see cref="T:Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.RelationalEntityQueryableExpressionVisitorFactory" />.
+            </summary>
+            <param name="dependencies"> Parameter object containing dependencies for this service. </param>
+        </member>
+        <member name="P:AspNetCore.EFCore.Internal._RelationalEntityQueryableExpressionVisitorFactory.Dependencies">
+            <summary>
+                Dependencies used to create a <see cref="T:Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.RelationalEntityQueryableExpressionVisitorFactory" />
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal._RelationalEntityQueryableExpressionVisitorFactory.Create(Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor,Remotion.Linq.Clauses.IQuerySource)">
+            <summary>
+                Creates a new ExpressionVisitor.
+            </summary>
+            <param name="queryModelVisitor"> The query model visitor. </param>
+            <param name="querySource"> The query source. </param>
+            <returns>
+                An ExpressionVisitor.
+            </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal._RelationalEntityQueryableExpressionVisitor.#ctor(Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.RelationalEntityQueryableExpressionVisitorDependencies,Microsoft.EntityFrameworkCore.Query.RelationalQueryModelVisitor,Remotion.Linq.Clauses.IQuerySource)">
+            <summary>
+                Creates a new instance of <see cref="T:Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.RelationalEntityQueryableExpressionVisitor" />.
+            </summary>
+            <param name="dependencies"> Parameter object containing dependencies for this service. </param>
+            <param name="queryModelVisitor"> The query model visitor. </param>
+            <param name="querySource"> The query source. </param>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal._RelationalEntityQueryableExpressionVisitor.VisitSubQuery(Remotion.Linq.Clauses.Expressions.SubQueryExpression)">
+            <summary>
+                Visit a sub-query expression.
+            </summary>
+            <param name="expression"> The expression. </param>
+            <returns>
+                An Expression corresponding to the translated sub-query.
+            </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal._RelationalEntityQueryableExpressionVisitor.VisitMember(System.Linq.Expressions.MemberExpression)">
+            <summary>
+                Visit a member expression.
+            </summary>
+            <param name="node"> The expression to visit. </param>
+            <returns>
+                An Expression corresponding to the translated member.
+            </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal._RelationalEntityQueryableExpressionVisitor.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)">
+            <summary>
+                Visit a method call expression.
+            </summary>
+            <param name="node"> The expression to visit. </param>
+            <returns>
+                An Expression corresponding to the translated method call.
+            </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal._RelationalEntityQueryableExpressionVisitor.VisitEntityQueryable(System.Type)">
+            <summary>
+                Visit an entity query root.
+            </summary>
+            <param name="elementType"> The CLR type of the entity root. </param>
+            <returns>
+                An Expression corresponding to the translated entity root.
+            </returns>
+        </member>
+        <member name="T:AspNetCore.EFCore.Internal._TypedRelationalValueBufferFactoryFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:AspNetCore.EFCore.Internal._TypedRelationalValueBufferFactoryFactory.DataReaderParameter">
+            <summary>
+                The parameter representing the DbDataReader in generated expressions.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal._TypedRelationalValueBufferFactoryFactory.#ctor(Microsoft.EntityFrameworkCore.Storage.RelationalValueBufferFactoryDependencies)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.Storage.TypedRelationalValueBufferFactoryFactory" /> class.
+            </summary>
+            <param name="dependencies"> Parameter object containing dependencies for this service. </param>
+        </member>
+        <member name="P:AspNetCore.EFCore.Internal._TypedRelationalValueBufferFactoryFactory.Dependencies">
+            <summary>
+                Parameter object containing dependencies for this service.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal._TypedRelationalValueBufferFactoryFactory.Create(System.Collections.Generic.IReadOnlyList{System.Type},System.Collections.Generic.IReadOnlyList{System.Int32})">
+            <summary>
+                Creates a new <see cref="T:Microsoft.EntityFrameworkCore.Storage.IRelationalValueBufferFactory" />.
+            </summary>
+            <param name="valueTypes">
+                The types of values to be returned from the value buffer.
+            </param>
+            <param name="indexMap">
+                An ordered list of zero-based indexes to be read from the underlying result set (i.e. the first number in this
+                list is the index of the underlying result set that will be returned when value 0 is requested from the
+                value buffer).
+            </param>
+            <returns>
+                The newly created <see cref="T:Microsoft.EntityFrameworkCore.Storage.IRelationalValueBufferFactoryFactory" />.
+            </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal._TypedRelationalValueBufferFactoryFactory.Create(System.Collections.Generic.IReadOnlyList{Microsoft.EntityFrameworkCore.Storage.TypeMaterializationInfo})">
+            <summary>
+                Creates a new <see cref="T:Microsoft.EntityFrameworkCore.Storage.IRelationalValueBufferFactory" />.
+            </summary>
+            <param name="types"> Types and mapping for the values to be read. </param>
+            <returns> The newly created <see cref="T:Microsoft.EntityFrameworkCore.Storage.IRelationalValueBufferFactoryFactory" />. </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.Internal._TypedRelationalValueBufferFactoryFactory.CreateAssignmentExpressions(System.Collections.Generic.IReadOnlyList{Microsoft.EntityFrameworkCore.Storage.TypeMaterializationInfo})">
+            <summary>
+                Creates value buffer assignment expressions for the the given type information.
+            </summary>
+            <param name="types"> Types and mapping for the values to be read. </param>
+            <returns> The value buffer assignment expressions. </returns>
+        </member>
+        <member name="T:AspNetCore.EFCore.SqlServerOptionsExtension">
+            <summary>
+            set
+            <see cref="T:AspNetCore.EFCore.ConnectionManager"/>,<see cref="P:AspNetCore.EFCore.SqlServerOptionsExtension.Masters"/> ,<see cref="P:AspNetCore.EFCore.SqlServerOptionsExtension.Slaves"/>
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServerOptionsExtension.#ctor">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServerOptionsExtension.#ctor(AspNetCore.EFCore.SqlServerOptionsExtension)">
+            <summary>
+            
+            </summary>
+            <param name="copyFrom"></param>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServerOptionsExtension.Clone">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServerOptionsExtension.AddMasters(AspNetCore.EFCore.ConnectionValue[])">
+            <summary>
+            添加只写的连接字符串 Master
+            </summary>
+            <param name="values"></param>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServerOptionsExtension.AddSlaves(AspNetCore.EFCore.ConnectionValue[])">
+            <summary>
+            添加只读的连接字符串
+            <para>
+            如果只读连接字符串未设置,则使用Master的连接字符串, 即:不启用读写分离.
+            </para>
+            </summary>
+            <param name="values"></param>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServerOptionsExtension.Masters">
+            <summary>
+            只写的连接字符串 Master
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServerOptionsExtension.Slaves">
+            <summary>
+            只读的连接字符串
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServerOptionsExtension.ConnectionString">
+            <summary>
+            Replace with MasterConnection.
+            <para>
+                The connection string, or <c>null</c> if a <see cref="T:System.Data.Common.DbConnection" /> was used instead of
+                a connection string.
+                </para>
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServerOptionsExtension.AutoDetectChangesEnabled">
+            <summary>
+                <para>
+                    Gets or sets a value indicating whether the <see cref="M:Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges" /> method is called
+                    automatically by methods of <see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> and related classes.
+                </para>
+                <para>
+                    The default value is true. This ensures the context is aware of any changes to tracked entity instances
+                    before performing operations such as <see cref="M:Microsoft.EntityFrameworkCore.DbContext.SaveChanges" /> or returning change tracking
+                    information. If you disable automatic detect changes then you must ensure that
+                    <see cref="M:Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges" /> is called when entity instances have been modified.
+                    Failure to do so may result in some changes not being persisted during
+                    <see cref="M:Microsoft.EntityFrameworkCore.DbContext.SaveChanges" /> or out-of-date change tracking information being returned.
+                </para>
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServerOptionsExtension.WithConnection(System.Data.Common.DbConnection)">
+            <summary>
+            Replace with AddConnection.
+            </summary>
+            <param name="connection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServerOptionsExtension.WithConnectionString(System.String)">
+            <summary>
+            Replace with AddConnection.
+            </summary>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServerOptionsExtension.Connection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServerOptionsExtension.UseNetTopologySuite">
+            <summary>
+             Use NetTopologySuite to access SQL Server spatial data.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServerOptionsExtension.ApplyServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AspNetCore.EFCore.SqlServer.SqlServerConnection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.#ctor(Microsoft.EntityFrameworkCore.Storage.RelationalConnectionDependencies,AspNetCore.EFCore.IConnectionManager)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServer.SqlServerConnection.ConnectionId">
+            <summary>
+                The unique identifier for this connection.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServer.SqlServerConnection.Dependencies">
+            <summary>
+                Parameter object containing service dependencies.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServer.SqlServerConnection.IsMultipleActiveResultSetsEnabled">
+            <summary>
+            Gets a value indicating whether the multiple active result sets feature is enabled.
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServer.SqlServerConnection.SupportsAmbientTransactions">
+            <summary>
+                Indicates whether the store connection supports ambient transactions
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServer.SqlServerConnection.ConnectionString">
+            <summary>
+                Gets the connection string for the database.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServer.SqlServerConnection.DbConnection">
+            <summary>
+                Gets the underlying <see cref="T:System.Data.Common.DbConnection" /> used to connect to the database.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.CreateDbConnection">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.CreateMasterConnection">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServer.SqlServerConnection.CurrentTransaction">
+            <summary>
+                Gets the current transaction.
+            </summary>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServer.SqlServerConnection.EnlistedTransaction">
+            <summary>
+                The currently enlisted transaction.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.EnlistTransaction(System.Transactions.Transaction)">
+            <summary>
+                Specifies an existing <see cref="T:System.Transactions.Transaction" /> to be used for database operations.
+            </summary>
+            <param name="transaction"> The transaction to be used. </param>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServer.SqlServerConnection.CommandTimeout">
+            <summary>
+                Gets the timeout for executing a command against the database.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.BeginTransaction">
+            <summary>
+                Begins a new transaction.
+            </summary>
+            <returns> The newly created transaction. </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.BeginTransactionAsync(System.Threading.CancellationToken)">
+            <summary>
+                Asynchronously begins a new transaction.
+            </summary>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <returns>
+                A task that represents the asynchronous operation. The task result contains the newly created transaction.
+            </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.BeginTransaction(System.Data.IsolationLevel)">
+            <summary>
+                Begins a new transaction.
+            </summary>
+            <param name="isolationLevel"> The isolation level to use for the transaction. </param>
+            <returns> The newly created transaction. </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.BeginTransactionAsync(System.Data.IsolationLevel,System.Threading.CancellationToken)">
+            <summary>
+                Asynchronously begins a new transaction.
+            </summary>
+            <param name="isolationLevel"> The isolation level to use for the transaction. </param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <returns>
+                A task that represents the asynchronous operation. The task result contains the newly created transaction.
+            </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.UseTransaction(System.Data.Common.DbTransaction)">
+            <summary>
+                Specifies an existing <see cref="T:System.Data.Common.DbTransaction" /> to be used for database operations.
+            </summary>
+            <param name="transaction"> The transaction to be used. </param>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.CommitTransaction">
+            <summary>
+                Commits all changes made to the database in the current transaction.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.RollbackTransaction">
+            <summary>
+                Discards all changes made to the database in the current transaction.
+            </summary>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.Open(System.Boolean)">
+            <summary>
+                Opens the connection to the database.
+            </summary>
+            <param name="errorsExpected">
+                Indicates if the connection errors are expected and should be logged as debug message.
+            </param>
+            <returns> True if the underlying connection was actually opened; false otherwise. </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.OpenAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                Asynchronously opens the connection to the database.
+            </summary>
+            <param name="errorsExpected"> Indicate if the connection errors are expected and should be logged as debug message. </param>
+            <param name="cancellationToken">
+                A <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.
+            </param>
+            <returns>
+                A task that represents the asynchronous operation, with a value of true if the connection
+                was actually opened.
+            </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.Close">
+            <summary>
+                Closes the connection to the database.
+            </summary>
+            <returns> True if the underlying connection was actually closed; false otherwise. </returns>
+        </member>
+        <member name="P:AspNetCore.EFCore.SqlServer.SqlServerConnection.Semaphore">
+            <summary>
+                Gets a semaphore used to serialize access to this connection.
+            </summary>
+            <value>
+                The semaphore used to serialize access to this connection.
+            </value>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.Microsoft#EntityFrameworkCore#Storage#IRelationalConnection#RegisterBufferable(Microsoft.EntityFrameworkCore.Query.Internal.IBufferable)">
+            <summary>
+                Registers a potentially bufferable active query.
+            </summary>
+            <param name="bufferable"> The bufferable query. </param>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.Microsoft#EntityFrameworkCore#Storage#IRelationalConnection#RegisterBufferableAsync(Microsoft.EntityFrameworkCore.Query.Internal.IBufferable,System.Threading.CancellationToken)">
+            <summary>
+                Asynchronously registers a potentially bufferable active query.
+            </summary>
+            <param name="bufferable"> The bufferable query. </param>
+            <param name="cancellationToken"> The cancellation token. </param>
+            <returns>
+                A Task.
+            </returns>
+        </member>
+        <member name="M:AspNetCore.EFCore.SqlServer.SqlServerConnection.Dispose">
+            <summary>
+                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:System.Linq.DbExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Linq.DbExtensions.UnwrapNullableType(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.DbExtensions.Update``1(Microsoft.EntityFrameworkCore.DbSet{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Boolean)">
+            <summary>
+            Update model
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dbset"></param>
+            <param name="predicate"></param>
+            <param name="values"></param>
+            <param name="saveChanges">Whether saved immediately</param>
+        </member>
+        <member name="M:System.Linq.DbExtensions.Update``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Boolean)">
+            <summary>
+            update model
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="where"></param>
+            <param name="values"></param>
+            <param name="saveChanges">Whether saved immediately</param>
+        </member>
+        <member name="M:System.Linq.DbExtensions.Delete``1(Microsoft.EntityFrameworkCore.DbSet{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)">
+            <summary>
+            delete model
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dbset"></param>
+            <param name="predicate"></param>
+            <param name="saveChanges">Whether saved immediately</param>
+        </member>
+        <member name="M:System.Linq.DbExtensions.Delete``1(System.Linq.IQueryable{``0},System.Boolean)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="predicate"></param>
+            <param name="saveChanges">Whether saved immediately</param>
+        </member>
+        <member name="M:System.Linq.DbExtensions.GetDbContext(System.Linq.IQueryable)">
+            <summary>
+            Get <see cref="T:Microsoft.EntityFrameworkCore.DbContext"/> from <see cref="T:System.Linq.IQueryable"/>
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.DbExtensions.ToSql(System.Linq.IQueryable)">
+            <summary>
+            Linq to SQL
+            </summary>
+            <param name="query"><paramref name="query"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.DbExtensions.ToSql(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Get Insert,Update,Delete sql
+            </summary>
+            <param name="dbContext"><see cref="T:Microsoft.EntityFrameworkCore.DbContext"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.DbExtensions.ToExpression(System.Linq.IQueryable)">
+            <summary>
+            
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.DefaultDbContext">
+            <summary>
+            the default database context
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.DefaultDbContext.ContextOptions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary>
+            
+            must set DbContextOptions as <see cref="T:Microsoft.EntityFrameworkCore.DbContextOptions`1" />
+            </summary>
+            <param name="contextOptions"></param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.RunSql(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            run sql 
+            </summary>
+            <param name="sql"></param>
+            <param name="parameterValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.RunSqlAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            run sql 
+            </summary>
+            <param name="sql"></param>
+            <param name="parameterValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.GetEntity``1(System.String,System.Object)">
+            <summary>
+            Recommended use GetQuery
+             convert datareader to entity
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="sql"></param>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.GetEntityAsync``1(System.String,System.Object)">
+            <summary>
+            Recommended use GetQuery
+             convert datareader to entity
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="sql"></param>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.GetEntity``1(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Recommended use GetQuery
+             convert datareader to entity
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="sql"></param>
+            <param name="parameterValues"></param>
+            <returns></returns>     
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.GetEntityAsync``1(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Recommended use GetQuery
+             convert datareader to entity
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="sql"></param>
+            <param name="parameterValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.GetEntities``1(System.String,System.Object)">
+            <summary>
+            Recommended use GetQuery
+             convert datareader to entity list
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="sql"></param>
+            <param name="where"></param>
+            <returns></returns>      
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.GetEntitiesAsync``1(System.String,System.Object)">
+            <summary>
+            Recommended use GetQuery
+             convert datareader to entity list
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="sql"></param>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.GetEntities``1(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Recommended use GetQuery
+            convert datareader to entity list
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="sql"></param>
+            <param name="parameterValues"></param>
+            <returns></returns>      
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.GetEntitiesAsync``1(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Recommended use GetQuery
+            通过sql查询数据, 与DbSet&lt;TEntity&gt;无关
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="sql"></param>
+            <param name="parameterValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.Add``1(``0,System.Func{``0,System.Collections.Generic.List{``0},System.Boolean})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="entity"></param>
+            <param name="checkExists"></param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.SaveChanges">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.SaveChanges(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="acceptAllChangesOnSuccess"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.SaveChanges(System.Boolean,System.Func{Microsoft.EntityFrameworkCore.Metadata.Internal.Property,System.Object,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="acceptAllChangesOnSuccess"></param>
+            <param name="customCheckAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DefaultDbContext.CheckPropertyValue(Microsoft.EntityFrameworkCore.Metadata.Internal.Property,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="property"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.Repository`1">
+            <summary>
+            the Repository for <typeparamref name="TContext"/>
+            </summary>
+            <typeparam name="TContext"><see cref="T:Microsoft.EntityFrameworkCore.DefaultDbContext"/></typeparam>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.#ctor">
+            <summary>
+            the <typeparamref name="TContext"/> must be <see cref="T:Microsoft.EntityFrameworkCore.DefaultDbContext"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.GetDbConnection">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.SetAutoDetectChanges(System.Boolean)">
+            <summary>
+                <para>
+                    Gets or sets a value indicating whether the <see cref="M:Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges" /> method is called
+                    automatically by methods of <see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> and related classes.
+                </para>
+                <para>
+                    The default value is true. This ensures the context is aware of any changes to tracked entity instances
+                    before performing operations such as <see cref="M:Microsoft.EntityFrameworkCore.DbContext.SaveChanges" /> or returning change tracking
+                    information. If you disable automatic detect changes then you must ensure that
+                    <see cref="M:Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges" /> is called when entity instances have been modified.
+                    Failure to do so may result in some changes not being persisted during
+                    <see cref="M:Microsoft.EntityFrameworkCore.DbContext.SaveChanges" /> or out-of-date change tracking information being returned.
+                </para>
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.SetTrackingBehavior(Microsoft.EntityFrameworkCore.QueryTrackingBehavior)">
+            <summary>
+                <para>
+                    Gets or sets the tracking behavior for LINQ queries run against the context. Disabling change tracking
+                    is useful for read-only scenarios because it avoids the overhead of setting up change tracking for each
+                    entity instance. You should not disable change tracking if you want to manipulate entity instances and
+                    persist those changes to the database using <see cref="M:Microsoft.EntityFrameworkCore.DbContext.SaveChanges" />.
+                </para>
+                <para>
+                    This method sets the default behavior for the context, but you can override this behavior for individual
+                    queries using the <see cref="M:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.AsNoTracking``1(System.Linq.IQueryable{``0})" />
+                    and <see cref="M:Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.AsTracking``1(System.Linq.IQueryable{``0})" /> methods.
+                </para>
+                <para>
+                    The default value is <see cref="F:Microsoft.EntityFrameworkCore.QueryTrackingBehavior.TrackAll" />. This means the change tracker will
+                    keep track of changes for all entities that are returned from a LINQ query.
+                </para>
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.GetDbTransaction">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.GetDbCommand">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.Repository`1.Context">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.UseTransaction(Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction)">
+            <summary>
+            
+            </summary>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.CheckExistsEntity``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.TagWith``1(System.String)">
+            <summary>
+                Adds a tag to the collection of tags associated with an EF LINQ query. Tags are query annotations
+                that can provide contextual tracing information at different points in the query pipeline.
+            </summary>
+            <typeparam name="TEntity"> The type of entity being queried. </typeparam>
+            <param name="tag"> The tag. </param>
+            <returns>
+                A new query annotated with the given tag.
+            </returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.GetEntity``1(System.String,System.Object)">
+            <summary>
+            Recommended use GetQuery
+            get model from raw sql 
+            The <typeparamref name="TSource"/> may not in database or DbContext
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <param name="sql">sql</param>
+            <param name="where"> where</param>
+            <returns></returns>       
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.GetEntityAsync``1(System.String,System.Object)">
+            <summary>
+            Recommended use GetQuery
+            get model from raw sql 
+            The <typeparamref name="TSource"/> may not in database or DbContext
+            </summary>
+            <typeparam name="TSource"> </typeparam>
+            <param name="sql">sql</param>
+            <param name="where"> where</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.GetEntities``1(System.String,System.Object)">
+            <summary>
+            Recommended use GetQuery
+            get entities by raw sql
+            The TSource may not in database or DbContext
+            </summary>
+            <typeparam name="TSource">any entity </typeparam>
+            <param name="sql">sql contains params like: select * from [Table] where Id=@id</param>
+            <param name="where">where e.g. new {Id=10} </param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.GetEntitiesAsync``1(System.String,System.Object)">
+            <summary>
+            Recommended use GetQuery
+            get entities by raw sql
+            The TSource may not in database or DbContext
+            </summary>
+            <typeparam name="TSource">any entity </typeparam>
+            <param name="sql">sql contains params like: select * from [Table] where Id=@id</param>
+            <param name="where">where e.g. new {Id=10} </param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.GetQuery``1(System.String)">
+            <summary>
+            Get IQueryable&lt;<typeparamref name="TSource"/>&gt;
+            <para>
+            ! that <typeparamref name="TSource"/> cannot be a DebSet&lt;<typeparamref name="TSource"/>&gt;
+            </para>
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <param name="sql"></param>       
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.ExecuteSql(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            run raw sql
+            </summary>
+            <param name="sql"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.ExecuteSqlAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            run raw sql
+            </summary>
+            <param name="sql"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.FromSql``1(System.FormattableString)">
+            <summary>
+            Recommended use GetQuery
+            get <typeparamref name="TEntity"/> from raw sql query
+            the TEntity must in database or <see cref="T:Microsoft.EntityFrameworkCore.DbContext"/>
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Single``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            get single or default TSource
+            </summary>
+            <typeparam name="TEntity">entity</typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.SingleAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            get single or default TSource
+            </summary>
+            <typeparam name="TEntity">entity</typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.First``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            get first or default TSource
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.FirstAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            get first or default TSource
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Where``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            select entity by conditions
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Count``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            counting the entity's count under this condition
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.CountAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            counting the entity's count under this condition
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Query``1">
+            <summary>
+            return the query
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Exists``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            check the condition
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.ExistsAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            check the condition
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Pages``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            paging the query
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="query"></param>
+            <param name="pageIndex">page index</param>
+            <param name="pageSize">page size </param>
+            <param name="count">total row record count</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Pages``1(System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            paging the query
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="pageIndex">page index</param>
+            <param name="pageSize">page size </param>
+            <param name="count">total row record count</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.PagesBySql``1(System.String,System.String,System.Int32@,System.Int32,System.Int32,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <param name="sql"></param>
+            <param name="order">e.g. "order by time desc"</param>
+            <param name="count"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.PagesBySqlAsync``1(System.String,System.String,System.Int32,System.Int32,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <param name="sql"></param>
+            <param name="order">e.g. "order by time desc"</param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Save">
+            <summary>
+            save all the changes add, update, delete
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.SaveAsync">
+            <summary>
+            save all the changes add, update, delete
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Add``1(``0,System.Boolean,System.Func{``0,System.Collections.Generic.List{``0},System.Boolean})">
+            <summary>
+            add entity to context or database
+            </summary>
+            <param name="entity"></param>
+            <param name="save">save the add and all changes before this to database</param>
+            <param name="checkExists"></param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.AddRange``1(System.Collections.Generic.IEnumerable{``0},System.Boolean,System.Func{``0,System.Collections.Generic.List{``0},System.Boolean})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entities"></param>
+            <param name="save"></param>
+            <param name="checkExists"></param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.AddAsync(System.Object,System.Boolean)">
+            <summary>
+            add entity to context or database
+            </summary>
+            <param name="entity"></param>
+            <param name="save">save the add and all changes before this to database</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Update(System.Object,System.Boolean)">
+            <summary>
+            update entity to context or database
+            </summary>
+            <param name="entity"></param>
+            <param name="save">save the update and all changes before this to database</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.UpdateAsync(System.Object,System.Boolean)">
+            <summary>
+            update entity to context or database
+            </summary>
+            <param name="entity"></param>
+            <param name="save">save the update and all changes before this to database</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Update(System.Collections.Generic.IEnumerable{System.Object},System.Boolean)">
+            <summary>
+            update entitys to context or database
+            </summary>
+            <param name="list"></param>
+            <param name="save">save the updates and all changes before this to database</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.UpdateAsync(System.Collections.Generic.IEnumerable{System.Object},System.Boolean)">
+            <summary>
+            update entitys to context or database
+            </summary>
+            <param name="list"></param>
+            <param name="save">save the updates and all changes before this to database</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Delete(System.Object,System.Boolean)">
+            <summary>
+            delete entity from context or database
+            </summary>
+            <param name="entity"></param>
+            <param name="save">save the delete and all changes before this to database</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.DeleteAsync(System.Object,System.Boolean)">
+            <summary>
+            delete entity from context or database
+            </summary>
+            <param name="entity"></param>
+            <param name="save">save the delete and all changes before this to database</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Delete(System.Collections.Generic.IEnumerable{System.Object},System.Boolean)">
+            <summary>
+            delete entitys from context or database
+            </summary>
+            <param name="list"></param>
+            <param name="save">save the deletes and all changes before this to database</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.DeleteAsync(System.Collections.Generic.IEnumerable{System.Object},System.Boolean)">
+            <summary>
+            delete entitys from context or database
+            </summary>
+            <param name="list"></param>
+            <param name="save">save the deletes and all changes before this to database</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Delete``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Boolean)">
+            <summary>
+            Delete TEntity by query
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="saveChanges"></param>
+            <param name="predicate"></param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.Detached(System.Object)">
+            <summary>
+            The entity is not being tracked by the context.
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Repository`1.ToSql">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.EFCoreServicesExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.EFCoreServicesExtensions.AddSqlServer``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{AspNetCore.EFCore.SqlServerOptionsExtension},System.Int32,Microsoft.EntityFrameworkCore.QueryTrackingBehavior)">
+            <summary>
+            可设置读写分离,主从数据库
+            </summary>
+            <typeparam name="TContext"></typeparam>
+            <param name="services"></param>
+            <param name="poolSize"></param>
+            <param name="sqlServerOptionsAction"></param>
+            <param name="queryTrackingBehavior">Disabling change tracking is useful for read-only scenarios</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
