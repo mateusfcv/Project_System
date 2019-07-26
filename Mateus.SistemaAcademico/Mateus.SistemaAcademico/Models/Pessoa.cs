@@ -12,7 +12,5 @@ namespace Mateus.SistemaAcademico.Models
         public Telefones[] telefones { get; set; }
         public Endereco endereco { get; set; }
         public CPF cpf { get; set; }
-        public Telefones telefone { get; set; }
-        public string cPF { get; set; }
     }
 }

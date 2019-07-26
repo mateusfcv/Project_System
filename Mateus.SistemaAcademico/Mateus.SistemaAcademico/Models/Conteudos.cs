@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mateus.SistemaAcademico.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ namespace Mateus.SistemaAcademico.Models
     {
         public string Nome;
 
-        public TipoConteudo TipoConteudo;
+        public ITipoConteudo Tipo;
+        
     }
 }

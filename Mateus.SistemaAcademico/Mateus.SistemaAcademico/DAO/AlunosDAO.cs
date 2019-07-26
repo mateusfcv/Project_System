@@ -1,18 +1,15 @@
-﻿using System;
+﻿using Mateus.SistemaAcademico.Interfaces;
+using Mateus.SistemaAcademico.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Mateus.SistemaAcademico.Models
+namespace Mateus.SistemaAcademico.DAO
 {
-    public class AlunosDAOEntity : IAlunosDAO, IDisposable
+    public class AlunosDAO : IAlunosDAO, IDisposable
     {
         private SistemaContext contexto;
-
-        public AlunosDAOEntity()
-        {
-            this.contexto = new SistemaContext();
-        }
 
         public void Adicionar(Alunos a)
         {

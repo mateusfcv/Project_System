@@ -243,8 +243,8 @@ C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Ma
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico.Tests\bin\Debug\pt-br\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico.Tests\bin\Debug\pt-br\System.Web.Http.WebHost.resources.dll
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico.Tests\bin\Debug\pt-br\System.Net.Http.Formatting.resources.dll
-C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico.Tests\obj\Debug\Mateus.SistemaAcademico.Tests.csprojAssemblyReference.cache
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico.Tests\obj\Debug\Mateus.SistemaAcademico.Tests.csproj.CoreCompileInputs.cache
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico.Tests\obj\Debug\Mateus.SistemaAcademico.Tests.csproj.CopyComplete
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico.Tests\obj\Debug\Mateus.SistemaAcademico.Tests.dll
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico.Tests\obj\Debug\Mateus.SistemaAcademico.Tests.pdb
+C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico.Tests\obj\Debug\Mateus.SistemaAcademico.Tests.csprojAssemblyReference.cache

@@ -642,9 +642,15 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAO\AlunosDAO.cs" />
+    <Compile Include="DAO\SistemaContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAlunosDAO.cs" />
+    <Compile Include="Interfaces\ITipoConteudo.cs" />
+    <Compile Include="Interfaces\ITipoCurso.cs" />
+    <Compile Include="Interfaces\ITipoProva.cs" />
     <Compile Include="Migrations\20190726170650_teste.cs" />
     <Compile Include="Migrations\20190726170650_teste.designer.cs">
       <DependentUpon>20190726170650_teste.cs</DependentUpon>
@@ -662,17 +668,12 @@
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Frequencia.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\IAlunosDAO.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Notas.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\Professor.cs" />
     <Compile Include="Models\Responsavel.cs" />
-    <Compile Include="Models\SistemaContext.cs" />
     <Compile Include="Models\Telefones.cs" />
-    <Compile Include="Models\TipoConteudo.cs" />
-    <Compile Include="Models\TipoCurso.cs" />
-    <Compile Include="Models\TipoProva.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

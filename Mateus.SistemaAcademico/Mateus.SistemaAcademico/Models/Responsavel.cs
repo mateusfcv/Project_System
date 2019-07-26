@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico.Models
 {
-    public class Responsavel : Pessoa
+    public class Responsavel 
     {
         
     }

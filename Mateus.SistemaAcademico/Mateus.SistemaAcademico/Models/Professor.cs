@@ -5,8 +5,12 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico.Models
 {
-    public class Professor : Pessoa
+    public class Professor
     {
+        public int RegistroDoProfessor;
+
+        public Disciplinas DisciplinasMinistratadas;
+
         public string Titulacao;
     }
 }

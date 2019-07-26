@@ -8,8 +8,8 @@ namespace Mateus.SistemaAcademico.Models
     public class Alunos
 
     {
-        public int Matricula { get; set; }
+        public int RegistroDoAluno { get; set; }
 
         public Responsavel responsavel;
-    }
+    } 
 }
