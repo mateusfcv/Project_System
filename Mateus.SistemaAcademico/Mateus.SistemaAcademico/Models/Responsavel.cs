@@ -5,11 +5,8 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico.Models
 {
-    //public class Responsavel : Pessoa
-    //{
-    //    public Responsavel(string Valor, string nome) : base(Valor, nome)
-    //    {
-
-    //    }
-    //}
+    public class Responsavel : Pessoa
+    {
+        
+    }
 }

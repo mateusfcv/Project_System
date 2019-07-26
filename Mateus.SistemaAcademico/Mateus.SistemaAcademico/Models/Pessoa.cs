@@ -14,13 +14,5 @@ namespace Mateus.SistemaAcademico.Models
         public CPF cpf { get; set; }
         public Telefones telefone { get; set; }
         public string cPF { get; set; }
-
-        public Pessoa(string cPF, string nome, Endereco endereco, Telefones telefone)
-        {
-            this.cPF = cPF;
-            Nome = nome;
-            this.endereco = endereco;
-            this.telefone = telefone;
-        }
     }
 }

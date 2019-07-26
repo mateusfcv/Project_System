@@ -36,8 +36,8 @@ namespace Mateus.SistemaAcademico.Models
             modelBuilder.Entity<Endereco>()
                .HasKey(c => c.EnderecoId);
 
-            modelBuilder.Entity<Pessoa>()
-               .HasKey(c => c.PessoaId);
+            modelBuilder.Entity<Alunos>()
+               .HasKey(c => c.Matricula);
 
             modelBuilder.Entity<Telefones>()
                .HasKey(c => c.TelfoneId);

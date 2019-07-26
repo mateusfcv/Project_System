@@ -645,9 +645,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20190723163824_Teste.cs" />
-    <Compile Include="Migrations\20190723163824_Teste.designer.cs">
-      <DependentUpon>20190723163824_Teste.cs</DependentUpon>
+    <Compile Include="Migrations\20190726170650_teste.cs" />
+    <Compile Include="Migrations\20190726170650_teste.designer.cs">
+      <DependentUpon>20190726170650_teste.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -666,7 +666,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Notas.cs" />
     <Compile Include="Models\Pessoa.cs" />
-    <Compile Include="Models\AlunosDAOEntity.cs" />
     <Compile Include="Models\Professor.cs" />
     <Compile Include="Models\Responsavel.cs" />
     <Compile Include="Models\SistemaContext.cs" />
@@ -736,6 +735,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Bussines\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
