@@ -7,6 +7,7 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class CPF
     {
+        public int IdCpf { get; set; }
         public string Valor { get; set; }
 
         public bool IsCpf(string cpf)

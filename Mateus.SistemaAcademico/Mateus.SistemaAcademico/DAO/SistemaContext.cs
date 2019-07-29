@@ -2,15 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
 namespace Mateus.SistemaAcademico.DAO
 {
-    public class SistemaContext : System.Data.Entity.DbContext
+    public class SistemaContext : DbContext
     {
-        public System.Data.Entity.DbSet<Alunos> Alunos { get; set; }
+        public DbSet<Aluno> Alunos { get; set; }
 
         public SistemaContext()
         {
@@ -26,24 +25,31 @@ namespace Mateus.SistemaAcademico.DAO
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=SistemaAcademico;Trusted_Connection=true;");
+                optionsBuilder
+                    .UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=SistemaAcademico;Trusted_Connection=true;");
             }
+            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Aluno>()
+                .HasKey(c => c.IdAluno);
+
             modelBuilder.Entity<CPF>()
-               .HasKey(c => c.Valor);
+               .HasKey(c => c.IdCpf);
 
             modelBuilder.Entity<Endereco>()
-               .HasKey(c => c.EnderecoId);
+               .HasKey(c => c.IdEndereco);
 
-            modelBuilder.Entity<Alunos>()
-               .HasKey(c => c.RegistroDoAluno);
+            modelBuilder.Entity<Nome>()
+               .HasKey(c => c.IdNome);
 
-            modelBuilder.Entity<Telefones>()
-               .HasKey(c => c.TelfoneId);
+            modelBuilder.Entity<Responsavel>()
+               .HasKey(c => c.IdResponsavel);
+
+            modelBuilder.Entity<Telefone>()
+               .HasKey(c => c.IdTelefone);
         }
-
     }
 }
