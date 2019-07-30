@@ -2,8 +2,8 @@
 {
     public enum TipoCurso : int
     {
-        Licenciatura = 0,
-        Baixarelado = 1,
-        Tecnologo = 2
+        Licenciatura = 0, 
+        Bacharelado = 1,
+        Tecnologo = 2 
     }
 }

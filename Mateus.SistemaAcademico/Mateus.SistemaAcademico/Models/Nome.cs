@@ -6,9 +6,8 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico.Models
 {
-    public class Nome
+    public class Nome : EntityBase
     {
-        public int IdNome { get; set; }
         public string Dados { get; set; }
 
         public Nome(string Dados)

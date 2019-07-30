@@ -5,9 +5,8 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico.Models
 {
-    public class CPF
+    public class Cpf : EntityBase
     {
-        public int IdCpf { get; set; }
         public string Valor { get; set; }
 
         public bool IsCpf(string cpf)
@@ -61,7 +60,7 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public CPF(string Valor)
+        public Cpf(string Valor)
         {
             if (IsCpf(Valor) == false)
             {

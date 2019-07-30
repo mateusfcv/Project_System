@@ -640,9 +640,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AlunosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="DAO\AlunoDAO.cs" />
+    <Compile Include="DAO\AlunosDAO.cs" />
     <Compile Include="DAO\SistemaContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -654,20 +655,24 @@
     <Compile Include="Interfaces\IFrequencia.cs" />
     <Compile Include="Interfaces\INota.cs" />
     <Compile Include="Interfaces\IProfessor.cs" />
-    <Compile Include="Migrations\20190729061355_teste.cs" />
-    <Compile Include="Migrations\20190729061355_teste.designer.cs">
-      <DependentUpon>20190729061355_teste.cs</DependentUpon>
+    <Compile Include="Migrations\20190730171418_primeira.cs" />
+    <Compile Include="Migrations\20190730171418_primeira.designer.cs">
+      <DependentUpon>20190730171418_primeira.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aluno.cs" />
+    <Compile Include="Models\Avaliacao.cs" />
     <Compile Include="Models\CampoInvalidException.cs" />
     <Compile Include="Models\CampoNullException.cs" />
     <Compile Include="Models\Conteudo.cs" />
-    <Compile Include="Models\CPF.cs" />
+    <Compile Include="Models\Cpf.cs" />
     <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\Disciplina.cs" />
     <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\EntityBase.cs" />
+    <Compile Include="Models\Enums\TipoConteudo.cs" />
+    <Compile Include="Models\Enums\TipoDeProva.cs" />
     <Compile Include="Models\Enums\TipoFrequencia.cs" />
     <Compile Include="Models\Frequencia.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -680,6 +685,8 @@
     <Compile Include="Models\Responsavel.cs" />
     <Compile Include="Models\Telefone.cs" />
     <Compile Include="Models\Enums\TipoCurso.cs" />
+    <Compile Include="Models\TipoAvaliacao.cs" />
+    <Compile Include="Models\Trabalho.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -739,6 +746,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Alunos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

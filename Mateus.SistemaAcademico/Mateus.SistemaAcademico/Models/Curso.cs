@@ -7,13 +7,13 @@ using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Models
 {
-    public class Curso
+    public class Curso : EntityBase
     {
-        public int IdCurso { get; set; }
         public string Nome { get; set; }
         public float Duracao { get; set; }
         public Professor Coordenador { get; set; }
         public List<Aluno> Aluno { get; set; }
+        public List<Disciplina> Disciplina { get; set; }
         public TipoCurso TipoCurso { get; set; }
 
         public Curso ()
@@ -21,13 +21,13 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Curso(int idCurso, string nome, float duracao, Professor coordenador, List<Aluno> aluno, TipoCurso tipoCurso)
+        public Curso(string nome, float duracao, Professor coordenador, List<Aluno> aluno, List<Disciplina> disciplina, TipoCurso tipoCurso)
         {
-            IdCurso = idCurso;
             Nome = nome;
             Duracao = duracao;
             Coordenador = coordenador;
             Aluno = aluno;
+            Disciplina = disciplina;
             TipoCurso = tipoCurso;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Mateus.SistemaAcademico.Interfaces;
+using Mateus.SistemaAcademico.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,20 +7,20 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico.Models
 {
-    public class Conteudo
+    public class Conteudo : EntityBase
     {
-        public int IdConteudo { get; set; }
         public string Descricao { get; set; }
+        public TipoConteudo TipoConteudos { get; set; }
 
         public Conteudo()
         {
-
+             
         }
 
-        public Conteudo(int Idconteudo, string descricao)
+        public Conteudo(string descricao, TipoConteudo tipoConteudos)
         {
-            IdConteudo = Idconteudo;
             Descricao = descricao;
+            TipoConteudos = tipoConteudos;
         }
     }
 }

@@ -5,26 +5,24 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico.Models
 {
-    public abstract class Pessoa
+    public abstract class Pessoa : EntityBase
     {
-        public int IdPessoa { get; set; }
-        public Nome nome { get; set; }
+        public Nome Nome { get; set; }
         public List<Telefone> Telefone { get; set; }
-        public Endereco endereco { get; set; }
-        public CPF cPF { get; set; }
+        public Endereco Endereco { get; set; }
+        public Cpf Cpf { get; set; }
 
         public Pessoa ()
         { 
 
         }
 
-        public Pessoa(int idPessoa, Nome nome, List<Telefone> telefone, Endereco endereco, CPF cPF)
+        protected Pessoa(Nome nome, List<Telefone> telefone, Endereco endereco, Cpf cpf)
         {
-            IdPessoa = idPessoa;
-            this.nome = nome;
+            Nome = nome;
             Telefone = telefone;
-            this.endereco = endereco;
-            this.cPF = cPF;
+            Endereco = endereco;
+            Cpf = cpf;
         }
     }
 }

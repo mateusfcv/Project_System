@@ -5,9 +5,8 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico.Models
 {
-    public class Telefone
+    public class Telefone : EntityBase
     {
-        public int IdTelefone { get; set; }
         public int Valor { get; set; }
 
         public Telefone ()
@@ -15,9 +14,8 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Telefone(int idTelefone, int valor)
+        public Telefone(int valor)
         {
-            IdTelefone = idTelefone;
             Valor = valor;
         }
     }

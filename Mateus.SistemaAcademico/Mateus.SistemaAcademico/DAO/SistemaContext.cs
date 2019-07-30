@@ -34,22 +34,22 @@ namespace Mateus.SistemaAcademico.DAO
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Aluno>()
-                .HasKey(c => c.IdAluno);
+                .HasKey(c => c.Id);
 
-            modelBuilder.Entity<CPF>()
-               .HasKey(c => c.IdCpf);
+            modelBuilder.Entity<Cpf>()
+               .HasKey(c => c.Id);
 
             modelBuilder.Entity<Endereco>()
-               .HasKey(c => c.IdEndereco);
+               .HasKey(c => c.Id);
 
             modelBuilder.Entity<Nome>()
-               .HasKey(c => c.IdNome);
+               .HasKey(c => c.Id);
 
             modelBuilder.Entity<Responsavel>()
-               .HasKey(c => c.IdResponsavel);
+               .HasKey(c => c.Id);
 
             modelBuilder.Entity<Telefone>()
-               .HasKey(c => c.IdTelefone);
+               .HasKey(c => c.Id);
         }
     }
 }

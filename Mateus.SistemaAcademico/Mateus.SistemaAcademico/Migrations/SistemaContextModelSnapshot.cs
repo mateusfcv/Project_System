@@ -25,13 +25,27 @@ namespace Mateus.SistemaAcademico.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("IdPessoa");
+
                     b.Property<int>("RegistroDoAluno");
 
                     b.Property<int?>("ResponsavelIdResponsavel");
 
+                    b.Property<int?>("cPFIdCpf");
+
+                    b.Property<int?>("enderecoIdEndereco");
+
+                    b.Property<int?>("nomeIdNome");
+
                     b.HasKey("IdAluno");
 
                     b.HasIndex("ResponsavelIdResponsavel");
+
+                    b.HasIndex("cPFIdCpf");
+
+                    b.HasIndex("enderecoIdEndereco");
+
+                    b.HasIndex("nomeIdNome");
 
                     b.ToTable("Alunos");
                 });
@@ -54,6 +68,16 @@ namespace Mateus.SistemaAcademico.Migrations
                     b.Property<int>("IdEndereco")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Bairro");
+
+                    b.Property<int>("CEP");
+
+                    b.Property<string>("Complemento");
+
+                    b.Property<string>("Logradouro");
+
+                    b.Property<int>("Numero");
 
                     b.HasKey("IdEndereco");
 
@@ -104,11 +128,15 @@ namespace Mateus.SistemaAcademico.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("AlunoIdAluno");
+
                     b.Property<int?>("ResponsavelIdResponsavel");
 
                     b.Property<int>("Valor");
 
                     b.HasKey("IdTelefone");
+
+                    b.HasIndex("AlunoIdAluno");
 
                     b.HasIndex("ResponsavelIdResponsavel");
 
@@ -120,6 +148,18 @@ namespace Mateus.SistemaAcademico.Migrations
                     b.HasOne("Mateus.SistemaAcademico.Models.Responsavel", "Responsavel")
                         .WithMany()
                         .HasForeignKey("ResponsavelIdResponsavel");
+
+                    b.HasOne("Mateus.SistemaAcademico.Models.CPF", "cPF")
+                        .WithMany()
+                        .HasForeignKey("cPFIdCpf");
+
+                    b.HasOne("Mateus.SistemaAcademico.Models.Endereco", "endereco")
+                        .WithMany()
+                        .HasForeignKey("enderecoIdEndereco");
+
+                    b.HasOne("Mateus.SistemaAcademico.Models.Nome", "nome")
+                        .WithMany()
+                        .HasForeignKey("nomeIdNome");
                 });
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Responsavel", b =>
@@ -139,6 +179,10 @@ namespace Mateus.SistemaAcademico.Migrations
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Telefone", b =>
                 {
+                    b.HasOne("Mateus.SistemaAcademico.Models.Aluno")
+                        .WithMany("Telefone")
+                        .HasForeignKey("AlunoIdAluno");
+
                     b.HasOne("Mateus.SistemaAcademico.Models.Responsavel")
                         .WithMany("Telefone")
                         .HasForeignKey("ResponsavelIdResponsavel");
