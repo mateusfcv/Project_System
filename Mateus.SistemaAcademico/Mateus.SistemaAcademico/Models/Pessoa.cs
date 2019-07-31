@@ -7,17 +7,17 @@ namespace Mateus.SistemaAcademico.Models
 {
     public abstract class Pessoa : EntityBase
     {
-        public Nome Nome { get; set; }
+        public string Nome { get; set; }
         public List<Telefone> Telefone { get; set; }
-        public Endereco Endereco { get; set; }
-        public Cpf Cpf { get; set; }
+        public List<Endereco> Endereco { get; set; }
+        public string Cpf { get; set; }
 
         public Pessoa ()
         { 
 
         }
 
-        protected Pessoa(Nome nome, List<Telefone> telefone, Endereco endereco, Cpf cpf)
+        protected Pessoa(string nome, List<Telefone> telefone, List<Endereco> endereco, string cpf)
         {
             Nome = nome;
             Telefone = telefone;

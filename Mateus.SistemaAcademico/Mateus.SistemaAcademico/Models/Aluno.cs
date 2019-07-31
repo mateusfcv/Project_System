@@ -16,7 +16,7 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Aluno(Nome nome, List<Telefone> telefone, Endereco endereco, Cpf cpf, int registroDoAluno, Responsavel responsavel)
+        public Aluno(string nome, List<Telefone> telefone, List<Endereco> endereco, string cpf, int registroDoAluno, Responsavel responsavel)
             :base(nome, telefone, endereco, cpf)
         {
             RegistroDoAluno = registroDoAluno;

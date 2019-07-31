@@ -2,25 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Models
 {
     public class Avaliacao : EntityBase
     {
-        public TipoAvaliacao TipoAvaliacao {get; set;}
         public Nota Nota { get; set; }
-        public int Valor { get; set; }
+        public TipoDeAvaliacao TipoDeAvalicao { get; set; }
+        public float ValorDaAvalicao { get; set; }
 
         public Avaliacao()
         {
 
         }
 
-        public Avaliacao(TipoAvaliacao tipoAvaliacao, Nota nota, int valor)
+        public Avaliacao(Nota nota, TipoDeAvaliacao tipoDeAvaliacao, float valorDaAvalicao)
         {
-            TipoAvaliacao = tipoAvaliacao;
             Nota = nota;
-            Valor = valor;
+            TipoDeAvalicao = tipoDeAvaliacao;
+            ValorDaAvalicao = valorDaAvalicao;
         }
     }
 }

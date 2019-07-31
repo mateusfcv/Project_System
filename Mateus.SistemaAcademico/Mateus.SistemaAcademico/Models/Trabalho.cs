@@ -3,17 +3,17 @@
     public class Trabalho : EntityBase
     {
         public Nota Nota { get; set; }
-        public int Valor { get; set; }
+        public float NotaDoTrabalho { get; set; }
 
         public Trabalho()
         {
 
         }
 
-        public Trabalho(Nota nota, int valor)
+        public Trabalho(Nota nota, float notaDoTrabalho)
         {
             Nota = nota;
-            Valor = valor;
+            NotaDoTrabalho = notaDoTrabalho;
         }
     }
 }

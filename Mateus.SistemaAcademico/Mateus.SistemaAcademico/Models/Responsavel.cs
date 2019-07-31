@@ -12,7 +12,7 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Responsavel(Nome nome, List<Telefone> telefone, Endereco endereco, Cpf cPF)
+        public Responsavel(string nome, List<Telefone> telefone, List<Endereco> endereco, string cPF)
             :base(nome, telefone, endereco, cPF)
         {
             

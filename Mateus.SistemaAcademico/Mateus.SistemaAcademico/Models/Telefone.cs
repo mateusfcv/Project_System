@@ -7,16 +7,16 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Telefone : EntityBase
     {
-        public int Valor { get; set; }
+        public int Numero { get; set; }
 
         public Telefone ()
         {
 
         }
 
-        public Telefone(int valor)
+        public Telefone(int numero)
         {
-            Valor = valor;
+            Numero = numero;
         }
     }
 }

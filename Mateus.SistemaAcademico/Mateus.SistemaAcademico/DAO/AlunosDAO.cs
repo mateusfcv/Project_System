@@ -38,10 +38,5 @@ namespace Mateus.SistemaAcademico.DAO
             contexto.Alunos.Remove(a);
             contexto.SaveChanges();
         }
-
-        void IAluno.ObterAluno(Aluno a)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

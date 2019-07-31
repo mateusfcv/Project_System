@@ -639,6 +639,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bussines\CampoInvalidException.cs" />
+    <Compile Include="Bussines\CampoNullException.cs" />
+    <Compile Include="Bussines\ValidacaoCpf.cs" />
+    <Compile Include="Bussines\ValidacaoNome.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AlunosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -655,37 +659,36 @@
     <Compile Include="Interfaces\IFrequencia.cs" />
     <Compile Include="Interfaces\INota.cs" />
     <Compile Include="Interfaces\IProfessor.cs" />
-    <Compile Include="Migrations\20190730171418_primeira.cs" />
-    <Compile Include="Migrations\20190730171418_primeira.designer.cs">
-      <DependentUpon>20190730171418_primeira.cs</DependentUpon>
+    <Compile Include="Migrations\20190731165317_Teste.cs" />
+    <Compile Include="Migrations\20190731165317_Teste.designer.cs">
+      <DependentUpon>20190731165317_Teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20190731195848_Aluno.cs" />
+    <Compile Include="Migrations\20190731195848_Aluno.designer.cs">
+      <DependentUpon>20190731195848_Aluno.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Avaliacao.cs" />
-    <Compile Include="Models\CampoInvalidException.cs" />
-    <Compile Include="Models\CampoNullException.cs" />
     <Compile Include="Models\Conteudo.cs" />
-    <Compile Include="Models\Cpf.cs" />
     <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\Disciplina.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\EntityBase.cs" />
     <Compile Include="Models\Enums\TipoConteudo.cs" />
-    <Compile Include="Models\Enums\TipoDeProva.cs" />
+    <Compile Include="Models\Enums\TipoDeAvaliacao.cs" />
     <Compile Include="Models\Enums\TipoFrequencia.cs" />
     <Compile Include="Models\Frequencia.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\JOINS\CursoDisciplina.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Nome.cs" />
     <Compile Include="Models\Nota.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\Professor.cs" />
     <Compile Include="Models\Responsavel.cs" />
     <Compile Include="Models\Telefone.cs" />
     <Compile Include="Models\Enums\TipoCurso.cs" />
-    <Compile Include="Models\TipoAvaliacao.cs" />
     <Compile Include="Models\Trabalho.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -750,7 +753,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Bussines\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

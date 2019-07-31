@@ -12,7 +12,6 @@ namespace Mateus.SistemaAcademico.Interfaces
         void Adicionar(Aluno a);
         void Atualizar(Aluno a);
         void Remover(Aluno a);
-        void ObterAluno(Aluno a);
         IList<Aluno> ListarAlunos();
         
     }

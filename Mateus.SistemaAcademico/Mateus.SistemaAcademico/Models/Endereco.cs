@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mateus.SistemaAcademico.Bussines;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -38,6 +39,11 @@ namespace Mateus.SistemaAcademico.Models
                 this.Complemento = Complemento;
                 this.Numero = numero;
             }
+        }
+
+        public static implicit operator List<object>(Endereco v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
