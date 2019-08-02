@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Mateus.SistemaAcademico.Models.Enums;
+using Mateus.SistemaAcademico.Models.JOINS;
 
 namespace Mateus.SistemaAcademico.Models
 {
@@ -13,7 +14,7 @@ namespace Mateus.SistemaAcademico.Models
         public float Duracao { get; set; }
         public Professor Coordenador { get; set; }
         public List<Aluno> Aluno { get; set; }
-        public List<Disciplina> Disciplina { get; set; }
+        public IList<CursoDisciplina> Disciplina { get; set; }
         public TipoCurso TipoCurso { get; set; }
 
         public Curso ()
@@ -21,7 +22,7 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Curso(string nome, float duracao, Professor coordenador, List<Aluno> aluno, List<Disciplina> disciplina, TipoCurso tipoCurso)
+        public Curso(string nome, float duracao, Professor coordenador, List<Aluno> aluno, IList<CursoDisciplina> disciplina, TipoCurso tipoCurso)
         {
             Nome = nome;
             Duracao = duracao;

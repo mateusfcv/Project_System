@@ -5,11 +5,11 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico.Models.JOINS
 {
-    public class CursoDisciplina
+    public class CursoDisciplina 
     {
-        public int IdCurso { get; set; }
+        public int CursoId { get; set; }
         public Curso Curso { get; set; }
-        public int IdDisciplina { get; set; }
-        public Disciplina Disciplina { get; set; } 
+        public int DisciplinaId { get; set; }
+        public Disciplina Disciplina { get; set; }  
     }
 }
