@@ -19,7 +19,8 @@ namespace Mateus.SistemaAcademico.DAO
 
         public IList<Aluno> ListarAlunos() 
         {
-            return contexto.Alunos.ToList();
+            //return contexto.Alunos.ToList();
+            return null;
         }
 
         public void Atualizar(Aluno a)

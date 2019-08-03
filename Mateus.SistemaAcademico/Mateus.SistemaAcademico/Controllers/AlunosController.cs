@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Mateus.SistemaAcademico.DAO;
 using Mateus.SistemaAcademico.Models;
 
@@ -10,14 +6,24 @@ namespace Mateus.SistemaAcademico.Controllers
 {
     public class AlunosController : Controller
     {
+        AlunosDAO dao = new AlunosDAO();
         // GET: Alunos
         public ActionResult Index()
         {
-            AlunosDAO dao = new AlunosDAO();
-            IList<Aluno> alunos = dao.ListarAlunos();
-            ViewBag.Alunos = alunos;
+            //ViewBag.Alunos = alunos;
 
-            return View();
+            return View(dao.ListarAlunos());
+        }
+
+        [HttpPost]
+        public ActionResult Create(Aluno aluno)
+        {
+            if (ModelState.IsValid)
+            {
+                dao.Adicionar(aluno);
+            }
+
+            return View(aluno);
         }
     }
 }

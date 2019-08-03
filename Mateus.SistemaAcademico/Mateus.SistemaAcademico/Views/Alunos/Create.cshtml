@@ -1,0 +1,38 @@
+﻿@model Mateus.SistemaAcademico.Models.Aluno
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Nome)
+    @Html.EditorFor(model => model.Nome)
+
+    <br>
+
+    @*@Html.LabelFor(model => model.Telefone)
+        @Html.EditorFor(model => model.Telefone)
+
+             <br>
+        @Html.LabelFor(model => model.Endereco)
+        @Html.EditorFor(model => model.Endereco)*@
+
+    <br>
+
+    @Html.LabelFor(model => model.Cpf)
+    @Html.EditorFor(model => model.Cpf)
+
+    <br>
+
+    @Html.LabelFor(model => model.RegistroDoAluno)
+    @Html.EditorFor(model => model.RegistroDoAluno)
+
+    <br>
+
+    @*@Html.LabelFor(model => model.Responsavel)
+        @Html.EditorFor(model => model.Responsavel)*@
+
+    <input type="submit" value="Create" />
+
+}

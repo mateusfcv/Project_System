@@ -8,7 +8,6 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Avaliacao : EntityBase
     {
-        public Nota Nota { get; set; }
         public TipoDeAvaliacao TipoDeAvalicao { get; set; }
         public float ValorDaAvalicao { get; set; }
 
@@ -17,9 +16,8 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Avaliacao(Nota nota, TipoDeAvaliacao tipoDeAvaliacao, float valorDaAvalicao)
+        public Avaliacao(TipoDeAvaliacao tipoDeAvaliacao, float valorDaAvalicao)
         {
-            Nota = nota;
             TipoDeAvalicao = tipoDeAvaliacao;
             ValorDaAvalicao = valorDaAvalicao;
         }

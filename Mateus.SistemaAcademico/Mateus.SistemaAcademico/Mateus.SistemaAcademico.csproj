@@ -671,6 +671,10 @@
     <Compile Include="Migrations\20190802201724_Curso.designer.cs">
       <DependentUpon>20190802201724_Curso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20190803182752_Frequencia.cs" />
+    <Compile Include="Migrations\20190803182752_Frequencia.designer.cs">
+      <DependentUpon>20190803182752_Frequencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aluno.cs" />
@@ -753,7 +757,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Alunos\Index.cshtml" />
+    <Content Include="Views\Alunos\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

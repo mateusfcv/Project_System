@@ -12,7 +12,8 @@ namespace Mateus.SistemaAcademico.DAO
     {
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Curso> Cursos { get; set; }
-        public DbSet<Disciplina> Disciplinas { get; set; } 
+        public DbSet<Disciplina> Disciplinas { get; set; }
+        public DbSet<Frequencia> Frequencias { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
