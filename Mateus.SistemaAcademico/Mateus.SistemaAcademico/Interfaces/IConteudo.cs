@@ -12,6 +12,6 @@ namespace Mateus.SistemaAcademico.Interfaces
         void Adicionar(Conteudo c);
         void Atualizar(Conteudo c);
         void Remover(Conteudo c);
-        IList<Conteudo> Conteudos(); 
+        IList<Conteudo> ListarConteudos();  
     }
 }

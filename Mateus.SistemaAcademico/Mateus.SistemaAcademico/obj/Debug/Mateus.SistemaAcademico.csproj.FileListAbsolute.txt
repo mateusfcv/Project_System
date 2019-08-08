@@ -336,10 +336,6 @@ C:\Users\mateu\Documents\repositorio\Project_System\Mateus.SistemaAcademico\Mate
 C:\Users\mateu\Documents\repositorio\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\bin\System.Text.Encodings.Web.xml
 C:\Users\mateu\Documents\repositorio\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\mateu\Documents\repositorio\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.csprojAssemblyReference.cache
-C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.csproj.CoreCompileInputs.cache
-C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\EFCoreSqlServerNetTopologySuite.cs
-C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.dll
-C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.pdb
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\bin\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\bin\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\bin\Mateus.SistemaAcademico.dll.config
@@ -670,4 +666,8 @@ C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Ma
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\bin\pt-br\Microsoft.AspNet.Identity.Core.resources.dll
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\bin\pt-br\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\bin\pt-br\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.csproj.CoreCompileInputs.cache
+C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\EFCoreSqlServerNetTopologySuite.cs
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.csproj.CopyComplete
+C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.dll
+C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.pdb

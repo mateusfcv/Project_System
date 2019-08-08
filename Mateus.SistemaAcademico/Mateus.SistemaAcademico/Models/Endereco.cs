@@ -1,6 +1,7 @@
 ﻿using Mateus.SistemaAcademico.Bussines;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -8,25 +9,22 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Endereco : EntityBase
     {
+       [Required]
+        public int CEP { get; set; }
+        [Required]
+        public int Numero { get; set; }
         public string Logradouro { get; set; }
         public string Bairro { get; set; }
         public string Complemento { get; set; }
-        public int CEP { get; set; }
-        public int Numero { get; set; }
-
-
-        public Endereco()
-        {
-
-        }
-
+        
+      
         public Endereco(int cep)
         {
-            this.CEP = cep;
-            //Inserir codigo para inserir outros campos baseado no CEP
+            CEP = cep;
+            //Inserir codigo para inserir outrso campos baseados no CEP
         }
-
-        public Endereco(string Logradouro, string Bairro, string Complemento, int numero)
+         
+        public Endereco(int numero, string logradouro, string bairro, string complemento)
         {
             if (Logradouro == null || Bairro == null || Complemento == null)
             {
@@ -34,10 +32,10 @@ namespace Mateus.SistemaAcademico.Models
             }
             else
             {
-                this.Logradouro = Logradouro;
-                this.Bairro = Bairro;
-                this.Complemento = Complemento;
-                this.Numero = numero;
+                Numero = numero;
+                Logradouro = logradouro;
+                Bairro = bairro;
+                Complemento = complemento;
             }
         }
 

@@ -11,17 +11,27 @@ namespace Mateus.SistemaAcademico.DAO
     public class SistemaContext : DbContext
     {
         public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Conteudo> Conteudos { get; set; }
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Disciplina> Disciplinas { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Frequencia> Frequencias { get; set; }
+        public DbSet<Professor> Professor { get; set; }
+        public DbSet<Responsavel> Responsaveis { get; set; } 
+        public DbSet<Telefone> Telefones { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .Entity<CursoDisciplina>()
-                .HasKey(pp => new { pp.CursoId, pp.DisciplinaId });
+                .HasKey(cd => new { cd.CursoId, cd.DisciplinaId });
             base.OnModelCreating(modelBuilder);
-        }
+       
+            modelBuilder
+                .Entity<ProfessorCurso>()
+                .HasKey(pc => new { pc.ProfessorId, pc.CursoId });
+            base.OnModelCreating(modelBuilder);
+        } 
 
         public SistemaContext()
         {

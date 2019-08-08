@@ -12,6 +12,6 @@ namespace Mateus.SistemaAcademico.Interfaces
         void Adicionar(Disciplina d);
         void Atualizar(Disciplina d);
         void Remover(Disciplina d);
-        IList<Disciplina> Disciplinas(); 
+        IList<Disciplina> ListarDisciplinas(); 
     }
 }

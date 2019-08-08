@@ -12,6 +12,6 @@ namespace Mateus.SistemaAcademico.Interfaces
         void Adicionar(Frequencia f);
         void Atualizar(Frequencia f);
         void Remover(Frequencia f);
-        IList<Frequencia> Frequencias();
+        IList<Frequencia> ListarFrequencias(); 
     }
 }

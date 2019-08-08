@@ -17,12 +17,6 @@ namespace Mateus.SistemaAcademico.DAO
             contexto.SaveChanges();
         }
 
-        public IList<Aluno> ListarAlunos() 
-        {
-            //return contexto.Alunos.ToList();
-            return null;
-        }
-
         public void Atualizar(Aluno a)
         {
             contexto.Alunos.Update(a);
@@ -32,6 +26,11 @@ namespace Mateus.SistemaAcademico.DAO
         public void Dispose()
         {
             contexto.Dispose();
+        }
+
+        public IList<Aluno> ListarAlunos()
+        {
+            return contexto.Alunos.ToList();
         }
 
         public void Remover(Aluno a)

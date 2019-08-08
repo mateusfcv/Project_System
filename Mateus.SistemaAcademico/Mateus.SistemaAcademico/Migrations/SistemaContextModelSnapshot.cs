@@ -29,15 +29,20 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.Property<int?>("CursoId");
 
+                    b.Property<int>("FrequenciaId");
+
                     b.Property<string>("Nome");
 
                     b.Property<int>("RegistroDoAluno");
 
-                    b.Property<int?>("ResponsavelId");
+                    b.Property<int>("ResponsavelId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CursoId");
+
+                    b.HasIndex("FrequenciaId")
+                        .IsUnique();
 
                     b.HasIndex("ResponsavelId");
 
@@ -50,9 +55,10 @@ namespace Mateus.SistemaAcademico.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Descricao");
+                    b.Property<string>("Descricao")
+                        .IsRequired();
 
-                    b.Property<int?>("DisciplinaId");
+                    b.Property<int>("DisciplinaId");
 
                     b.Property<int>("TipoConteudos");
 
@@ -60,7 +66,7 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.HasIndex("DisciplinaId");
 
-                    b.ToTable("Conteudo");
+                    b.ToTable("Conteudos");
                 });
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Curso", b =>
@@ -69,17 +75,18 @@ namespace Mateus.SistemaAcademico.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CoordenadorId");
-
                     b.Property<float>("Duracao");
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired();
+
+                    b.Property<int>("ProfessorId");
 
                     b.Property<int>("TipoCurso");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CoordenadorId");
+                    b.HasIndex("ProfessorId");
 
                     b.ToTable("Cursos");
                 });
@@ -92,9 +99,17 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.Property<float>("CargaHoraria");
 
-                    b.Property<string>("Nome");
+                    b.Property<int>("ConteudoId");
+
+                    b.Property<int>("FrequenciaId");
+
+                    b.Property<string>("Nome")
+                        .IsRequired();
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FrequenciaId")
+                        .IsUnique();
 
                     b.ToTable("Disciplinas");
                 });
@@ -129,7 +144,7 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.HasIndex("ResponsavelId");
 
-                    b.ToTable("Endereco");
+                    b.ToTable("Enderecos");
                 });
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Frequencia", b =>
@@ -138,19 +153,11 @@ namespace Mateus.SistemaAcademico.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AlunoId");
-
                     b.Property<DateTime>("Data");
-
-                    b.Property<int?>("DisciplinaId");
 
                     b.Property<int>("TipoFrequencia");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AlunoId");
-
-                    b.HasIndex("DisciplinaId");
 
                     b.ToTable("Frequencias");
                 });
@@ -168,6 +175,19 @@ namespace Mateus.SistemaAcademico.Migrations
                     b.ToTable("CursoDisciplina");
                 });
 
+            modelBuilder.Entity("Mateus.SistemaAcademico.Models.JOINS.ProfessorCurso", b =>
+                {
+                    b.Property<int>("ProfessorId");
+
+                    b.Property<int>("CursoId");
+
+                    b.HasKey("ProfessorId", "CursoId");
+
+                    b.HasIndex("CursoId");
+
+                    b.ToTable("ProfessorCurso");
+                });
+
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Professor", b =>
                 {
                     b.Property<int>("Id")
@@ -176,9 +196,19 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.Property<string>("Cpf");
 
+                    b.Property<int>("DisciplinaId");
+
                     b.Property<string>("Nome");
 
+                    b.Property<int>("RegistroDoProfessor");
+
+                    b.Property<string>("Titulacao")
+                        .IsRequired();
+
                     b.HasKey("Id");
+
+                    b.HasIndex("DisciplinaId")
+                        .IsUnique();
 
                     b.ToTable("Professor");
                 });
@@ -189,13 +219,15 @@ namespace Mateus.SistemaAcademico.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("AlunoId");
+
                     b.Property<string>("Cpf");
 
                     b.Property<string>("Nome");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Responsavel");
+                    b.ToTable("Responsaveis");
                 });
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Telefone", b =>
@@ -204,7 +236,7 @@ namespace Mateus.SistemaAcademico.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AlunoId");
+                    b.Property<int>("AlunoId");
 
                     b.Property<int>("Numero");
 
@@ -220,32 +252,48 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.HasIndex("ResponsavelId");
 
-                    b.ToTable("Telefone");
+                    b.ToTable("Telefones");
                 });
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Aluno", b =>
                 {
-                    b.HasOne("Mateus.SistemaAcademico.Models.Curso")
-                        .WithMany("Aluno")
+                    b.HasOne("Mateus.SistemaAcademico.Models.Curso", "Curso")
+                        .WithMany("Alunos")
                         .HasForeignKey("CursoId");
 
+                    b.HasOne("Mateus.SistemaAcademico.Models.Frequencia", "Frequencia")
+                        .WithOne("Aluno")
+                        .HasForeignKey("Mateus.SistemaAcademico.Models.Aluno", "FrequenciaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("Mateus.SistemaAcademico.Models.Responsavel", "Responsavel")
-                        .WithMany()
-                        .HasForeignKey("ResponsavelId");
+                        .WithMany("Aluno")
+                        .HasForeignKey("ResponsavelId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Conteudo", b =>
                 {
-                    b.HasOne("Mateus.SistemaAcademico.Models.Disciplina")
+                    b.HasOne("Mateus.SistemaAcademico.Models.Disciplina", "Disciplina")
                         .WithMany("Conteudo")
-                        .HasForeignKey("DisciplinaId");
+                        .HasForeignKey("DisciplinaId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Curso", b =>
                 {
                     b.HasOne("Mateus.SistemaAcademico.Models.Professor", "Coordenador")
                         .WithMany()
-                        .HasForeignKey("CoordenadorId");
+                        .HasForeignKey("ProfessorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Mateus.SistemaAcademico.Models.Disciplina", b =>
+                {
+                    b.HasOne("Mateus.SistemaAcademico.Models.Frequencia", "Frequencia")
+                        .WithOne("Disciplina")
+                        .HasForeignKey("Mateus.SistemaAcademico.Models.Disciplina", "FrequenciaId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Endereco", b =>
@@ -263,17 +311,6 @@ namespace Mateus.SistemaAcademico.Migrations
                         .HasForeignKey("ResponsavelId");
                 });
 
-            modelBuilder.Entity("Mateus.SistemaAcademico.Models.Frequencia", b =>
-                {
-                    b.HasOne("Mateus.SistemaAcademico.Models.Aluno", "Aluno")
-                        .WithMany()
-                        .HasForeignKey("AlunoId");
-
-                    b.HasOne("Mateus.SistemaAcademico.Models.Disciplina", "Disciplina")
-                        .WithMany()
-                        .HasForeignKey("DisciplinaId");
-                });
-
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.JOINS.CursoDisciplina", b =>
                 {
                     b.HasOne("Mateus.SistemaAcademico.Models.Curso", "Curso")
@@ -287,11 +324,33 @@ namespace Mateus.SistemaAcademico.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("Mateus.SistemaAcademico.Models.JOINS.ProfessorCurso", b =>
+                {
+                    b.HasOne("Mateus.SistemaAcademico.Models.Curso", "Curso")
+                        .WithMany("Professor")
+                        .HasForeignKey("CursoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Mateus.SistemaAcademico.Models.Professor", "Professor")
+                        .WithMany("Curso")
+                        .HasForeignKey("ProfessorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Mateus.SistemaAcademico.Models.Professor", b =>
+                {
+                    b.HasOne("Mateus.SistemaAcademico.Models.Disciplina", "DisciplinasMinistratadas")
+                        .WithOne("Professor")
+                        .HasForeignKey("Mateus.SistemaAcademico.Models.Professor", "DisciplinaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Telefone", b =>
                 {
-                    b.HasOne("Mateus.SistemaAcademico.Models.Aluno")
+                    b.HasOne("Mateus.SistemaAcademico.Models.Aluno", "Aluno")
                         .WithMany("Telefone")
-                        .HasForeignKey("AlunoId");
+                        .HasForeignKey("AlunoId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Mateus.SistemaAcademico.Models.Professor")
                         .WithMany("Telefone")

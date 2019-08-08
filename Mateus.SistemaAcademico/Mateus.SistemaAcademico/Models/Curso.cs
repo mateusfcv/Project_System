@@ -5,16 +5,25 @@ using System.Linq;
 using System.Web;
 using Mateus.SistemaAcademico.Models.Enums;
 using Mateus.SistemaAcademico.Models.JOINS;
+using System.ComponentModel.DataAnnotations;
 
 namespace Mateus.SistemaAcademico.Models
 {
     public class Curso : EntityBase
     {
+        public List<CursoDisciplina> Disciplina { get; set; }
+
+        public virtual IList<ProfessorCurso> Professor { get; set; }
+        [Required]
         public string Nome { get; set; }
+        [Required]
         public float Duracao { get; set; }
-        public Professor Coordenador { get; set; }
-        public List<Aluno> Aluno { get; set; }
-        public IList<CursoDisciplina> Disciplina { get; set; }
+        [Required]
+        public virtual Professor Coordenador { get; set; }
+        public int ProfessorId { get; set; }
+        [Required]
+        public List<Aluno> Alunos { get; set; }
+        [Required]
         public TipoCurso TipoCurso { get; set; }
 
         public Curso ()
@@ -22,13 +31,15 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Curso(string nome, float duracao, Professor coordenador, List<Aluno> aluno, IList<CursoDisciplina> disciplina, TipoCurso tipoCurso)
+        public Curso(List<CursoDisciplina> disciplina, IList<ProfessorCurso> professor, string nome, float duracao, Professor coordenador, int professorId, List<Aluno> alunos, TipoCurso tipoCurso)
         {
+            Disciplina = disciplina;
+            Professor = professor;
             Nome = nome;
             Duracao = duracao;
             Coordenador = coordenador;
-            Aluno = aluno;
-            Disciplina = disciplina;
+            ProfessorId = professorId;
+            Alunos = alunos;
             TipoCurso = tipoCurso;
         }
     }

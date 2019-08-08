@@ -12,6 +12,6 @@ namespace Mateus.SistemaAcademico.Interfaces
         void Adicionar(Curso c);
         void Atualizar(Curso c);
         void Remover(Curso c);
-        IList<Curso> Cursos(); 
+        IList<Curso> ListarCursos(); 
     }
 }

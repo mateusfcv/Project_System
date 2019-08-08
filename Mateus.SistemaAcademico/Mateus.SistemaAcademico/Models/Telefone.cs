@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,7 +8,11 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Telefone : EntityBase
     {
+        [Required]
         public int Numero { get; set; }
+
+        public virtual Aluno Aluno { get; set; }
+        public int AlunoId { get; set; }
 
         public Telefone ()
         {
