@@ -11,9 +11,6 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public int Numero { get; set; }
 
-        public virtual Aluno Aluno { get; set; }
-        public int AlunoId { get; set; }
-
         public Telefone ()
         {
 

@@ -1,47 +1,40 @@
 ﻿using Mateus.SistemaAcademico.Bussines;
+using Mateus.SistemaAcademico.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Mateus.SistemaAcademico.Models
+namespace Mateus.SistemaAcademico
 {
     public class Endereco : EntityBase
     {
-       [Required]
-        public int CEP { get; set; }
-        [Required]
-        public int Numero { get; set; }
         public string Logradouro { get; set; }
         public string Bairro { get; set; }
         public string Complemento { get; set; }
-        
-      
-        public Endereco(int cep)
+        public int CEP { get; set; }
+        public int Numero { get; set; }
+
+        public Endereco(int CEP)
         {
-            CEP = cep;
-            //Inserir codigo para inserir outrso campos baseados no CEP
+            this.CEP = CEP;
+            //Inserir codigo para inserir outros campos baseado no Cep
         }
-         
-        public Endereco(int numero, string logradouro, string bairro, string complemento)
+
+        public Endereco(string lograddouro, string bairro, string complemento, int numero)
         {
-            if (Logradouro == null || Bairro == null || Complemento == null)
+            if (lograddouro == null || bairro == null || complemento == null)
             {
                 throw new CampoNullException();
             }
             else
             {
-                Numero = numero;
-                Logradouro = logradouro;
+                Logradouro = lograddouro;
                 Bairro = bairro;
                 Complemento = complemento;
+                Numero = numero;
             }
-        }
-
-        public static implicit operator List<object>(Endereco v)
-        {
-            throw new NotImplementedException();
-        }
+        } 
     }
 }

@@ -14,21 +14,26 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public DateTime Data { get; set; }
 
-        public Disciplina Disciplina { get; set; }
+        public virtual Disciplina Disciplina { get; set; }
+        public int DisciplinaId { get; set; }
 
-        public Aluno Aluno { get; set; }
+        public virtual Aluno Aluno { get; set; }
+        public int AlunoId { get; set; }
 
         public Frequencia ()
         {
 
         }
 
-        public Frequencia(TipoFrequencia tipoFrequencia, DateTime data, Disciplina disciplina, Aluno aluno)
+        public Frequencia(TipoFrequencia tipoFrequencia, DateTime data, Disciplina disciplina, int disciplinaId,
+            Aluno aluno, int alunoId)
         {
             TipoFrequencia = tipoFrequencia;
             Data = data;
             Disciplina = disciplina;
+            DisciplinaId = disciplinaId;
             Aluno = aluno;
+            AlunoId = alunoId;
         }
     }
 }

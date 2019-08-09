@@ -11,16 +11,19 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Curso : EntityBase
     {
-        public List<CursoDisciplina> Disciplina { get; set; }
+        public IList<CursoDisciplina> Disciplina { get; set; }
+        public IList<ProfessorCurso> Professor { get; set; }
 
-        public virtual IList<ProfessorCurso> Professor { get; set; }
         [Required]
         public string Nome { get; set; }
         [Required]
         public float Duracao { get; set; }
         [Required]
-        public virtual Professor Coordenador { get; set; }
-        public int ProfessorId { get; set; }
+        public DateTime DataDeInicio { get; set; }
+        [Required]
+        public DateTime DataDeFim { get; set; }
+        [Required]
+        public Professor Coordenador { get; set; }
         [Required]
         public List<Aluno> Alunos { get; set; }
         [Required]
@@ -31,14 +34,13 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Curso(List<CursoDisciplina> disciplina, IList<ProfessorCurso> professor, string nome, float duracao, Professor coordenador, int professorId, List<Aluno> alunos, TipoCurso tipoCurso)
+        public Curso(List<CursoDisciplina> disciplina, IList<ProfessorCurso> professor, string nome, float duracao, Professor coordenador, List<Aluno> alunos, TipoCurso tipoCurso)
         {
             Disciplina = disciplina;
             Professor = professor;
             Nome = nome;
             Duracao = duracao;
             Coordenador = coordenador;
-            ProfessorId = professorId;
             Alunos = alunos;
             TipoCurso = tipoCurso;
         }

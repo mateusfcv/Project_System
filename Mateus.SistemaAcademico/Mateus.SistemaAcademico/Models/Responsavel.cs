@@ -15,9 +15,9 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Responsavel(string nome, List<Telefone> telefone, List<Endereco> endereco, string cpf,
+        public Responsavel(string nome, int numero, int CEP, string cpf,
             List<Aluno> aluno, int alunoId)
-            :base(nome, telefone, endereco, cpf)
+            :base( nome,  numero,  CEP,  cpf)
         {
             Aluno = aluno;
             AlunoId = alunoId;

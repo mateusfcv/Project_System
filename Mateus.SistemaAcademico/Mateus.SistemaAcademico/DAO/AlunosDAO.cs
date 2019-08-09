@@ -9,7 +9,7 @@ namespace Mateus.SistemaAcademico.DAO
 {
     public class AlunosDAO : IDisposable, IAluno
     {
-        private SistemaContext contexto;
+        public SistemaContext contexto = new SistemaContext();
 
         public void Adicionar(Aluno a)
         {

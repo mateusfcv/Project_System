@@ -12,11 +12,9 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public int RegistroDoAluno { get; set; }
 
-        public virtual Responsavel Responsavel { get; set; }
-        public int ResponsavelId { get; set; }
+        public Responsavel Responsaveis { get; set; }
 
-        public virtual Frequencia Frequencia { get; set; }
-        public int FrequenciaId { get; set; }
+        public Frequencia Frequencia { get; set; }
 
         public Curso Curso { get; set; }
 
@@ -25,26 +23,22 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Aluno(string nome, List<Telefone> telefone, List<Endereco> endereco, string cpf,
-            int registroDoAluno, Responsavel responsavel, int responsavelId, Frequencia frequencia, int frequenciaId, Curso curso)
-            :base(nome, telefone, endereco, cpf)
+        public Aluno(string nome, int numero, int CEP, string cpf,
+            int registroDoAluno, Responsavel responsaveis, Frequencia frequencia, Curso curso)
+            :base( nome,  numero,  CEP,  cpf)
         {
             RegistroDoAluno = registroDoAluno;
-            Responsavel = responsavel;
-            ResponsavelId = responsavelId;
+            Responsaveis = responsaveis;
             Frequencia = frequencia;
-            FrequenciaId = frequenciaId;
             Curso = curso;
         }
 
-        public Aluno(int registroDoAluno, Responsavel responsavel, int responsavelId, Frequencia frequencia, int frequenciaId, Curso curso)
+        public Aluno(int registroDoAluno, Responsavel responsaveis, Frequencia frequencia, Curso curso)
         {
             RegistroDoAluno = registroDoAluno;
-            Responsavel = responsavel;
-            ResponsavelId = responsavelId;
+            Responsaveis = responsaveis;
             Frequencia = frequencia;
-            FrequenciaId = frequenciaId;
             Curso = curso;
         }
     }
-}
+}  

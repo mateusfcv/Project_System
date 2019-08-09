@@ -15,7 +15,7 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public TipoConteudo TipoConteudos { get; set; }
         [Required]
-        public virtual Disciplina Disciplina { get; set; }
+        public Disciplina Disciplina { get; set; }
         public int DisciplinaId { get; set; }
 
         public Conteudo()

@@ -1,0 +1,40 @@
+﻿<h2>Form</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> form </title>"
+</head>
+<body>
+
+    @using (Html.BeginForm("AdicionarAluno", "Alunos", FormMethod.Post))
+    {
+
+    <form action="/Produto/Adiciona">
+
+
+
+        <label for="nome">Nome:</label>
+        <input id="nome" name="nome" />
+
+        <label for="telefone">Telefone:</label>
+        <input id="telefone" name="telefone" />
+
+        <label for="endereco">endereco:</label>
+        <input id="endereco" name="endereco" />
+
+        <label for="Cpf">Cpf:</label>
+        <input id="cpf" name="cpf" />
+
+        <label for="Responsavel">Responsavel:</label>
+        <input id="responsavel" name="responsavel" />
+
+        <label for="RegistroDoAluno">RegistroDoAluno:</label>
+        <input id="RegistroDoAluno" name="RegistroDoAluno" />
+
+
+        <input type="submit" class="btn btn-primary" value="Cadastrar" />
+    </form>
+    }
+</body>
+</html>tml>

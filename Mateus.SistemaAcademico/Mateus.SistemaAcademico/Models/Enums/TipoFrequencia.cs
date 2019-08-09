@@ -7,7 +7,7 @@ namespace Mateus.SistemaAcademico.Models.Enums
 {
     public enum TipoFrequencia : int
     {
-        Presenca =0,
+        Presenca = 0,
         Falta = 1
     }
 }
