@@ -7,25 +7,20 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico.DAO
 {
-    public class AlunosDAO : IDisposable, IAluno
+    public class AlunosDAO : IAluno
     {
         public SistemaContext contexto = new SistemaContext();
 
-        public void Adicionar(Aluno a)
+        public void Adicionar(Aluno aluno)
         {
-            contexto.Alunos.Add(a);
+            contexto.Alunos.Add(aluno);
             contexto.SaveChanges();
         }
 
-        public void Atualizar(Aluno a)
+        public void Editar(Aluno aluno)
         {
-            contexto.Alunos.Update(a);
+            contexto.Alunos.Update(aluno);
             contexto.SaveChanges();
-        }
-
-        public void Dispose()
-        {
-            contexto.Dispose();
         }
 
         public IList<Aluno> ListarAlunos()
@@ -33,9 +28,9 @@ namespace Mateus.SistemaAcademico.DAO
             return contexto.Alunos.ToList();
         }
 
-        public void Remover(Aluno a)
+        public void Remover(Aluno aluno)
         {
-            contexto.Alunos.Remove(a);
+            contexto.Alunos.Remove(aluno);
             contexto.SaveChanges();
         }
     }

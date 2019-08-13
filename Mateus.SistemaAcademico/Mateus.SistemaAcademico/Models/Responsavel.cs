@@ -7,26 +7,23 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Responsavel : Pessoa
     {
-        public virtual List<Aluno> Aluno { get; set; }
-        public int AlunoId { get; set; }
+        public List<Aluno> Alunos { get; set; }
 
-        public Responsavel ()
+
+        public Responsavel()
         {
 
         }
 
-        public Responsavel(string nome, int numero, int CEP, string cpf,
-            List<Aluno> aluno, int alunoId)
-            :base( nome,  numero,  CEP,  cpf)
+        public Responsavel(string nome, int CEP, int numero, string cpf, List<Aluno> alunos)
+            :base( nome,  CEP,  numero,  cpf)
         {
-            Aluno = aluno;
-            AlunoId = alunoId;
+            Alunos = alunos;
         }
 
-        public Responsavel(List<Aluno> aluno, int alunoId)
+        public Responsavel(List<Aluno> alunos)
         {
-            Aluno = aluno;
-            AlunoId = alunoId;
+            Alunos = alunos;
         }
     }
 }

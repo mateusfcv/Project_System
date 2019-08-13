@@ -642,11 +642,16 @@
     <Compile Include="Bussines\Exceptions\CampoInvalidException.cs" />
     <Compile Include="Bussines\Exceptions\CampoNullException.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CursosController .cs" />
     <Compile Include="Controllers\AlunosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProfessorController.cs" />
+    <Compile Include="Controllers\ResponsavelController.cs" />
+    <Compile Include="DAO\CursosDAO.cs" />
     <Compile Include="DAO\AlunosDAO.cs" />
+    <Compile Include="DAO\ConteudoDAO.cs" />
+    <Compile Include="DAO\ProfessorDAO.cs" />
+    <Compile Include="DAO\ResponsavelDAO.cs" />
     <Compile Include="DAO\SistemaContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -658,9 +663,10 @@
     <Compile Include="Interfaces\IFrequencia.cs" />
     <Compile Include="Interfaces\INota.cs" />
     <Compile Include="Interfaces\IProfessor.cs" />
-    <Compile Include="Migrations\20190809005342_PrimeiraMigration.cs" />
-    <Compile Include="Migrations\20190809005342_PrimeiraMigration.designer.cs">
-      <DependentUpon>20190809005342_PrimeiraMigration.cs</DependentUpon>
+    <Compile Include="Interfaces\IResponsavel.cs" />
+    <Compile Include="Migrations\20190809185457_PrimeiraMigration.cs" />
+    <Compile Include="Migrations\20190809185457_PrimeiraMigration.designer.cs">
+      <DependentUpon>20190809185457_PrimeiraMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -749,10 +755,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Alunos\AdicionarAluno.cshtml" />
+    <Content Include="Views\Cursos\AdicionarCurso.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Professor\" />
+    <Folder Include="Views\Responsavel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

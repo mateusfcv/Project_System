@@ -9,9 +9,9 @@ namespace Mateus.SistemaAcademico.Interfaces
 {
     public interface IFrequencia
     {
-        void Adicionar(Frequencia f);
-        void Atualizar(Frequencia f);
-        void Remover(Frequencia f);
+        void Adicionar(Frequencia frequencia);
+        void Atualizar(Frequencia frequencia);
+        void Remover(Frequencia frequencia);  
         IList<Frequencia> ListarFrequencias(); 
     }
 }

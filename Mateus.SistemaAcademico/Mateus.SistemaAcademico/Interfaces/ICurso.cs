@@ -9,9 +9,9 @@ namespace Mateus.SistemaAcademico.Interfaces
 {
     public interface ICurso
     {
-        void Adicionar(Curso c);
-        void Atualizar(Curso c);
-        void Remover(Curso c);
+        void Adicionar(Curso curso);
+        void Editar(Curso curso);
+        void Remover(Curso curso);
         IList<Curso> ListarCursos(); 
     }
 }

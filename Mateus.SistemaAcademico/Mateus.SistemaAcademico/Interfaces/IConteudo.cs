@@ -9,9 +9,9 @@ namespace Mateus.SistemaAcademico.Interfaces
 {
     public interface IConteudo
     {
-        void Adicionar(Conteudo c);
-        void Atualizar(Conteudo c);
-        void Remover(Conteudo c);
+        void Adicionar(Conteudo conteudo);
+        void Atualizar(Conteudo conteudo);
+        void Remover(Conteudo conteudo); 
         IList<Conteudo> ListarConteudos();  
     }
 }

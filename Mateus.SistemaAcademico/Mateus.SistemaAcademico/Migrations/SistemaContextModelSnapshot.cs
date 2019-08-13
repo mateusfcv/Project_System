@@ -223,8 +223,6 @@ namespace Mateus.SistemaAcademico.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AlunoId");
-
                     b.Property<string>("Cpf");
 
                     b.Property<string>("Nome");

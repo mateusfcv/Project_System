@@ -9,9 +9,9 @@ namespace Mateus.SistemaAcademico.Interfaces
 {
     public interface IDisciplina
     {
-        void Adicionar(Disciplina d);
-        void Atualizar(Disciplina d);
-        void Remover(Disciplina d);
+        void Adicionar(Disciplina disciplina);
+        void Atualizar(Disciplina disciplina);
+        void Remover(Disciplina disciplina); 
         IList<Disciplina> ListarDisciplinas(); 
     }
 }

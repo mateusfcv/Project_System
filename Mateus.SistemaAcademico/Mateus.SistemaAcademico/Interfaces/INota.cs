@@ -9,9 +9,9 @@ namespace Mateus.SistemaAcademico.Interfaces
 {
     public interface INota
     {
-        void Adicionar(Nota n);
-        void Atualizar(Nota n);
-        void Remover(Nota n);
-        IList<Nota> Notas();
+        void Adicionar(Nota nota);
+        void Atualizar(Nota nota);
+        void Remover(Nota nota);
+        IList<Nota> Notas(); 
     } 
 }

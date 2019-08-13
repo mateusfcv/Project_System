@@ -18,7 +18,7 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        protected Pessoa(string nome, int CEP, int numero, string cpf)
+        public Pessoa(string nome, int CEP, int numero, string cpf)
         {
             Nome = nome;
             Telefones.Add(new Telefone(numero));

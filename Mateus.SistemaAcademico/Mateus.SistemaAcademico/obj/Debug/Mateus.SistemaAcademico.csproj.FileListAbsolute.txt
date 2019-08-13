@@ -671,3 +671,4 @@ C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Ma
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.csproj.CopyComplete
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.dll
 C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.pdb
+C:\Users\mateu\Documents\repositorio 3\Project_System\Mateus.SistemaAcademico\Mateus.SistemaAcademico\obj\Debug\Mateus.SistemaAcademico.csprojAssemblyReference.cache

@@ -10,20 +10,31 @@ namespace Mateus.SistemaAcademico.Controllers
 {
     public class AlunosController : Controller
     {
-       // get: alunos
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+        // get: alunos
+        [HttpPost]
+        public ActionResult AdicionarAluno(Aluno aluno)
+        {
+            var dao = new AlunosDAO();
+            dao.Adicionar(aluno);
+            return View();
+        }
 
-        //public ActionResult AdicionarAluno(string nome, List<Telefone> telefone, List<Endereco> endereco, string cpf,
-        //    int registroDoAluno, Responsavel responsaveis, int responsavelId, Frequencia frequencia, int frequenciaId, Curso curso)
-        //{
-        //    Aluno alunos = new Aluno(nome, telefone, endereco, cpf, responsaveis, registroDoAluno);
-        //    AlunosDAO dao = new AlunosDAO();
-        //    dao.Adicionar(alunos);
+        [HttpGet]
+        public ActionResult AdicionarAluno()
+        {
+            return View(new Aluno());
+        }
 
-        //    return View();
-        //}
+        public ActionResult RemoverAluno(Aluno aluno)
+        {
+            var dao = new AlunosDAO();
+            dao.Remover(aluno);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
     }
 }
