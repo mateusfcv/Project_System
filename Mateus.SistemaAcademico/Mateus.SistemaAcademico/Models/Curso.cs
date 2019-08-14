@@ -23,7 +23,7 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public DateTime DataDeFim { get; set; }
         [Required]
-        public Professor Coordenador { get; set; }
+        public int CoordenadorId { get; set; }
         [Required]
         public List<Aluno> Alunos { get; set; }
         [Required]
@@ -34,14 +34,23 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Curso(List<CursoDisciplina> disciplina, IList<ProfessorCurso> professor, string nome, float duracao, Professor coordenador, List<Aluno> alunos, TipoCurso tipoCurso)
+        //public Curso(List<CursoDisciplina> disciplina, IList<ProfessorCurso> professor, string nome, float duracao, Professor coordenador, List<Aluno> alunos, TipoCurso tipoCurso)
+        //{
+        //    Disciplina = disciplina;
+        //    Professor = professor;
+        //    Nome = nome;
+        //    Duracao = duracao;
+        //   // Coordenador = coordenador;
+        //    Alunos = alunos;
+        //    TipoCurso = tipoCurso;
+        //}
+
+        public Curso(string nome, float duracao, DateTime datadeinicio, DateTime datadefim, int coordenadorId, TipoCurso tipoCurso )
         {
-            Disciplina = disciplina;
-            Professor = professor;
             Nome = nome;
-            Duracao = duracao;
-            Coordenador = coordenador;
-            Alunos = alunos;
+            DataDeInicio = datadeinicio;
+            DataDeFim = datadefim;
+            CoordenadorId = coordenadorId;
             TipoCurso = tipoCurso;
         }
     }

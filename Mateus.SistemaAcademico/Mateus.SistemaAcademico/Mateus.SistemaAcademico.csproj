@@ -664,9 +664,9 @@
     <Compile Include="Interfaces\INota.cs" />
     <Compile Include="Interfaces\IProfessor.cs" />
     <Compile Include="Interfaces\IResponsavel.cs" />
-    <Compile Include="Migrations\20190809185457_PrimeiraMigration.cs" />
-    <Compile Include="Migrations\20190809185457_PrimeiraMigration.designer.cs">
-      <DependentUpon>20190809185457_PrimeiraMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20190814000918_Primeira.cs" />
+    <Compile Include="Migrations\20190814000918_Primeira.designer.cs">
+      <DependentUpon>20190814000918_Primeira.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -755,6 +755,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Alunos\AdicionarAluno.cshtml" />
+    <Content Include="Views\Cursos\Index.cshtml" />
     <Content Include="Views\Cursos\AdicionarCurso.cshtml" />
   </ItemGroup>
   <ItemGroup>

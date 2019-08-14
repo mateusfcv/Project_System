@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Mateus.SistemaAcademico.DAO;
 using Mateus.SistemaAcademico.Models;
+using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
@@ -14,9 +15,10 @@ namespace Mateus.SistemaAcademico.Controllers
 
         // Gerar view de cadastro de curso
         [HttpPost]
-        public ActionResult AdicionarCurso(Curso curso)
+        public ActionResult AdicionarCurso(string nome, float duracao, DateTime datadeinicio, DateTime datadefim, int coordenadorId, TipoCurso tipoCurso)
         {
             var dao = new CursosDAO();
+            var curso = new Curso(nome, duracao, datadeinicio, datadefim, coordenadorId, tipoCurso);
             dao.Adicionar(curso);
             return View();
         }
@@ -57,26 +59,12 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(new Curso());
         }
 
-        // Listar Cursos cadastrados
-        [HttpPost]
-        public ActionResult ListarCurso()
-        {
-            var dao = new CursosDAO();
-            var curso = dao.ListarCursos();
-            ViewBag.Cursos = curso;
-            return View();
-        }
-
-        //[HttpGet]
-        //public ActionResult ListarCurso()
-        //{
-        //    return View(new Curso());
-        //}
-
         public ActionResult Index()
         {
-            //var dao = new CursosDAO();
-            //IList<Curso> cursos = dao.ListarCursos();
+            var cursosDAO = new CursosDAO();
+            var cursos = cursosDAO.ListarCursos();
+            ViewBag.Cursos = cursos;
+            ViewBag.Professor = new Professor();
             return View();
         }
     }

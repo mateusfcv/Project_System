@@ -22,6 +22,9 @@ namespace Mateus.SistemaAcademico.DAO
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<Pessoa>()
+                .HasKey(c => c.Id);
             modelBuilder
                 .Entity<CursoDisciplina>()
                 .HasKey(cd => new { cd.CursoId, cd.DisciplinaId });

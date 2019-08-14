@@ -14,21 +14,16 @@ namespace Mateus.SistemaAcademico.Models
         public string Descricao { get; set; }
         [Required]
         public TipoConteudo TipoConteudos { get; set; }
-        [Required]
-        public Disciplina Disciplina { get; set; }
-        public int DisciplinaId { get; set; }
 
         public Conteudo()
         {
              
         }
 
-        public Conteudo(string descricao, TipoConteudo tipoConteudos, Disciplina disciplina, int disciplinaId)
+        public Conteudo(string descricao, TipoConteudo tipoConteudos)
         {
             Descricao = descricao;
             TipoConteudos = tipoConteudos;
-            Disciplina = disciplina;
-            DisciplinaId = disciplinaId;
         }
     }
 }
