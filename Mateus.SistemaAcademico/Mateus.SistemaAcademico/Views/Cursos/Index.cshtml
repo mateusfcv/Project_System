@@ -7,67 +7,74 @@
 }
 
 <h2>Lista de cursos do sistema</h2>
+<div class="card-body">
 
-<table class="table table-hover">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-    <thead>
+            <thead>
 
-        <tr>
+                <tr>
 
-            <th>Nome</th>
-            <th>Data de Inicio</th>
-            <th>Data de Fim</th>
-            <th>Coordenador</th>
-            <th>Tipo de Curso</th>
+                    <th>Nome</th>
+                    <th>Data de Inicio</th>
+                    <th>Data de Fim</th>
+                    <th>Coordenador</th>
+                    <th>Tipo de Curso</th>
 
-            <th></th>
-            <th></th>
+                    <th></th>
+                    <th></th>
 
-        </tr>
+                    <td>
+                        <a href="/Cursos/AdicionarCurso">Adicionar Curso</a>
+                    </td>
+                </tr>
 
-    </thead>
+            </thead>
 
-    <tbody>
+            <tbody>
 
-        @foreach (var cursos in ViewBag.cursos)
-        {
-            using (Html.BeginForm("ListarCurso", "Curso", new { id = cursos.Id }))
-            {
-        <tr>
-            <td>
-                @cursos.Nome
-            </td>
+                @foreach (var cursos in ViewBag.cursos)
+                {
+                    using (Html.BeginForm("ListarCurso", "Curso", new { id = cursos.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @cursos.Nome
+                            </td>
 
-            <td>
-                @cursos.DataDeInicio
-            </td>
+                            <td>
+                                @cursos.DataDeInicio
+                            </td>
 
-            <td>
-                @cursos.DataDeFim
-            </td>
+                            <td>
+                                @cursos.DataDeFim
+                            </td>
 
-            <td>
-                @cursos.Coordenador
-            </td>
+                            <td>
+                                @cursos.Coordenador
+                            </td>
 
-            <td>
-                @cursos.TipoCurso
-            </td>
+                            <td>
+                                @cursos.TipoCurso
+                            </td>
 
-            <td>
-                <a href="Curso/Remover/@cursos.Id">Remover Curso</a>
-            </td>
+                            <td>
+                                <a href="/Cursos/RemoverCurso/@cursos.Id">Remover Curso</a>
+                            </td>
 
-            <td>
-                <a href="Curso/Listar/@cursos.Id">Listar Curso</a>
-            </td>
+                            <td>
+                                <a href="/Cursos/ListarCurso/@cursos.Id">Listar Curso</a>
+                            </td>
 
-            <td>
-                <a href="Curso/Editar/@cursos.Id">Editar Curso</a>
-            </td>
+                            <td>
+                                <a href="/Cursos/EditarCurso/@cursos.Id">Editar Curso</a>
+                            </td>
 
-        </tr>
-            }
-        }
-    </tbody>
-</table>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        </div>
+    </div>

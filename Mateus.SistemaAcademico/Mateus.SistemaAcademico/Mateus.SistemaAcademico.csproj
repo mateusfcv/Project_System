@@ -664,13 +664,9 @@
     <Compile Include="Interfaces\INota.cs" />
     <Compile Include="Interfaces\IProfessor.cs" />
     <Compile Include="Interfaces\IResponsavel.cs" />
-    <Compile Include="Migrations\20190814170753_Primeira.cs" />
-    <Compile Include="Migrations\20190814170753_Primeira.designer.cs">
-      <DependentUpon>20190814170753_Primeira.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20190814192328_AlteracaoCurso.cs" />
-    <Compile Include="Migrations\20190814192328_AlteracaoCurso.designer.cs">
-      <DependentUpon>20190814192328_AlteracaoCurso.cs</DependentUpon>
+    <Compile Include="Migrations\20190815204904_Primeira.cs" />
+    <Compile Include="Migrations\20190815204904_Primeira.designer.cs">
+      <DependentUpon>20190815204904_Primeira.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -762,7 +758,9 @@
     <Content Include="Views\Cursos\Index.cshtml" />
     <Content Include="Views\Cursos\EditarCurso.cshtml" />
     <Content Include="Views\Cursos\AdicionarCurso.cshtml" />
-    <Content Include="Views\Cursos\Formulario.cshtml" />
+    <Content Include="Views\Cursos\RemoverCurso.cshtml" />
+    <Content Include="Views\Cursos\ListarCurso.cshtml" />
+    <Content Include="Views\Cursos\VisualizarDetalhes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

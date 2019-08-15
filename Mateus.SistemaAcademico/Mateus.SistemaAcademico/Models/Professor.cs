@@ -15,7 +15,6 @@ namespace Mateus.SistemaAcademico.Models
         public int RegistroDoProfessor { get; set; }
         [Required]
         public Disciplina DisciplinasMinistratadas { get; set; }
-        public int DisciplinaId { get; set; }
         [Required]
         public string Titulacao { get; set; }
 
@@ -26,20 +25,18 @@ namespace Mateus.SistemaAcademico.Models
 
         public Professor(string nome, int CEP, int numero, string cpf,
            int registroDoProfessor, Disciplina disciplinasMinistratadas,
-            int disciplinaId, string titulacao)
+             string titulacao)
             :base( nome,  CEP,  numero,  cpf)
         {
             RegistroDoProfessor = registroDoProfessor;
             DisciplinasMinistratadas = disciplinasMinistratadas;
-            DisciplinaId = disciplinaId;
             Titulacao = titulacao;
         }
 
-        public Professor(int registroDoProfessor, Disciplina disciplinasMinistratadas, int disciplinaId, string titulacao)
+        public Professor(int registroDoProfessor, Disciplina disciplinasMinistratadas, string titulacao)
         {
             RegistroDoProfessor = registroDoProfessor;
             DisciplinasMinistratadas = disciplinasMinistratadas;
-            DisciplinaId = disciplinaId;
             Titulacao = titulacao;
         }
     }

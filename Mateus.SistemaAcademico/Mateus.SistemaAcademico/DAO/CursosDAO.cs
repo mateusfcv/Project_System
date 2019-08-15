@@ -30,13 +30,15 @@ namespace Mateus.SistemaAcademico.DAO
 
         public void Remover(Curso curso)
         {
+            int id = 0;
+            contexto.Cursos.Where(x => x.Id == id).FirstOrDefault();
             contexto.Cursos.Remove(curso);
             contexto.SaveChanges();
         }
 
-        public Curso BuscaPorId(int id)
+        public Curso BuscaPorId(int Id)
         {
-            return contexto.Cursos.Where(u => u.Id == id).FirstOrDefault();
+            return contexto.Cursos.Where(u => u.Id == Id).FirstOrDefault();
         }
     }
 }

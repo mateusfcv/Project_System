@@ -1,0 +1,66 @@
+﻿@model Mateus.SistemaAcademico.Models.Curso
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VisualizarDetalhes</title>
+</head>
+<body>
+    <div>
+        <h4>Curso</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Duracao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Duracao)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DataDeInicio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataDeInicio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DataDeFim)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataDeFim)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CoordenadorId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CoordenadorId)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "EditarCurso", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

@@ -1,40 +1,69 @@
-﻿@{
+﻿@model Mateus.SistemaAcademico.Models.Curso
 
-    ViewBag.Title = "EditarCurso";
-
+@{
+    Layout = null;
 }
 
-<form action="/Cursos/Editar/@ViewBag.Cursos.Id" method="post">
+<!DOCTYPE html>
 
-    @Html.AntiForgeryToken()
-
-
-    @Html.ValidationMessage("cursos.Nome")
-    <label for="nome">Nome: </label>
-    <input id="nome" value="@ViewBag.Curso.Nome" name="Nome" class="form-control" />
-
-    @Html.ValidationMessage("cursos.Cpf")
-    <label for="datadeinicio">DataDeInicio: </label>
-    <input id="datadeinicio" value="@ViewBag.Curso.DataDeInicio" name="Data de Inicio" class="form-control" />
-
-
-
-    @Html.ValidationMessage("cursos.Matricula")
-
-    <label for="matricula">Matricula: </label>
-
-    <input id="matricula" value="@ViewBag.Curso.Matricula" name="Matricula" class="form-control" />        @Html.ValidationMessage("cursos.Nome")
-
-
-
-    @Html.ValidationMessage("cursos.Senha")
-
-    <label for="senha">Nova senha senha: </label>
-
-    <input id="senha" value="@ViewBag.Curso.Senha" name="Senha" class="form-control" />
-
-    <input type="submit" value="Alterar" />
-
-
-
-</form>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditarCurso</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>Curso</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.DataDeInicio, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DataDeInicio, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DataDeInicio, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.DataDeFim, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DataDeFim, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DataDeFim, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.CoordenadorId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CoordenadorId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CoordenadorId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

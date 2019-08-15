@@ -132,7 +132,12 @@ namespace Mateus.SistemaAcademico.Migrations
                     b.Property<string>("Nome")
                         .IsRequired();
 
+                    b.Property<int>("ProfessorId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ProfessorId")
+                        .IsUnique();
 
                     b.ToTable("Disciplinas");
                 });
@@ -183,8 +188,6 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.Property<string>("Cpf");
 
-                    b.Property<int>("DisciplinaId");
-
                     b.Property<string>("Nome");
 
                     b.Property<int>("RegistroDoProfessor");
@@ -193,9 +196,6 @@ namespace Mateus.SistemaAcademico.Migrations
                         .IsRequired();
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DisciplinaId")
-                        .IsUnique();
 
                     b.ToTable("Professor");
                 });
@@ -281,6 +281,14 @@ namespace Mateus.SistemaAcademico.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("Mateus.SistemaAcademico.Models.Disciplina", b =>
+                {
+                    b.HasOne("Mateus.SistemaAcademico.Models.Professor", "Professor")
+                        .WithOne("DisciplinasMinistratadas")
+                        .HasForeignKey("Mateus.SistemaAcademico.Models.Disciplina", "ProfessorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Frequencia", b =>
                 {
                     b.HasOne("Mateus.SistemaAcademico.Models.Aluno", "Aluno")
@@ -304,14 +312,6 @@ namespace Mateus.SistemaAcademico.Migrations
                     b.HasOne("Mateus.SistemaAcademico.Models.Disciplina", "Disciplina")
                         .WithMany("Curso")
                         .HasForeignKey("DisciplinaId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Mateus.SistemaAcademico.Models.Professor", b =>
-                {
-                    b.HasOne("Mateus.SistemaAcademico.Models.Disciplina", "DisciplinasMinistratadas")
-                        .WithOne("Professor")
-                        .HasForeignKey("Mateus.SistemaAcademico.Models.Professor", "DisciplinaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
