@@ -9,7 +9,7 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Professor : Pessoa
     {
-        public IList<ProfessorCurso> Curso { get; set; }
+        //public IList<ProfessorCurso> Curso { get; set; }
 
         [Required]
         public int RegistroDoProfessor { get; set; }
@@ -25,21 +25,18 @@ namespace Mateus.SistemaAcademico.Models
         }
 
         public Professor(string nome, int CEP, int numero, string cpf,
-            IList<ProfessorCurso> curso, int registroDoProfessor, Disciplina disciplinasMinistratadas,
+           int registroDoProfessor, Disciplina disciplinasMinistratadas,
             int disciplinaId, string titulacao)
             :base( nome,  CEP,  numero,  cpf)
         {
-            Curso = curso;
             RegistroDoProfessor = registroDoProfessor;
             DisciplinasMinistratadas = disciplinasMinistratadas;
             DisciplinaId = disciplinaId;
             Titulacao = titulacao;
         }
 
-        public Professor(IList<ProfessorCurso> curso, int registroDoProfessor, Disciplina disciplinasMinistratadas, 
-            int disciplinaId, string titulacao)
+        public Professor(int registroDoProfessor, Disciplina disciplinasMinistratadas, int disciplinaId, string titulacao)
         {
-            Curso = curso;
             RegistroDoProfessor = registroDoProfessor;
             DisciplinasMinistratadas = disciplinasMinistratadas;
             DisciplinaId = disciplinaId;

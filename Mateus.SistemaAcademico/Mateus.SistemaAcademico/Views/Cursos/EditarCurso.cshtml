@@ -1,0 +1,40 @@
+﻿@{
+
+    ViewBag.Title = "EditarCurso";
+
+}
+
+<form action="/Cursos/Editar/@ViewBag.Cursos.Id" method="post">
+
+    @Html.AntiForgeryToken()
+
+
+    @Html.ValidationMessage("cursos.Nome")
+    <label for="nome">Nome: </label>
+    <input id="nome" value="@ViewBag.Curso.Nome" name="Nome" class="form-control" />
+
+    @Html.ValidationMessage("cursos.Cpf")
+    <label for="datadeinicio">DataDeInicio: </label>
+    <input id="datadeinicio" value="@ViewBag.Curso.DataDeInicio" name="Data de Inicio" class="form-control" />
+
+
+
+    @Html.ValidationMessage("cursos.Matricula")
+
+    <label for="matricula">Matricula: </label>
+
+    <input id="matricula" value="@ViewBag.Curso.Matricula" name="Matricula" class="form-control" />        @Html.ValidationMessage("cursos.Nome")
+
+
+
+    @Html.ValidationMessage("cursos.Senha")
+
+    <label for="senha">Nova senha senha: </label>
+
+    <input id="senha" value="@ViewBag.Curso.Senha" name="Senha" class="form-control" />
+
+    <input type="submit" value="Alterar" />
+
+
+
+</form>

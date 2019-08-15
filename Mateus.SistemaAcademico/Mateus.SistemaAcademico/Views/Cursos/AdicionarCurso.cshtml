@@ -1,73 +1,18 @@
-﻿<h2>Cadastro de Cursos</h2>
+﻿@model Mateus.SistemaAcademico.Models.Curso
 
+@{
+    ViewBag.Title = "Adiciona";
+}
 
+<div>
+    <h2>
+        Curso adicionado com sucesso
+    </h2>
 
-<!DOCTYPE html>
+    <li>@Html.ActionLink("Cadastrar novo curso", "Formulario", "Curso")</li>
 
-<html>
+    <li>@Html.ActionLink("Lista de cursos do sistema", "Index", "Curso")</li>
 
-<head>
+    <li>@Html.ActionLink("Voltar ao menu", "Index", "Home")</li>
 
-    <title> formulario de curso </title>
-
-</head>
-
-<body>
-
-
-
-    @using (Html.BeginForm("AdicionarCurso", "Cursos", FormMethod.Post))
-
-    {
-
-
-
-        <form action="/Cursos/AdicionarCurso">
-
-            @*@html.antiforgerytoken()*@
-
-
-
-
-
-            <label for="nome">Nome:</label>
-
-            <input id="nome" name="nome" />
-
-
-
-            <label for="duracao">Duracao:</label>
-
-            <input id="duracao" name="duracao" />
-
-
-
-            <label for="datadeinicio">Data de Inicio:</label>
-
-            <input type="date" id="datadeinicio"  name="datadeinicio" />
-
-
-
-            <label for="datadefim">Data de Fim:</label>
-            <input type="date" id="datadefim" name="datadefim" />
-
-
-
-            <label for="coordenador">Coordenador:</label>
-            <input id="coordenador" name="coordenador" />
-
-
-            <label for="tipodecurso">Tipo de Curso:</label>
-
-            <input id="tipodecurso" name="tipodecurso" />
-
-
-            <input type="submit" class="btn btn-primary" value="Cadastrar" />
-
-        </form>
-
-    }
-
-</body>
-
-</html>
+</div>

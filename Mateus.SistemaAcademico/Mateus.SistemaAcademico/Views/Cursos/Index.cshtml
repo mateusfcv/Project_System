@@ -6,35 +6,22 @@
 
 }
 
-
-
-<h2>Lista de cursos do sistema.</h2>
+<h2>Lista de cursos do sistema</h2>
 
 <table class="table table-hover">
-
-
 
     <thead>
 
         <tr>
 
             <th>Nome</th>
-
-            <th>Duração</th>
-
             <th>Data de Inicio</th>
-
             <th>Data de Fim</th>
-
             <th>Coordenador</th>
-
             <th>Tipo de Curso</th>
 
             <th></th>
-
             <th></th>
-
-
 
         </tr>
 
@@ -43,73 +30,44 @@
     <tbody>
 
         @foreach (var cursos in ViewBag.cursos)
-
         {
-
             using (Html.BeginForm("ListarCurso", "Curso", new { id = cursos.Id }))
-
             {
-
         <tr>
             <td>
                 @cursos.Nome
-
             </td>
 
             <td>
-
-                @cursos.Duracao
-
-            </td>
-
-            <td>
-
                 @cursos.DataDeInicio
-
             </td>
 
             <td>
-
                 @cursos.DataDeFim
-
             </td>
 
             <td>
-
                 @cursos.Coordenador
-
             </td>
 
             <td>
-
                 @cursos.TipoCurso
-
             </td>
 
             <td>
-
-                <a href="Curso/Remover/@cursos.Id">RemoverCurso</a>
-
+                <a href="Curso/Remover/@cursos.Id">Remover Curso</a>
             </td>
 
             <td>
-
-                <a href="Curso/Listar/@cursos.Id">ListarCurso</a>
-
+                <a href="Curso/Listar/@cursos.Id">Listar Curso</a>
             </td>
 
             <td>
-
-                <a href="Curso/Editar/@cursos.Id">EditarCurso</a>
-
+                <a href="Curso/Editar/@cursos.Id">Editar Curso</a>
             </td>
 
         </tr>
-
             }
-
         }
-
     </tbody>
-
 </table>

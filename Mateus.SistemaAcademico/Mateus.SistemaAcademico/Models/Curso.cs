@@ -6,24 +6,33 @@ using System.Web;
 using Mateus.SistemaAcademico.Models.Enums;
 using Mateus.SistemaAcademico.Models.JOINS;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mateus.SistemaAcademico.Models
 {
     public class Curso : EntityBase
     {
         public IList<CursoDisciplina> Disciplina { get; set; }
-        public IList<ProfessorCurso> Professor { get; set; }
+        //public IList<ProfessorCurso> Professor { get; set; }
 
         [Required]
         public string Nome { get; set; }
-        [Required]
-        public float Duracao { get; set; }
+        [NotMapped]
+        public TimeSpan Duracao {
+            get
+            {
+                return DataDeFim.Subtract(DataDeInicio);
+            }
+
+        }
         [Required]
         public DateTime DataDeInicio { get; set; }
         [Required]
         public DateTime DataDeFim { get; set; }
+
         [Required]
         public int CoordenadorId { get; set; }
+        public Professor Coordenador { get; set; }
         [Required]
         public List<Aluno> Alunos { get; set; }
         [Required]
@@ -34,23 +43,15 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        //public Curso(List<CursoDisciplina> disciplina, IList<ProfessorCurso> professor, string nome, float duracao, Professor coordenador, List<Aluno> alunos, TipoCurso tipoCurso)
-        //{
-        //    Disciplina = disciplina;
-        //    Professor = professor;
-        //    Nome = nome;
-        //    Duracao = duracao;
-        //   // Coordenador = coordenador;
-        //    Alunos = alunos;
-        //    TipoCurso = tipoCurso;
-        //}
-
-        public Curso(string nome, float duracao, DateTime datadeinicio, DateTime datadefim, int coordenadorId, TipoCurso tipoCurso )
+        public Curso(IList<CursoDisciplina> disciplina, string nome, DateTime dataDeInicio, DateTime dataDeFim,
+            Professor coordenador, List<Aluno> alunos, TipoCurso tipoCurso)
         {
+            Disciplina = disciplina;
             Nome = nome;
-            DataDeInicio = datadeinicio;
-            DataDeFim = datadefim;
-            CoordenadorId = coordenadorId;
+            DataDeInicio = dataDeInicio;
+            DataDeFim = dataDeFim;
+            Coordenador = coordenador;
+            Alunos = alunos;
             TipoCurso = tipoCurso;
         }
     }

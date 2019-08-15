@@ -13,12 +13,10 @@ namespace Mateus.SistemaAcademico.Controllers
     {
         // get: cursos
 
-        // Gerar view de cadastro de curso
         [HttpPost]
-        public ActionResult AdicionarCurso(string nome, float duracao, DateTime datadeinicio, DateTime datadefim, int coordenadorId, TipoCurso tipoCurso)
+        public ActionResult AdicionarCurso(Curso curso)
         {
             var dao = new CursosDAO();
-            var curso = new Curso(nome, duracao, datadeinicio, datadefim, coordenadorId, tipoCurso);
             dao.Adicionar(curso);
             return View();
         }
@@ -26,7 +24,9 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpGet]
         public ActionResult AdicionarCurso()
         {
-            return View(new Curso());
+            var curso = new Curso();
+            curso.Coordenador = new Professor();
+            return View(curso);
         }
 
         // Remover Curso

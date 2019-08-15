@@ -1,6 +1,6 @@
 ﻿namespace Mateus.SistemaAcademico.Models.Enums
 {
-    public enum TipoCurso : int
+    public enum TipoCurso
     {
         Licenciatura = 0, 
         Bacharelado = 1,
