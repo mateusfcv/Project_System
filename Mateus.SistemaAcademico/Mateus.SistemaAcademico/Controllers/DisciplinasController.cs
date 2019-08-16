@@ -37,22 +37,22 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         [HttpPost]
-        public ActionResult RemoverCurso(Disciplina disciplina)
+        public ActionResult RemoverDisciplina(Disciplina disciplina)
         {
             disciplinasDAO.Remover(disciplina);
             return RedirectToAction("Index", "Disciplinas");
         }
 
+        // Editar Disciplinas
         [HttpGet]
-        public ActionResult EditarDisciplinas(int id)
+        public ActionResult EditarDisciplina(int id)
         {
             Disciplina disciplina = disciplinasDAO.BuscaPorId(id);
             return View(disciplina);
         }
 
-        // Editar Disciplinas
         [HttpPost]
-        public ActionResult EditarCurso(Disciplina disciplina)
+        public ActionResult EditarDisciplina(Disciplina disciplina) 
         {
             disciplinasDAO.Editar(disciplina);
             return RedirectToAction("Index", "Disciplinas");

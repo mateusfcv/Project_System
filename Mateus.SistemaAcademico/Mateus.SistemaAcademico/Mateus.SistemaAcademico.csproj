@@ -765,10 +765,10 @@
     <Content Include="Views\Cursos\VisualizarDetalhes.cshtml" />
     <Content Include="Views\Disciplinas\Index.cshtml" />
     <Content Include="Views\Disciplinas\AdicionarDisciplina.cshtml" />
-    <Content Include="Views\Disciplinas\RemoverDisciplina.cshtml" />
-    <Content Include="Views\Disciplinas\EditarDisciplinas.cshtml" />
     <Content Include="Views\Disciplinas\ListarDisciplina.cshtml" />
     <Content Include="Views\Disciplinas\VisualizarDetalhes.cshtml" />
+    <Content Include="Views\Disciplinas\RemoverDisciplina.cshtml" />
+    <Content Include="Views\Disciplinas\EditarDisciplina.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
