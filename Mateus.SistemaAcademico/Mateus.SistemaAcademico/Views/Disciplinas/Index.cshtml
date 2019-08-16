@@ -1,0 +1,71 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Disciplina>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de disciplinas do sistema</h2>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Nome</th>
+                    <th>Carga Horaria</th>
+                    <th>Professor</th>
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Disciplinas/AdicionarDiciplina">Adicionar Disciplina</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var disciplinas in ViewBag.disciplinas)
+                {
+                    using (Html.BeginForm("ListarDisciplina", "Disciplina", new { id = disciplinas.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @disciplinas.Nome
+                            </td>
+
+                            <td>
+                                @disciplinas.CargaHoraria
+                            </td>
+
+                            <td>
+                                @disciplinas.ProfessorId
+                            </td>
+
+
+                            <td>
+                                <a href="/Disciplinas/RemoverDisciplina/@disciplinas.Id">Remover Disciplina</a>
+                            </td>
+
+                            <td>
+                                <a href="/Disciplinas/ListarDisciplina/@disciplinas.Id">Listar Disciplinas</a>
+                            </td>
+
+                            <td>
+                                <a href="/Disciplinas/EditarDisciplina/@disciplinas.Id">Editar Disciplinas</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

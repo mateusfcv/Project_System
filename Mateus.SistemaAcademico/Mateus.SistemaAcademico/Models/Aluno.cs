@@ -1,5 +1,4 @@
-﻿using Mateus.SistemaAcademico.Models.JOINS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,7 +15,7 @@ namespace Mateus.SistemaAcademico.Models
 
         public Frequencia Frequencia { get; set; }
 
-        public Curso Curso { get; set; }
+        public Disciplina Curso { get; set; }
 
         public Aluno()
         {
@@ -24,7 +23,7 @@ namespace Mateus.SistemaAcademico.Models
         }
 
         public Aluno(string nome, int numero, int CEP, string cpf,
-            int registroDoAluno, Responsavel responsaveis, Frequencia frequencia, Curso curso)
+            int registroDoAluno, Responsavel responsaveis, Frequencia frequencia, Disciplina curso)
             :base( nome,  numero,  CEP,  cpf)
         {
             RegistroDoAluno = registroDoAluno;
@@ -33,7 +32,7 @@ namespace Mateus.SistemaAcademico.Models
             Curso = curso;
         }
 
-        public Aluno(int registroDoAluno, Responsavel responsaveis, Frequencia frequencia, Curso curso)
+        public Aluno(int registroDoAluno, Responsavel responsaveis, Frequencia frequencia, Disciplina curso)
         {
             RegistroDoAluno = registroDoAluno;
             Responsaveis = responsaveis;

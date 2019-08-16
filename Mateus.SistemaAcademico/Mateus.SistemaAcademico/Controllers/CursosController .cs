@@ -19,7 +19,7 @@ namespace Mateus.SistemaAcademico.Controllers
         {
 
             cursosDAO.Adicionar(curso);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Cursos");
         }
 
         [HttpGet]

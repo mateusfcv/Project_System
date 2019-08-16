@@ -643,10 +643,10 @@
     <Compile Include="Bussines\Exceptions\CampoNullException.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CursosController .cs" />
-    <Compile Include="Controllers\AlunosController.cs" />
+    <Compile Include="Controllers\DisciplinasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ResponsavelController.cs" />
+    <Compile Include="DAO\DisciplinasDAO.cs" />
     <Compile Include="DAO\CursosDAO.cs" />
     <Compile Include="DAO\AlunosDAO.cs" />
     <Compile Include="DAO\ConteudoDAO.cs" />
@@ -664,9 +664,13 @@
     <Compile Include="Interfaces\INota.cs" />
     <Compile Include="Interfaces\IProfessor.cs" />
     <Compile Include="Interfaces\IResponsavel.cs" />
-    <Compile Include="Migrations\20190815204904_Primeira.cs" />
-    <Compile Include="Migrations\20190815204904_Primeira.designer.cs">
-      <DependentUpon>20190815204904_Primeira.cs</DependentUpon>
+    <Compile Include="Migrations\20190816013044_Primeira.cs" />
+    <Compile Include="Migrations\20190816013044_Primeira.designer.cs">
+      <DependentUpon>20190816013044_Primeira.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20190816022444_CursoDisciplina.cs" />
+    <Compile Include="Migrations\20190816022444_CursoDisciplina.designer.cs">
+      <DependentUpon>20190816022444_CursoDisciplina.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -682,8 +686,7 @@
     <Compile Include="Models\Enums\TipoFrequencia.cs" />
     <Compile Include="Models\Frequencia.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\JOINS\CursoDisciplina.cs" />
-    <Compile Include="Models\JOINS\ProfessorCurso.cs" />
+    <Compile Include="Models\Joins\CursoDisciplina.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Nota.cs" />
     <Compile Include="Models\Objects Value\ValidacaoCpf.cs" />
@@ -754,17 +757,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Alunos\AdicionarAluno.cshtml" />
     <Content Include="Views\Cursos\Index.cshtml" />
     <Content Include="Views\Cursos\EditarCurso.cshtml" />
     <Content Include="Views\Cursos\AdicionarCurso.cshtml" />
     <Content Include="Views\Cursos\RemoverCurso.cshtml" />
     <Content Include="Views\Cursos\ListarCurso.cshtml" />
     <Content Include="Views\Cursos\VisualizarDetalhes.cshtml" />
+    <Content Include="Views\Disciplinas\Index.cshtml" />
+    <Content Include="Views\Disciplinas\AdicionarDisciplina.cshtml" />
+    <Content Include="Views\Disciplinas\RemoverDisciplina.cshtml" />
+    <Content Include="Views\Disciplinas\EditarDisciplinas.cshtml" />
+    <Content Include="Views\Disciplinas\ListarDisciplina.cshtml" />
+    <Content Include="Views\Disciplinas\VisualizarDetalhes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Responsavel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

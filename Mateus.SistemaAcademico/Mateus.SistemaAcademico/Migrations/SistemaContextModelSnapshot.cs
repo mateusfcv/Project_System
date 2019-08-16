@@ -62,6 +62,8 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.Property<int?>("CursoId");
 
+                    b.Property<int?>("CursoId1");
+
                     b.Property<string>("Nome");
 
                     b.Property<int>("RegistroDoAluno");
@@ -71,6 +73,8 @@ namespace Mateus.SistemaAcademico.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CursoId");
+
+                    b.HasIndex("CursoId1");
 
                     b.HasIndex("ResponsaveisId");
 
@@ -167,7 +171,7 @@ namespace Mateus.SistemaAcademico.Migrations
                     b.ToTable("Frequencias");
                 });
 
-            modelBuilder.Entity("Mateus.SistemaAcademico.Models.JOINS.CursoDisciplina", b =>
+            modelBuilder.Entity("Mateus.SistemaAcademico.Models.Joins.CursoDisciplina", b =>
                 {
                     b.Property<int>("CursoId");
 
@@ -257,9 +261,13 @@ namespace Mateus.SistemaAcademico.Migrations
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Aluno", b =>
                 {
-                    b.HasOne("Mateus.SistemaAcademico.Models.Curso", "Curso")
-                        .WithMany("Alunos")
+                    b.HasOne("Mateus.SistemaAcademico.Models.Disciplina", "Curso")
+                        .WithMany()
                         .HasForeignKey("CursoId");
+
+                    b.HasOne("Mateus.SistemaAcademico.Models.Curso")
+                        .WithMany("Alunos")
+                        .HasForeignKey("CursoId1");
 
                     b.HasOne("Mateus.SistemaAcademico.Models.Responsavel", "Responsaveis")
                         .WithMany("Alunos")
@@ -302,7 +310,7 @@ namespace Mateus.SistemaAcademico.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Mateus.SistemaAcademico.Models.JOINS.CursoDisciplina", b =>
+            modelBuilder.Entity("Mateus.SistemaAcademico.Models.Joins.CursoDisciplina", b =>
                 {
                     b.HasOne("Mateus.SistemaAcademico.Models.Curso", "Curso")
                         .WithMany("Disciplina")
