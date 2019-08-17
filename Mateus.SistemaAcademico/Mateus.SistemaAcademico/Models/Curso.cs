@@ -7,6 +7,7 @@ using Mateus.SistemaAcademico.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Mateus.SistemaAcademico.Models.Joins;
+using Mateus.SistemaAcademico.Bussines;
 
 namespace Mateus.SistemaAcademico.Models
 {
@@ -17,6 +18,7 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public string Nome { get; set; }
         [NotMapped]
+        //  FAZER A FUNÇÃO PARA EXIBIR A DURAÇÃO
         public TimeSpan Duracao
         {
             get
@@ -26,8 +28,10 @@ namespace Mateus.SistemaAcademico.Models
 
         }
         [Required]
+        [DataType(DataType.Date)]
         public DateTime DataDeInicio { get; set; }
         [Required]
+        [DataType(DataType.Date)]
         public DateTime DataDeFim { get; set; }
         [Required]
         public int CoordenadorId { get; set; }
@@ -45,7 +49,16 @@ namespace Mateus.SistemaAcademico.Models
         public Curso(IList<CursoDisciplina> disciplina, string nome, DateTime dataDeInicio, DateTime dataDeFim, int coordenadorId, Professor coordenador, List<Aluno> alunos, TipoCurso tipoCurso)
         {
             Disciplina = disciplina;
-            Nome = nome;
+            ValidacaoNome validador = new ValidacaoNome();
+            if (validador.Validar(Nome) == false)
+            {
+                throw new CampoInvalidException();
+            }
+            else
+            {
+                Nome = nome;
+            }
+           
             DataDeInicio = dataDeInicio;
             DataDeFim = dataDeFim;
             CoordenadorId = coordenadorId;

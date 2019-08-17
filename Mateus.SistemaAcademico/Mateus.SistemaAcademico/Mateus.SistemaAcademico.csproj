@@ -672,6 +672,10 @@
     <Compile Include="Migrations\20190816022444_CursoDisciplina.designer.cs">
       <DependentUpon>20190816022444_CursoDisciplina.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20190816171626_DataCurso.cs" />
+    <Compile Include="Migrations\20190816171626_DataCurso.designer.cs">
+      <DependentUpon>20190816171626_DataCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aluno.cs" />
@@ -687,6 +691,7 @@
     <Compile Include="Models\Frequencia.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Joins\CursoDisciplina.cs" />
+    <Compile Include="Models\Joins\ProfessorCurso.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Nota.cs" />
     <Compile Include="Models\Objects Value\ValidacaoCpf.cs" />
@@ -758,17 +763,17 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Cursos\Index.cshtml" />
-    <Content Include="Views\Cursos\EditarCurso.cshtml" />
-    <Content Include="Views\Cursos\AdicionarCurso.cshtml" />
-    <Content Include="Views\Cursos\RemoverCurso.cshtml" />
-    <Content Include="Views\Cursos\ListarCurso.cshtml" />
-    <Content Include="Views\Cursos\VisualizarDetalhes.cshtml" />
     <Content Include="Views\Disciplinas\Index.cshtml" />
     <Content Include="Views\Disciplinas\AdicionarDisciplina.cshtml" />
     <Content Include="Views\Disciplinas\ListarDisciplina.cshtml" />
     <Content Include="Views\Disciplinas\VisualizarDetalhes.cshtml" />
     <Content Include="Views\Disciplinas\RemoverDisciplina.cshtml" />
     <Content Include="Views\Disciplinas\EditarDisciplina.cshtml" />
+    <Content Include="Views\Cursos\AdicionarCurso.cshtml" />
+    <Content Include="Views\Cursos\RemoverCurso.cshtml" />
+    <Content Include="Views\Cursos\EditarCurso.cshtml" />
+    <Content Include="Views\Cursos\ListarCurso.cshtml" />
+    <Content Include="Views\Cursos\VisualizarDetalhes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

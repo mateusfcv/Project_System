@@ -9,11 +9,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Listar Curso</title>
+    <title>ListarCurso</title>
 </head>
 <body>
     <p>
-        @Html.ActionLink("Adicionar novo curso", "AdicionarCurso")
+        @Html.ActionLink("Adiconar Curso", "AdicionarCurso")
     </p>
     <table class="table">
         <tr>
@@ -32,34 +32,44 @@
             <th>
                 @Html.DisplayNameFor(model => model.CoordenadorId)
             </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.TipoCurso)
+            </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duracao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataDeInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataDeFim)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CoordenadorId)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "EditarCurso", new { id=item.Id }) |
-                @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id=item.Id }) |
-                @Html.ActionLink("Excluir", "RemoverCurso", new { id=item.Id })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duracao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataDeInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataDeFim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CoordenadorId)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoCurso)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "EditarCurso", new { id = item.Id }) |
+            @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id = item.Id }) |
+            @Html.ActionLink("Excluir", "RemoverCurso", new { id = item.Id })
+        </td>
+    </tr>
+        }
+
+        @Html.ActionLink("Voltar", "Index")
     </table>
 </body>
 </html>

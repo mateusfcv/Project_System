@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Mateus.SistemaAcademico.Bussines;
 using Mateus.SistemaAcademico.DAO;
 using Mateus.SistemaAcademico.Models;
 using Mateus.SistemaAcademico.Models.Enums;
@@ -17,7 +18,7 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpPost]
         public ActionResult AdicionarCurso(Curso curso)
         {
-
+            // IMPLEMENTAR A VALIDAÇÃO DE NOME, EXISTENTE NA CLASSE CURSO E CRIAR FUNÇÃO PARA EXIBIR O NOME DO COORDENADOR
             cursosDAO.Adicionar(curso);
             return RedirectToAction("Index", "Cursos");
         }
@@ -25,9 +26,9 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpGet]
         public ActionResult AdicionarCurso()
         {
-            var curso = new Curso();
-            curso.Coordenador = new Professor();
-            return View(curso);
+                var curso = new Curso();
+                curso.Coordenador = new Professor();
+                return View(curso);
         }
 
         // Remover Curso
@@ -49,14 +50,17 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpGet]
         public ActionResult EditarCurso(int id)
         {
+            var cursosDAO = new CursosDAO();
             Curso curso = cursosDAO.BuscaPorId(id);
             return View(curso);
         }
 
         // FAZER A VALIDAÇÃO DO CAMPO NOME E CRIAR FUNÇÃO PARA EXIBIR O NOME DO COORDENADOR
         [HttpPost]
-        public ActionResult EditarCurso(Curso curso)
+        [ValidateAntiForgeryToken]
+        public ActionResult EditarCurso([Bind(Include = "Id, Nome, DataDeInicio, DataDeFim, CoordenadorId, TipoCurso")]Curso curso)
         {
+            cursosDAO = new CursosDAO();
             cursosDAO.Editar(curso);
             return RedirectToAction("Index", "Cursos");
         }

@@ -2,6 +2,7 @@
 using Mateus.SistemaAcademico.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -17,15 +18,22 @@ namespace Mateus.SistemaAcademico.DAO
             contexto.SaveChanges();
         }
 
+        public void Editar(int cursoId)
+        {
+            contexto.Entry(cursoId).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            contexto.SaveChanges();
+        }
+
         public void Editar(Curso curso)
         {
+            contexto.Entry(curso).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             contexto.Cursos.Update(curso);
             contexto.SaveChanges();
         }
 
         public IList<Curso> ListarCursos()
         {
-            return contexto.Cursos.ToList();
+            return contexto.Cursos.Include(p => p.TipoCurso).ToList();
         }
 
         public void Remover(Curso curso)

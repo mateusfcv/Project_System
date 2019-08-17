@@ -13,54 +13,62 @@
 </head>
 <body>
     <div>
-        <h4>Curso</h4>
+        <h4>Detalhes do Curso</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Nome)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Duracao)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Duracao)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.DataDeInicio)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.DataDeInicio)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.DataDeFim)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.DataDeFim)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.CoordenadorId)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.CoordenadorId)
             </dd>
-    
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TipoCurso)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TipoCurso)
+            </dd>
+
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "EditarCurso", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Editar", "EditarCurso", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar", "ListarCurso")
     </p>
 </body>
 </html>

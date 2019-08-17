@@ -9,62 +9,69 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Remover Curso</title>
+    <title>RemoverCurso</title>
 </head>
 <body>
-    <h3>Are you sure you want to delete this?</h3>
+    <h3>Tem certeza de que deseja excluir este curso?</h3>
     <div>
-        <h4>Curso</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Nome)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Duracao)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Duracao)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.DataDeInicio)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.DataDeInicio)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.DataDeFim)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.DataDeFim)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.CoordenadorId)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.CoordenadorId)
             </dd>
-    
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TipoCurso)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TipoCurso)
+            </dd>
+
         </dl>
     
         @using (Html.BeginForm()) {
             @Html.AntiForgeryToken()
     
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+                <input type="submit" value="Excluir" class="btn btn-default" /> |
+                @Html.ActionLink("Voltar", "Index")
             </div>
         }
     </div>
