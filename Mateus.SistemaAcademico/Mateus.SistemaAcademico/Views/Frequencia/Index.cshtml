@@ -1,0 +1,72 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Frequencia>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Lista de frequencias do sistema</h2>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellpadding="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Tipo de Frequencia</th>
+                    <th>Data</th>
+                    <th>Disciplina</th>
+                    <th>Aluno</th>
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Frequencia/AdicionarFrequencia">Adicionar Frequencia</a>
+                    </td>
+            </thead>
+
+            <tbody>
+                @foreach (var frequencias in ViewBag.frequencias)
+                {
+                    using (Html.BeginForm("ListarFrequencia", "Frequencia", new { id = frequencias.Id }))
+                    {
+                <tr>
+                    <td>
+                        @frequencias.TipoFrequencia
+                    </td>
+
+                    <td>
+                        @frequencias.Data
+                    </td>
+
+                    <td>
+                        @frequencias.DisciplinaId
+                    </td>
+
+                    <td>
+                        @frequencias.AlunoId
+                    </td>
+
+                    <td>
+                        <a href="/Frequencia/RemoverFrequencia/@frequencias.Id">Remover Frequencia</a>
+                    </td>
+
+                    <td>
+                        <a href="/Frequencia/ListarFrequencia/@frequencias.Id">Listar Frequencia</a>
+                    </td>
+
+                    <td>
+                        <a href="/Frequencia/EditarFrequencia/@frequencias.Id">Editar Frequencia</a>
+                    </td>
+
+                  </tr>
+
+                 }
+            }
+                </tbody>
+            </table>
+        </div>
+    </div>

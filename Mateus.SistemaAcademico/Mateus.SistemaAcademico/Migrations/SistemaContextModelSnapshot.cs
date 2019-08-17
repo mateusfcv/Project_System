@@ -60,9 +60,7 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.Property<string>("Cpf");
 
-                    b.Property<int?>("CursoId");
-
-                    b.Property<int?>("CursoId1");
+                    b.Property<int>("CursoId");
 
                     b.Property<string>("Nome");
 
@@ -73,8 +71,6 @@ namespace Mateus.SistemaAcademico.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CursoId");
-
-                    b.HasIndex("CursoId1");
 
                     b.HasIndex("ResponsaveisId");
 
@@ -261,13 +257,10 @@ namespace Mateus.SistemaAcademico.Migrations
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Aluno", b =>
                 {
-                    b.HasOne("Mateus.SistemaAcademico.Models.Disciplina", "Curso")
-                        .WithMany()
-                        .HasForeignKey("CursoId");
-
-                    b.HasOne("Mateus.SistemaAcademico.Models.Curso")
+                    b.HasOne("Mateus.SistemaAcademico.Models.Curso", "Curso")
                         .WithMany("Alunos")
-                        .HasForeignKey("CursoId1");
+                        .HasForeignKey("CursoId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Mateus.SistemaAcademico.Models.Responsavel", "Responsaveis")
                         .WithMany("Alunos")

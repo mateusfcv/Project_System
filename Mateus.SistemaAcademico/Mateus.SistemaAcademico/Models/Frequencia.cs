@@ -12,6 +12,7 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public TipoFrequencia TipoFrequencia { get; set; }
         [Required]
+        [DataType(DataType.Date)]
         public DateTime Data { get; set; }
 
         public virtual Disciplina Disciplina { get; set; }
