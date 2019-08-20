@@ -17,26 +17,24 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public float CargaHoraria { get; set; }
         [Required]
-        public  Frequencia Frequencia { get; set; }
-        [Required]
         public int ProfessorId { get; set; }
         public Professor Professor { get; set; }
 
 
-        public Disciplina ()
+        public Disciplina()
         {
 
         }
 
-        public Disciplina(IList<CursoDisciplina> curso, List<Conteudo> conteudo, string nome, float cargaHoraria, Frequencia frequencia, int professorId, Professor professor)
+        public Disciplina(IList<CursoDisciplina> curso, List<Conteudo> conteudo, string nome, float cargaHoraria, 
+            int professorId, Professor professor)
         {
             Curso = curso;
             Conteudo = conteudo;
             Nome = nome;
             CargaHoraria = cargaHoraria;
-            Frequencia = frequencia;
             ProfessorId = professorId;
             Professor = professor;
         }
-    }
+    } 
 }

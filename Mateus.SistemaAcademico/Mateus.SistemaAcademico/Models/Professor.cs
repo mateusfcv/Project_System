@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mateus.SistemaAcademico.Models.Joins;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,12 +9,12 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Professor : Pessoa
     {
-        //public IList<ProfessorCurso> Curso { get; set; }
+        public IList<ProfessorCurso> Curso { get; set; }
 
         [Required]
         public int RegistroDoProfessor { get; set; }
-        [Required]
-        public Disciplina DisciplinasMinistratadas { get; set; }
+        //[Required]
+        //public Disciplina DisciplinasMinistratadas { get; set; }
         [Required]
         public string Titulacao { get; set; }
 
@@ -22,20 +23,12 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Professor(string nome, int CEP, int numero, string cpf,
-           int registroDoProfessor, Disciplina disciplinasMinistratadas,
-             string titulacao)
-            :base( nome,  CEP,  numero,  cpf)
+        public Professor(string nome, List<Telefone> telefones, List<Endereco> enderecos, string cpf,
+            IList<ProfessorCurso> curso, int registroDoProfessor, string titulacao)
+            :base(nome, telefones, enderecos, cpf)
         {
+            Curso = curso;
             RegistroDoProfessor = registroDoProfessor;
-            DisciplinasMinistratadas = disciplinasMinistratadas;
-            Titulacao = titulacao;
-        }
-
-        public Professor(int registroDoProfessor, Disciplina disciplinasMinistratadas, string titulacao)
-        {
-            RegistroDoProfessor = registroDoProfessor;
-            DisciplinasMinistratadas = disciplinasMinistratadas;
             Titulacao = titulacao;
         }
     }

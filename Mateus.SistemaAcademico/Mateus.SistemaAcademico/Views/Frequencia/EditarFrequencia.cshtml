@@ -7,10 +7,6 @@
 
 <!DOCTYPE html>
 
-
-@*FAZER A FUNÇÃO DE EDITAR FREQUENCIA FUNCINONAR*@
-
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -28,9 +24,11 @@
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TipoFrequencia, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TipoFrequencia, "Tipo de Frequencia", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+
                 @Html.DropDownList("TipoFrequencia", new SelectList(Enum.GetValues(typeof(TipoFrequencia))), "Selecione o tipo de Frequencia", new { @class = "form-control" })
+
             </div>
         </div>
 

@@ -9,9 +9,6 @@ namespace Mateus.SistemaAcademico.Models
 {
     public abstract class Pessoa : EntityBase
     {
-        //[Key]
-        //[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        //public int Id { get; set; }
         public string Nome { get; set; }
         public List<Telefone> Telefones { get; set; }
         public List<Endereco> Enderecos { get; set; }
@@ -22,11 +19,11 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Pessoa(string nome, int CEP, int numero, string cpf)
+        protected Pessoa(string nome, List<Telefone> telefones, List<Endereco> enderecos, string cpf)
         {
             Nome = nome;
-            Telefones.Add(new Telefone(numero));
-            Enderecos.Add(new Endereco(CEP));
+            Telefones = telefones;
+            Enderecos = enderecos;
             Cpf = cpf;
         }
     }

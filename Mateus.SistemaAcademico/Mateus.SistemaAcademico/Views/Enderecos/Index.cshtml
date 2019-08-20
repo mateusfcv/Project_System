@@ -1,0 +1,90 @@
+﻿@model IList<Mateus.SistemaAcademico.Endereco>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de Enderecos do sistema</h2>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Cep</th>
+                    <th>Nome da Rua</th>
+                    <th>Numero</th>
+                    <th>Complemento</th>
+                    <th>Bairro</th>
+                    <th>Estados</th>
+                    <th>Cidades</th>
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Enderecos/AdicionarEndereco">Adicionar Endereço</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var Enderecos in ViewBag.Enderecos)
+                {
+                    using (Html.BeginForm("ListarEnderecos", "Enderecos", new { id = Enderecos.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @Enderecos.Cep
+                            </td>
+
+                            <td>
+                                @Enderecos.NomeRua
+                            </td>
+
+                            <td>
+                                @Enderecos.Numero
+                            </td>
+
+                            <td>
+                                @Enderecos.Complemento
+                            </td>
+
+                            <td>
+                                @Enderecos.Bairro
+                            </td>
+
+                            <td>Estados
+                                @Enderecos.Estados
+                            </td>
+
+                            <td>
+                                @Enderecos.Cidades
+                            </td>
+
+                            <td>
+                                <a href="/Enderecos/RemoverEndereco/@Enderecos.Id">Remover Endereco</a>
+                            </td>
+
+                            <td>
+                                <a href="/Enderecos/ListarEnderecos/@Enderecos.Id">Listar Endereco</a>
+                            </td>
+
+                            <td>
+                                <a href="/Enderecos/EditarEndereco/@Enderecos.Id">Editar Endereco</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

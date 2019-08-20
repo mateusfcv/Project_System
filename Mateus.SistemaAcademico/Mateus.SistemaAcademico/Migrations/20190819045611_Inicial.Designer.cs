@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mateus.SistemaAcademico.Migrations
 {
     [DbContext(typeof(SistemaContext))]
-    [Migration("20190816171626_DataCurso")]
-    partial class DataCurso
+    [Migration("20190819045611_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,23 +62,19 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.Property<string>("Cpf");
 
-                    b.Property<int?>("CursoId");
-
-                    b.Property<int?>("CursoId1");
+                    b.Property<int>("CursoId");
 
                     b.Property<string>("Nome");
 
                     b.Property<int>("RegistroDoAluno");
 
-                    b.Property<int?>("ResponsaveisId");
+                    b.Property<int>("ResponsavelId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CursoId");
 
-                    b.HasIndex("CursoId1");
-
-                    b.HasIndex("ResponsaveisId");
+                    b.HasIndex("ResponsavelId");
 
                     b.ToTable("Alunos");
                 });
@@ -142,8 +138,7 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProfessorId")
-                        .IsUnique();
+                    b.HasIndex("ProfessorId");
 
                     b.ToTable("Disciplinas");
                 });
@@ -164,11 +159,9 @@ namespace Mateus.SistemaAcademico.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AlunoId")
-                        .IsUnique();
+                    b.HasIndex("AlunoId");
 
-                    b.HasIndex("DisciplinaId")
-                        .IsUnique();
+                    b.HasIndex("DisciplinaId");
 
                     b.ToTable("Frequencias");
                 });
@@ -184,6 +177,21 @@ namespace Mateus.SistemaAcademico.Migrations
                     b.HasIndex("DisciplinaId");
 
                     b.ToTable("CursoDisciplina");
+                });
+
+            modelBuilder.Entity("Mateus.SistemaAcademico.Models.Joins.ProfessorCurso", b =>
+                {
+                    b.Property<int>("ProfessorId");
+
+                    b.Property<int>("CurosId");
+
+                    b.Property<int?>("CursoId");
+
+                    b.HasKey("ProfessorId", "CurosId");
+
+                    b.HasIndex("CursoId");
+
+                    b.ToTable("ProfessorCurso");
                 });
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Professor", b =>
@@ -263,17 +271,15 @@ namespace Mateus.SistemaAcademico.Migrations
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Aluno", b =>
                 {
-                    b.HasOne("Mateus.SistemaAcademico.Models.Disciplina", "Curso")
-                        .WithMany()
-                        .HasForeignKey("CursoId");
-
-                    b.HasOne("Mateus.SistemaAcademico.Models.Curso")
+                    b.HasOne("Mateus.SistemaAcademico.Models.Curso", "Curso")
                         .WithMany("Alunos")
-                        .HasForeignKey("CursoId1");
+                        .HasForeignKey("CursoId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Mateus.SistemaAcademico.Models.Responsavel", "Responsaveis")
                         .WithMany("Alunos")
-                        .HasForeignKey("ResponsaveisId");
+                        .HasForeignKey("ResponsavelId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Conteudo", b =>
@@ -294,21 +300,21 @@ namespace Mateus.SistemaAcademico.Migrations
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Disciplina", b =>
                 {
                     b.HasOne("Mateus.SistemaAcademico.Models.Professor", "Professor")
-                        .WithOne("DisciplinasMinistratadas")
-                        .HasForeignKey("Mateus.SistemaAcademico.Models.Disciplina", "ProfessorId")
+                        .WithMany()
+                        .HasForeignKey("ProfessorId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Mateus.SistemaAcademico.Models.Frequencia", b =>
                 {
                     b.HasOne("Mateus.SistemaAcademico.Models.Aluno", "Aluno")
-                        .WithOne("Frequencia")
-                        .HasForeignKey("Mateus.SistemaAcademico.Models.Frequencia", "AlunoId")
+                        .WithMany()
+                        .HasForeignKey("AlunoId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Mateus.SistemaAcademico.Models.Disciplina", "Disciplina")
-                        .WithOne("Frequencia")
-                        .HasForeignKey("Mateus.SistemaAcademico.Models.Frequencia", "DisciplinaId")
+                        .WithMany()
+                        .HasForeignKey("DisciplinaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -322,6 +328,18 @@ namespace Mateus.SistemaAcademico.Migrations
                     b.HasOne("Mateus.SistemaAcademico.Models.Disciplina", "Disciplina")
                         .WithMany("Curso")
                         .HasForeignKey("DisciplinaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Mateus.SistemaAcademico.Models.Joins.ProfessorCurso", b =>
+                {
+                    b.HasOne("Mateus.SistemaAcademico.Models.Curso", "Curso")
+                        .WithMany("Professor")
+                        .HasForeignKey("CursoId");
+
+                    b.HasOne("Mateus.SistemaAcademico.Models.Professor", "Professor")
+                        .WithMany("Curso")
+                        .HasForeignKey("ProfessorId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -33,20 +33,20 @@ namespace Mateus.SistemaAcademico.DAO
 
         public IList<Curso> ListarCursos()
         {
-            return contexto.Cursos.Include(p => p.TipoCurso).ToList();
+            return contexto.Cursos.Include(c => c.TipoCurso).ToList();
         }
 
         public void Remover(Curso curso)
         {
             int id = 0;
-            contexto.Cursos.Where(x => x.Id == id).FirstOrDefault();
+            contexto.Cursos.Where(c => c.Id == id).FirstOrDefault();
             contexto.Cursos.Remove(curso);
             contexto.SaveChanges();
         }
 
-        public Curso BuscaPorId(int Id)
+        public Curso BuscaPorId(int id)
         {
-            return contexto.Cursos.Where(u => u.Id == Id).FirstOrDefault();
+            return contexto.Cursos.Where(c => c.Id == id).FirstOrDefault();
         }
     }
 }

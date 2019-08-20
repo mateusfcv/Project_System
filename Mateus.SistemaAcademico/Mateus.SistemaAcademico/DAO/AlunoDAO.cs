@@ -2,12 +2,13 @@
 using Mateus.SistemaAcademico.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
 namespace Mateus.SistemaAcademico.DAO
 {
-    public class AlunosDAO : IAluno
+    public class AlunoDAO : IAluno
     {
         public SistemaContext contexto = new SistemaContext();
 
@@ -17,8 +18,15 @@ namespace Mateus.SistemaAcademico.DAO
             contexto.SaveChanges();
         }
 
+        public void Editar(int alunoId)
+        {
+            contexto.Entry(alunoId).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            contexto.SaveChanges();
+        }
+
         public void Editar(Aluno aluno)
         {
+            contexto.Entry(aluno).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             contexto.Alunos.Update(aluno);
             contexto.SaveChanges();
         }
@@ -30,8 +38,15 @@ namespace Mateus.SistemaAcademico.DAO
 
         public void Remover(Aluno aluno)
         {
+            int id = 0;
+            contexto.Alunos.Where(x => x.Id == id).FirstOrDefault();
             contexto.Alunos.Remove(aluno);
             contexto.SaveChanges();
+        }
+
+        public Aluno BuscaPorId(int Id)
+        {
+            return contexto.Alunos.Where(u => u.Id == Id).FirstOrDefault();
         }
     }
 }

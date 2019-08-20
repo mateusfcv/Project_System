@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Mateus.SistemaAcademico.Migrations
 {
-    public partial class Primeira : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -91,31 +91,49 @@ namespace Mateus.SistemaAcademico.Migrations
                     Nome = table.Column<string>(nullable: true),
                     Cpf = table.Column<string>(nullable: true),
                     RegistroDoAluno = table.Column<int>(nullable: false),
-                    ResponsaveisId = table.Column<int>(nullable: true),
-                    CursoId = table.Column<int>(nullable: true),
-                    CursoId1 = table.Column<int>(nullable: true)
+                    ResponsavelId = table.Column<int>(nullable: false),
+                    CursoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Alunos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Alunos_Disciplinas_CursoId",
+                        name: "FK_Alunos_Cursos_CursoId",
                         column: x => x.CursoId,
-                        principalTable: "Disciplinas",
+                        principalTable: "Cursos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_Alunos_Cursos_CursoId1",
-                        column: x => x.CursoId1,
+                        name: "FK_Alunos_Responsaveis_ResponsavelId",
+                        column: x => x.ResponsavelId,
+                        principalTable: "Responsaveis",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProfessorCurso",
+                columns: table => new
+                {
+                    ProfessorId = table.Column<int>(nullable: false),
+                    CurosId = table.Column<int>(nullable: false),
+                    CursoId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProfessorCurso", x => new { x.ProfessorId, x.CurosId });
+                    table.ForeignKey(
+                        name: "FK_ProfessorCurso_Cursos_CursoId",
+                        column: x => x.CursoId,
                         principalTable: "Cursos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Alunos_Responsaveis_ResponsaveisId",
-                        column: x => x.ResponsaveisId,
-                        principalTable: "Responsaveis",
+                        name: "FK_ProfessorCurso_Professor_ProfessorId",
+                        column: x => x.ProfessorId,
+                        principalTable: "Professor",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -137,6 +155,30 @@ namespace Mateus.SistemaAcademico.Migrations
                         principalTable: "Disciplinas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CursoDisciplina",
+                columns: table => new
+                {
+                    CursoId = table.Column<int>(nullable: false),
+                    DisciplinaId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CursoDisciplina", x => new { x.CursoId, x.DisciplinaId });
+                    table.ForeignKey(
+                        name: "FK_CursoDisciplina_Cursos_CursoId",
+                        column: x => x.CursoId,
+                        principalTable: "Cursos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_CursoDisciplina_Disciplinas_DisciplinaId",
+                        column: x => x.DisciplinaId,
+                        principalTable: "Disciplinas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -245,18 +287,18 @@ namespace Mateus.SistemaAcademico.Migrations
                 column: "CursoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Alunos_CursoId1",
+                name: "IX_Alunos_ResponsavelId",
                 table: "Alunos",
-                column: "CursoId1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Alunos_ResponsaveisId",
-                table: "Alunos",
-                column: "ResponsaveisId");
+                column: "ResponsavelId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Conteudos_DisciplinaId",
                 table: "Conteudos",
+                column: "DisciplinaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CursoDisciplina_DisciplinaId",
+                table: "CursoDisciplina",
                 column: "DisciplinaId");
 
             migrationBuilder.CreateIndex(
@@ -267,8 +309,7 @@ namespace Mateus.SistemaAcademico.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Disciplinas_ProfessorId",
                 table: "Disciplinas",
-                column: "ProfessorId",
-                unique: true);
+                column: "ProfessorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Enderecos_AlunoId",
@@ -288,14 +329,17 @@ namespace Mateus.SistemaAcademico.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Frequencias_AlunoId",
                 table: "Frequencias",
-                column: "AlunoId",
-                unique: true);
+                column: "AlunoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Frequencias_DisciplinaId",
                 table: "Frequencias",
-                column: "DisciplinaId",
-                unique: true);
+                column: "DisciplinaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProfessorCurso_CursoId",
+                table: "ProfessorCurso",
+                column: "CursoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Telefones_AlunoId",
@@ -319,19 +363,25 @@ namespace Mateus.SistemaAcademico.Migrations
                 name: "Conteudos");
 
             migrationBuilder.DropTable(
+                name: "CursoDisciplina");
+
+            migrationBuilder.DropTable(
                 name: "Enderecos");
 
             migrationBuilder.DropTable(
                 name: "Frequencias");
 
             migrationBuilder.DropTable(
+                name: "ProfessorCurso");
+
+            migrationBuilder.DropTable(
                 name: "Telefones");
 
             migrationBuilder.DropTable(
-                name: "Alunos");
+                name: "Disciplinas");
 
             migrationBuilder.DropTable(
-                name: "Disciplinas");
+                name: "Alunos");
 
             migrationBuilder.DropTable(
                 name: "Cursos");

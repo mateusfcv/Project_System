@@ -10,7 +10,7 @@ namespace Mateus.SistemaAcademico.Interfaces
     public interface IProfessor
     {
         void Adicionar(Professor professor);
-        void Atualizar(Professor professor); 
+        void Editar(Professor professor); 
         void Remover(Professor professor);
         IList<Professor> ListarProfessores(); 
     }

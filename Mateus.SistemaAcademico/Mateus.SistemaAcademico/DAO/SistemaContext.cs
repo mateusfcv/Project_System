@@ -26,6 +26,11 @@ namespace Mateus.SistemaAcademico.DAO
                  .Entity<CursoDisciplina>()
                  .HasKey(cd => new { cd.CursoId, cd.DisciplinaId });
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder
+                .Entity<ProfessorCurso>()
+                .HasKey(pc => new { pc.ProfessorId, pc.CurosId });
+            base.OnModelCreating(modelBuilder);
         } 
 
         public SistemaContext()

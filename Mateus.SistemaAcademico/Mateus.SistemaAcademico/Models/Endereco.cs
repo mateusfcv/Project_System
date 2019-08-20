@@ -8,33 +8,38 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico
 {
-    public class Endereco : EntityBase
+    public class Endereco : EntityBase 
     {
-        public string Logradouro { get; set; }
-        public string Bairro { get; set; }
-        public string Complemento { get; set; }
-        public int CEP { get; set; }
+        public string Cep { get; set; }
+        public string NomeRua { get; set; }
         public int Numero { get; set; }
+        public string Complemento { get; set; }
+        public string Bairro { get; set; }
+        public string Estados { get; set; }
+        public string Cidades { get; set; }
 
-        public Endereco(int CEP)
+        public Endereco()
         {
-            this.CEP = CEP;
-            //Inserir codigo para inserir outros campos baseado no Cep
+
         }
 
-        public Endereco(string lograddouro, string bairro, string complemento, int numero)
+        public Endereco(string cep, string nomeRua, int numero, string complemento, string bairro, string estados, string cidades)
         {
-            if (lograddouro == null || bairro == null || complemento == null)
+            //if (Bairro == null || Complemento == null)
+            //{
+            //    throw new CampoNullException();
+            //}
+            //else
             {
-                throw new CampoNullException();
-            }
-            else
-            {
-                Logradouro = lograddouro;
-                Bairro = bairro;
-                Complemento = complemento;
+                Cep = cep;
+                NomeRua = nomeRua;
                 Numero = numero;
+                Complemento = complemento;
+                Bairro = bairro;
+                Estados = estados;
+                Cidades = cidades;
             }
-        } 
+            
+        }
     }
 }

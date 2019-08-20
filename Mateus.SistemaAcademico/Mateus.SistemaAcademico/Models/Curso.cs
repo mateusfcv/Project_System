@@ -14,6 +14,7 @@ namespace Mateus.SistemaAcademico.Models
     public class Curso : EntityBase
     {
         public IList<CursoDisciplina> Disciplina { get; set; }
+        public IList<ProfessorCurso> Professor { get; set; }
 
         [Required]
         public string Nome { get; set; }
@@ -46,9 +47,9 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Curso(IList<CursoDisciplina> disciplina, string nome, DateTime dataDeInicio, DateTime dataDeFim, int coordenadorId, Professor coordenador, List<Aluno> alunos, TipoCurso tipoCurso)
+        public Curso(IList<CursoDisciplina> disciplina, IList<ProfessorCurso> professor, string nome, DateTime dataDeInicio, DateTime dataDeFim,
+            int coordenadorId, Professor coordenador, List<Aluno> alunos, TipoCurso tipoCurso)
         {
-            Disciplina = disciplina;
             ValidacaoNome validador = new ValidacaoNome();
             if (validador.Validar(Nome) == false)
             {
@@ -58,7 +59,8 @@ namespace Mateus.SistemaAcademico.Models
             {
                 Nome = nome;
             }
-           
+            Disciplina = disciplina;
+            Professor = professor;
             DataDeInicio = dataDeInicio;
             DataDeFim = dataDeFim;
             CoordenadorId = coordenadorId;

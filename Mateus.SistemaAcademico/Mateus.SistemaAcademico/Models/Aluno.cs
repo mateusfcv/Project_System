@@ -11,32 +11,26 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public int RegistroDoAluno { get; set; }
 
-        public Responsavel Responsaveis { get; set; }
+        public int ResponsavelId { get; set; }
+        public virtual Responsavel Responsaveis { get; set; }
 
-        public Frequencia Frequencia { get; set; }
         [Required]
-        public Curso Curso { get; set; }
+        public int CursoId { get; set; }
+        public virtual Curso Curso { get; set; }
 
         public Aluno()
         {
 
         }
 
-        public Aluno(string nome, int numero, int CEP, string cpf,
-            int registroDoAluno, Responsavel responsaveis, Frequencia frequencia, Curso curso)
-            :base( nome,  numero,  CEP,  cpf)
+        public Aluno(string nome, List<Telefone> telefones, List<Endereco> enderecos, string cpf,
+            int registroDoAluno, int responsavelId, Responsavel responsaveis, int cursoId, Curso curso)
+            :base(nome, telefones, enderecos, cpf)
         {
             RegistroDoAluno = registroDoAluno;
+            ResponsavelId = responsavelId;
             Responsaveis = responsaveis;
-            Frequencia = frequencia;
-            Curso = curso;
-        }
-
-        public Aluno(int registroDoAluno, Responsavel responsaveis, Frequencia frequencia, Curso curso)
-        {
-            RegistroDoAluno = registroDoAluno;
-            Responsaveis = responsaveis;
-            Frequencia = frequencia;
+            CursoId = cursoId;
             Curso = curso;
         }
     }

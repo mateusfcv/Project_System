@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Mateus.SistemaAcademico.Endereco>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listar Enderecos</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Adicionar Endereço ", "AdicionarEndereco")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeRua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Complemento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bairro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidades)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cep)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeRua)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Complemento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bairro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estados)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidades)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarEndereco", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id = item.Id }) |
+                    @Html.ActionLink("Remover", "RemoverEndereco", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>
+        @Html.ActionLink("Voltar ", "Index")
+    </p>
+</body>
+</html>
