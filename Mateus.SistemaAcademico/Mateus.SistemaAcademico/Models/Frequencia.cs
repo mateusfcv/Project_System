@@ -14,10 +14,10 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         [DataType(DataType.Date)]
         public DateTime Data { get; set; }
-
+        [Required]
         public virtual Disciplina Disciplina { get; set; }
         public int DisciplinaId { get; set; }
-
+        [Required]
         public virtual Aluno Aluno { get; set; }
         public int AlunoId { get; set; }
 

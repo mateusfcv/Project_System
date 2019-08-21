@@ -50,15 +50,7 @@ namespace Mateus.SistemaAcademico.Models
         public Curso(IList<CursoDisciplina> disciplina, IList<ProfessorCurso> professor, string nome, DateTime dataDeInicio, DateTime dataDeFim,
             int coordenadorId, Professor coordenador, List<Aluno> alunos, TipoCurso tipoCurso)
         {
-            ValidacaoNome validador = new ValidacaoNome();
-            if (validador.Validar(Nome) == false)
-            {
-                throw new CampoInvalidException();
-            }
-            else
-            {
-                Nome = nome;
-            }
+            Nome = nome;
             Disciplina = disciplina;
             Professor = professor;
             DataDeInicio = dataDeInicio;

@@ -10,21 +10,27 @@ namespace Mateus.SistemaAcademico.Models
     public abstract class Pessoa : EntityBase
     {
         public string Nome { get; set; }
+        public string Email { get; set; }
+        public string Cpf { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime DataDeNascimento { get; set; }
         public List<Telefone> Telefones { get; set; }
         public List<Endereco> Enderecos { get; set; }
-        public string Cpf { get; set; }
+        
 
         public Pessoa ()
         { 
 
         }
 
-        protected Pessoa(string nome, List<Telefone> telefones, List<Endereco> enderecos, string cpf)
+        protected Pessoa(string nome, string email, string cpf, DateTime dataDeNascimento, List<Telefone> telefones, List<Endereco> enderecos)
         {
             Nome = nome;
+            Email = email;
+            Cpf = cpf;
+            DataDeNascimento = dataDeNascimento;
             Telefones = telefones;
             Enderecos = enderecos;
-            Cpf = cpf;
         }
     }
 }

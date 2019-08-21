@@ -1,0 +1,58 @@
+﻿@model Mateus.SistemaAcademico.Models.Secretaria
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhes</title>
+</head>
+<body>
+    <div>
+        <h4>Detalhes da Secretária</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Cpf)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DataDeNascimento)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataDeNascimento)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "EditarSecretaria", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar", "ListarSecretaria")
+    </p>
+</body>
+</html>

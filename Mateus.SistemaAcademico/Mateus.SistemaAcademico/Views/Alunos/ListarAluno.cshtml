@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Mateus.SistemaAcademico.Models.Aluno>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listar Alunos</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Matricular Aluno", "AdicionarAluno")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataDeNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroDoAluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResponsavelId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CursoId)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDeNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistroDoAluno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResponsavelId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CursoId)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditarAluno", new { id=item.Id }) |
+                @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id=item.Id }) |
+                @Html.ActionLink("Remover", "RemoverAluno", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+    <p>
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</body>
+</html>

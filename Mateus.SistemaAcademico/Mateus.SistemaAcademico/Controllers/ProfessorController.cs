@@ -1,38 +1,39 @@
-﻿using Mateus.SistemaAcademico.DAO;
-using Mateus.SistemaAcademico.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Mateus.SistemaAcademico.Bussines;
+using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Models;
+using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
-    public class ProfessorController : Controller
+    public class ProfessoresController : Controller
     {
-        // GET: Professor
-        ProfessorDAO professorDAO = new ProfessorDAO();
-
-        // Adicionar Professor
-        [HttpGet]
-        public ActionResult AdicionarProfessor()
-        {
-            var professor = new Professor();
-            return View(professor);
-        }
+        // get: professor
+        ProfessoresDAO professorDAO = new ProfessoresDAO();
 
         [HttpPost]
         public ActionResult AdicionarProfessor(Professor professor)
         {
             professorDAO.Adicionar(professor);
-            return RedirectToAction("Index", "Professor");
+            return RedirectToAction("Index", "Professores");
+        }
+
+        [HttpGet]
+        public ActionResult AdicionarProfessor()
+        {
+                var professor = new Professor();
+                return View(professor);
         }
 
         // Remover Professor
         [HttpGet]
-        public ActionResult RemoverProfessor(int id)
+        public ActionResult RemoverProfessor(int Id)
         {
-            Professor professor = professorDAO.BuscaPorId(id);
+            Professor professor = professorDAO.BuscaPorId(Id);
             return View(professor);
         }
 
@@ -40,36 +41,33 @@ namespace Mateus.SistemaAcademico.Controllers
         public ActionResult RemoverProfessor(Professor professor)
         {
             professorDAO.Remover(professor);
-            return RedirectToAction("Index", "Professor");
+            return RedirectToAction("Index", "Professores");
         }
 
         // Editar Professor
         [HttpGet]
         public ActionResult EditarProfessor(int id)
         {
-            var professorDAO = new ProfessorDAO();
+            var professorDAO = new ProfessoresDAO();
             Professor professor = professorDAO.BuscaPorId(id);
             return View(professor);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarProfessor([Bind(Include = "Id, Nome, numero, CEP, Cpf, RegistroDoProfessor, Titulacao")]
-        Professor professor)
+        public ActionResult EditarProfessor([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, RegistroDoProfessor, Titulacao")]Professor professor)
         {
-            professorDAO = new ProfessorDAO();
+            professorDAO = new ProfessoresDAO();
             professorDAO.Editar(professor);
-            return RedirectToAction("Index", "Professor");
+            return RedirectToAction("Index", "Professores");
         }
 
-        // Listar Professores
         public ActionResult ListarProfessores()
         {
-            IList<Professor> professors = professorDAO.ListarProfessores();
-            return View(professors);
+            IList<Professor> professor = professorDAO.ListarProfessores();
+            return View(professor);
         }
 
-        // Visualizar Detalhes
         public ActionResult VisualizarDetalhes(int id)
         {
             Professor professor = professorDAO.BuscaPorId(id);
@@ -78,7 +76,7 @@ namespace Mateus.SistemaAcademico.Controllers
 
         public ActionResult Index()
         {
-            var professorDAO = new ProfessorDAO();
+            var professorDAO = new ProfessoresDAO();
             var professor = professorDAO.ListarProfessores();
             ViewBag.Professor = professor;
             return View();

@@ -18,9 +18,9 @@ namespace Mateus.SistemaAcademico.DAO
             contexto.SaveChanges();
         }
 
-        public void Editar(int enderecoId)
+        public void Editar(int EnderecosId)
         {
-            contexto.Entry(enderecoId).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            contexto.Entry(EnderecosId).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             contexto.SaveChanges();
         }
 
@@ -33,20 +33,20 @@ namespace Mateus.SistemaAcademico.DAO
 
         public IList<Endereco> ListarEnderecos()
         {
-            return contexto.Enderecos.Include(c => c.Cep).ToList();
+            return contexto.Enderecos.ToList();
         }
 
         public void Remover(Endereco endereco)
         {
             int id = 0;
-            contexto.Enderecos.Where(c => c.Id == id).FirstOrDefault();
+            contexto.Enderecos.Where(e => e.Id == id).FirstOrDefault();
             contexto.Enderecos.Remove(endereco);
             contexto.SaveChanges();
         }
 
         public Endereco BuscaPorId(int id)
         {
-            return contexto.Enderecos.Where(c => c.Id == id).FirstOrDefault();
+            return contexto.Enderecos.Where(e => e.Id == id).FirstOrDefault();
         }
     }
 }

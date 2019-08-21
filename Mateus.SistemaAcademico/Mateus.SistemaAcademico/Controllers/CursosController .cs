@@ -55,7 +55,6 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(curso);
         }
 
-        // FAZER A VALIDAÇÃO DO CAMPO NOME E CRIAR FUNÇÃO PARA EXIBIR O NOME DO COORDENADOR
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditarCurso([Bind(Include = "Id, Nome, DataDeInicio, DataDeFim, CoordenadorId, TipoCurso")]Curso curso)

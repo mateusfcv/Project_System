@@ -16,9 +16,9 @@ namespace Mateus.SistemaAcademico.Controllers
         EnderecosDAO enderecosDAO = new EnderecosDAO();
 
         [HttpPost]
-        public ActionResult AdicionarEndereco(Endereco enderecos)
+        public ActionResult AdicionarEndereco(Endereco endereco)
         {
-            enderecosDAO.Adicionar(enderecos);
+            enderecosDAO.Adicionar(endereco);
             return RedirectToAction("Index", "Enderecos");
         }
 
@@ -29,7 +29,7 @@ namespace Mateus.SistemaAcademico.Controllers
                 return View(endereco);
         }
 
-        // Remover Endereço
+        // Remover Endereco
         [HttpGet]
         public ActionResult RemoverEndereco(int Id)
         {
@@ -44,12 +44,12 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Enderecos");
         }
 
-        // Editar Endereço
+        // Editar Endereco
         [HttpGet]
-        public ActionResult EditarEndereco(int id)
+        public ActionResult EditarEndereco(int Id)
         {
             var enderecosDAO = new EnderecosDAO();
-            Endereco endereco = enderecosDAO.BuscaPorId(id);
+            Endereco endereco = enderecosDAO.BuscaPorId(Id);
             return View(endereco);
         }
 
@@ -62,14 +62,12 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Enderecos");
         }
 
-        // Listar Endereços
-        public ActionResult ListarEnderecos()
+        public ActionResult ListarEndereco()
         {
             IList<Endereco> enderecos = enderecosDAO.ListarEnderecos();
             return View(enderecos);
         }
 
-        // Visualizar Detalhes
         public ActionResult VisualizarDetalhes(int id)
         {
             Endereco endereco = enderecosDAO.BuscaPorId(id);

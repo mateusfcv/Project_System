@@ -1,0 +1,86 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Professor>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de professores do sistema</h2>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>CPF</th>
+                    <th>Data de nascimento</th>
+                    <th>RP</th>
+                    <th>Titulação</th>
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Professores/AdicionarProfessor">Adicionar Professor</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var professor in ViewBag.Professor)
+                {
+                    using (Html.BeginForm("ListarProfessor", "Professor", new { id = professor.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @professor.Nome
+                            </td>
+
+                            <td>
+                                @professor.Email
+                            </td>
+
+                            <td>
+                                @professor.Cpf
+                            </td>
+
+                            <td>
+                                @professor.DataDeNascimento
+                            </td>
+
+                            <td>
+                                @professor.RegistroDoProfessor
+                            </td>
+
+                            <td>
+                                @professor.Titulacao
+                            </td>
+
+
+                            <td>
+                                <a href="/Professores/RemoverProfessor/@professor.Id">Remover Professor</a>
+                            </td>
+
+                            <td>
+                                <a href="/Professores/ListarProfessores/@professor.Id">Listar Professores</a>
+                            </td>
+
+                            <td>
+                                <a href="/Professores/EditarProfessor/@professor.Id">Editar Professor</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

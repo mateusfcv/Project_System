@@ -6,7 +6,7 @@
 
 }
 
-<h2>Lista de Enderecos do sistema</h2>
+<h2>Lista de endereços do sistema</h2>
 <div class="card-body">
 
     <div class="table-responsive">
@@ -16,13 +16,13 @@
 
                 <tr>
 
-                    <th>Cep</th>
-                    <th>Nome da Rua</th>
+                    <th>CEP</th>
+                    <th>Nome da rua</th>
                     <th>Numero</th>
                     <th>Complemento</th>
                     <th>Bairro</th>
-                    <th>Estados</th>
-                    <th>Cidades</th>
+                    <th>Estado</th>
+                    <th>Cidade</th>
 
                     <th></th>
                     <th></th>
@@ -36,49 +36,49 @@
 
             <tbody>
 
-                @foreach (var Enderecos in ViewBag.Enderecos)
+                @foreach (var enderecos in ViewBag.Enderecos)
                 {
-                    using (Html.BeginForm("ListarEnderecos", "Enderecos", new { id = Enderecos.Id }))
+                    using (Html.BeginForm("ListarEndereco", "Endereco", new { id = enderecos.Id }))
                     {
                         <tr>
                             <td>
-                                @Enderecos.Cep
+                                @enderecos.Cep
                             </td>
 
                             <td>
-                                @Enderecos.NomeRua
+                                @enderecos.NomeRua
                             </td>
 
                             <td>
-                                @Enderecos.Numero
+                                @enderecos.Numero
                             </td>
 
                             <td>
-                                @Enderecos.Complemento
+                                @enderecos.Complemento
                             </td>
 
                             <td>
-                                @Enderecos.Bairro
-                            </td>
-
-                            <td>Estados
-                                @Enderecos.Estados
+                                @enderecos.Bairro
                             </td>
 
                             <td>
-                                @Enderecos.Cidades
+                                @enderecos.Estados
                             </td>
 
                             <td>
-                                <a href="/Enderecos/RemoverEndereco/@Enderecos.Id">Remover Endereco</a>
+                                @enderecos.Cidades
                             </td>
 
                             <td>
-                                <a href="/Enderecos/ListarEnderecos/@Enderecos.Id">Listar Endereco</a>
+                                <a href="/Enderecos/RemoverEndereco/@enderecos.Id">Remover Endereco</a>
                             </td>
 
                             <td>
-                                <a href="/Enderecos/EditarEndereco/@Enderecos.Id">Editar Endereco</a>
+                                <a href="/Enderecos/ListarEndereco/@enderecos.Id">Listar Endereco</a>
+                            </td>
+
+                            <td>
+                                <a href="/Enderecos/EditarEndereco/@enderecos.Id">Editar Endereco</a>
                             </td>
 
                         </tr>

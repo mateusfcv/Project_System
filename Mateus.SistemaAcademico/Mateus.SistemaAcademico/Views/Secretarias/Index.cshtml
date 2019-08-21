@@ -1,0 +1,76 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Secretaria>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de Secretárias do sistema</h2>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>CPF</th>
+                    <th>Data de nascimento</th>
+                    
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Secretarias/AdicionarSecretaria">Adicionar Secretária</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var secretaria in ViewBag.Secretarias)
+                {
+                    using (Html.BeginForm("ListarSecretaria", "Secretaria", new { id = secretaria.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @secretaria.Nome
+                            </td>
+
+                            <td>
+                                @secretaria.Email
+                            </td>
+
+                            <td>
+                                @secretaria.Cpf
+                            </td>
+
+                            <td>
+                                @secretaria.DataDeNascimento
+                            </td>
+
+
+                            <td>
+                                <a href="/Secretarias/RemoverSecretaria/@secretaria.Id">Remover Secretária</a>
+                            </td>
+
+                            <td>
+                                <a href="/Secretarias/ListarSecretaria/@secretaria.Id">Listar Secretárias</a>
+                            </td>
+
+                            <td>
+                                <a href="/Secretarias/EditarSecretaria/@secretaria.Id">Editar Secretária</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

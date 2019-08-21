@@ -10,15 +10,22 @@ namespace Mateus.SistemaAcademico.DAO
 {
     public class SistemaContext : DbContext
     {
+        public DbSet<Administrador> Administradores { get; set; }
         public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<TipoDeAvaliacoes> TipoDeAvaliacoes { get; set; }
         public DbSet<Conteudo> Conteudos { get; set; }
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Disciplina> Disciplinas { get; set; }
-        public DbSet<Frequencia> Frequencias { get; set; }
-        public DbSet<Professor> Professor { get; set; }
-        public DbSet<Responsavel> Responsaveis { get; set; } 
-        public DbSet<Telefone> Telefones { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Frequencia> Frequencias { get; set; }
+        public DbSet<Notas> Notas { get; set; }
+        public DbSet<Professor> Professor { get; set; }
+        public DbSet<Responsavel> Responsavel { get; set; } 
+        public DbSet<Secretaria> Secretarias { get; set; }
+        public DbSet<Telefone> Telefones { get; set; }
+        public DbSet<Trabalho> Trabalhos { get; set; }
+        public DbSet<Turma> Turmas { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,7 +38,13 @@ namespace Mateus.SistemaAcademico.DAO
                 .Entity<ProfessorCurso>()
                 .HasKey(pc => new { pc.ProfessorId, pc.CurosId });
             base.OnModelCreating(modelBuilder);
-        } 
+
+            modelBuilder
+                .Entity<ProfessorDisciplina>()
+                .HasKey(pd => new { pd.ProfessorId, pd.DisciplinaId });
+            base.OnModelCreating(modelBuilder);
+
+        }
 
         public SistemaContext()
         {

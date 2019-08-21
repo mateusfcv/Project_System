@@ -25,11 +25,6 @@ namespace Mateus.SistemaAcademico
 
         public Endereco(string cep, string nomeRua, int numero, string complemento, string bairro, string estados, string cidades)
         {
-            //if (Bairro == null || Complemento == null)
-            //{
-            //    throw new CampoNullException();
-            //}
-            //else
             {
                 Cep = cep;
                 NomeRua = nomeRua;

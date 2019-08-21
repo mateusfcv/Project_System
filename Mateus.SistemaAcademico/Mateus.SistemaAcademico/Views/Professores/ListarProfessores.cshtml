@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Mateus.SistemaAcademico.Models.Professor>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listar Professores</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Adicionar Professor", "AdicionarProfessor")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataDeNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistroDoProfessor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulacao)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataDeNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegistroDoProfessor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulacao)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarProfessor", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id = item.Id }) |
+                    @Html.ActionLink("Remover", "RemoverProfessor", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</body>
+</html>
