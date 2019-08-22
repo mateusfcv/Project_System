@@ -16,7 +16,7 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public string Nome { get; set; }
         [Required]
-        public float CargaHoraria { get; set; }
+        public TimeSpan CargaHoraria { get; set; }
 
         public virtual IEnumerable<Notas> Notas { get; set; }
 
@@ -26,15 +26,15 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Disciplina(IList<CursoDisciplina> curso, IList<ProfessorDisciplina> professors, List<Conteudo> conteudo, 
-            string nome, float cargaHoraria, IEnumerable<Notas> notas)
+        public Disciplina(IList<CursoDisciplina> curso, IList<ProfessorDisciplina> professors, List<Conteudo> conteudo, string nome, 
+            TimeSpan cargaHoraria, IEnumerable<Notas> notas)
         {
             Curso = curso;
             Professors = professors;
             Conteudo = conteudo;
             Nome = nome;
             CargaHoraria = cargaHoraria;
-            Notas = notas; 
+            Notas = notas;
         }
     } 
 }

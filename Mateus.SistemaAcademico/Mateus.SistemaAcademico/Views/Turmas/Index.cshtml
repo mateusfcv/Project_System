@@ -1,0 +1,76 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Turma>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de turmas</h2>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Nome</th>
+                    <th>Aluno</th>
+                    <th>Disciplina</th>
+                    <th>Ano</th>
+
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Turmas/AdicionarTurma">Adicionar turma</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var turma in ViewBag.Turmas)
+                {
+                    using (Html.BeginForm("ListarTurma", "Turmas", new { id = turma.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @turma.Nome
+                            </td>
+
+                            <td>
+                                @turma.AlunoId
+                            </td>
+
+                            <td>
+                                @turma.DisciplinaId
+                            </td>
+
+                            <td>
+                                @turma.Ano
+                            </td>
+
+                            <td>
+                                <a href="/Turmas/RemoverTurma/@turma.Id">Remover turma</a>
+                            </td>
+
+                            <td>
+                                <a href="/Turmas/ListarTurma/@turma.Id">Listar turmas</a>
+                            </td>
+
+                            <td>
+                                <a href="/Turmas/EditarTurma/@turma.Id">Editar turma</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

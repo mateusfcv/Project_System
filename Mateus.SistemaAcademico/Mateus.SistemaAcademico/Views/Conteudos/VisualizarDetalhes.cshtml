@@ -1,0 +1,42 @@
+﻿@model Mateus.SistemaAcademico.Models.Conteudo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhes</title>
+</head>
+<body>
+    <div>
+        <h4>Detalhes de conteúdo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Descricao)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TipoConteudos)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TipoConteudos)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "EditarConteudo", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar", "ListarConteudo")
+    </p>
+</body>
+</html>

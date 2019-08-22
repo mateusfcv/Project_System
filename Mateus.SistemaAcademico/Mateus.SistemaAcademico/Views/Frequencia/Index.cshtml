@@ -1,0 +1,76 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Frequencia>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h4>FREQUENCIA</h4>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Data</th>
+                    <th>Disciplina</th>
+                    <th>Aluno</th>
+                    <th>Tipo de frequencia</th>
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Frequencia/AdicionarFrequencia">Adicionar Frequencia</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var frequencia in ViewBag.Frequencia)
+                {
+                    using (Html.BeginForm("ListarFrequencia", "Frequencia", new { id = frequencia.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @frequencia.Data
+                            </td>
+
+                            <td>
+                                @frequencia.DisciplinaId
+                            </td>
+
+                            <td>
+                                @frequencia.AlunoId
+                            </td>
+
+                            <td>
+                                @frequencia.TipoFrequencia
+                            </td>
+
+
+                            <td>
+                                <a href="/Frequencia/RemoverFrequencia/@frequencia.Id">Remover Frequencia</a>
+                            </td>
+
+                            <td>
+                                <a href="/Frequencia/ListarFrequencias/@frequencia.Id">Listar Frequencia</a>
+                            </td>
+
+                            <td>
+                                <a href="/Frequencia/EditarFrequencia/@frequencia.Id">Editar Frequencia</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

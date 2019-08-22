@@ -1,0 +1,55 @@
+﻿@model Mateus.SistemaAcademico.Models.Trabalho
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Remover</title>
+</head>
+<body>
+    <h3>Deseja remover está nota?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NotaDoTrabalho)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NotaDoTrabalho)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DataDeInicio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataDeInicio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DataDaEntrega)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataDaEntrega)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Remover" class="btn btn-default" /> |
+                @Html.ActionLink("Voltar", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

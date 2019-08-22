@@ -1,0 +1,66 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Conteudo>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de conteúdos do sistema</h2>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Descrição</th>
+                    <th>Tipo Conteúdos</th>
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Conteudos/AdicionarConteudo">Adicionar Conteúdo</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var conteudo in ViewBag.Conteudos)
+                {
+                    using (Html.BeginForm("ListarConteudo", "Conteudos", new { id = conteudo.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @conteudo.Descricao
+                            </td>
+
+                            <td>
+                                @conteudo.TipoConteudos
+                            </td>
+
+
+                            <td>
+                                <a href="/Conteudos/RemoverConteudo/@conteudo.Id">Remover Conteúdo</a>
+                            </td>
+
+                            <td>
+                                <a href="/Conteudos/ListarConteudo/@conteudo.Id">Listar Conteúdo</a>
+                            </td>
+
+                            <td>
+                                <a href="/Conteudos/EditarConteudo/@conteudo.Id">Editar Conteúdo</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

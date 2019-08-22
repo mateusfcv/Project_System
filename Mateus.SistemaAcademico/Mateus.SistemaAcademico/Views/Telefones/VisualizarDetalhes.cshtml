@@ -1,0 +1,42 @@
+﻿@model Mateus.SistemaAcademico.Models.Telefone
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhes</title>
+</head>
+<body>
+    <div>
+        <h4>Detalhes Telefone</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Numero)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Numero)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TipoTelefone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TipoTelefone)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "EditarTelefone", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar", "ListarTelefone")
+    </p>
+</body>
+</html>

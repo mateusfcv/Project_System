@@ -10,20 +10,24 @@ namespace Mateus.SistemaAcademico.Models
     public class Notas : EntityBase
     {
         [Required]
-        public int AlunosId { get; set; }
+        public int AlunoId { get; set; }
         public virtual Aluno Aluno { get; set; }
 
         [Required]
-        public int DisciplinasId { get; set; }
+        public int DisciplinaId { get; set; }
         public virtual Disciplina Disciplina { get; set; }
 
         [Required]
-        public int TurmasId { get; set; }
+        public int TurmaId { get; set; }
         public virtual Turma Turma { get; set; }
 
         [Required]
-        public float Avaliacao { get; set; }
-        public float Trabalho  { get; set; }
+        public int TrabalhoId { get; set; }
+        public virtual Trabalho Trabalho { get; set; }
+
+        
+        public int TipoDeAvaliacoesId { get; set; }
+        public TipoDeAvaliacoes TipoDeAvaliacoes  { get; set; }
 
 
         public Notas()
@@ -31,17 +35,19 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Notas(int alunosId, Aluno aluno, int disciplinasId, Disciplina disciplina, int turmasId, Turma turma, float avaliacao,
-            float trabalho)
+        public Notas(int alunoId, Aluno aluno, int disciplinaId, Disciplina disciplina, int turmaId, Turma turma, int trabalhoId, 
+            Trabalho trabalho, int tipoDeAvaliacoesId, TipoDeAvaliacoes tipoDeAvaliacoes)
         {
-            AlunosId = alunosId;
+            AlunoId = alunoId;
             Aluno = aluno;
-            DisciplinasId = disciplinasId;
+            DisciplinaId = disciplinaId;
             Disciplina = disciplina;
-            TurmasId = turmasId;
+            TurmaId = turmaId;
             Turma = turma;
-            Avaliacao = avaliacao;
+            TrabalhoId = trabalhoId;
             Trabalho = trabalho;
+            TipoDeAvaliacoesId = tipoDeAvaliacoesId;
+            TipoDeAvaliacoes = tipoDeAvaliacoes;
         }
     }
 }

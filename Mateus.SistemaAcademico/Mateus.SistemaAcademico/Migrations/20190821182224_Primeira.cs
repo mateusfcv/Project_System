@@ -13,26 +13,15 @@ namespace Mateus.SistemaAcademico.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    Cpf = table.Column<string>(nullable: false),
+                    DataDeNascimento = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Administradores", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Avaliacoes",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    TipoAvaliacao = table.Column<int>(nullable: false),
-                    NotaAvaliacao = table.Column<float>(nullable: false),
-                    DataAvaliacao = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Avaliacoes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -55,9 +44,9 @@ namespace Mateus.SistemaAcademico.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    Cpf = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    Cpf = table.Column<string>(nullable: false),
                     DataDeNascimento = table.Column<DateTime>(nullable: false),
                     RegistroDoProfessor = table.Column<int>(nullable: false),
                     Titulacao = table.Column<string>(nullable: false)
@@ -73,9 +62,9 @@ namespace Mateus.SistemaAcademico.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    Cpf = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    Cpf = table.Column<string>(nullable: false),
                     DataDeNascimento = table.Column<DateTime>(nullable: false),
                     EstadoCivil = table.Column<int>(nullable: false),
                     Escolaridade = table.Column<int>(nullable: false)
@@ -91,14 +80,30 @@ namespace Mateus.SistemaAcademico.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    Cpf = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    Cpf = table.Column<string>(nullable: false),
                     DataDeNascimento = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Secretarias", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TipoDeAvaliacoes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DataAvaliacao = table.Column<DateTime>(nullable: false),
+                    NotaAvaliacoes = table.Column<float>(nullable: true),
+                    NotaSubstitutivas = table.Column<float>(nullable: true),
+                    NotaExameFinal = table.Column<float>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TipoDeAvaliacoes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -205,12 +210,12 @@ namespace Mateus.SistemaAcademico.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    Cpf = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
+                    Cpf = table.Column<string>(nullable: false),
                     DataDeNascimento = table.Column<DateTime>(nullable: false),
                     RegistroDoAluno = table.Column<int>(nullable: false),
-                    ResponsavelId = table.Column<int>(nullable: false),
+                    ResponsavelId1 = table.Column<int>(nullable: true),
                     CursoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -223,11 +228,11 @@ namespace Mateus.SistemaAcademico.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_Alunos_Responsavel_ResponsavelId",
-                        column: x => x.ResponsavelId,
+                        name: "FK_Alunos_Responsavel_ResponsavelId1",
+                        column: x => x.ResponsavelId1,
                         principalTable: "Responsavel",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -259,18 +264,17 @@ namespace Mateus.SistemaAcademico.Migrations
                 columns: table => new
                 {
                     ProfessorId = table.Column<int>(nullable: false),
-                    CurosId = table.Column<int>(nullable: false),
-                    CursoId = table.Column<int>(nullable: true)
+                    CursoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProfessorCurso", x => new { x.ProfessorId, x.CurosId });
+                    table.PrimaryKey("PK_ProfessorCurso", x => new { x.ProfessorId, x.CursoId });
                     table.ForeignKey(
                         name: "FK_ProfessorCurso_Cursos_CursoId",
                         column: x => x.CursoId,
                         principalTable: "Cursos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_ProfessorCurso_Professor_ProfessorId",
                         column: x => x.ProfessorId,
@@ -292,6 +296,7 @@ namespace Mateus.SistemaAcademico.Migrations
                     Bairro = table.Column<string>(nullable: true),
                     Estados = table.Column<string>(nullable: true),
                     Cidades = table.Column<string>(nullable: true),
+                    AdministradorId = table.Column<int>(nullable: true),
                     AlunoId = table.Column<int>(nullable: true),
                     ProfessorId = table.Column<int>(nullable: true),
                     ResponsavelId = table.Column<int>(nullable: true),
@@ -300,6 +305,12 @@ namespace Mateus.SistemaAcademico.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Enderecos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Enderecos_Administradores_AdministradorId",
+                        column: x => x.AdministradorId,
+                        principalTable: "Administradores",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Enderecos_Alunos_AlunoId",
                         column: x => x.AlunoId,
@@ -362,6 +373,7 @@ namespace Mateus.SistemaAcademico.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Numero = table.Column<int>(nullable: false),
                     TipoTelefone = table.Column<int>(nullable: false),
+                    AdministradorId = table.Column<int>(nullable: true),
                     AlunoId = table.Column<int>(nullable: true),
                     ProfessorId = table.Column<int>(nullable: true),
                     ResponsavelId = table.Column<int>(nullable: true),
@@ -370,6 +382,12 @@ namespace Mateus.SistemaAcademico.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Telefones", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Telefones_Administradores_AdministradorId",
+                        column: x => x.AdministradorId,
+                        principalTable: "Administradores",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Telefones_Alunos_AlunoId",
                         column: x => x.AlunoId,
@@ -403,10 +421,8 @@ namespace Mateus.SistemaAcademico.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(nullable: false),
-                    AlunosId = table.Column<int>(nullable: false),
-                    AlunoId = table.Column<int>(nullable: true),
-                    DisciplinasId = table.Column<int>(nullable: false),
-                    DisciplinaId = table.Column<int>(nullable: true),
+                    AlunoId = table.Column<int>(nullable: false),
+                    DisciplinaId = table.Column<int>(nullable: false),
                     Ano = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -417,13 +433,13 @@ namespace Mateus.SistemaAcademico.Migrations
                         column: x => x.AlunoId,
                         principalTable: "Alunos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Turmas_Disciplinas_DisciplinaId",
                         column: x => x.DisciplinaId,
                         principalTable: "Disciplinas",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -432,14 +448,11 @@ namespace Mateus.SistemaAcademico.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    AlunosId = table.Column<int>(nullable: false),
-                    AlunoId = table.Column<int>(nullable: true),
-                    DisciplinasId = table.Column<int>(nullable: false),
-                    DisciplinaId = table.Column<int>(nullable: true),
-                    TurmasId = table.Column<int>(nullable: false),
-                    TurmaId = table.Column<int>(nullable: true),
-                    Avaliacao = table.Column<float>(nullable: false),
-                    Trabalho = table.Column<float>(nullable: false)
+                    AlunoId = table.Column<int>(nullable: false),
+                    DisciplinaId = table.Column<int>(nullable: false),
+                    TurmaId = table.Column<int>(nullable: false),
+                    TrabalhoId = table.Column<int>(nullable: false),
+                    TipoDeAvaliacoesId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -449,19 +462,31 @@ namespace Mateus.SistemaAcademico.Migrations
                         column: x => x.AlunoId,
                         principalTable: "Alunos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Notas_Disciplinas_DisciplinaId",
                         column: x => x.DisciplinaId,
                         principalTable: "Disciplinas",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_Notas_TipoDeAvaliacoes_TipoDeAvaliacoesId",
+                        column: x => x.TipoDeAvaliacoesId,
+                        principalTable: "TipoDeAvaliacoes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_Notas_Trabalhos_TrabalhoId",
+                        column: x => x.TrabalhoId,
+                        principalTable: "Trabalhos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Notas_Turmas_TurmaId",
                         column: x => x.TurmaId,
                         principalTable: "Turmas",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateIndex(
@@ -470,9 +495,9 @@ namespace Mateus.SistemaAcademico.Migrations
                 column: "CursoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Alunos_ResponsavelId",
+                name: "IX_Alunos_ResponsavelId1",
                 table: "Alunos",
-                column: "ResponsavelId");
+                column: "ResponsavelId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Conteudos_DisciplinaId",
@@ -488,6 +513,11 @@ namespace Mateus.SistemaAcademico.Migrations
                 name: "IX_Cursos_CoordenadorId",
                 table: "Cursos",
                 column: "CoordenadorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Enderecos_AdministradorId",
+                table: "Enderecos",
+                column: "AdministradorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Enderecos_AlunoId",
@@ -530,6 +560,16 @@ namespace Mateus.SistemaAcademico.Migrations
                 column: "DisciplinaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Notas_TipoDeAvaliacoesId",
+                table: "Notas",
+                column: "TipoDeAvaliacoesId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Notas_TrabalhoId",
+                table: "Notas",
+                column: "TrabalhoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Notas_TurmaId",
                 table: "Notas",
                 column: "TurmaId");
@@ -543,6 +583,11 @@ namespace Mateus.SistemaAcademico.Migrations
                 name: "IX_ProfessorDisciplina_DisciplinaId",
                 table: "ProfessorDisciplina",
                 column: "DisciplinaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Telefones_AdministradorId",
+                table: "Telefones",
+                column: "AdministradorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Telefones_AlunoId",
@@ -578,12 +623,6 @@ namespace Mateus.SistemaAcademico.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Administradores");
-
-            migrationBuilder.DropTable(
-                name: "Avaliacoes");
-
-            migrationBuilder.DropTable(
                 name: "Conteudos");
 
             migrationBuilder.DropTable(
@@ -608,13 +647,19 @@ namespace Mateus.SistemaAcademico.Migrations
                 name: "Telefones");
 
             migrationBuilder.DropTable(
-                name: "Trabalhos");
-
-            migrationBuilder.DropTable(
                 name: "Usuarios");
 
             migrationBuilder.DropTable(
+                name: "TipoDeAvaliacoes");
+
+            migrationBuilder.DropTable(
+                name: "Trabalhos");
+
+            migrationBuilder.DropTable(
                 name: "Turmas");
+
+            migrationBuilder.DropTable(
+                name: "Administradores");
 
             migrationBuilder.DropTable(
                 name: "Secretarias");

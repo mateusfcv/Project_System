@@ -11,10 +11,10 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public string Nome { get; set; }
         [Required]
-        public int AlunosId { get; set; }
+        public int AlunoId { get; set; }
         public virtual Aluno Aluno { get; set; }
         [Required]
-        public int DisciplinasId { get; set; }
+        public int DisciplinaId { get; set; }
         public virtual Disciplina Disciplina { get; set; }
         // Em qual ano do curso o aluno está
         [Required]
@@ -27,12 +27,12 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Turma(string nome, int alunosId, Aluno aluno, int disciplinasId, Disciplina disciplina, int ano, IEnumerable<Notas> notas)
+        public Turma(string nome, int alunoId, Aluno aluno, int disciplinaId, Disciplina disciplina, int ano, IEnumerable<Notas> notas)
         {
             Nome = nome;
-            AlunosId = alunosId;
+            AlunoId = alunoId;
             Aluno = aluno;
-            DisciplinasId = disciplinasId;
+            DisciplinaId = disciplinaId;
             Disciplina = disciplina;
             Ano = ano;
             Notas = notas;

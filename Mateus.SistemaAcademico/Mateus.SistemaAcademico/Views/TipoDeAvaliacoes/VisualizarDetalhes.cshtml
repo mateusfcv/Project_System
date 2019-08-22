@@ -1,0 +1,58 @@
+﻿@model Mateus.SistemaAcademico.Models.TipoDeAvaliacoes
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhes</title>
+</head>
+<body>
+    <div>
+        <h4>Detalhes TipoDeAvaliacoes</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DataAvaliacao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataAvaliacao)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NotaAvaliacoes)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NotaAvaliacoes)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NotaSubstitutivas)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NotaSubstitutivas)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NotaExameFinal)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NotaExameFinal)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "EditarTipoDeAvaliacoes", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar", "ListarTipoDeAvaliacoes")
+    </p>
+</body>
+</html>

@@ -38,7 +38,7 @@
 
                 @foreach (var enderecos in ViewBag.Enderecos)
                 {
-                    using (Html.BeginForm("ListarEndereco", "Endereco", new { id = enderecos.Id }))
+                    using (Html.BeginForm("ListarEndereco", "Enderecos", new { id = enderecos.Id }))
                     {
                         <tr>
                             <td>

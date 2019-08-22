@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Mateus.SistemaAcademico.Models.Telefone>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listar Telefones</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Adicionar", "AdicionarTelefone")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.TipoTelefone)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarTelefone", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id = item.Id }) |
+                    @Html.ActionLink("Remover", "RemoverTelefone", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</body>
+</html>

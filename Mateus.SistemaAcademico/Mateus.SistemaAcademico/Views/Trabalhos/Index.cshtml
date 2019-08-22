@@ -1,0 +1,72 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Trabalho>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de notas de trabalhos</h2>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Nota do Trabalho</th>
+                    <th>Data de início</th>
+                    <th>Data de entrega</th>
+
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Trabalhos/AdicionarTrabalho">Adicionar nota</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var trabalho in ViewBag.Trabalhos)
+                {
+                    using (Html.BeginForm("ListarTrabalho", "Trabalhos", new { id = trabalho.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @trabalho.NotaDoTrabalho
+                            </td>
+
+                            <td>
+                                @trabalho.DataDeInicio
+                            </td>
+
+                            <td>
+                                @trabalho.DataDaEntrega
+                            </td>
+                            
+
+                            <td>
+                                <a href="/Trabalhos/RemoverTrabalho/@trabalho.Id">Remover nota</a>
+                            </td>
+
+                            <td>
+                                <a href="/Trabalhos/ListarTrabalho/@trabalho.Id">Listar nota</a>
+                            </td>
+
+                            <td>
+                                <a href="/Trabalhos/EditarTrabalho/@trabalho.Id">Editar nota</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

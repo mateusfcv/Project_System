@@ -1,0 +1,77 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.TipoDeAvaliacoes>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de notas de avaliações</h2>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Data da avaliação</th>
+                    <th>Nota da avaliação</th>
+                    <th>Nota da substitutiva</th>
+                    <th>Nota do exame final</th>
+
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/TipoDeAvaliacoes/AdicionarTipoDeAvaliacoes">Adicionar nota de avaliações</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var tipoDeAvaliacoes in ViewBag.TipoDeAvaliacoes)
+                {
+                    using (Html.BeginForm("ListarTipoDeAvaliacoes", "TipoDeAvaliacoes", new { id = tipoDeAvaliacoes.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @tipoDeAvaliacoes.DataAvaliacao
+                            </td>
+
+                            <td>
+                                @tipoDeAvaliacoes.NotaAvaliacoes
+                            </td>
+
+                            <td>
+                                @tipoDeAvaliacoes.NotaSubstitutivas
+                            </td>
+
+                            <td>
+                                @tipoDeAvaliacoes.NotaExameFinal
+                            </td>
+
+
+                            <td>
+                                <a href="/TipoDeAvaliacoes/RemoverTipoDeAvaliacoes/@tipoDeAvaliacoes.Id">Remover nota</a>
+                            </td>
+
+                            <td>
+                                <a href="/TipoDeAvaliacoes/ListarTipoDeAvaliacoes/@tipoDeAvaliacoes.Id">Listar nota</a>
+                            </td>
+
+                            <td>
+                                <a href="/TipoDeAvaliacoes/EditarTipoDeAvaliacoes/@tipoDeAvaliacoes.Id">Editar nota</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

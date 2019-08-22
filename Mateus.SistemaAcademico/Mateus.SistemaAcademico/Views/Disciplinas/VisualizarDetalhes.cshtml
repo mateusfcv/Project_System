@@ -1,0 +1,42 @@
+﻿@model Mateus.SistemaAcademico.Models.Disciplina
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhes</title>
+</head>
+<body>
+    <div>
+        <h4>Detalhes da disciplina</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CargaHoraria)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CargaHoraria)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "EditarDisciplina", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar", "ListarDisciplina")
+    </p>
+</body>
+</html>

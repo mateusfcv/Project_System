@@ -36,7 +36,7 @@ namespace Mateus.SistemaAcademico.DAO
 
             modelBuilder
                 .Entity<ProfessorCurso>()
-                .HasKey(pc => new { pc.ProfessorId, pc.CurosId });
+                .HasKey(pc => new { pc.ProfessorId, pc.CursoId });
             base.OnModelCreating(modelBuilder);
 
             modelBuilder

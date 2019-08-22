@@ -1,0 +1,66 @@
+﻿@model Mateus.SistemaAcademico.Models.Notas
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhes</title>
+</head>
+<body>
+    <div>
+        <h4>Notas</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AlunoId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AlunoId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DisciplinaId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DisciplinaId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TurmaId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TurmaId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TrabalhoId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TrabalhoId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TipoDeAvaliacoesId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TipoDeAvaliacoesId)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "EditarNotas", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar", "ListarNotas")
+    </p>
+</body>
+</html>

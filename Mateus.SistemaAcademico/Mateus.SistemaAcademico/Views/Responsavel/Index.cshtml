@@ -1,0 +1,85 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Responsavel>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de Responsáveis do sistema</h2>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>CPF</th>
+                    <th>Data de nascimento</th>
+                    <th>Escolaridade</th>
+                    <th>Estado Civil</th>
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Responsavel/AdicionarResponsavel">Adicionar Responsável</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var responsaveis in ViewBag.Responsavel)
+                {
+                    using (Html.BeginForm("ListarResponsaveis", "Responsável", new { id = responsaveis.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @responsaveis.Nome
+                            </td>
+
+                            <td>
+                                @responsaveis.Email
+                            </td>
+
+                            <td>
+                                @responsaveis.Cpf
+                            </td>
+
+                            <td>
+                                @responsaveis.DataDeNascimento
+                            </td>
+
+                            <td>
+                                @responsaveis.Escolaridade
+                            </td>
+
+                            <td>
+                                @responsaveis.EstadoCivil
+                            </td>
+
+                            <td>
+                                <a href="/Responsavel/RemoverResponsavel/@responsaveis.Id">Remover Responsável</a>
+                            </td>
+
+                            <td>
+                                <a href="/Responsavel/ListarResponsavel/@responsaveis.Id">Listar Responsáveis</a>
+                            </td>
+
+                            <td>
+                                <a href="/Responsavel/EditarResponsavel/@responsaveis.Id">Editar Responsável</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

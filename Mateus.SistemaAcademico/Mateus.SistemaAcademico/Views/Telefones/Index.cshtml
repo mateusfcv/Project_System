@@ -1,0 +1,66 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Telefone>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de telefones do sistema</h2>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Numero</th>
+                    <th>Tipo de telefone</th>
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Telefones/AdicionarTelefone">Adicionar Telefone</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var telefone in ViewBag.Telefones)
+                {
+                    using (Html.BeginForm("ListarTelefone", "Telefones", new { id = telefone.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @telefone.Numero
+                            </td>
+
+                            <td>
+                                @telefone.TipoTelefone
+                            </td>
+
+
+                            <td>
+                                <a href="/Telefones/RemoverTelefone/@telefone.Id">Remover Telefone</a>
+                            </td>
+
+                            <td>
+                                <a href="/Telefones/ListarTelefone/@telefone.Id">Listar Telefones</a>
+                            </td>
+
+                            <td>
+                                <a href="/Telefones/EditarTelefone/@telefone.Id">Editar Telefone</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

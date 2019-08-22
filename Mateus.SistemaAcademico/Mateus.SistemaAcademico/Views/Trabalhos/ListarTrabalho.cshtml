@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Mateus.SistemaAcademico.Models.Trabalho>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listar notas de trabalho</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Adicionar nota", "AdicionarTrabalho")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaDoTrabalho)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataDeInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataDaEntrega)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NotaDoTrabalho)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataDeInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataDaEntrega)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarTrabalho", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id = item.Id }) |
+                    @Html.ActionLink("Remover", "RemoverTrabalho", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</body>
+</html>

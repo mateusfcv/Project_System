@@ -9,7 +9,7 @@ namespace Mateus.SistemaAcademico.Models.Joins
     {
         public int ProfessorId { get; set; }
         public Professor Professor { get; set; }
-        public int CurosId { get; set; }
+        public int CursoId { get; set; }
         public Curso Curso { get; set; }
-    }
+    } 
 }

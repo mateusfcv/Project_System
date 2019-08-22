@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Mateus.SistemaAcademico.Models.Notas>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listar Notas</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Lançar Nota", "AdicionarNotas")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlunoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisciplinaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TurmaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrabalhoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoDeAvaliacoesId)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AlunoId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DisciplinaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TurmaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrabalhoId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoDeAvaliacoesId)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarNotas", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id = item.Id }) |
+                    @Html.ActionLink("Remover", "RemoverNotas", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</body>
+</html>

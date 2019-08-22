@@ -1,0 +1,50 @@
+﻿@model Mateus.SistemaAcademico.Models.Trabalho
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhes</title>
+</head>
+<body>
+    <div>
+        <h4>Detalhes</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NotaDoTrabalho)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NotaDoTrabalho)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DataDeInicio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataDeInicio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DataDaEntrega)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DataDaEntrega)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "EditarTrabalho", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar", "ListarTrabalho")
+    </p>
+</body>
+</html>

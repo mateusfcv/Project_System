@@ -1,0 +1,80 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Notas>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h4>NOTAS</h4>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Aluno</th>
+                    <th>Disciplina</th>
+                    <th>Turma</th>
+                    <th>Trabalho</th>
+                    <th>Tipo de avaliação</th>
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Notas/AdicionarNotas">Lançar Nota</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var notas in ViewBag.Notas)
+                {
+                    using (Html.BeginForm("ListarNotas", "Notas", new { id = notas.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @notas.AlunoId
+                            </td>
+
+                            <td>
+                                @notas.DisciplinaId
+                            </td>
+
+                            <td>
+                                @notas.TurmaId
+                            </td>
+
+                            <td>
+                                @notas.TrabalhoId
+                            </td>
+
+                            <td>
+                                @notas.TipoDeAvaliacoesId
+                            </td>
+
+                            <td>
+                                <a href="/Notas/RemoverNotas/@notas.Id">Remover Notas</a>
+                            </td>
+
+                            <td>
+                                <a href="/Notas/ListarNotas/@notas.Id">Listar Notas</a>
+                            </td>
+
+                            <td>
+                                <a href="/Notas/EditarNotas/@notas.Id">Editar Notas</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

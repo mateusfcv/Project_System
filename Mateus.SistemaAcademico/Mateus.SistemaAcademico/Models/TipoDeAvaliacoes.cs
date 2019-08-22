@@ -10,15 +10,15 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class TipoDeAvaliacoes : EntityBase
     {
-        [NotMapped]
-        public float NotaAvaliacoes { get; set; }
-        [NotMapped]
-        public float NotaSubstitutivas { get; set; }
-        [NotMapped]
-        public float NotaExameFinal { get; set; }
+        
         [Required]
         [DataType(DataType.Date)]
         public DateTime DataAvaliacao { get; set; }
+        public float NotaAvaliacoes { get; set; }
+
+        public float NotaSubstitutivas { get; set; }
+
+        public float NotaExameFinal { get; set; }
 
         public TipoDeAvaliacoes()
         {

@@ -54,15 +54,10 @@
         </div>
 
         <div class="form-group">
-
             @Html.LabelFor(model => model.TipoCurso, "Tipo de Curso", htmlAttributes: new { @class = "control-label col-md-2" })
-
             <div class="col-md-10">
-
                 @Html.DropDownList("TipoCurso", new SelectList(Enum.GetValues(typeof(TipoCurso))), "Selecione o tipo de Curso", new { @class = "form-control" })
-
             </div>
-
         </div>
 
         <div class="form-group">
