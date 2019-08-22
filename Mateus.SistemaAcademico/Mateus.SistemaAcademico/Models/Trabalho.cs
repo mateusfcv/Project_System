@@ -6,6 +6,14 @@ namespace Mateus.SistemaAcademico.Models
     public class Trabalho : EntityBase
     {
         [Required]
+        public int AlunoId { get; set; }
+        public Aluno Aluno { get; set; }
+
+        [Required]
+        public int DisciplinaId { get; set; }
+        public Disciplina Disciplina { get; set; }
+
+        [Required]
         public float NotaDoTrabalho { get; set; }
         // data em que o professor lançou o trabalho
         [Required]
@@ -20,8 +28,13 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Trabalho(float notaDoTrabalho, DateTime dataDeInicio, DateTime dataDaEntrega)
+        public Trabalho(int alunoId, Aluno aluno, int disciplinaId, Disciplina disciplina, float notaDoTrabalho, DateTime dataDeInicio,
+            DateTime dataDaEntrega)
         {
+            AlunoId = alunoId;
+            Aluno = aluno;
+            DisciplinaId = disciplinaId;
+            Disciplina = disciplina;
             NotaDoTrabalho = notaDoTrabalho;
             DataDeInicio = dataDeInicio;
             DataDaEntrega = dataDaEntrega;

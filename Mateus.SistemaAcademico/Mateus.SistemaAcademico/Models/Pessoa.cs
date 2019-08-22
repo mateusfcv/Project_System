@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Mateus.SistemaAcademico.Bussines;
+using Mateus.SistemaAcademico.Models.Objects_Value;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -33,7 +35,6 @@ namespace Mateus.SistemaAcademico.Models
             Cpf = cpf;
             DataDeNascimento = dataDeNascimento;
             Telefones = telefones;
-            Enderecos = enderecos;
         }
     }
 }

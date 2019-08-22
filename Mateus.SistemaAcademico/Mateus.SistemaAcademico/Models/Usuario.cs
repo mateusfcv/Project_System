@@ -9,11 +9,8 @@ namespace Mateus.SistemaAcademico.Models
     public class Usuario : EntityBase
     {
         [Required]
-        public string Nome { get; set; }
+        public string Login { get; set; }
         [Required]
         public string Senha { get; set; }
-        // Qual o tipo de usuario (Professor, Aluno ou Secretaria)
-        [Required]
-        public int Tipo { get; set; }
     }
 }

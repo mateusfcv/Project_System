@@ -18,13 +18,11 @@ namespace Mateus.SistemaAcademico.DAO
         public DbSet<Disciplina> Disciplinas { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Frequencia> Frequencias { get; set; }
-        public DbSet<Notas> Notas { get; set; }
         public DbSet<Professor> Professor { get; set; }
         public DbSet<Responsavel> Responsavel { get; set; } 
         public DbSet<Secretaria> Secretarias { get; set; }
         public DbSet<Telefone> Telefones { get; set; }
         public DbSet<Trabalho> Trabalhos { get; set; }
-        public DbSet<Turma> Turmas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

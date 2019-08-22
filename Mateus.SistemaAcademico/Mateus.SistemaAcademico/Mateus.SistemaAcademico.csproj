@@ -640,13 +640,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bussines\Exceptions\CampoInvalidException.cs" />
-    <Compile Include="Bussines\Exceptions\CampoNullException.cs" />
+    <Compile Include="Bussines\Exceptions\NullException.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\TurmasController.cs" />
     <Compile Include="Controllers\TrabalhosController.cs" />
     <Compile Include="Controllers\TipoDeAvaliacoesController.cs" />
     <Compile Include="Controllers\TelefonesController.cs" />
-    <Compile Include="Controllers\NotasController.cs" />
     <Compile Include="Controllers\FrequenciaController.cs" />
     <Compile Include="Controllers\DisciplinasController.cs" />
     <Compile Include="Controllers\ConteudosController.cs" />
@@ -658,11 +656,9 @@
     <Compile Include="Controllers\CursosController .cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="DAO\TurmasDAO.cs" />
     <Compile Include="DAO\TrabalhosDAO.cs" />
     <Compile Include="DAO\TipoDeAvaliacoesDAO.cs" />
     <Compile Include="DAO\TelefonesDAO.cs" />
-    <Compile Include="DAO\NotasDAO.cs" />
     <Compile Include="DAO\FrequenciasDAO.cs" />
     <Compile Include="DAO\DisciplinasDAO.cs" />
     <Compile Include="DAO\ConteudosDAO.cs" />
@@ -677,20 +673,17 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ICurso.cs" />
-    <Compile Include="Migrations\20190821182224_Primeira.cs" />
-    <Compile Include="Migrations\20190821182224_Primeira.designer.cs">
-      <DependentUpon>20190821182224_Primeira.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20190822010128_Disciplina.cs" />
-    <Compile Include="Migrations\20190822010128_Disciplina.designer.cs">
-      <DependentUpon>20190822010128_Disciplina.cs</DependentUpon>
+    <Compile Include="Migrations\20190822205144_Primeira.cs" />
+    <Compile Include="Migrations\20190822205144_Primeira.designer.cs">
+      <DependentUpon>20190822205144_Primeira.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Aluno.cs" />
+    <Compile Include="Models\Enums\Area.cs" />
+    <Compile Include="Models\Enums\Periodo.cs" />
     <Compile Include="Models\Enums\TipoTelefone.cs" />
-    <Compile Include="Models\Notas.cs" />
     <Compile Include="Models\Conteudo.cs" />
     <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\Disciplina.cs" />
@@ -716,7 +709,6 @@
     <Compile Include="Models\Telefone.cs" />
     <Compile Include="Models\Enums\TipoCurso.cs" />
     <Compile Include="Models\Trabalho.cs" />
-    <Compile Include="Models\Turma.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -831,12 +823,6 @@
     <Content Include="Views\Frequencia\EditarFrequencia.cshtml" />
     <Content Include="Views\Frequencia\ListarFrequencias.cshtml" />
     <Content Include="Views\Frequencia\VisualizarDetalhes.cshtml" />
-    <Content Include="Views\Notas\AdicionarNotas.cshtml" />
-    <Content Include="Views\Notas\Index.cshtml" />
-    <Content Include="Views\Notas\RemoverNotas.cshtml" />
-    <Content Include="Views\Notas\EditarNotas.cshtml" />
-    <Content Include="Views\Notas\ListarNotas.cshtml" />
-    <Content Include="Views\Notas\VisualizarDetalhes.cshtml" />
     <Content Include="Views\Telefones\AdicionarTelefone.cshtml" />
     <Content Include="Views\Telefones\RemoverTelefone.cshtml" />
     <Content Include="Views\Telefones\EditarTelefone.cshtml" />
@@ -855,12 +841,6 @@
     <Content Include="Views\Trabalhos\ListarTrabalho.cshtml" />
     <Content Include="Views\Trabalhos\VisualizarDetalhes.cshtml" />
     <Content Include="Views\Trabalhos\Index.cshtml" />
-    <Content Include="Views\Turmas\AdicionarTurma.cshtml" />
-    <Content Include="Views\Turmas\RemoverTurma.cshtml" />
-    <Content Include="Views\Turmas\EditarTurma.cshtml" />
-    <Content Include="Views\Turmas\ListarTurma.cshtml" />
-    <Content Include="Views\Turmas\VisualizarDetalhes.cshtml" />
-    <Content Include="Views\Turmas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

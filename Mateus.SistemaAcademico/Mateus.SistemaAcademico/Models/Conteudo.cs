@@ -11,19 +11,27 @@ namespace Mateus.SistemaAcademico.Models
     public class Conteudo : EntityBase
     {
         [Required]
+        public string Nome { get; set; }
+        [Required]
         public string Descricao { get; set; }
         [Required]
         public TipoConteudo TipoConteudos { get; set; }
+        [Required]
+        public int DisciplinaId { get; set; }
+        public Disciplina Disciplina { get; set; }
 
         public Conteudo()
         {
              
         }
 
-        public Conteudo(string descricao, TipoConteudo tipoConteudos)
+        public Conteudo(string nome, string descricao, TipoConteudo tipoConteudos, int disciplinaId, Disciplina disciplina)
         {
+            Nome = nome;
             Descricao = descricao;
             TipoConteudos = tipoConteudos;
+            DisciplinaId = disciplinaId;
+            Disciplina = disciplina;
         }
     }
 }

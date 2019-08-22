@@ -40,25 +40,37 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public List<Aluno> Alunos { get; set; }
         [Required]
+        public int SecretariaId { get; set; }
+        public Secretaria Secretaria { get; set; }
+        [Required]
         public TipoCurso TipoCurso { get; set; }
+        [Required]
+        public Periodo Periodo { get; set; }
+        [Required]
+        public Area Area { get; set; }
 
         public Curso()
         {
 
         }
 
-        public Curso(IList<CursoDisciplina> disciplina, IList<ProfessorCurso> professor, string nome, DateTime dataDeInicio, DateTime dataDeFim,
-            int coordenadorId, Professor coordenador, List<Aluno> alunos, TipoCurso tipoCurso)
+        public Curso(IList<CursoDisciplina> disciplina, IList<ProfessorCurso> professor, string nome, DateTime dataDeInicio, 
+            DateTime dataDeFim, int coordenadorId, Professor coordenador, List<Aluno> alunos, int secretariaId, 
+            Secretaria secretaria, TipoCurso tipoCurso, Periodo periodo, Area area)
         {
-            Nome = nome;
             Disciplina = disciplina;
             Professor = professor;
+            Nome = nome;
             DataDeInicio = dataDeInicio;
             DataDeFim = dataDeFim;
             CoordenadorId = coordenadorId;
             Coordenador = coordenador;
             Alunos = alunos;
+            SecretariaId = secretariaId;
+            Secretaria = secretaria;
             TipoCurso = tipoCurso;
+            Periodo = periodo;
+            Area = area;
         }
     }
 }

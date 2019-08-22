@@ -10,7 +10,14 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class TipoDeAvaliacoes : EntityBase
     {
-        
+        [Required]
+        public int AlunoId { get; set; }
+        public Aluno Aluno { get; set; }
+
+        [Required]
+        public int DisciplinaId { get; set; }
+        public Disciplina Disciplina { get; set; }
+
         [Required]
         [DataType(DataType.Date)]
         public DateTime DataAvaliacao { get; set; }
@@ -25,12 +32,17 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public TipoDeAvaliacoes(float notaAvaliacoes, float notaSubstitutivas, float notaExameFinal, DateTime dataAvaliacao)
+        public TipoDeAvaliacoes(int alunoId, Aluno aluno, int disciplinaId, Disciplina disciplina, DateTime dataAvaliacao,
+            float notaAvaliacoes, float notaSubstitutivas, float notaExameFinal)
         {
+            AlunoId = alunoId;
+            Aluno = aluno;
+            DisciplinaId = disciplinaId;
+            Disciplina = disciplina;
+            DataAvaliacao = dataAvaliacao;
             NotaAvaliacoes = notaAvaliacoes;
             NotaSubstitutivas = notaSubstitutivas;
             NotaExameFinal = notaExameFinal;
-            DataAvaliacao = dataAvaliacao;
         }
     }
 }

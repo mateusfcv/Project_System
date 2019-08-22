@@ -7,16 +7,18 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Secretaria : Pessoa
     {
+       public List<Curso> Cursos { get; set; }
 
         public Secretaria()
         {
-
+            
         }
 
-        public Secretaria(string nome, string email, string cpf, DateTime dataDeNascimento, List<Telefone> telefones, List<Endereco> enderecos)
-            :base(nome, email, cpf, dataDeNascimento, telefones, enderecos)
+        public Secretaria(string nome, string email, string cpf, DateTime dataDeNascimento, List<Telefone> telefones,
+            List<Endereco> enderecos, List<Curso> cursos)
+            : base(nome, email, cpf, dataDeNascimento, telefones, enderecos)
         {
-
+            Cursos = cursos;
         }
     }
 }
