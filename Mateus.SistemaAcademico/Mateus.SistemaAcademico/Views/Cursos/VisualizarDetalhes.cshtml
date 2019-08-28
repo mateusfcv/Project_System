@@ -9,11 +9,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>VisualizarDetalhes</title>
+    <title>Detalhes</title>
 </head>
 <body>
     <div>
-        <h4>Detalhes do Curso</h4>
+        <h4>Detalhes do curso</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
@@ -57,6 +57,14 @@
             </dd>
 
             <dt>
+                @Html.DisplayNameFor(model => model.SecretariaId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SecretariaId)
+            </dd>
+
+            <dt>
                 @Html.DisplayNameFor(model => model.TipoCurso)
             </dt>
 
@@ -64,11 +72,26 @@
                 @Html.DisplayFor(model => model.TipoCurso)
             </dd>
 
+            <dt>
+                @Html.DisplayNameFor(model => model.Periodo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Periodo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Area)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Area)
+            </dd>
         </dl>
     </div>
     <p>
         @Html.ActionLink("Editar", "EditarCurso", new { id = Model.Id }) |
-        @Html.ActionLink("Voltar", "ListarCurso")
+        @Html.ActionLink("Voltar", "Index")
     </p>
 </body>
 </html>

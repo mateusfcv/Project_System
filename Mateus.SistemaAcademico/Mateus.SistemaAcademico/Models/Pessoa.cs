@@ -17,8 +17,12 @@ namespace Mateus.SistemaAcademico.Models
         public string Email { get; set; }
         [Required]
         public string Cpf { get; set; }
-        [DataType(DataType.Date)]
+
+        [Display(Name = "Data de Nascimento")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
+        [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         public DateTime DataDeNascimento { get; set; }
+
         public List<Telefone> Telefones { get; set; }
         public List<Endereco> Enderecos { get; set; }
         
@@ -28,13 +32,15 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        protected Pessoa(string nome, string email, string cpf, DateTime dataDeNascimento, List<Telefone> telefones, List<Endereco> enderecos)
+        protected Pessoa(string nome, string email, string cpf, DateTime dataDeNascimento, List<Telefone> telefones,
+            List<Endereco> enderecos)
         {
             Nome = nome;
             Email = email;
             Cpf = cpf;
             DataDeNascimento = dataDeNascimento;
             Telefones = telefones;
+            Enderecos = enderecos;
         }
     }
 }

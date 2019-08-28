@@ -12,59 +12,66 @@
     <title>Remover</title>
 </head>
 <body>
-    <h3>Tem certeza que deseja remover este professor?</h3>
+    <h3>Deseja remover este professor?</h3>
     <div>
-        <h4>Remover Professor</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Nome)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Email)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Email)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Cpf)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Cpf)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.DataDeNascimento)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.DataDeNascimento)
             </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.RegistroDoProfessor)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.RegistroDoProfessor)
-            </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Titulacao)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Titulacao)
             </dd>
-    
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NomeUsuario)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NomeUsuario)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Senha)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Senha)
+            </dd>
+
         </dl>
     
         @using (Html.BeginForm()) {

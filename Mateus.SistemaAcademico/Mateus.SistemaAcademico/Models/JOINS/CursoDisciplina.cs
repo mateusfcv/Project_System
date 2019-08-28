@@ -11,5 +11,16 @@ namespace Mateus.SistemaAcademico.Models.Joins
         public Curso Curso { get; set; }
         public int DisciplinaId { get; set; }
         public Disciplina Disciplina { get; set; }
+
+        public CursoDisciplina()
+        {
+
+        }
+
+        public CursoDisciplina(Curso curso, Disciplina disciplina)
+        {
+            Curso = curso;
+            Disciplina = disciplina;
+        }
     }
 }

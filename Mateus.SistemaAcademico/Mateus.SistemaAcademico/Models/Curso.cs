@@ -29,10 +29,14 @@ namespace Mateus.SistemaAcademico.Models
 
         }
         [Required]
-        [DataType(DataType.Date)]
+        [Display(Name = "Data de Inicío")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
+        [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         public DateTime DataDeInicio { get; set; }
         [Required]
-        [DataType(DataType.Date)]
+        [Display(Name = "Data de fim")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
+        [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         public DateTime DataDeFim { get; set; }
         [Required]
         public int CoordenadorId { get; set; }

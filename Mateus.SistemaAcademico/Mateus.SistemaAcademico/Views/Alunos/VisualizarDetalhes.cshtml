@@ -13,70 +13,62 @@
 </head>
 <body>
     <div>
-        <h4>Visualizar informações do aluno</h4>
+        <h4>Aluno</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Nome)
             </dd>
-    
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NomeUsuario)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NomeUsuario)
+            </dd>
+
             <dt>
                 @Html.DisplayNameFor(model => model.Email)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Email)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Cpf)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Cpf)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.DataDeNascimento)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.DataDeNascimento)
             </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.RegistroDoAluno)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.RegistroDoAluno)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.ResponsavelId)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.ResponsavelId)
-            </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.CursoId)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.CursoId)
             </dd>
-    
+
         </dl>
     </div>
     <p>
         @Html.ActionLink("Editar", "EditarAluno", new { id = Model.Id }) |
-        @Html.ActionLink("Voltar", "ListarAluno")
+        @Html.ActionLink("Voltar", "Index") 
     </p>
 </body>
 </html>

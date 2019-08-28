@@ -6,27 +6,26 @@
 
 }
 
-<h2>Lista de notas de trabalhos</h2>
+<h2>Lista de Trabalhos</h2>
 <div class="card-body">
-
+    <p>
+        <a href="/Trabalhos/AdicionarTrabalho">Adicionar nota</a>
+    </p>
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
             <thead>
 
                 <tr>
-
+                    <th>Aluno</th>
                     <th>Nota do Trabalho</th>
+                    <th>Disciplina</th>
                     <th>Data de início</th>
                     <th>Data de entrega</th>
 
-
                     <th></th>
                     <th></th>
-
-                    <td>
-                        <a href="/Trabalhos/AdicionarTrabalho">Adicionar nota</a>
-                    </td>
+                    <th></th>
                 </tr>
 
             </thead>
@@ -37,36 +36,48 @@
                 {
                     using (Html.BeginForm("ListarTrabalho", "Trabalhos", new { id = trabalho.Id }))
                     {
-                        <tr>
-                            <td>
-                                @trabalho.NotaDoTrabalho
-                            </td>
+                <tr>
+                    <td>
+                        @trabalho.AlunoId
+                    </td>
 
-                            <td>
-                                @trabalho.DataDeInicio
-                            </td>
+                    <td>
+                        @trabalho.Nota
+                    </td>
 
-                            <td>
-                                @trabalho.DataDaEntrega
-                            </td>
-                            
+                    <td>
+                        @trabalho.DisciplinaId
+                    </td>
 
-                            <td>
-                                <a href="/Trabalhos/RemoverTrabalho/@trabalho.Id">Remover nota</a>
-                            </td>
 
-                            <td>
-                                <a href="/Trabalhos/ListarTrabalho/@trabalho.Id">Listar nota</a>
-                            </td>
+                    <td>
+                        @trabalho.DataDeInicio
+                    </td>
 
-                            <td>
-                                <a href="/Trabalhos/EditarTrabalho/@trabalho.Id">Editar nota</a>
-                            </td>
+                    <td>
+                        @trabalho.DataDaEntrega
+                    </td>
 
-                        </tr>
+
+                    <td>
+                        <a href="/Trabalhos/RemoverTrabalho/@trabalho.Id">Remover</a>
+                    </td>
+
+                    <td>
+                        <a href="/Trabalhos/VisualizarDetalhes/@trabalho.Id">Detalhes</a>
+                    </td>
+
+                    <td>
+                        <a href="/Trabalhos/EditarTrabalho/@trabalho.Id">Editar</a>
+                    </td>
+
+                </tr>
                     }
                 }
             </tbody>
         </table>
+        <p>
+            @Html.ActionLink("Voltar", "Index", "Home")
+        </p>
     </div>
 </div>

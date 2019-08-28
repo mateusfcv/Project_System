@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace Mateus.SistemaAcademico.Models
+{
+    public class Nota : EntityBase
+    {
+        public int DisciplinaId { get; set; }
+        public virtual Disciplina Disciplina { get; set; }
+
+        public Avaliacao Avaliacao { get; set; }
+
+        public Substitutivas Substitutivas { get; set; }
+
+        public Trabalho Trabalho { get; set; }
+
+        public int AlunoId { get; set; }
+        public virtual Aluno Aluno { get; set; }
+
+        public Nota()
+        {
+
+        }
+
+        public Nota(int disciplinaId, Disciplina disciplina, Avaliacao avaliacao, Substitutivas substitutivas, Trabalho trabalho, 
+            int alunoId, Aluno aluno)
+        {
+            DisciplinaId = disciplinaId;
+            Disciplina = disciplina;
+            Avaliacao = avaliacao;
+            Substitutivas = substitutivas;
+            Trabalho = trabalho;
+            AlunoId = alunoId;
+            Aluno = aluno;
+        }
+    }
+}

@@ -9,11 +9,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>ListarCurso</title>
+    <title>Listar</title>
 </head>
 <body>
     <p>
-        @Html.ActionLink("Adiconar Curso", "AdicionarCurso")
+        @Html.ActionLink("Cadastrar curso", "AdicionarCurso")
     </p>
     <table class="table">
         <tr>
@@ -32,43 +32,40 @@
             <th>
                 @Html.DisplayNameFor(model => model.CoordenadorId)
             </th>
-
             <th>
-                @Html.DisplayNameFor(model => model.TipoCurso)
+                @Html.DisplayNameFor(model => model.SecretariaId)
             </th>
             <th></th>
         </tr>
-
-        @foreach (var item in Model)
-        {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Duracao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataDeInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataDeFim)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CoordenadorId)
-        </td>
-
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoCurso)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "EditarCurso", new { id = item.Id }) |
-            @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id = item.Id }) |
-            @Html.ActionLink("Excluir", "RemoverCurso", new { id = item.Id })
-        </td>
-    </tr>
-        }
-
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duracao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDeInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDeFim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoordenadorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecretariaId)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditarCurso", new { id=item.Id }) |
+                @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id=item.Id }) |
+                @Html.ActionLink("Remover", "RemoverCurso", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
     </table>
     <p>
         @Html.ActionLink("Voltar", "Index")

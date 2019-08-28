@@ -6,8 +6,11 @@
 
 }
 
-<h2>Lista de alunos do sistema</h2>
+<h2>Lista de Alunos</h2>
 <div class="card-body">
+    <p>
+        <a href="/Alunos/AdicionarAluno">Matricular Aluno</a>
+    </p>
 
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -17,19 +20,12 @@
                 <tr>
 
                     <th>Nome</th>
-                    <th>Email</th>
-                    <th>Cpf</th>
-                    <th>Data de nascimento</th>
-                    <th>RA</th>
-                    <th>Nome do responsavel</th>
                     <th>Curso Matriculado</th>
 
                     <th></th>
                     <th></th>
+                    <th></th>
 
-                    <td>
-                        <a href="/Alunos/AdicionarAluno">Matricular Aluno</a>
-                    </td>
                 </tr>
 
             </thead>
@@ -46,35 +42,16 @@
                             </td>
 
                             <td>
-                                @aluno.Email
-                            </td>
-
-                            <td>
-                                @aluno.Cpf
-                            </td>
-
-                            <td>
-                                @aluno.DataDeNascimento
-                            </td>
-
-                            <td>
-                                @aluno.RegistroDoAluno
-                            </td>
-
-                            <td>
-                                @aluno.ResponsavelId
-                            </td>
-
-                            <td>
                                 @aluno.CursoId
                             </td>
+
 
                             <td>
                                 <a href="/Alunos/RemoverAluno/@aluno.Id">Remover Aluno</a>
                             </td>
 
                             <td>
-                                <a href="/Alunos/ListarAluno/@aluno.Id">Listar Alunos</a>
+                                <a href="/Alunos/VisualizarDetalhes/@aluno.Id">Detalhes</a>
                             </td>
 
                             <td>
@@ -86,5 +63,8 @@
                 }
             </tbody>
         </table>
+        <p>
+            @Html.ActionLink("Voltar", "Index", "Home")
+        </p>
     </div>
 </div>

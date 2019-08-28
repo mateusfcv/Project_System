@@ -9,6 +9,10 @@
 <h2>Lista de cursos do sistema</h2>
 <div class="card-body">
 
+    <p>
+        <a href="/Cursos/AdicionarCurso">Cadastrar Curso</a>
+    </p>
+
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
@@ -18,15 +22,13 @@
 
                     <th>Nome</th>
                     <th>Duração do Curso</th>
-                    <th>Coordenador</th>
                     <th>Tipo de Curso</th>
+                    <th>Área</th>
 
                     <th></th>
                     <th></th>
+                    <th></th>
 
-                    <td>
-                        <a href="/Cursos/AdicionarCurso">Adicionar Curso</a>
-                    </td>
                 </tr>
 
             </thead>
@@ -47,11 +49,10 @@
                             </td>
 
                             <td>
-                                @cursos.Coordenador
-                            </td>
-
-                            <td>
                                 @cursos.TipoCurso
+               
+                            <td>
+                                @cursos.Area
                             </td>
 
                             <td>
@@ -59,7 +60,7 @@
                             </td>
 
                             <td>
-                                <a href="/Cursos/ListarCurso/@cursos.Id">Listar Curso</a>
+                                <a href="/Cursos/VisualizarDetalhes/@cursos.Id">Detalhes</a>
                             </td>
 
                             <td>
@@ -71,5 +72,8 @@
                 }
             </tbody>
         </table>
-        </div>
+        <p>
+            @Html.ActionLink("Voltar", "Index", "Home")
+        </p>
     </div>
+</div>

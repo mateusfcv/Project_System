@@ -23,7 +23,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         [HttpGet]
-        public ActionResult AdicionarResponsavel()
+        public ActionResult AdicionarResponsavel(int? alunoId)
         {
                 var responsavel = new Responsavel();
                 return View(responsavel);

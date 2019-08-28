@@ -12,8 +12,12 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public TipoFrequencia TipoFrequencia { get; set; }
         [Required]
-        [DataType(DataType.Date)]
+
+        [Display(Name = "Data")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
+        [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         public DateTime Data { get; set; }
+
         [Required]
         public virtual Disciplina Disciplina { get; set; }
         public int DisciplinaId { get; set; }

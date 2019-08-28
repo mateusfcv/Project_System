@@ -10,11 +10,15 @@ namespace Mateus.SistemaAcademico.Models
     public class Disciplina : EntityBase
     {
         public IList<CursoDisciplina> Curso { get; set; }
-        public IList<ProfessorDisciplina> Professors { get; set; }
 
         public virtual List<Conteudo> Conteudo { get; set; }
-        public virtual List<Aluno> Alunos { get; set;
-        }
+        public virtual List<Aluno> Alunos { get; set; }
+        public virtual IEnumerable<Nota> Notas { get; set; }
+        
+        [Required]
+        public int ProfessorId { get; set; }
+        public virtual Professor Professor { get; set; }
+
         [Required]
         public string Nome { get; set; }
         [Required]
@@ -25,13 +29,15 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Disciplina(IList<CursoDisciplina> curso, IList<ProfessorDisciplina> professors, List<Conteudo> conteudo, 
-            List<Aluno> alunos, string nome, TimeSpan cargaHoraria)
+        public Disciplina(IList<CursoDisciplina> curso, List<Conteudo> conteudo, List<Aluno> alunos, IEnumerable<Nota> notas,
+            int professorId, Professor professor, string nome, TimeSpan cargaHoraria)
         {
             Curso = curso;
-            Professors = professors;
             Conteudo = conteudo;
             Alunos = alunos;
+            Notas = notas;
+            ProfessorId = professorId;
+            Professor = professor;
             Nome = nome;
             CargaHoraria = cargaHoraria;
         }

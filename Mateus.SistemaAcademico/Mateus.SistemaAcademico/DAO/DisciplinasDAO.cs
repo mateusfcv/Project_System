@@ -31,7 +31,7 @@ namespace Mateus.SistemaAcademico.DAO
             contexto.SaveChanges();
         }
 
-        public IList<Disciplina> ListarDisciplinas()
+        public List<Disciplina> ListarDisciplinas()
         {
             return contexto.Disciplinas.ToList();
         }

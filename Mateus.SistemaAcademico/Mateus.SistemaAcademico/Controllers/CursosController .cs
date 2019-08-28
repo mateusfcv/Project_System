@@ -26,9 +26,17 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpGet]
         public ActionResult AdicionarCurso()
         {
-                var curso = new Curso();
-                curso.Coordenador = new Professor();
-                return View(curso);
+            var coordenador = new ProfessoresDAO();
+            var listas = coordenador.ListarProfessores();
+            ViewBag.ListaCoordenador = listas;
+
+            var secretaria = new SecretariasDAO();
+            var lista = secretaria.ListarSecretarias();
+            ViewBag.ListaSecretaria = lista;
+
+            var curso = new Curso();
+            curso.Coordenador = new Professor();
+            return View(curso); 
         }
 
         // Remover Curso
@@ -57,7 +65,7 @@ namespace Mateus.SistemaAcademico.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarCurso([Bind(Include = "Id, Nome, DataDeInicio, DataDeFim, CoordenadorId, TipoCurso")]Curso curso)
+        public ActionResult EditarCurso([Bind(Include = "Id, Nome, DataDeInicio, DataDeFim, CoordenadorId, SecretariaId, TipoCurso, Periodo, Area")]Curso curso)
         {
             cursosDAO = new CursosDAO();
             cursosDAO.Editar(curso);

@@ -10,7 +10,7 @@ namespace Mateus.SistemaAcademico.Models.Objects_Value
     {
         public string Valor;
 
-        public bool IsCpf(string cpf)
+        public static bool IsCpf(string cpf)
 
         {
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };

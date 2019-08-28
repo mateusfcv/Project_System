@@ -12,7 +12,6 @@ namespace Mateus.SistemaAcademico.DAO
     {
         public DbSet<Administrador> Administradores { get; set; }
         public DbSet<Aluno> Alunos { get; set; }
-        public DbSet<TipoDeAvaliacoes> TipoDeAvaliacoes { get; set; }
         public DbSet<Conteudo> Conteudos { get; set; }
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Disciplina> Disciplinas { get; set; }
@@ -23,7 +22,10 @@ namespace Mateus.SistemaAcademico.DAO
         public DbSet<Secretaria> Secretarias { get; set; }
         public DbSet<Telefone> Telefones { get; set; }
         public DbSet<Trabalho> Trabalhos { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Nota> Notas { get; set; }
+        public DbSet<Avaliacao> Avaliacoes { get; set; }
+        public DbSet<Substitutivas> Substitutivas { get; set; }
+        public DbSet<ExameFinal> ExamesFinais { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,11 +37,6 @@ namespace Mateus.SistemaAcademico.DAO
             modelBuilder
                 .Entity<ProfessorCurso>()
                 .HasKey(pc => new { pc.ProfessorId, pc.CursoId });
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder
-                .Entity<ProfessorDisciplina>()
-                .HasKey(pd => new { pd.ProfessorId, pd.DisciplinaId });
             base.OnModelCreating(modelBuilder);
 
         }

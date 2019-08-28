@@ -10,10 +10,14 @@ namespace Mateus.SistemaAcademico.Models
     public class Professor : Pessoa
     {
         public IList<ProfessorCurso> Curso { get; set; }
-        public IList<ProfessorDisciplina> Disciplinas { get; set; }
 
         [Required]
+        public List<Disciplina> Disciplinas { get; set; } = new List<Disciplina>();
+        [Required] 
         public string Titulacao { get; set; }
+
+        public string NomeUsuario { get; set; }
+        public string Senha { get; set; }
 
         public Professor ()
         {
@@ -21,12 +25,14 @@ namespace Mateus.SistemaAcademico.Models
         }
 
         public Professor(string nome, string email, string cpf, DateTime dataDeNascimento, List<Telefone> telefones, List<Endereco> enderecos,
-            IList<ProfessorCurso> curso, IList<ProfessorDisciplina> disciplinas, string titulacao)
+            IList<ProfessorCurso> curso, List<Disciplina> disciplinas, string titulacao, string nomeUsuario, string senha)
             :base(nome, email, cpf, dataDeNascimento, telefones, enderecos)
         {
             Curso = curso;
             Disciplinas = disciplinas;
             Titulacao = titulacao;
+            NomeUsuario = nomeUsuario;
+            Senha = senha;
         }
     }
 }

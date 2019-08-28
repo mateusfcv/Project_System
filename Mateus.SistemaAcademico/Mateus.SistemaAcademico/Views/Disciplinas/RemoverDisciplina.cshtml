@@ -12,10 +12,18 @@
     <title>Remover</title>
 </head>
 <body>
-    <h3>Deseja remover esta disciplina?</h3>
+    <h3>Deseja remover está disciplina?</h3>
     <div>
         <hr />
         <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ProfessorId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProfessorId)
+            </dd>
+    
             <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>

@@ -13,46 +13,127 @@
 </head>
 <body>
     <div>
-        <h4>Detalhes da Secretária</h4>
+        <h4>Detalhes da secretária</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Nome)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Email)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Email)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Cpf)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Cpf)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.DataDeNascimento)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.DataDeNascimento)
             </dd>
-    
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NomeUsuario)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NomeUsuario)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Senha)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Senha)
+            </dd>
+
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Editar", "EditarSecretaria", new { id = Model.Id }) |
-        @Html.ActionLink("Voltar", "ListarSecretaria")
+        @Html.ActionLink("Editar", "EditarSecretaria", new { id = Model.Id })
+        @Html.ActionLink("Voltar", "Index")
     </p>
 </body>
 </html>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+        <thead>
+            
+            <tr>
+
+                <th>Nome</th>
+                <th>Duração do Curso</th>
+                <th>Coordenador</th>
+                <th>Tipo de Curso</th>
+                <th>Período</th>
+                <th>Área</th>
+
+                <th></th>
+                <th></th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            @if (Model.Cursos.Count != 0)
+            {
+                foreach (var cursos in Model.Cursos)
+                {
+                    using (Html.BeginForm("ListarCurso", "Curso", new { id = cursos.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @cursos.Nome
+                            </td>
+
+                            <td>
+                                @cursos.Duracao
+                            </td>
+
+                            <td>
+                                @cursos.Coordenador
+                            </td>
+
+                            <td>
+                                @cursos.TipoCurso
+                            </td>
+
+                            <td>
+                                @cursos.Periodo
+                            </td>
+
+                            <td>
+                                @cursos.Area
+                            </td>
+
+
+                        </tr>
+                    }
+                }
+            }
+
+
+        </tbody>
+    </table>
+</div>

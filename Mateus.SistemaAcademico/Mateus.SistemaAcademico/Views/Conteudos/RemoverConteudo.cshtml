@@ -17,21 +17,29 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+    
+            <dt>
                 @Html.DisplayNameFor(model => model.Descricao)
             </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.Descricao)
             </dd>
-
+    
             <dt>
-                @Html.DisplayNameFor(model => model.TipoConteudos)
+                @Html.DisplayNameFor(model => model.DisciplinaId)
             </dt>
-
+    
             <dd>
-                @Html.DisplayFor(model => model.TipoConteudos)
+                @Html.DisplayFor(model => model.DisciplinaId)
             </dd>
-
+    
         </dl>
     
         @using (Html.BeginForm()) {

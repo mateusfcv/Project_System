@@ -55,7 +55,7 @@ namespace Mateus.SistemaAcademico.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarTrabalho([Bind(Include = "Id, NotaDoTrabalho, DataDeInicio, DataDaEntrega")]Trabalho trabalho)
+        public ActionResult EditarTrabalho([Bind(Include = "Id, AlunoId, Nota, DisciplinaId, , DataDeInicio, DataDaEntrega")]Trabalho trabalho)
         {
             trabalhosDAO = new TrabalhosDAO();
             trabalhosDAO.Editar(trabalho);

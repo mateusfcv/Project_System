@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Listar Telefones</title>
+    <title>Listar</title>
 </head>
 <body>
     <p>
@@ -33,6 +33,10 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoTelefone)
                 </td>
                 <td>
                     @Html.ActionLink("Editar", "EditarTelefone", new { id = item.Id }) |

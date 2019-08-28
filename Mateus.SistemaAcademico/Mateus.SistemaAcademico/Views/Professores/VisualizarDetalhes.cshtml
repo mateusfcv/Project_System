@@ -13,62 +13,101 @@
 </head>
 <body>
     <div>
-        <h4>Detalhes do Professor</h4>
+        <h4>Professor</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Nome)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Email)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Email)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Cpf)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Cpf)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.DataDeNascimento)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.DataDeNascimento)
             </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.RegistroDoProfessor)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.RegistroDoProfessor)
-            </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Titulacao)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Titulacao)
             </dd>
-    
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NomeUsuario)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NomeUsuario)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Senha)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Senha)
+            </dd>
+
         </dl>
     </div>
     <p>
         @Html.ActionLink("Editar", "EditarProfessor", new { id = Model.Id }) |
-        @Html.ActionLink("Voltar", "ListarProfessores")
+        @Html.ActionLink("Remover", "RemoverProfessor", new { id = Model.Id })
+        @Html.ActionLink("Voltar", "Index")
     </p>
-</body>
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <tbody>
+                @if (Model.Disciplinas.Count != 0)
+                {
+
+                <th>Nome</th>
+                <th>Carga horária</th>
+
+                foreach (var disciplinas in Model.Disciplinas)
+                {
+                    using (Html.BeginForm("ListarDisciplina", "Disciplina", new { id = disciplinas.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @disciplinas.Nome
+                            </td>
+
+                            <td>
+                                @disciplinas.CargaHoraria
+                            </td>
+                        </tr>
+                    }
+                }
+
+            }
+                </tbody>
+            </table>
+        </div>
+    </body>
 </html>

@@ -10,6 +10,7 @@ namespace Mateus.SistemaAcademico.Models.Enums
         Video,
         Pdf,
         Texto,
-        Link
+        Link,
+        Arquivo
     }
 }

@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico.DAO
 {
-    public class CursosDAO : ICurso
+    public class CursosDAO 
     {
         public SistemaContext contexto = new SistemaContext();
 
@@ -31,7 +31,7 @@ namespace Mateus.SistemaAcademico.DAO
             contexto.SaveChanges();
         }
 
-        public IList<Curso> ListarCursos()
+        public List<Curso> ListarCursos()
         {
             return contexto.Cursos.Include(c => c.TipoCurso).ToList();
         }

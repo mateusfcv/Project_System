@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Mateus.SistemaAcademico.Models.Substitutivas>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Listar</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Adicionar", "AdicionarSubstitutivas")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlunoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisciplinaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlunoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisciplinaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditarSubstitutivas", new { id=item.Id }) |
+                @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id=item.Id }) |
+                @Html.ActionLink("Remover", "RemoverSubstitutivas", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+    <p>
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</body>
+</html>

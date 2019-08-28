@@ -25,8 +25,11 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpGet]
         public ActionResult AdicionarConteudo()
         {
-                var conteudo = new Conteudo();
-                return View(conteudo);
+            var disciplina = new DisciplinasDAO();
+            var lista = disciplina.ListarDisciplinas();
+            ViewBag.ListaDisciplina = lista;
+            var conteudo = new Conteudo();
+            return View(conteudo);
         }
 
         // Remover Conteudo
@@ -55,7 +58,7 @@ namespace Mateus.SistemaAcademico.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarConteudo([Bind(Include = "Id, Descricao, TipoConteudos")]Conteudo conteudo)
+        public ActionResult EditarConteudo([Bind(Include = "Id, Nome, Descricao, TipoConteudos, DisciplinaId")]Conteudo conteudo)
         {
             conteudosDAO = new ConteudosDAO();
             conteudosDAO.Editar(conteudo);

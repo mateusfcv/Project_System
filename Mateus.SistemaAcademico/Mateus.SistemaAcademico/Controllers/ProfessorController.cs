@@ -31,9 +31,9 @@ namespace Mateus.SistemaAcademico.Controllers
 
         // Remover Professor
         [HttpGet]
-        public ActionResult RemoverProfessor(int Id)
+        public ActionResult RemoverProfessor(int id)
         {
-            Professor professor = professorDAO.BuscaPorId(Id);
+            Professor professor = professorDAO.BuscaPorId(id);
             return View(professor);
         }
 
@@ -55,7 +55,7 @@ namespace Mateus.SistemaAcademico.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarProfessor([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, RegistroDoProfessor, Titulacao")]Professor professor)
+        public ActionResult EditarProfessor([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, RegistroDoProfessor, Titulacao, NomeUsuario, Senha")]Professor professor)
         {
             professorDAO = new ProfessoresDAO();
             professorDAO.Editar(professor);
@@ -71,14 +71,22 @@ namespace Mateus.SistemaAcademico.Controllers
         public ActionResult VisualizarDetalhes(int id)
         {
             Professor professor = professorDAO.BuscaPorId(id);
+            var disciplinaDAO = new DisciplinasDAO();
+            List<Disciplina> disciplinaProfessor = disciplinaDAO.ListarDisciplinas()
+                                                                .Where(x => x.ProfessorId == id)
+                                                                .ToList();
+            professor.Disciplinas = disciplinaProfessor;
             return View(professor);
         }
 
         public ActionResult Index()
         {
             var professorDAO = new ProfessoresDAO();
+            // trocar o var para o ususario de professor
+            var User = (Professor)Session["ProfessorLogado"];
             var professor = professorDAO.ListarProfessores();
             ViewBag.Professor = professor;
+
             return View();
         }
     }

@@ -6,9 +6,11 @@
 
 }
 
-<h2>Lista de Responsáveis do sistema</h2>
+<h2>Lista de Responsáveis</h2>
 <div class="card-body">
-
+    <p>
+        <a href="/Responsavel/AdicionarResponsavel">Cadastrar Responsável</a>
+    </p>
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
@@ -25,10 +27,8 @@
 
                     <th></th>
                     <th></th>
+                    <th></th>
 
-                    <td>
-                        <a href="/Responsavel/AdicionarResponsavel">Adicionar Responsável</a>
-                    </td>
                 </tr>
 
             </thead>
@@ -69,7 +69,7 @@
                             </td>
 
                             <td>
-                                <a href="/Responsavel/ListarResponsavel/@responsaveis.Id">Listar Responsáveis</a>
+                                <a href="/Responsavel/VisualizarDetalhes/@responsaveis.Id">Detalhes</a>
                             </td>
 
                             <td>
@@ -81,5 +81,8 @@
                 }
             </tbody>
         </table>
+        <p>
+            @Html.ActionLink("Voltar", "Index", "Home")
+        </p>
     </div>
 </div>

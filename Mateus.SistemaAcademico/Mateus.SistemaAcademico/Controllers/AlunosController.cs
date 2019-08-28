@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Mateus.SistemaAcademico.Bussines;
-using Mateus.SistemaAcademico.DAO;
+﻿using Mateus.SistemaAcademico.DAO;
 using Mateus.SistemaAcademico.Models;
-using Mateus.SistemaAcademico.Models.Enums;
+using Mateus.SistemaAcademico.Models.Objects_Value;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
@@ -25,8 +21,11 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpGet]
         public ActionResult AdicionarAluno()
         {
-                var aluno = new Aluno();
-                return View(aluno);
+            var curso = new CursosDAO();
+            var lista = curso.ListarCursos();
+            ViewBag.Listacurso = lista;
+            var aluno = new Aluno();
+            return View(aluno);
         }
 
         // Remover Aluno
@@ -55,10 +54,11 @@ namespace Mateus.SistemaAcademico.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarAluno([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, RegistroDoAluno, ResponsavelId, CursoId")]Aluno aluno)
+        public ActionResult EditarAluno([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, RegistroDoAluno, ResponsavelId, CursoId, NomeUsuario, Senha")]Aluno aluno)
         {
             alunosDAO = new AlunosDAO();
             alunosDAO.Editar(aluno);
+
             return RedirectToAction("Index", "Alunos");
         }
 

@@ -8,7 +8,9 @@
 
 <h4>FREQUENCIA</h4>
 <div class="card-body">
-
+    <p>
+        <a href="/Frequencia/AdicionarFrequencia">Adicionar Frequencia</a>
+    </p>
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
@@ -23,10 +25,7 @@
 
                     <th></th>
                     <th></th>
-
-                    <td>
-                        <a href="/Frequencia/AdicionarFrequencia">Adicionar Frequencia</a>
-                    </td>
+                    <th></th>
                 </tr>
 
             </thead>
@@ -60,7 +59,7 @@
                             </td>
 
                             <td>
-                                <a href="/Frequencia/ListarFrequencias/@frequencia.Id">Listar Frequencia</a>
+                                <a href="/Frequencia/VisualizarDetalhes/@frequencia.Id">Detalhes</a>
                             </td>
 
                             <td>
@@ -72,5 +71,8 @@
                 }
             </tbody>
         </table>
+        <p>
+            @Html.ActionLink("Voltar", "Index", "Home")
+        </p>
     </div>
 </div>

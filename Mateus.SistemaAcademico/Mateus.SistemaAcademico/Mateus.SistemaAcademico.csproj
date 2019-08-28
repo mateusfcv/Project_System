@@ -60,6 +60,90 @@
     <Reference Include="GeoAPI, Version=1.7.5.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
       <HintPath>..\packages\GeoAPI.Core.1.7.5\lib\net45\GeoAPI.dll</HintPath>
     </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Cldrdata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Cldrdata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Localedata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Localedata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Nashorn, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Nashorn.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNetCore.Antiforgery, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Antiforgery.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Antiforgery.dll</HintPath>
     </Reference>
@@ -642,8 +726,13 @@
     <Compile Include="Bussines\Exceptions\CampoInvalidException.cs" />
     <Compile Include="Bussines\Exceptions\NullException.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AvaliacoesController.cs" />
+    <Compile Include="Controllers\AdmController.cs" />
+    <Compile Include="Controllers\ExamesFinaisController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SubstitutivasController.cs" />
+    <Compile Include="Controllers\NotasController.cs" />
     <Compile Include="Controllers\TrabalhosController.cs" />
-    <Compile Include="Controllers\TipoDeAvaliacoesController.cs" />
     <Compile Include="Controllers\TelefonesController.cs" />
     <Compile Include="Controllers\FrequenciaController.cs" />
     <Compile Include="Controllers\DisciplinasController.cs" />
@@ -656,8 +745,12 @@
     <Compile Include="Controllers\CursosController .cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAO\AvaliacoesDAO.cs" />
+    <Compile Include="DAO\AdmDAO.cs" />
+    <Compile Include="DAO\ExamesFinaisDAO.cs" />
+    <Compile Include="DAO\SubstitutivasDAO.cs" />
+    <Compile Include="DAO\NotasDAO.cs" />
     <Compile Include="DAO\TrabalhosDAO.cs" />
-    <Compile Include="DAO\TipoDeAvaliacoesDAO.cs" />
     <Compile Include="DAO\TelefonesDAO.cs" />
     <Compile Include="DAO\FrequenciasDAO.cs" />
     <Compile Include="DAO\DisciplinasDAO.cs" />
@@ -673,14 +766,23 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ICurso.cs" />
-    <Compile Include="Migrations\20190822205144_Primeira.cs" />
-    <Compile Include="Migrations\20190822205144_Primeira.designer.cs">
-      <DependentUpon>20190822205144_Primeira.cs</DependentUpon>
+    <Compile Include="Migrations\20190826174056_Primeira.cs" />
+    <Compile Include="Migrations\20190826174056_Primeira.designer.cs">
+      <DependentUpon>20190826174056_Primeira.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20190827170505_Aluno.cs" />
+    <Compile Include="Migrations\20190827170505_Aluno.designer.cs">
+      <DependentUpon>20190827170505_Aluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20190827183543_Login.cs" />
+    <Compile Include="Migrations\20190827183543_Login.designer.cs">
+      <DependentUpon>20190827183543_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Aluno.cs" />
+    <Compile Include="Models\Avaliacao.cs" />
     <Compile Include="Models\Enums\Area.cs" />
     <Compile Include="Models\Enums\Periodo.cs" />
     <Compile Include="Models\Enums\TipoTelefone.cs" />
@@ -693,23 +795,23 @@
     <Compile Include="Models\Enums\EstadoCivil.cs" />
     <Compile Include="Models\Enums\TipoConteudo.cs" />
     <Compile Include="Models\Enums\TipoFrequencia.cs" />
+    <Compile Include="Models\ExameFinal.cs" />
     <Compile Include="Models\Frequencia.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Joins\CursoDisciplina.cs" />
     <Compile Include="Models\Joins\ProfessorCurso.cs" />
-    <Compile Include="Models\Joins\ProfessorDisciplina.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Nota.cs" />
     <Compile Include="Models\Objects Value\ValidacaoCpf.cs" />
     <Compile Include="Models\Objects Value\ValidacaoNome.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\Professor.cs" />
-    <Compile Include="Models\TipoDeAvaliacoes.cs" />
+    <Compile Include="Models\Substitutivas.cs" />
     <Compile Include="Models\Responsavel.cs" />
     <Compile Include="Models\Secretaria.cs" />
     <Compile Include="Models\Telefone.cs" />
     <Compile Include="Models\Enums\TipoCurso.cs" />
     <Compile Include="Models\Trabalho.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -778,12 +880,10 @@
     <Content Include="Views\Alunos\AdicionarAluno.cshtml" />
     <Content Include="Views\Alunos\Index.cshtml" />
     <Content Include="Views\Alunos\RemoverAluno.cshtml" />
-    <Content Include="Views\Alunos\EditarAluno.cshtml" />
     <Content Include="Views\Alunos\ListarAluno.cshtml" />
     <Content Include="Views\Alunos\VisualizarDetalhes.cshtml" />
     <Content Include="Views\Professores\AdicionarProfessor.cshtml" />
     <Content Include="Views\Professores\Index.cshtml" />
-    <Content Include="Views\Professores\RemoverProfessor.cshtml" />
     <Content Include="Views\Professores\EditarProfessor.cshtml" />
     <Content Include="Views\Enderecos\Index.cshtml" />
     <Content Include="Views\Enderecos\RemoverEndereco.cshtml" />
@@ -805,18 +905,7 @@
     <Content Include="Views\Responsavel\EditarResponsavel.cshtml" />
     <Content Include="Views\Responsavel\ListarResponsavel.cshtml" />
     <Content Include="Views\Responsavel\VisualizarDetalhes.cshtml" />
-    <Content Include="Views\Conteudos\AdicionarConteudo.cshtml" />
     <Content Include="Views\Conteudos\Index.cshtml" />
-    <Content Include="Views\Conteudos\RemoverConteudo.cshtml" />
-    <Content Include="Views\Conteudos\EditarConteudo.cshtml" />
-    <Content Include="Views\Conteudos\ListarConteudo.cshtml" />
-    <Content Include="Views\Conteudos\VisualizarDetalhes.cshtml" />
-    <Content Include="Views\Disciplinas\AdicionarDisciplina.cshtml" />
-    <Content Include="Views\Disciplinas\Index.cshtml" />
-    <Content Include="Views\Disciplinas\RemoverDisciplina.cshtml" />
-    <Content Include="Views\Disciplinas\EditarDisciplina.cshtml" />
-    <Content Include="Views\Disciplinas\ListarDisciplina.cshtml" />
-    <Content Include="Views\Disciplinas\VisualizarDetalhes.cshtml" />
     <Content Include="Views\Frequencia\AdicionarFrequencia.cshtml" />
     <Content Include="Views\Frequencia\Index.cshtml" />
     <Content Include="Views\Frequencia\RemoverFrequencia.cshtml" />
@@ -829,21 +918,60 @@
     <Content Include="Views\Telefones\ListarTelefone.cshtml" />
     <Content Include="Views\Telefones\VisualizarDetalhes.cshtml" />
     <Content Include="Views\Telefones\Index.cshtml" />
-    <Content Include="Views\TipoDeAvaliacoes\AdicionarTipoDeAvaliacoes.cshtml" />
-    <Content Include="Views\TipoDeAvaliacoes\RemoverTipoDeAvaliacoes.cshtml" />
-    <Content Include="Views\TipoDeAvaliacoes\EditarTipoDeAvaliacoes.cshtml" />
-    <Content Include="Views\TipoDeAvaliacoes\ListarTipoDeAvaliacoes.cshtml" />
-    <Content Include="Views\TipoDeAvaliacoes\VisualizarDetalhes.cshtml" />
-    <Content Include="Views\TipoDeAvaliacoes\Index.cshtml" />
+    <Content Include="Views\Trabalhos\Index.cshtml" />
+    <Content Include="Views\Disciplinas\AdicionarDisciplina.cshtml" />
+    <Content Include="Views\Disciplinas\RemoverDisciplina.cshtml" />
+    <Content Include="Views\Disciplinas\EditarDisciplina.cshtml" />
+    <Content Include="Views\Disciplinas\ListarDisciplina.cshtml" />
+    <Content Include="Views\Disciplinas\VisualizarDetalhes.cshtml" />
+    <Content Include="Views\Disciplinas\Index.cshtml" />
+    <Content Include="Views\Conteudos\AdicionarConteudo.cshtml" />
+    <Content Include="Views\Conteudos\RemoverConteudo.cshtml" />
+    <Content Include="Views\Conteudos\EditarConteudo.cshtml" />
+    <Content Include="Views\Conteudos\ListarConteudo.cshtml" />
+    <Content Include="Views\Conteudos\VisualizarDetalhes.cshtml" />
+    <Content Include="Views\Alunos\EditarAluno.cshtml" />
     <Content Include="Views\Trabalhos\AdicionarTrabalho.cshtml" />
     <Content Include="Views\Trabalhos\RemoverTrabalho.cshtml" />
     <Content Include="Views\Trabalhos\EditarTrabalho.cshtml" />
     <Content Include="Views\Trabalhos\ListarTrabalho.cshtml" />
     <Content Include="Views\Trabalhos\VisualizarDetalhes.cshtml" />
-    <Content Include="Views\Trabalhos\Index.cshtml" />
+    <Content Include="Views\Notas\RemoverNota.cshtml" />
+    <Content Include="Views\Notas\EditarNota.cshtml" />
+    <Content Include="Views\Notas\ListarNota.cshtml" />
+    <Content Include="Views\Notas\VisualizarDetalhes.cshtml" />
+    <Content Include="Views\Notas\Index.cshtml" />
+    <Content Include="Views\Avaliacoes\AdicionarAvaliacao.cshtml" />
+    <Content Include="Views\Avaliacoes\RemoverAvaliacao.cshtml" />
+    <Content Include="Views\Avaliacoes\EditarAvaliacao.cshtml" />
+    <Content Include="Views\Avaliacoes\ListarAvaliacao.cshtml" />
+    <Content Include="Views\Avaliacoes\VisualizarDetalhes.cshtml" />
+    <Content Include="Views\Avaliacoes\Index.cshtml" />
+    <Content Include="Views\Substitutivas\AdicionarSubstitutivas.cshtml" />
+    <Content Include="Views\Substitutivas\RemoverSubstitutivas.cshtml" />
+    <Content Include="Views\Substitutivas\EditarSubstitutivas.cshtml" />
+    <Content Include="Views\Substitutivas\ListarSubstitutivas.cshtml" />
+    <Content Include="Views\Substitutivas\VisualizarDetalhes.cshtml" />
+    <Content Include="Views\Substitutivas\Index.cshtml" />
+    <Content Include="Views\ExamesFinais\AdicionarExameFinal.cshtml" />
+    <Content Include="Views\ExamesFinais\RemoverExameFinal.cshtml" />
+    <Content Include="Views\ExamesFinais\EditarExameFinal.cshtml" />
+    <Content Include="Views\ExamesFinais\ListarExameFinal.cshtml" />
+    <Content Include="Views\ExamesFinais\VisualizarDetalhes.cshtml" />
+    <Content Include="Views\ExamesFinais\Index.cshtml" />
+    <Content Include="Views\Professores\RemoverProfessor.cshtml" />
+    <Content Include="Views\Adm\AdicionarAdministrador.cshtml" />
+    <Content Include="Views\Adm\RemoverAdministrador.cshtml" />
+    <Content Include="Views\Adm\EditarAdministrador.cshtml" />
+    <Content Include="Views\Adm\ListarAdministrador.cshtml" />
+    <Content Include="Views\Adm\VisualizarDetalhes.cshtml" />
+    <Content Include="Views\Adm\Index.cshtml" />
+    <Content Include="Views\Notas\AdicionarNota.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

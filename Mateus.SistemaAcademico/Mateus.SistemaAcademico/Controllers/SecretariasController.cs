@@ -55,7 +55,7 @@ namespace Mateus.SistemaAcademico.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarSecretaria([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento")]Secretaria secretaria)
+        public ActionResult EditarSecretaria([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, NomeUsuario, Senha")]Secretaria secretaria)
         {
             secretariasDAO = new SecretariasDAO();
             secretariasDAO.Editar(secretaria);
@@ -71,6 +71,11 @@ namespace Mateus.SistemaAcademico.Controllers
         public ActionResult VisualizarDetalhes(int id)
         {
             Secretaria secretaria = secretariasDAO.BuscaPorId(id);
+            var cursosDAO = new CursosDAO();
+            List<Curso> secretariaCurso = cursosDAO.ListarCursos()
+                                                    .Where(x => x.SecretariaId == id)
+                                                     .ToList();
+            secretaria.Cursos = secretariaCurso;
             return View(secretaria);
         }
 

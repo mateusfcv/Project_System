@@ -1,0 +1,80 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.ExameFinal>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de Exames</h2>
+<div class="card-body">
+    <p>
+        <a href="/ExamesFinais/AdicionarExameFinal">Adicionar Avaliações</a>
+    </p>
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Aluno</th>
+                    <th>Nota</th>
+                    <th>Disciplina</th>
+                    <th>Data</th>
+
+                    <th></th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var examesFinais in ViewBag.ExamesFinais)
+                {
+                    using (Html.BeginForm("ListarExameFinal", "ExamesFinais", new { id = examesFinais.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @examesFinais.AlunoId
+                            </td>
+
+                            <td>
+                                @examesFinais.Nota
+                            </td>
+
+                            <td>
+                                @examesFinais.DisciplinaId
+                            </td>
+
+                            <td>
+                                @examesFinais.Data.ToString("dd/MM/yyyy")
+                            </td>
+
+
+
+                            <td>
+                                <a href="/ExamesFinais/RemoverExameFinal/@examesFinais.Id">Remover Exame Final</a>
+                            </td>
+
+                            <td>
+                                <a href="/ExamesFinais/VisualizarDetalhes/@examesFinais.Id">Detalhes</a>
+                            </td>
+
+                            <td>
+                                <a href="/ExamesFinais/EditarExameFinal/@examesFinais.Id">Editar Exame Final</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <p>
+            @Html.ActionLink("Voltar", "Index", "Home")
+        </p>
+    </div>
+</div>

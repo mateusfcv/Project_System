@@ -1,0 +1,81 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Avaliacao>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Lista de Avaliações</h2>
+<div class="card-body">
+    <p>
+        <a href="/Avaliacoes/AdicionarAvaliacao">Adicionar Avaliações</a>
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Aluno</th>
+                    <th>Nota</th>
+                    <th>Disciplina</th>
+                    <th>Data</th>
+
+                    <th></th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var avaliacoes in ViewBag.Avaliacoes)
+                {
+                    using (Html.BeginForm("ListarAvaliacao", "Avaliacoes", new { id = avaliacoes.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @avaliacoes.AlunoId
+                            </td>
+
+                            <td>
+                                @avaliacoes.Nota
+                            </td>
+
+                            <td>
+                                @avaliacoes.DisciplinaId
+                            </td>
+
+                            <td>
+                                @avaliacoes.Data.ToString("dd/MM/yyyy")
+                            </td>
+
+
+
+                            <td>
+                                <a href="/Avaliacoes/RemoverAvaliacao/@avaliacoes.Id">Remover Avaliação</a>
+                            </td>
+
+                            <td>
+                                <a href="/Avaliacoes/VisualizarDetalhes/@avaliacoes.Id">Detalhes</a>
+                            </td>
+
+                            <td>
+                                <a href="/Avaliacoes/EditarAvaliacao/@avaliacoes.Id">Editar Avaliação</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <p>
+            @Html.ActionLink("Voltar", "Index", "Home")
+        </p>
+    </div>
+</div>

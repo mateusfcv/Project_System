@@ -48,6 +48,11 @@ namespace Mateus.SistemaAcademico.DAO
         {
             return contexto.Secretarias.Where(c => c.Id == id).FirstOrDefault();
         }
+
+        public Secretaria BuscaSecretaria(string login, string senha)
+        {
+            return contexto.Secretarias.FirstOrDefault(x => x.NomeUsuario == login && x.Senha == senha);
+        }
     }
 }
 

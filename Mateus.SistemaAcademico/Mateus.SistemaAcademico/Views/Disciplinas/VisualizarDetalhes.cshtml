@@ -17,6 +17,14 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
+                @Html.DisplayNameFor(model => model.ProfessorId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProfessorId)
+            </dd>
+    
+            <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>
     
@@ -36,7 +44,7 @@
     </div>
     <p>
         @Html.ActionLink("Editar", "EditarDisciplina", new { id = Model.Id }) |
-        @Html.ActionLink("Voltar", "ListarDisciplina")
+        @Html.ActionLink("Voltar", "Index")
     </p>
 </body>
 </html>

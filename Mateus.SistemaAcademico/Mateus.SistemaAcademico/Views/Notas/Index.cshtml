@@ -1,0 +1,81 @@
+﻿@model IList<Mateus.SistemaAcademico.Models.Nota>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h4>Notas</h4>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Disciplina</th>
+                    <th>Substitutivas</th>
+                    <th>Trabalho</th>
+                    <th>Avaliação</th>
+                    <th>Aluno</th>
+
+                    <th></th>
+                    <th></th>
+
+                    <td>
+                        <a href="/Notas/AdicionarNota">Adicionar</a>
+                    </td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var notas in ViewBag.Notas)
+                {
+                    using (Html.BeginForm("ListarNota", "Notas", new { id = notas.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @notas.DisciplinaId
+                            </td>
+
+                            <td>
+                                @notas.Substitutivas
+                            </td>
+
+                            <td>
+                                @notas.Trabalho
+                            </td>
+
+                            <td>
+                                @notas.Avaliacao
+                            </td>
+
+                            <td>
+                                @notas.AlunoId
+                            </td>
+
+
+                            <td>
+                                <a href="/Notas/RemoverNota/@notas.Id">Remover Nota</a>
+                            </td>
+
+                            <td>
+                                <a href="/Notas/ListarNota/@notas.Id">Listar Notas</a>
+                            </td>
+
+                            <td>
+                                <a href="/Notas/EditarNota/@notas.Id">Editar Nota</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

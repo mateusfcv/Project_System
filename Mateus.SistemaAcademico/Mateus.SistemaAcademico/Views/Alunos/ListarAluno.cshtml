@@ -9,12 +9,10 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Listar Alunos</title>
+    <title>Listar</title>
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Matricular Aluno", "AdicionarAluno")
-    </p>
+    
     <table class="table">
         <tr>
             <th>
@@ -29,14 +27,17 @@
             <th>
                 @Html.DisplayNameFor(model => model.DataDeNascimento)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RegistroDoAluno)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ResponsavelId)
-            </th>
+  
             <th>
                 @Html.DisplayNameFor(model => model.CursoId)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.NomeUsuario)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Senha)
             </th>
             <th></th>
         </tr>
@@ -55,14 +56,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.DataDeNascimento)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegistroDoAluno)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ResponsavelId)
-            </td>
+   
             <td>
                 @Html.DisplayFor(modelItem => item.CursoId)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeUsuario)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Senha)
             </td>
             <td>
                 @Html.ActionLink("Editar", "EditarAluno", new { id=item.Id }) |
@@ -75,6 +79,7 @@
     </table>
     <p>
         @Html.ActionLink("Voltar", "Index")
+        @Html.ActionLink("Login", "Login", "Login")
     </p>
 </body>
 </html>

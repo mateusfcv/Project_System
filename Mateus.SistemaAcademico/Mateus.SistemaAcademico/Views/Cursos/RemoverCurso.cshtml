@@ -9,10 +9,10 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>RemoverCurso</title>
+    <title>Remover</title>
 </head>
 <body>
-    <h3>Tem certeza de que deseja remover este curso?</h3>
+    <h3>Deseja remover este curso?</h3>
     <div>
         <hr />
         <dl class="dl-horizontal">
@@ -57,11 +57,35 @@
             </dd>
 
             <dt>
+                @Html.DisplayNameFor(model => model.SecretariaId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SecretariaId)
+            </dd>
+
+            <dt>
                 @Html.DisplayNameFor(model => model.TipoCurso)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.TipoCurso)
+                @Html.DisplayNameFor(model => model.TipoCurso)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Periodo)
+            </dt>
+
+            <dd>
+                @Html.DisplayNameFor(model => model.Periodo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Area)
+            </dt>
+
+            <dd>
+                @Html.DisplayNameFor(model => model.Area)
             </dd>
 
         </dl>

@@ -55,7 +55,7 @@ namespace Mateus.SistemaAcademico.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarDisciplina([Bind(Include = "Id, Nome, CargaHoraria")]Disciplina disciplina)
+        public ActionResult EditarDisciplina([Bind(Include = "Id, ProfessorId, Nome, CargaHoraria")]Disciplina disciplina)
         {
             disciplinasDAO = new DisciplinasDAO();
             disciplinasDAO.Editar(disciplina);
