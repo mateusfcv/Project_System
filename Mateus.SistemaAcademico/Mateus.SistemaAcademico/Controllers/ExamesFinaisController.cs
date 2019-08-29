@@ -18,7 +18,6 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpPost]
         public ActionResult AdicionarExameFinal(ExameFinal exameFinal)
         {
-            // IMPLEMENTAR A VALIDAÇÃO DE NOME, EXISTENTE NA CLASSE CURSO E CRIAR FUNÇÃO PARA EXIBIR O NOME DO COORDENADOR
             exameFinalsDAO.Adicionar(exameFinal);
             return RedirectToAction("Index", "ExamesFinais");
         }
@@ -26,8 +25,16 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpGet]
         public ActionResult AdicionarExameFinal()
         {
-                var exameFinal = new ExameFinal();
-                return View(exameFinal);
+            var aluno = new AlunosDAO();
+            var lista = aluno.ListarAlunos();
+            ViewBag.ListarAluno = lista;
+
+            var disciplina = new DisciplinasDAO();
+            var listas = disciplina.ListarDisciplinas();
+            ViewBag.ListaDisciplina = listas;
+
+            var exameFinal = new ExameFinal();
+            return View(exameFinal);
         }
 
         // Remover ExameFinal

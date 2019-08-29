@@ -25,8 +25,16 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpGet]
         public ActionResult AdicionarTrabalho()
         {
-                var trabalho = new Trabalho();
-                return View(trabalho);
+            var aluno = new AlunosDAO();
+            var lista = aluno.ListarAlunos();
+            ViewBag.ListarAluno = lista;
+
+            var disciplina = new DisciplinasDAO();
+            var listas = disciplina.ListarDisciplinas();
+            ViewBag.ListaDisciplina = listas;
+
+            var trabalho = new Trabalho();
+            return View(trabalho);
         }
 
         // Remover Trabalho

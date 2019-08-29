@@ -81,6 +81,12 @@ namespace Mateus.SistemaAcademico.Controllers
         public ActionResult VisualizarDetalhes(int id)
         {
             Curso curso = cursosDAO.BuscaPorId(id);
+            var alunosDAO = new AlunosDAO();
+            List<Aluno> alunoCurso = alunosDAO.ListarAlunos()
+                                               .Where(x => x.CursoId == id)
+                                                .ToList();
+
+            curso.Alunos = alunoCurso;
             return View(curso);
         }
 

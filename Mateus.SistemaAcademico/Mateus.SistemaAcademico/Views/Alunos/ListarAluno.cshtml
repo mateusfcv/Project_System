@@ -32,13 +32,6 @@
                 @Html.DisplayNameFor(model => model.CursoId)
             </th>
 
-            <th>
-                @Html.DisplayNameFor(model => model.NomeUsuario)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Senha)
-            </th>
             <th></th>
         </tr>
     
@@ -61,13 +54,6 @@
                 @Html.DisplayFor(modelItem => item.CursoId)
             </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeUsuario)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Senha)
-            </td>
             <td>
                 @Html.ActionLink("Editar", "EditarAluno", new { id=item.Id }) |
                 @Html.ActionLink("Detalhes", "VisualizarDetalhes", new { id=item.Id }) |

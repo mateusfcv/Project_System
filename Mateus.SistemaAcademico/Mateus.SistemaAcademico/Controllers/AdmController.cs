@@ -55,7 +55,7 @@ namespace Mateus.SistemaAcademico.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarAdministrador([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, NomeUsuario, Senha")]Administrador adm)
+        public ActionResult EditarAdministrador([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento")]Administrador adm)
         {
             admsDAO = new AdmDAO();
             admsDAO.Editar(adm);

@@ -23,8 +23,13 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.ProfessorId, "Professor", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.ProfessorId, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ProfessorId, "", new { @class = "text-danger" })
+                    <select class="form-control" name="ProfessorId">
+                        <option selected disabled value="">Selecione um Professor</option>
+                        @foreach (var professor in ViewBag.listaProfessor)
+                        {
+                            <option value="@professor.Id">@professor.Nome</option>
+                        }
+                    </select>
                 </div>
             </div>
     

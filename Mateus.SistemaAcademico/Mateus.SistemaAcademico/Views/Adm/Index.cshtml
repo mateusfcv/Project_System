@@ -13,6 +13,10 @@
     </p>
 
     <div class="table-responsive">
+        <label class="text-uppercase">Pesquisar Administrador</label>
+        <input class="form-control" type="text" name="pesquisa" id="pesquisa" placeholder="Digite o nome do administrador">
+        <label style="opacity:0;">conselho</label><br />
+
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
             <thead>
@@ -36,8 +40,8 @@
                 {
                     using (Html.BeginForm("ListarAdministrador", "Adm", new { id = adm.Id }))
                     {
-                        <tr>
-                            <td>
+                        <tr class="busca">
+                            <td  class="info-nome">
                                 @adm.Nome
                             </td>
 
@@ -47,7 +51,7 @@
 
 
                             <td>
-                                <a href="/Adm/RemoverAdministrador/@adm.Id">Remover Administrador</a>
+                                <a href="/Adm/RemoverAdministrador/@adm.Id">Remover</a>
                             </td>
 
                             <td>
@@ -55,7 +59,7 @@
                             </td>
 
                             <td>
-                                <a href="/Adm/EditarAdministrador/@adm.Id">Editar Administrador</a>
+                                <a href="/Adm/EditarAdministrador/@adm.Id">Editar</a>
                             </td>
 
                         </tr>
@@ -68,3 +72,5 @@
         </p>
     </div>
 </div>
+
+<script type="text/javascript" src="~/Content/js/pesquisa.js"></script>

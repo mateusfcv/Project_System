@@ -48,11 +48,6 @@ namespace Mateus.SistemaAcademico.DAO
         {
             return contexto.Administradores.Where(c => c.Id == id).FirstOrDefault();
         }
-
-        public Administrador BuscaAdm(string login, string senha)
-        {
-            return contexto.Administradores.FirstOrDefault(x => x.NomeUsuario == login && x.Senha == senha);
-        }
     }
 }
 

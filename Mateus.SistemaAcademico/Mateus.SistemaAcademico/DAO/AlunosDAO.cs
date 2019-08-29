@@ -49,11 +49,6 @@ namespace Mateus.SistemaAcademico.DAO
         {
             return contexto.Alunos.Where(c => c.Id == id).FirstOrDefault();
         }
-
-        public Aluno BuscaAluno(string login, string senha)
-        {
-            return contexto.Alunos.FirstOrDefault(x => x.NomeUsuario == login && x.Senha == senha);
-        }
     }
 }
 

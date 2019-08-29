@@ -95,3 +95,49 @@
     </p>
 </body>
 </html>
+
+@*==============================================================================================================*@
+
+<div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+        <thead>
+
+            <tr>
+
+                <th>Nome</th>
+                <th>Curso Matriculado</th>
+
+                <th></th>
+                <th></th>
+                <th></th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            @if (Model.Alunos.Count != 0)
+            {
+                foreach (var aluno in ViewBag.Alunos)
+                {
+                    using (Html.BeginForm("ListarAluno", "Aluno", new { id = aluno.Id }))
+                    {
+                        <tr>
+                            <td>
+                                @aluno.Nome
+                            </td>
+
+                            <td>
+                                @aluno.CursoId
+                            </td>
+
+                        </tr>
+                    }
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
+

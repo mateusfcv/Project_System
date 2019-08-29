@@ -16,8 +16,6 @@ namespace Mateus.SistemaAcademico.Models
         [Required] 
         public string Titulacao { get; set; }
 
-        public string NomeUsuario { get; set; }
-        public string Senha { get; set; }
 
         public Professor ()
         {
@@ -25,14 +23,13 @@ namespace Mateus.SistemaAcademico.Models
         }
 
         public Professor(string nome, string email, string cpf, DateTime dataDeNascimento, List<Telefone> telefones, List<Endereco> enderecos,
-            IList<ProfessorCurso> curso, List<Disciplina> disciplinas, string titulacao, string nomeUsuario, string senha)
+            IList<ProfessorCurso> curso, List<Disciplina> disciplinas, string titulacao)
             :base(nome, email, cpf, dataDeNascimento, telefones, enderecos)
         {
             Curso = curso;
             Disciplinas = disciplinas;
             Titulacao = titulacao;
-            NomeUsuario = nomeUsuario;
-            Senha = senha;
+
         }
     }
 }

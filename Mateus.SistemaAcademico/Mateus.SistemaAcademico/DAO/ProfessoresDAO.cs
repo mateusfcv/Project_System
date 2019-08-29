@@ -48,11 +48,6 @@ namespace Mateus.SistemaAcademico.DAO
         {
             return contexto.Professor.Include(x => x.Disciplinas).Where(p => p.Id == id).FirstOrDefault();
         }
-
-        public Professor BuscaProfessor(string login, string senha)
-        {
-            return contexto.Professor.FirstOrDefault(x => x.NomeUsuario == login && x.Senha == senha);
-        }
     }
 }
 

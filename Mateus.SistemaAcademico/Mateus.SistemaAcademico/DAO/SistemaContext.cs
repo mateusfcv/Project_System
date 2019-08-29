@@ -26,6 +26,7 @@ namespace Mateus.SistemaAcademico.DAO
         public DbSet<Avaliacao> Avaliacoes { get; set; }
         public DbSet<Substitutivas> Substitutivas { get; set; }
         public DbSet<ExameFinal> ExamesFinais { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

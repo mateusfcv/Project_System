@@ -25,8 +25,16 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpGet]
         public ActionResult AdicionarFrequencia()
         {
-                var frequencia = new Frequencia();
-                return View(frequencia);
+            var aluno = new AlunosDAO();
+            var lista = aluno.ListarAlunos();
+            ViewBag.ListarAluno = lista;
+
+            var disciplina = new DisciplinasDAO();
+            var listas = disciplina.ListarDisciplinas();
+            ViewBag.ListaDisciplina = listas;
+
+            var frequencia = new Frequencia();
+            return View(frequencia);
         }
 
         // Remover Frequencia
@@ -62,7 +70,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Frequencia");
         }
 
-        public ActionResult ListarFrequencias() 
+        public ActionResult ListarFrequencias()
         {
             IList<Frequencia> frequencia = frequenciaDAO.ListarFrequencias();
             return View(frequencia);

@@ -55,7 +55,7 @@ namespace Mateus.SistemaAcademico.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarSecretaria([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, NomeUsuario, Senha")]Secretaria secretaria)
+        public ActionResult EditarSecretaria([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento")]Secretaria secretaria)
         {
             secretariasDAO = new SecretariasDAO();
             secretariasDAO.Editar(secretaria);

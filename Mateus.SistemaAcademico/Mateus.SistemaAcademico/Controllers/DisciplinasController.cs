@@ -25,8 +25,12 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpGet]
         public ActionResult AdicionarDisciplina()
         {
-                var disciplina = new Disciplina();
-                return View(disciplina);
+            var professor = new ProfessoresDAO();
+            IList<Professor> lista = professor.ListarProfessores();
+            ViewBag.listaProfessor = lista;
+
+            var disciplina = new Disciplina();
+            return View(disciplina);
         }
 
         // Remover Disciplina

@@ -729,7 +729,6 @@
     <Compile Include="Controllers\AvaliacoesController.cs" />
     <Compile Include="Controllers\AdmController.cs" />
     <Compile Include="Controllers\ExamesFinaisController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SubstitutivasController.cs" />
     <Compile Include="Controllers\NotasController.cs" />
     <Compile Include="Controllers\TrabalhosController.cs" />
@@ -778,6 +777,10 @@
     <Compile Include="Migrations\20190827183543_Login.designer.cs">
       <DependentUpon>20190827183543_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20190829005538_Usuario.cs" />
+    <Compile Include="Migrations\20190829005538_Usuario.designer.cs">
+      <DependentUpon>20190829005538_Usuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -785,6 +788,7 @@
     <Compile Include="Models\Avaliacao.cs" />
     <Compile Include="Models\Enums\Area.cs" />
     <Compile Include="Models\Enums\Periodo.cs" />
+    <Compile Include="Models\Enums\TipoPessoa.cs" />
     <Compile Include="Models\Enums\TipoTelefone.cs" />
     <Compile Include="Models\Conteudo.cs" />
     <Compile Include="Models\Curso.cs" />
@@ -812,6 +816,7 @@
     <Compile Include="Models\Telefone.cs" />
     <Compile Include="Models\Enums\TipoCurso.cs" />
     <Compile Include="Models\Trabalho.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -820,6 +825,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Js\pesquisa.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -971,6 +977,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Filtro\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>

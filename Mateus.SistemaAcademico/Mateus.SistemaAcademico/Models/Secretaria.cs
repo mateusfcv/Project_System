@@ -9,21 +9,17 @@ namespace Mateus.SistemaAcademico.Models
     {
        public List<Curso> Cursos { get; set; } = new List<Curso>();
 
-        public string NomeUsuario { get; set; }
-        public string Senha { get; set; }
-
         public Secretaria()
         {
             
         }
 
         public Secretaria(string nome, string email, string cpf, DateTime dataDeNascimento, List<Telefone> telefones, List<Endereco> enderecos,
-            List<Curso> cursos, string nomeUsuario, string senha)
+            List<Curso> cursos)
             :base(nome, email, cpf, dataDeNascimento, telefones, enderecos)
         {
             Cursos = cursos;
-            NomeUsuario = nomeUsuario;
-            Senha = senha;
+          
         }
     }
 }

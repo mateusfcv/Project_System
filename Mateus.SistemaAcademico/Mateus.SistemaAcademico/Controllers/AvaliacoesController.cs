@@ -25,8 +25,16 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpGet]
         public ActionResult AdicionarAvaliacao()
         {
-                var avaliacao = new Avaliacao();
-                return View(avaliacao);
+            var aluno = new AlunosDAO();
+            var lista = aluno.ListarAlunos();
+            ViewBag.ListarAluno = lista;
+
+            var disciplina = new DisciplinasDAO();
+            IList<Disciplina> listas = disciplina.ListarDisciplinas();
+            ViewBag.ListaDisciplina = listas;
+
+            var avaliacao = new Avaliacao();
+            return View(avaliacao);
         }
 
         // Remover Avaliacao

@@ -54,7 +54,7 @@ namespace Mateus.SistemaAcademico.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarAluno([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, RegistroDoAluno, ResponsavelId, CursoId, NomeUsuario, Senha")]Aluno aluno)
+        public ActionResult EditarAluno([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, RegistroDoAluno, ResponsavelId, CursoId")]Aluno aluno)
         {
             alunosDAO = new AlunosDAO();
             alunosDAO.Editar(aluno);
