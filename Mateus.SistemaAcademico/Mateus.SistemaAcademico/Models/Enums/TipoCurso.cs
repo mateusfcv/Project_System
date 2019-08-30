@@ -1,9 +1,12 @@
-﻿namespace Mateus.SistemaAcademico.Models.Enums
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Mateus.SistemaAcademico.Models.Enums
 {
     public enum TipoCurso
     {
         Licenciatura,
-        Bacharelado, 
+        Bacharelado,
+        [Display(Name = "Tecnólogo")]
         Tecnologo
     }
 }

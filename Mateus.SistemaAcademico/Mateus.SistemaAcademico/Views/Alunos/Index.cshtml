@@ -1,4 +1,6 @@
 ﻿@model IList<Mateus.SistemaAcademico.Models.Aluno>
+@using Mateus.SistemaAcademico.Models
+@using Mateus.SistemaAcademico.Models.Enums
 
 @{
 
@@ -8,9 +10,13 @@
 
 <h2>Lista de Alunos</h2>
 <div class="card-body">
-    <p>
-        <a href="/Alunos/AdicionarAluno">Matricular Aluno</a>
-    </p>
+    @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador ||
+         (Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Secretaria)
+    {
+        <p>
+            <a href="/Alunos/AdicionarAluno">Matricular Aluno</a>
+        </p>
+    }
 
     <div class="table-responsive">
         <label class="text-uppercase">Pesquisar Alunos</label>
@@ -36,7 +42,7 @@
 
             <tbody>
 
-                @foreach (var aluno in ViewBag.Alunos)
+                @foreach (var aluno in Model)
                 {
                     using (Html.BeginForm("ListarAluno", "Aluno", new { id = aluno.Id }))
                     {
@@ -46,21 +52,26 @@
                             </td>
 
                             <td>
-                                @aluno.CursoId
+                                @aluno.Curso.Nome
                             </td>
 
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador ||
+                                 (Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Secretaria)
+                            {
 
-                            <td>
-                                <a href="/Alunos/RemoverAluno/@aluno.Id">Remover Aluno</a>
-                            </td>
+                                <td>
+                                    <a href="/Alunos/RemoverAluno/@aluno.Id">Remover Aluno</a>
+                                </td>
 
-                            <td>
-                                <a href="/Alunos/VisualizarDetalhes/@aluno.Id">Detalhes</a>
-                            </td>
+                                <td>
+                                    <a href="/Alunos/VisualizarDetalhes/@aluno.Id">Detalhes</a>
+                                </td>
 
-                            <td>
-                                <a href="/Alunos/EditarAluno/@aluno.Id">Editar Aluno</a>
-                            </td>
+
+                                <td>
+                                    <a href="/Alunos/EditarAluno/@aluno.Id">Editar Aluno</a>
+                                </td>
+                            }
 
                         </tr>
                     }

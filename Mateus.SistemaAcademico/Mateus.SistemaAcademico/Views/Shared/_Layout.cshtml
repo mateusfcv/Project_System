@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Mateus.SistemaAcademico.Models
+@using Mateus.SistemaAcademico.Models.Enums
+
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -21,21 +25,43 @@
                 </button>
                 @Html.ActionLink("University System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Aluno", "Index", "Alunos")</li>
-                    <li>@Html.ActionLink("Secretaria", "Index", "Secretarias")</li>
-                    <li>@Html.ActionLink("Professor", "Index", "Professores")</li>
-                    <li>@Html.ActionLink("Curso", "Index", "Cursos")</li>
-                    <li>@Html.ActionLink("Disciplina", "Index", "Disciplinas")</li>
-                    <li>@Html.ActionLink("Conteudo", "Index", "Conteudos")</li>
-                    <li>@Html.ActionLink("Frequencia", "Index", "Frequencia")</li>
-                    <li>@Html.ActionLink("Nota", "Index", "Notas")</li>
+            @if (Session.Keys.Cast<String>().Any(c => c == "usuarioLogado"))
+            {
+                @*<div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Logout", "Logout", "Login")</li>
+                    </ul>
+                </div>*@
 
+                if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador)
+                {
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Aluno", "Index", "Alunos")</li>
+                            <li>@Html.ActionLink("Secretaria", "Index", "Secretarias")</li>
+                            <li>@Html.ActionLink("Professor", "Index", "Professores")</li>
+                            <li>@Html.ActionLink("Curso", "Index", "Cursos")</li>
+                        </ul>
+                    </div>
+                }
+                if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Aluno)
+                {
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Disciplina", "Index", "Disciplinas")</li>
+                            <li>@Html.ActionLink("Conteudo", "Index", "Conteudos")</li>
+                            <li>@Html.ActionLink("Frequencia", "Index", "Frequencia")</li>
+                            <li>@Html.ActionLink("Nota", "Index", "Notas")</li>
+                        </ul>
+                    </div>
+                }
+            }
+            else
+            {
+                @*<li>@Html.ActionLink("Logon", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
+            }
 
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+            @Html.Partial("_LoginPartial")
         </div>
     </div>
     <div class="container body-content">

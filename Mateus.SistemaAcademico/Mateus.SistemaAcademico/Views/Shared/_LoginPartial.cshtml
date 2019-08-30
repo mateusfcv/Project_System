@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@using Mateus.SistemaAcademico.Models
+
+@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -15,8 +17,17 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Registrar", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Logon", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+<ul class="nav navbar-nav navbar-right">
+    @if ((Session["usuarioLogado"] != null))
+    {
+        <li>@Html.ActionLink("Logout", "Logout", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    }
+    else
+    {
+        <li>@Html.ActionLink("Login", "Index", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    }
+
+
+
+</ul>
 }

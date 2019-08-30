@@ -483,28 +483,13 @@ namespace Mateus.SistemaAcademico.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AlunoId");
+                    b.Property<string>("NomeUsuario");
 
-                    b.Property<string>("Login")
-                        .IsRequired();
+                    b.Property<string>("Senha");
 
-                    b.Property<int>("ProfessorId");
-
-                    b.Property<int>("SecretariaId");
-
-                    b.Property<string>("Senha")
-                        .IsRequired()
-                        .HasMaxLength(20);
-
-                    b.Property<int>("TipoPessoa");
+                    b.Property<int>("TipoPerfil");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AlunoId");
-
-                    b.HasIndex("ProfessorId");
-
-                    b.HasIndex("SecretariaId");
 
                     b.ToTable("Usuarios");
                 });
@@ -713,24 +698,6 @@ namespace Mateus.SistemaAcademico.Migrations
                     b.HasOne("Mateus.SistemaAcademico.Models.Disciplina", "Disciplina")
                         .WithMany()
                         .HasForeignKey("DisciplinaId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Mateus.SistemaAcademico.Models.Usuario", b =>
-                {
-                    b.HasOne("Mateus.SistemaAcademico.Models.Aluno", "Aluno")
-                        .WithMany()
-                        .HasForeignKey("AlunoId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Mateus.SistemaAcademico.Models.Professor", "Professor")
-                        .WithMany()
-                        .HasForeignKey("ProfessorId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Mateus.SistemaAcademico.Models.Secretaria", "Secretaria")
-                        .WithMany()
-                        .HasForeignKey("SecretariaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

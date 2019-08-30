@@ -729,6 +729,7 @@
     <Compile Include="Controllers\AvaliacoesController.cs" />
     <Compile Include="Controllers\AdmController.cs" />
     <Compile Include="Controllers\ExamesFinaisController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SubstitutivasController.cs" />
     <Compile Include="Controllers\NotasController.cs" />
     <Compile Include="Controllers\TrabalhosController.cs" />
@@ -744,6 +745,7 @@
     <Compile Include="Controllers\CursosController .cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="DAO\AvaliacoesDAO.cs" />
     <Compile Include="DAO\AdmDAO.cs" />
     <Compile Include="DAO\ExamesFinaisDAO.cs" />
@@ -761,25 +763,15 @@
     <Compile Include="DAO\AlunosDAO.cs" />
     <Compile Include="DAO\CursosDAO.cs" />
     <Compile Include="DAO\SistemaContext.cs" />
+    <Compile Include="DAO\UsuariosDAO.cs" />
+    <Compile Include="Filtro\AutorizacaoFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ICurso.cs" />
-    <Compile Include="Migrations\20190826174056_Primeira.cs" />
-    <Compile Include="Migrations\20190826174056_Primeira.designer.cs">
-      <DependentUpon>20190826174056_Primeira.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20190827170505_Aluno.cs" />
-    <Compile Include="Migrations\20190827170505_Aluno.designer.cs">
-      <DependentUpon>20190827170505_Aluno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20190827183543_Login.cs" />
-    <Compile Include="Migrations\20190827183543_Login.designer.cs">
-      <DependentUpon>20190827183543_Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20190829005538_Usuario.cs" />
-    <Compile Include="Migrations\20190829005538_Usuario.designer.cs">
-      <DependentUpon>20190829005538_Usuario.cs</DependentUpon>
+    <Compile Include="Migrations\20190829190136_Primeira.cs" />
+    <Compile Include="Migrations\20190829190136_Primeira.designer.cs">
+      <DependentUpon>20190829190136_Primeira.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SistemaContextModelSnapshot.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -788,7 +780,7 @@
     <Compile Include="Models\Avaliacao.cs" />
     <Compile Include="Models\Enums\Area.cs" />
     <Compile Include="Models\Enums\Periodo.cs" />
-    <Compile Include="Models\Enums\TipoPessoa.cs" />
+    <Compile Include="Models\Enums\TipoPerfil.cs" />
     <Compile Include="Models\Enums\TipoTelefone.cs" />
     <Compile Include="Models\Conteudo.cs" />
     <Compile Include="Models\Curso.cs" />
@@ -974,10 +966,15 @@
     <Content Include="Views\Adm\Index.cshtml" />
     <Content Include="Views\Notas\AdicionarNota.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Usuarios\AdicionarUsuario.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Usuarios\RemoverUsuario.cshtml" />
+    <Content Include="Views\Usuarios\EditarUsuario.cshtml" />
+    <Content Include="Views\Usuarios\VisualizarDetalhes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Filtro\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>

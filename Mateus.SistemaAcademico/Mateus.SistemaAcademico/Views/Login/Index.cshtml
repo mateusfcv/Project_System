@@ -1,0 +1,35 @@
+﻿@model Mateus.SistemaAcademico.Models.Usuario
+
+<h2 class="text-uppercase">Login</h2>
+
+<form action="/Login/Autentica" method="post">
+    @Html.ValidationSummary(true, "Erro", new { @class = "text-danger" })
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="form-label-group">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="login" class="text-uppercase">Login</label>
+                        <input autofocus required type="text" name="login" id="login" class="form-control" placeholder="Informe seu nome de usuário" />
+                        @Html.ValidationMessageFor(model => model.NomeUsuario, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="senha" class="text-uppercase">Senha</label>
+                        <input required type="password" name="senha" id="senha" class="form-control" placeholder="Informe sua senha" />
+                        @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label style="opacity:0;">login</label><br />
+                        <input class="btn btn-success text-uppercase" type="submit" value="Entrar" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

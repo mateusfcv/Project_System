@@ -11,16 +11,20 @@ namespace Mateus.SistemaAcademico.Models
 {
     public abstract class Pessoa : EntityBase
     {
-        [Required]
+        [Required(ErrorMessage = "O nome é obrigatório.")]
         public string Nome { get; set; }
-        [Required]
+
+
+        [Required(ErrorMessage = "O email é obrigatório.")]
         public string Email { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "O cpf é obrigatório.")]
         public string Cpf { get; set; }
 
         [Display(Name = "Data de Nascimento")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
+        [Required]
         public DateTime DataDeNascimento { get; set; }
 
         public List<Telefone> Telefones { get; set; }
