@@ -34,13 +34,13 @@
 
             <tbody>
 
-                @foreach (var avaliacoes in ViewBag.Avaliacoes)
+                @foreach (var avaliacoes in Model)
                 {
                     using (Html.BeginForm("ListarAvaliacao", "Avaliacoes", new { id = avaliacoes.Id }))
                     {
                         <tr>
                             <td>
-                                @avaliacoes.AlunoId
+                                @avaliacoes.Aluno.Nome
                             </td>
 
                             <td>
@@ -48,7 +48,7 @@
                             </td>
 
                             <td>
-                                @avaliacoes.DisciplinaId
+                                @avaliacoes.Disciplina.Nome
                             </td>
 
                             <td>
