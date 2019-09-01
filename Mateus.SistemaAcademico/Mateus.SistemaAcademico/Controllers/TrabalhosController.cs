@@ -78,16 +78,43 @@ namespace Mateus.SistemaAcademico.Controllers
 
         public ActionResult VisualizarDetalhes(int id)
         {
+            var alunos = new AlunosDAO();
+            var disciplinas = new DisciplinasDAO();
+            var trabalhosDAO = new TrabalhosDAO();
+            var trabalhos = trabalhosDAO.ListarTrabalhos();
+
+            foreach (var trabalhoo in trabalhos)
+            {
+                trabalhoo.Aluno = alunos.BuscaPorId(trabalhoo.AlunoId);
+            }
+
+            foreach (var trabalhoo in trabalhos)
+            {
+                trabalhoo.Disciplina = disciplinas.BuscaPorId(trabalhoo.DisciplinaId);
+            }
+
             Trabalho trabalho = trabalhosDAO.BuscaPorId(id);
             return View(trabalho);
         }
 
         public ActionResult Index()
         {
+            var alunos = new AlunosDAO();
+            var disciplinas = new DisciplinasDAO();
             var trabalhosDAO = new TrabalhosDAO();
             var trabalhos = trabalhosDAO.ListarTrabalhos();
-            ViewBag.Trabalhos = trabalhos;
-            return View();
+
+            foreach (var trabalho in trabalhos)
+            {
+                trabalho.Aluno = alunos.BuscaPorId(trabalho.AlunoId);
+            }
+
+            foreach (var trabalho in trabalhos)
+            {
+                trabalho.Disciplina = disciplinas.BuscaPorId(trabalho.DisciplinaId);
+            }
+
+            return View(trabalhos);
         }
     }
 }

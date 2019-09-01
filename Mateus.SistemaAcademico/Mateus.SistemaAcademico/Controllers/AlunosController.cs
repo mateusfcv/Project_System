@@ -81,6 +81,13 @@ namespace Mateus.SistemaAcademico.Controllers
         [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         public ActionResult VisualizarDetalhes(int id)
         {
+            var cursos = new CursosDAO();
+            var alunosDAO = new AlunosDAO();
+            var alunos = alunosDAO.ListarAlunos();
+            foreach (var alunoss in alunos)
+            {
+                alunoss.Curso = cursos.BuscaPorId(alunoss.CursoId);
+            }
             Aluno aluno = alunosDAO.BuscaPorId(id);
             return View(aluno);
         }

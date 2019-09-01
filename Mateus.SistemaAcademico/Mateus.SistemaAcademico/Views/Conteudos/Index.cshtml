@@ -32,7 +32,7 @@
 
             <tbody>
 
-                @foreach (var conteudo in ViewBag.Conteudos)
+                @foreach (var conteudo in Model)
                 {
                     using (Html.BeginForm("ListarConteudo", "Conteudos", new { id = conteudo.Id }))
                     {
@@ -50,12 +50,12 @@
                             </td>
 
                             <td>
-                                @conteudo.DisciplinaId
+                                @conteudo.Disciplina.Nome
                             </td>
 
 
                             <td>
-                                <a href="/Conteudos/RemoverConteudo/@conteudo.Id">Remover Conteúdo</a>
+                                <a href="/Conteudos/RemoverConteudo/@conteudo.Id">Remover</a>
                             </td>
 
                             <td>
@@ -63,7 +63,7 @@
                             </td>
 
                             <td>
-                                <a href="/Conteudos/EditarConteudo/@conteudo.Id">Editar Conteúdo</a>
+                                <a href="/Conteudos/EditarConteudo/@conteudo.Id">Editar</a>
                             </td>
 
                         </tr>

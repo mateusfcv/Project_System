@@ -80,6 +80,22 @@ namespace Mateus.SistemaAcademico.Controllers
 
         public ActionResult VisualizarDetalhes(int id)
         {
+            var secretaria = new SecretariasDAO();
+            var cursosDAO = new CursosDAO();
+            var cursos = cursosDAO.ListarCursos();
+            foreach (var cursoo in cursos)
+            {
+                cursoo.Secretaria = secretaria.BuscaPorId(cursoo.SecretariaId);
+            }
+
+            var coordenador = new ProfessoresDAO();
+            var cursoDAO = new CursosDAO();
+            var cursoss = cursosDAO.ListarCursos();
+            foreach (var ccurso in cursos)
+            {
+                ccurso.Coordenador = coordenador.BuscaPorId(ccurso.CoordenadorId);
+            }
+
             Curso curso = cursosDAO.BuscaPorId(id);
             var alunosDAO = new AlunosDAO();
             List<Aluno> alunoCurso = alunosDAO.ListarAlunos()

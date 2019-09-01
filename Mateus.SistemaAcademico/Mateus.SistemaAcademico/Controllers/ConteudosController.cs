@@ -73,16 +73,28 @@ namespace Mateus.SistemaAcademico.Controllers
 
         public ActionResult VisualizarDetalhes(int id)
         {
+            var disciplina = new DisciplinasDAO();
+            var conteudosDAO = new ConteudosDAO();
+            var conteudos = conteudosDAO.ListarConteudos();
+            foreach (var conteudoo in conteudos)
+            {
+                conteudoo.Disciplina = disciplina.BuscaPorId(conteudoo.DisciplinaId);
+            }
+
             Conteudo conteudo = conteudosDAO.BuscaPorId(id);
             return View(conteudo);
         }
 
         public ActionResult Index()
         {
+            var disciplina = new DisciplinasDAO();
             var conteudosDAO = new ConteudosDAO();
             var conteudos = conteudosDAO.ListarConteudos();
-            ViewBag.Conteudos = conteudos;
-            return View();
+            foreach (var conteudo in conteudos)
+            {
+                conteudo.Disciplina = disciplina.BuscaPorId(conteudo.DisciplinaId);
+            }
+            return View(conteudos);
         }
     }
 }

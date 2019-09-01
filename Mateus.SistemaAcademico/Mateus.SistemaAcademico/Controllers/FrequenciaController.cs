@@ -78,16 +78,43 @@ namespace Mateus.SistemaAcademico.Controllers
 
         public ActionResult VisualizarDetalhes(int id)
         {
+            var alunos = new AlunosDAO();
+            var disciplinas = new DisciplinasDAO();
+            var frequenciaDAO = new FrequenciasDAO();
+            var frequencias = frequenciaDAO.ListarFrequencias();
+
+            foreach (var frequenciaa in frequencias)
+            {
+                frequenciaa.Aluno = alunos.BuscaPorId(frequenciaa.AlunoId);
+            }
+
+            foreach (var frequenciaa in frequencias)
+            {
+                frequenciaa.Disciplina = disciplinas.BuscaPorId(frequenciaa.DisciplinaId);
+            }
+
             Frequencia frequencia = frequenciaDAO.BuscaPorId(id);
             return View(frequencia);
         }
 
         public ActionResult Index()
         {
+            var alunos = new AlunosDAO();
+            var disciplinas = new DisciplinasDAO();
             var frequenciaDAO = new FrequenciasDAO();
-            var frequencia = frequenciaDAO.ListarFrequencias();
-            ViewBag.Frequencia = frequencia;
-            return View();
+            var frequencias = frequenciaDAO.ListarFrequencias(); 
+
+            foreach (var frequencia in frequencias)
+            {
+                frequencia.Aluno = alunos.BuscaPorId(frequencia.AlunoId);
+            }
+
+            foreach (var frequencia in frequencias)
+            {
+                frequencia.Disciplina = disciplinas.BuscaPorId(frequencia.DisciplinaId);
+            }
+
+            return View(frequencias);
         }
     }
 }

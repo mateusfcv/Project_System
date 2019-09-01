@@ -49,19 +49,19 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.CoordenadorId)
+                @Html.DisplayNameFor(model => model.Coordenador)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.CoordenadorId)
+                @Html.DisplayFor(model => model.Coordenador.Nome)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.SecretariaId)
+                @Html.DisplayNameFor(model => model.Secretaria)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.SecretariaId)
+                @Html.DisplayFor(model => model.Secretaria.Nome)
             </dd>
 
             <dt>
@@ -98,7 +98,7 @@
 
 @*==============================================================================================================*@
 
-<div class="table-responsive">
+@*<div class="table-responsive">
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
         <thead>
@@ -114,9 +114,9 @@
 
             </tr>
 
-        </thead>
+        </thead>*@
 
-        <tbody>
+        @*<tbody>
             @if (Model.Alunos.Count != 0)
             {
                 foreach (var aluno in ViewBag.Alunos)
@@ -139,5 +139,5 @@
 
         </tbody>
     </table>
-</div>
+</div>*@
 

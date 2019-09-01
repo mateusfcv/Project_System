@@ -32,13 +32,13 @@
 
             <tbody>
 
-                @foreach (var trabalho in ViewBag.Trabalhos)
+                @foreach (var trabalho in Model)
                 {
                     using (Html.BeginForm("ListarTrabalho", "Trabalhos", new { id = trabalho.Id }))
                     {
                 <tr>
                     <td>
-                        @trabalho.AlunoId
+                        @trabalho.Aluno.Nome
                     </td>
 
                     <td>
@@ -46,16 +46,16 @@
                     </td>
 
                     <td>
-                        @trabalho.DisciplinaId
+                        @trabalho.Disciplina.Nome
                     </td>
 
 
                     <td>
-                        @trabalho.DataDeInicio
+                        @trabalho.DataDeInicio.ToString("dd/MM/yyyy")
                     </td>
 
                     <td>
-                        @trabalho.DataDaEntrega
+                        @trabalho.DataDaEntrega.ToString("dd/MM/yyyy")
                     </td>
 
 

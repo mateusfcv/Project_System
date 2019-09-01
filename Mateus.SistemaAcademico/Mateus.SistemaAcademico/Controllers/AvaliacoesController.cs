@@ -78,6 +78,21 @@ namespace Mateus.SistemaAcademico.Controllers
 
         public ActionResult VisualizarDetalhes(int id)
         {
+            var alunos = new AlunosDAO();
+            var disciplinas = new DisciplinasDAO();
+            var avaliacaosDAO = new AvaliacoesDAO();
+            var avaliacaos = avaliacaosDAO.ListarAvaliacoes();
+
+            foreach (var avaliacaoo in avaliacaos)
+            {
+                avaliacaoo.Aluno = alunos.BuscaPorId(avaliacaoo.AlunoId);
+            }
+
+            foreach (var avaliacaoo in avaliacaos)
+            {
+                avaliacaoo.Disciplina = disciplinas.BuscaPorId(avaliacaoo.DisciplinaId);
+            }
+
             Avaliacao avaliacao = avaliacaosDAO.BuscaPorId(id);
             return View(avaliacao);
         }

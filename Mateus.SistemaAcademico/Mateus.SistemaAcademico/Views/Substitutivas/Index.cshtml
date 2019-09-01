@@ -33,13 +33,13 @@
 
             <tbody>
 
-                @foreach (var substitutivas in ViewBag.Substitutivas)
+                @foreach (var substitutivas in Model)
                 {
                     using (Html.BeginForm("ListarSubstitutivas", "Substitutivas", new { id = substitutivas.Id }))
                     {
                         <tr>
                             <td>
-                                @substitutivas.AlunoId
+                                @substitutivas.Aluno.Nome
                             </td>
 
                             <td>
@@ -47,7 +47,7 @@
                             </td>
 
                             <td>
-                                @substitutivas.DisciplinaId
+                                @substitutivas.Disciplina.Nome
                             </td>
 
                             <td>

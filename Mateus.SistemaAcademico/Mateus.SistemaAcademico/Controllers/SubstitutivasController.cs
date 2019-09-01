@@ -78,16 +78,43 @@ namespace Mateus.SistemaAcademico.Controllers
 
         public ActionResult VisualizarDetalhes(int id)
         {
+            var alunos = new AlunosDAO();
+            var disciplinas = new DisciplinasDAO();
+            var substitutivasDAO = new SubstitutivasDAO(); 
+            var substitutivass = substitutivasDAO.ListarSubstitutivas();
+
+            foreach (var substitutiva in substitutivass)
+            {
+                substitutiva.Aluno = alunos.BuscaPorId(substitutiva.AlunoId);
+            }
+
+            foreach (var substitutiva in substitutivass)
+            {
+                substitutiva.Disciplina = disciplinas.BuscaPorId(substitutiva.DisciplinaId);
+            }
+
             Substitutivas substitutivas = substitutivasDAO.BuscaPorId(id);
             return View(substitutivas);
         }
 
         public ActionResult Index()
         {
+            var alunos = new AlunosDAO();
+            var disciplinas = new DisciplinasDAO();
             var substitutivasDAO = new SubstitutivasDAO();
             var substitutivas = substitutivasDAO.ListarSubstitutivas();
-            ViewBag.Substitutivas = substitutivas;
-            return View();
+
+            foreach (var substitutiva in substitutivas)
+            {
+                substitutiva.Aluno = alunos.BuscaPorId(substitutiva.AlunoId);
+            }
+
+            foreach (var substitutiva in substitutivas)
+            {
+                substitutiva.Disciplina = disciplinas.BuscaPorId(substitutiva.DisciplinaId);
+            }
+
+            return View(substitutivas);
         }
     }
 }

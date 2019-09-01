@@ -78,16 +78,43 @@ namespace Mateus.SistemaAcademico.Controllers
 
         public ActionResult VisualizarDetalhes(int id)
         {
+            var alunos = new AlunosDAO();
+            var disciplinas = new DisciplinasDAO();
+            var examesfinaisDAO = new ExamesFinaisDAO();
+            var examesfinais = examesfinaisDAO.ListarExamesFinais();
+
+            foreach (var examefinal in examesfinais)
+            {
+                examefinal.Aluno = alunos.BuscaPorId(examefinal.AlunoId);
+            }
+
+            foreach (var examefinal in examesfinais)
+            {
+                examefinal.Disciplina = disciplinas.BuscaPorId(examefinal.DisciplinaId);
+            }
+
             ExameFinal exameFinal = exameFinalsDAO.BuscaPorId(id);
             return View(exameFinal);
         }
 
         public ActionResult Index()
         {
-            var exameFinalsDAO = new ExamesFinaisDAO();
-            var exameFinals = exameFinalsDAO.ListarExamesFinais();
-            ViewBag.ExamesFinais = exameFinals;
-            return View();
+            var alunos = new AlunosDAO();
+            var disciplinas = new DisciplinasDAO();
+            var examesfinaisDAO = new ExamesFinaisDAO();
+            var examesfinais = examesfinaisDAO.ListarExamesFinais();
+
+            foreach (var examefinal in examesfinais)
+            {
+                examefinal.Aluno = alunos.BuscaPorId(examefinal.AlunoId);
+            }
+
+            foreach (var examefinal in examesfinais)
+            {
+                examefinal.Disciplina = disciplinas.BuscaPorId(examefinal.DisciplinaId);
+            }
+
+            return View(examesfinais);
         }
     }
 }
