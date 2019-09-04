@@ -5,23 +5,36 @@ using System.Web;
 using System.Web.Mvc;
 using Mateus.SistemaAcademico.Bussines;
 using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Filtro;
 using Mateus.SistemaAcademico.Models;
 using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
+    [AutorizacaoFilter]
     public class ProfessoresController : Controller
     {
         // get: professor
         ProfessoresDAO professorDAO = new ProfessoresDAO();
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpPost]
         public ActionResult AdicionarProfessor(Professor professor)
         {
-            professorDAO.Adicionar(professor);
-            return RedirectToAction("Index", "Professores");
+            if (ModelState.IsValid)
+            {
+                if (professor.ValidaData(professor))
+                {
+                    professorDAO.Adicionar(professor);
+                    return RedirectToAction("Index", "Professores");
+                }
+            }
+            TempData["msg"] = "Data de nascimento inválida";
+            return View(professor);
+
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpGet]
         public ActionResult AdicionarProfessor()
         {
@@ -30,6 +43,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Remover Professor
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpGet]
         public ActionResult RemoverProfessor(int id)
         {
@@ -37,6 +51,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(professor);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpPost]
         public ActionResult RemoverProfessor(Professor professor)
         {
@@ -45,6 +60,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Editar Professor
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpGet]
         public ActionResult EditarProfessor(int id)
         {
@@ -53,6 +69,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(professor);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditarProfessor([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, RegistroDoProfessor, Titulacao")]Professor professor)
@@ -62,12 +79,14 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Professores");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         public ActionResult ListarProfessores()
         {
             IList<Professor> professor = professorDAO.ListarProfessores();
             return View(professor);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         public ActionResult VisualizarDetalhes(int id)
         {
             Professor professor = professorDAO.BuscaPorId(id);
@@ -79,6 +98,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(professor);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         public ActionResult Index()
         {
             var professorDAO = new ProfessoresDAO();

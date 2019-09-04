@@ -1,4 +1,6 @@
 ﻿@model IList<Mateus.SistemaAcademico.Models.Curso>
+@using Mateus.SistemaAcademico.Models
+@using Mateus.SistemaAcademico.Models.Enums
 
 @{
 
@@ -9,9 +11,13 @@
 <h2>Lista de cursos do sistema</h2>
 <div class="card-body">
 
-    <p>
-        <a href="/Cursos/AdicionarCurso">Cadastrar Curso</a>
-    </p>
+    @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador)
+    {
+        <p>
+            <a href="/Cursos/AdicionarCurso">Cadastrar Curso</a>
+        </p>
+    }
+
 
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -21,7 +27,7 @@
                 <tr>
 
                     <th>Nome</th>
-                    <th>Duração do Curso</th>
+                    @*<th>Duração do Curso</th>*@
                     <th>Tipo de Curso</th>
                     <th>Área</th>
 
@@ -44,28 +50,60 @@
                                 @cursos.Nome
                             </td>
 
-                            <td>
-                                @cursos.Duracao
-                            </td>
+                            @*<td>
+                                    @cursos.Duracao
+                                </td>*@
 
                             <td>
                                 @cursos.TipoCurso
-               
+
                             <td>
                                 @cursos.Area
                             </td>
 
-                            <td>
-                                <a href="/Cursos/RemoverCurso/@cursos.Id">Remover Curso</a>
-                            </td>
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador)
+                            {
+                                <td>
+                                    <a href="/Cursos/RemoverCurso/@cursos.Id">Remover</a>
+                                </td>
+                            }
 
-                            <td>
-                                <a href="/Cursos/VisualizarDetalhes/@cursos.Id">Detalhes</a>
-                            </td>
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador)
+                            {
+                                <td>
+                                    <a href="/Cursos/VisualizarDetalhes/@cursos.Id">Detalhes</a>
+                                </td>
+                            }
 
-                            <td>
-                                <a href="/Cursos/EditarCurso/@cursos.Id">Editar Curso</a>
-                            </td>
+
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Secretaria)
+                            {
+                                <td>
+                                    <a href="/Cursos/VisualizarDetalhes/@cursos.Id">Detalhes</a>
+                                </td>
+                            }
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Professor)
+                            {
+                                <td>
+                                    <a href="/Cursos/VisualizarDetalhes/@cursos.Id">Detalhes</a>
+                                </td>
+                            }
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Aluno)
+                            {
+                                <td>
+                                    <a href="/Cursos/VisualizarDetalhes/@cursos.Id">Detalhes</a>
+                                </td>
+                            }
+
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador)
+                            {
+                                <td>
+                                    <a href="/Cursos/EditarCurso/@cursos.Id">Editar</a>
+                                </td>
+                            }
+
+
+
 
                         </tr>
                     }

@@ -18,8 +18,17 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpPost]
         public ActionResult AdicionarAdministrador(Administrador adm)
         {
-            admsDAO.Adicionar(adm);
-            return RedirectToAction("Index", "Adm");
+            if (ModelState.IsValid)
+            {
+                if (adm.ValidaData(adm))
+                {
+                    admsDAO.Adicionar(adm);
+                    return RedirectToAction("Index", "Adm");
+                }
+            }
+            TempData["msg"] = "Data de nascimento inválida";
+            return View(adm);
+            
         }
 
         [HttpGet]

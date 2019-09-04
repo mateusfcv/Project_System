@@ -10,12 +10,13 @@ using System.Web.Mvc;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
-    [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
+    [AutorizacaoFilter]
     public class UsuariosController : Controller
     {
         // GET: Usuarios
         UsuariosDAO usuariosDAO = new UsuariosDAO();
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpPost]
         public ActionResult AdicionarUsuario(Usuario usuario)
         {
@@ -23,6 +24,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Usuarios");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpGet]
         public ActionResult AdicionarUsuario()
         {
@@ -32,6 +34,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Remover Usuario
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpGet]
         public ActionResult RemoverUsuario(int Id)
         {
@@ -39,6 +42,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(usuario);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpPost]
         public ActionResult RemoverUsuario(Usuario usuario)
         {
@@ -47,6 +51,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Editar Usuario
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpGet]
         public ActionResult EditarUsuario(int id)
         {
@@ -55,28 +60,31 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(usuario);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarUsuario([Bind(Include = "Id, NomeUsuario, Senha")]Usuario usuario)
+        public ActionResult EditarUsuario([Bind(Include = "Id, NomeUsuario, Senha, TipoPerfil")]Usuario usuario)
         {
             usuariosDAO = new UsuariosDAO();
             usuariosDAO.Editar(usuario);
             return RedirectToAction("Index", "Usuarios");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         public ActionResult ListarUsuario()
         {
             IList<Usuario> usuarios = usuariosDAO.Lista();
             return View(usuarios);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         public ActionResult VisualizarDetalhes(int id)
         {
             Usuario usuario = usuariosDAO.BuscaPorId(id);
             return View(usuario);
         }
-        
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         public ActionResult Index()
         {
             UsuariosDAO usuariosDAO = new UsuariosDAO();
@@ -84,5 +92,7 @@ namespace Mateus.SistemaAcademico.Controllers
             ViewBag.Usuarios = usuarios;
             return View();
         }
+
+        
     }
 }

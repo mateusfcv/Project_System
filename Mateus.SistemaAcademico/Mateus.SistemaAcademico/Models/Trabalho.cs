@@ -5,11 +5,14 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Trabalho : EntityBase
     {
+        [Required]
         public int AlunoId { get; set; }
         public Aluno Aluno { get; set; }
 
+        [Required]
         public float Nota { get; set; }
 
+        [Required]
         public int DisciplinaId { get; set; }
         public Disciplina Disciplina { get; set; }
 
@@ -31,7 +34,8 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Trabalho(int alunoId, Aluno aluno, float nota, int disciplinaId, Disciplina disciplina, DateTime dataDeInicio, DateTime dataDaEntrega)
+        public Trabalho(int alunoId, Aluno aluno, float nota, int disciplinaId, Disciplina disciplina,
+            DateTime dataDeInicio, DateTime dataDaEntrega)
         {
             AlunoId = alunoId;
             Aluno = aluno;

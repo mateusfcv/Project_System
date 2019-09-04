@@ -1,4 +1,7 @@
 ﻿@model IList<Mateus.SistemaAcademico.Models.Avaliacao>
+@using Mateus.SistemaAcademico.Models
+@using Mateus.SistemaAcademico.Models.Enums
+
 
 @{
 
@@ -8,9 +11,13 @@
 
 <h2>Lista de Avaliações</h2>
 <div class="card-body">
-    <p>
-        <a href="/Avaliacoes/AdicionarAvaliacao">Adicionar Avaliações</a>
-    </p>
+    @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Professor)
+    {
+        <p>
+            <a href="/Avaliacoes/AdicionarAvaliacao">Adicionar Avaliações</a>
+        </p>
+    }
+
 
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -25,8 +32,8 @@
                     <th>Data</th>
 
                     <th></th>
-                    <th></th>
-                    <th></th>
+                    @*<th></th>
+                        <th></th>*@
 
                 </tr>
 
@@ -56,18 +63,21 @@
                             </td>
 
 
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Professor)
+                            {
+                                <td>
+                                    <a href="/Avaliacoes/RemoverAvaliacao/@avaliacoes.Id">Remover</a>
+                                </td>
 
-                            <td>
-                                <a href="/Avaliacoes/RemoverAvaliacao/@avaliacoes.Id">Remover</a>
-                            </td>
+                                <td>
+                                    <a href="/Avaliacoes/VisualizarDetalhes/@avaliacoes.Id">Detalhes</a>
+                                </td>
 
-                            <td>
-                                <a href="/Avaliacoes/VisualizarDetalhes/@avaliacoes.Id">Detalhes</a>
-                            </td>
+                                <td>
+                                    <a href="/Avaliacoes/EditarAvaliacao/@avaliacoes.Id">Editar</a>
+                                </td>
+                            }
 
-                            <td>
-                                <a href="/Avaliacoes/EditarAvaliacao/@avaliacoes.Id">Editar</a>
-                            </td>
 
                         </tr>
                     }

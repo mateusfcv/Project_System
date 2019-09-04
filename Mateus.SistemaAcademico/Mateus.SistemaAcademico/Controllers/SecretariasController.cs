@@ -5,23 +5,36 @@ using System.Web;
 using System.Web.Mvc;
 using Mateus.SistemaAcademico.Bussines;
 using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Filtro;
 using Mateus.SistemaAcademico.Models;
 using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
+    [AutorizacaoFilter]
     public class SecretariasController : Controller
     {
         // get: secretarias
         SecretariasDAO secretariasDAO = new SecretariasDAO();
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpPost]
         public ActionResult AdicionarSecretaria(Secretaria secretaria)
         {
-            secretariasDAO.Adicionar(secretaria);
-            return RedirectToAction("Index", "Secretarias");
+            if (ModelState.IsValid)
+            {
+                if (secretaria.ValidaData(secretaria))
+                {
+                    secretariasDAO.Adicionar(secretaria);
+                    return RedirectToAction("Index", "Secretarias");
+                }
+            }
+            TempData["msg"] = "Data de nascimento inválida";
+            return View(secretaria);
+
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpGet]
         public ActionResult AdicionarSecretaria()
         {
@@ -30,6 +43,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Remover Secretaria
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpGet]
         public ActionResult RemoverSecretaria(int Id)
         {
@@ -37,6 +51,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(secretaria);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpPost]
         public ActionResult RemoverSecretaria(Secretaria secretaria)
         {
@@ -45,6 +60,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Editar Secretaria
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpGet]
         public ActionResult EditarSecretaria(int id)
         {
@@ -53,6 +69,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(secretaria);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditarSecretaria([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento")]Secretaria secretaria)
@@ -62,12 +79,14 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Secretarias");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         public ActionResult ListarSecretaria()
         {
             IList<Secretaria> secretarias = secretariasDAO.ListarSecretarias();
             return View(secretarias);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         public ActionResult VisualizarDetalhes(int id)
         {
             Secretaria secretaria = secretariasDAO.BuscaPorId(id);
@@ -79,6 +98,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(secretaria);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         public ActionResult Index()
         {
             var secretariasDAO = new SecretariasDAO();

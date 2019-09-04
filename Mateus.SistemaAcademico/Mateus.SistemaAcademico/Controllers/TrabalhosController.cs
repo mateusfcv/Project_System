@@ -5,16 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using Mateus.SistemaAcademico.Bussines;
 using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Filtro;
 using Mateus.SistemaAcademico.Models;
 using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
+    [AutorizacaoFilter]
     public class TrabalhosController : Controller
     {
         // get: trabalhos
         TrabalhosDAO trabalhosDAO = new TrabalhosDAO();
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult AdicionarTrabalho(Trabalho trabalho)
         {
@@ -22,6 +25,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Trabalhos");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult AdicionarTrabalho()
         {
@@ -38,6 +42,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Remover Trabalho
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult RemoverTrabalho(int Id)
         {
@@ -45,6 +50,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(trabalho);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult RemoverTrabalho(Trabalho trabalho)
         {
@@ -53,6 +59,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Editar Trabalho
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult EditarTrabalho(int id)
         {
@@ -61,6 +68,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(trabalho);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditarTrabalho([Bind(Include = "Id, AlunoId, Nota, DisciplinaId, , DataDeInicio, DataDaEntrega")]Trabalho trabalho)
@@ -70,12 +78,14 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Trabalhos");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         public ActionResult ListarTrabalho()
         {
             IList<Trabalho> trabalhos = trabalhosDAO.ListarTrabalhos();
             return View(trabalhos);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Aluno, TipoPerfil.Administrador })]
         public ActionResult VisualizarDetalhes(int id)
         {
             var alunos = new AlunosDAO();
@@ -97,6 +107,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(trabalho);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Aluno, TipoPerfil.Administrador })]
         public ActionResult Index()
         {
             var alunos = new AlunosDAO();

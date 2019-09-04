@@ -1,71 +1,151 @@
 ﻿@model Mateus.SistemaAcademico.Models.Aluno
 
 @{
-    Layout = null;
+    ViewBag.Title = "Remover";
 }
 
-<!DOCTYPE html>
+<h3>Deseja remover este aluno?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Remover</title>
-</head>
-<body>
-    <h3>Deseja remover este aluno?</h3>
-    <div>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Nome)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Nome)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Email)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Email)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Cpf)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Cpf)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.DataDeNascimento)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.DataDeNascimento)
-            </dd>
- 
-            <dt>
-                @Html.DisplayNameFor(model => model.CursoId)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.CursoId)
-            </dd>
-    
-        </dl>
-    
-        @using (Html.BeginForm()) {
-            @Html.AntiForgeryToken()
-    
-            <div class="form-actions no-color">
-                <input type="submit" value="Remover" class="btn btn-default" /> |
-                @Html.ActionLink("Voltar", "Index")
-            </div>
-        }
-    </div>
-</body>
-</html>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDeNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDeNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroTel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroTel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoTelefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoTelefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeRua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeRua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estados)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estados)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidades)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidades)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.ResponsavelId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResponsavelId)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Curso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CursoId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remover" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
+

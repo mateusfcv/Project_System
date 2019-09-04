@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Mateus.SistemaAcademico
 {
-    public class Endereco : EntityBase 
+    public class Endereco : EntityBase
     {
         public string Cep { get; set; }
         public string NomeRua { get; set; }
@@ -34,7 +34,7 @@ namespace Mateus.SistemaAcademico
                 Estados = estados;
                 Cidades = cidades;
             }
-            
+
         }
     }
 }

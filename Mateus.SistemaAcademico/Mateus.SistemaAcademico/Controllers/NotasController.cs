@@ -5,16 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using Mateus.SistemaAcademico.Bussines;
 using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Filtro;
 using Mateus.SistemaAcademico.Models;
 using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
+    [AutorizacaoFilter]
     public class NotasController : Controller
     {
         // get: notas
         NotasDAO notasDAO = new NotasDAO();
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult AdicionarNota(Nota nota)
         {
@@ -22,6 +25,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Notas");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult AdicionarNota()
         {
@@ -30,6 +34,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Remover Nota
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult RemoverNota(int Id)
         {
@@ -37,6 +42,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(nota);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult RemoverNota(Nota nota)
         {
@@ -45,6 +51,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Editar Nota
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult EditarNota(int id)
         {
@@ -53,6 +60,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(nota);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditarNota([Bind(Include = "Id, DisciplinaId, Substitutivas, Trabalho, Avaliacao, AlunoId")]Nota nota)
@@ -62,18 +70,21 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Notas");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         public ActionResult ListarNota()
         {
             IList<Nota> notas = notasDAO.ListarNotas();
             return View(notas);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Aluno })]
         public ActionResult VisualizarDetalhes(int id)
         {
             Nota nota = notasDAO.BuscaPorId(id);
             return View(nota);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Aluno })]
         public ActionResult Index()
         {
             var notasDAO = new NotasDAO();

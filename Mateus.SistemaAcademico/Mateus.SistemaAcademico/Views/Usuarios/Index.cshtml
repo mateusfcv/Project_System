@@ -23,7 +23,7 @@
         <thead>
             <tr>
                 <th class="text-uppercase">Nome de usuário</th>
-                <th class="text-uppercase">Senha</th>
+                @*<th class="text-uppercase">Senha</th>*@
                 <th class="text-uppercase">Perfil de Usuário</th>
             </tr>
         </thead>
@@ -37,24 +37,24 @@
                         @usuario.NomeUsuario
                     </td>
 
-                    <td>
+                    @*<td>
                         @usuario.Senha
-                    </td>
+                    </td>*@
 
                     <td>
                         @usuario.TipoPerfil
                     </td>
 
                     <td>
-                        <a class="btn btn-primary text-uppercase" href="~/Usuario/Detalhes/@usuario.Id">Ver</a>
+                        <a class="btn btn-primary text-uppercase" href="~/Usuarios/VisualizarDetalhes/@usuario.Id">Detalhes</a>
                     </td>
 
                     <td>
-                        <a class="btn btn-primary btn-danger text-uppercase" href="Usuarios/RemoverUsuario/@usuario.Id">Excluir</a>
+                        <a class="btn btn-primary btn-danger text-uppercase" href="Usuarios/RemoverUsuario/@usuario.Id">Remover</a>
                     </td>
 
                     <td>
-                        <a class="btn btn-warning text-uppercase" href="~/Usuario/Alterar/@usuario.Id">Editar</a>
+                        <a class="btn btn-warning text-uppercase" href="~/Usuarios/EditarUsuario/@usuario.Id">Editar</a>
                     </td>
 
                 </tr>

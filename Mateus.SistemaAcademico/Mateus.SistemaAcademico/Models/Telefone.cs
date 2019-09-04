@@ -14,7 +14,7 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public TipoTelefone TipoTelefone { get; set; }
 
-        public Telefone ()
+        public Telefone()
         {
 
         }

@@ -1,66 +1,143 @@
 ﻿@model Mateus.SistemaAcademico.Models.Aluno
 
 @{
-    Layout = null;
+    ViewBag.Title = "Detalhes";
 }
+<div>
+    <h4>Aluno</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
 
-<!DOCTYPE html>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Detalhes</title>
-</head>
-<body>
-    <div>
-        <h4>Aluno</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Nome)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Nome)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Email)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Email)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Cpf)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDeNascimento)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Cpf)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.DataDeNascimento)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.DataDeNascimento)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroTel)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DataDeNascimento)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.NumeroTel)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Curso)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoTelefone)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Curso.Nome)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.TipoTelefone)
+        </dd>
 
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Editar", "EditarAluno", new { id = Model.Id }) |
-        @Html.ActionLink("Voltar", "Index") 
-    </p>
-</body>
-</html>
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.NomeUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeRua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeRua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estados)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estados)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidades)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidades)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.ResponsavelId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResponsavelId)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Curso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Curso.Nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "EditarAluno", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

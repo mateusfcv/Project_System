@@ -5,16 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using Mateus.SistemaAcademico.Bussines;
 using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Filtro;
 using Mateus.SistemaAcademico.Models;
 using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
+    [AutorizacaoFilter]
     public class AvaliacoesController : Controller
     {
         // get: AVALIAÇÕES
         AvaliacoesDAO avaliacaosDAO = new AvaliacoesDAO();
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult AdicionarAvaliacao(Avaliacao avaliacao)
         {
@@ -22,6 +25,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Avaliacoes");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult AdicionarAvaliacao()
         {
@@ -38,6 +42,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Remover Avaliacao
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult RemoverAvaliacao(int Id)
         {
@@ -45,14 +50,16 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(avaliacao);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult RemoverAvaliacao(Avaliacao avaliacao)
         {
             avaliacaosDAO.Remover(avaliacao);
-            return RedirectToAction("Index", "Avaliacoes");
+            return RedirectToAction("VisualizarDetalhes", "Avaliacoes");
         }
 
         // Editar Avaliacao
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult EditarAvaliacao(int id)
         {
@@ -61,21 +68,24 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(avaliacao);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditarAvaliacao([Bind(Include = "Id, AlunoId, Nota, DisciplinaId, Data")]Avaliacao avaliacao)
         {
             avaliacaosDAO = new AvaliacoesDAO();
             avaliacaosDAO.Editar(avaliacao);
-            return RedirectToAction("Index", "Avaliacoes");
+            return RedirectToAction("VisualizarDetalhes", "Avaliacoes");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Aluno })]
         public ActionResult ListarAvaliacao()
         {
             IList<Avaliacao> avaliacaos = avaliacaosDAO.ListarAvaliacoes();
             return View(avaliacaos);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Aluno })]
         public ActionResult VisualizarDetalhes(int id)
         {
             var alunos = new AlunosDAO();
@@ -97,6 +107,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(avaliacao);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Aluno, TipoPerfil.Administrador })]
         public ActionResult Index()
         {
             var alunos = new AlunosDAO();

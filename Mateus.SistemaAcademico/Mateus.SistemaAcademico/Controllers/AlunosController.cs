@@ -18,8 +18,16 @@ namespace Mateus.SistemaAcademico.Controllers
         [HttpPost]
         public ActionResult AdicionarAluno(Aluno aluno)
         {
-            alunosDAO.Adicionar(aluno);
-            return RedirectToAction("Index", "Alunos");
+            if (ModelState.IsValid)
+            {
+                if (aluno.ValidaData(aluno))
+                {
+                    alunosDAO.Adicionar(aluno);
+                    return RedirectToAction("Index", "Alunos");
+                }
+            }
+            TempData["msg"] = "Data de nascimento inválida";
+            return View(aluno);
         }
 
         [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
@@ -63,7 +71,8 @@ namespace Mateus.SistemaAcademico.Controllers
         [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditarAluno([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, RegistroDoAluno, ResponsavelId, CursoId")]Aluno aluno)
+        public ActionResult EditarAluno([Bind(Include = "Id, Nome, Email, Cpf, DataDeNascimento, NumeroTel, UsuarioId, " +
+            "Cep, NomeRua, Numero, Complemento, Bairro, Estados, Cidades, CursoId")]Aluno aluno)
         {
             alunosDAO = new AlunosDAO();
             alunosDAO.Editar(aluno);
@@ -78,21 +87,31 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(alunos);
         }
 
-        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria })]
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria,
+            TipoPerfil.Professor, TipoPerfil.Aluno})]
         public ActionResult VisualizarDetalhes(int id)
         {
             var cursos = new CursosDAO();
+            var usuario = new UsuariosDAO();
             var alunosDAO = new AlunosDAO();
             var alunos = alunosDAO.ListarAlunos();
+
             foreach (var alunoss in alunos)
             {
                 alunoss.Curso = cursos.BuscaPorId(alunoss.CursoId);
             }
+
+            foreach (var alunoo in alunos)
+            {
+                alunoo.Usuario = usuario.BuscaPorId(alunoo.UsuarioId);
+            }
+
             Aluno aluno = alunosDAO.BuscaPorId(id);
             return View(aluno);
         }
 
-        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria, TipoPerfil.Professor })]
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria,
+            TipoPerfil.Aluno, TipoPerfil.Professor})]
         public ActionResult Index()
         {
             var cursos = new CursosDAO();

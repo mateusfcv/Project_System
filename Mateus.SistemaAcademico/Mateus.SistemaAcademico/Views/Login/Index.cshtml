@@ -4,9 +4,7 @@
 
 <form action="/Login/Autentica" method="post">
     @Html.ValidationSummary(true, "Erro", new { @class = "text-danger" })
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="form-label-group">
+ 
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="login" class="text-uppercase">Login</label>
@@ -29,7 +27,5 @@
                         <input class="btn btn-success text-uppercase" type="submit" value="Entrar" />
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+
 </form>

@@ -19,7 +19,7 @@ namespace Mateus.SistemaAcademico.Models
         [Required]
         public string Nome { get; set; }
         [NotMapped]
-        //  FAZER A FUNÇÃO PARA EXIBIR A DURAÇÃO
+        //fazer a função para exibir a duração
         public TimeSpan Duracao
         {
             get
@@ -33,23 +33,30 @@ namespace Mateus.SistemaAcademico.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         public DateTime DataDeInicio { get; set; }
+
         [Required]
         [Display(Name = "Data de fim")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         public DateTime DataDeFim { get; set; }
+
         [Required]
         public int CoordenadorId { get; set; }
         public Professor Coordenador { get; set; }
+
         [Required]
         public List<Aluno> Alunos { get; set; }
+
         [Required]
         public int SecretariaId { get; set; }
         public Secretaria Secretaria { get; set; }
+
         [Required]
         public TipoCurso TipoCurso { get; set; }
+
         [Required]
         public Periodo Periodo { get; set; }
+
         [Required]
         public Area Area { get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Filtro;
 using Mateus.SistemaAcademico.Models;
 using System;
 using System.Collections.Generic;

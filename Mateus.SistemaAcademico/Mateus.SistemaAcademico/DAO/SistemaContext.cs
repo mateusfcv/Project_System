@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using static sun.util.calendar.BaseCalendar;
 
 namespace Mateus.SistemaAcademico.DAO
 {
@@ -15,12 +16,12 @@ namespace Mateus.SistemaAcademico.DAO
         public DbSet<Conteudo> Conteudos { get; set; }
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Disciplina> Disciplinas { get; set; }
-        public DbSet<Endereco> Enderecos { get; set; }
+        //public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Frequencia> Frequencias { get; set; }
         public DbSet<Professor> Professor { get; set; }
         public DbSet<Responsavel> Responsavel { get; set; } 
         public DbSet<Secretaria> Secretarias { get; set; }
-        public DbSet<Telefone> Telefones { get; set; }
+        //public DbSet<Telefone> Telefones { get; set; }
         public DbSet<Trabalho> Trabalhos { get; set; }
         public DbSet<Nota> Notas { get; set; }
         public DbSet<Avaliacao> Avaliacoes { get; set; }
@@ -39,6 +40,7 @@ namespace Mateus.SistemaAcademico.DAO
                 .Entity<ProfessorCurso>()
                 .HasKey(pc => new { pc.ProfessorId, pc.CursoId });
             base.OnModelCreating(modelBuilder);
+
 
         }
 

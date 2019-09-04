@@ -8,11 +8,14 @@ namespace Mateus.SistemaAcademico.Models
 {
     public class Substitutivas : EntityBase
     {
+        [Required]
         public int AlunoId { get; set; }
         public virtual Aluno Aluno { get; set; }
 
+        [Required]
         public float Nota { get; set; }
 
+        [Required]
         public int DisciplinaId {get; set;}
         public virtual Disciplina Disciplina { get; set; }
 

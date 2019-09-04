@@ -1,8 +1,5 @@
 ﻿@model Mateus.SistemaAcademico.Models.Avaliacao
 
-@{
-    Layout = null;
-}
 
 <!DOCTYPE html>
 
@@ -52,6 +49,7 @@
     </div>
     <p>
         @Html.ActionLink("Editar", "EditarAvaliacao", new { id = Model.Id }) |
+        @Html.ActionLink("Remover", "RemoverAvaliacao", new { id = Model.Id }) |
         @Html.ActionLink("Voltar", "Index")
     </p>
 </body>

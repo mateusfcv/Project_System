@@ -5,16 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using Mateus.SistemaAcademico.Bussines;
 using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Filtro;
 using Mateus.SistemaAcademico.Models;
 using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
+    [AutorizacaoFilter]
     public class DisciplinasController : Controller
     {
         // get: disciplinas
         DisciplinasDAO disciplinasDAO = new DisciplinasDAO();
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Secretaria, TipoPerfil.Administrador })]
         [HttpPost]
         public ActionResult AdicionarDisciplina(Disciplina disciplina)
         {
@@ -22,6 +25,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Disciplinas");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Secretaria, TipoPerfil.Administrador })]
         [HttpGet]
         public ActionResult AdicionarDisciplina()
         {
@@ -34,6 +38,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Remover Disciplina
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Secretaria, TipoPerfil.Administrador })]
         [HttpGet]
         public ActionResult RemoverDisciplina(int Id)
         {
@@ -41,6 +46,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(disciplina);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Secretaria, TipoPerfil.Administrador })]
         [HttpPost]
         public ActionResult RemoverDisciplina(Disciplina disciplina)
         {
@@ -49,6 +55,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Editar Disciplina
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Secretaria, TipoPerfil.Administrador })]
         [HttpGet]
         public ActionResult EditarDisciplina(int id)
         {
@@ -57,6 +64,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(disciplina);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Secretaria, TipoPerfil.Administrador })]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditarDisciplina([Bind(Include = "Id, ProfessorId, Nome, CargaHoraria")]Disciplina disciplina)
@@ -66,12 +74,15 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Disciplinas");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Secretaria, TipoPerfil.Administrador })]
         public ActionResult ListarDisciplina()
         {
             IList<Disciplina> disciplinas = disciplinasDAO.ListarDisciplinas();
             return View(disciplinas);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Secretaria, TipoPerfil.Administrador,
+            TipoPerfil.Professor, TipoPerfil.Aluno })]
         public ActionResult VisualizarDetalhes(int id)
         {
             var professor = new ProfessoresDAO();
@@ -86,6 +97,8 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(disciplina);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Secretaria, TipoPerfil.Administrador,
+            TipoPerfil.Professor, TipoPerfil.Aluno })]
         public ActionResult Index()
         {
             var professor = new ProfessoresDAO();

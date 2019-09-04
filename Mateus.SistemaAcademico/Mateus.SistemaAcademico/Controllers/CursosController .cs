@@ -5,24 +5,27 @@ using System.Web;
 using System.Web.Mvc;
 using Mateus.SistemaAcademico.Bussines;
 using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Filtro;
 using Mateus.SistemaAcademico.Models;
 using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
+    [AutorizacaoFilter]
     public class CursosController : Controller
     {
         // get: cursos
         CursosDAO cursosDAO = new CursosDAO();
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpPost]
         public ActionResult AdicionarCurso(Curso curso)
         {
-            // IMPLEMENTAR A VALIDAÇÃO DE NOME, EXISTENTE NA CLASSE CURSO E CRIAR FUNÇÃO PARA EXIBIR O NOME DO COORDENADOR
             cursosDAO.Adicionar(curso);
             return RedirectToAction("Index", "Cursos");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpGet]
         public ActionResult AdicionarCurso()
         {
@@ -40,6 +43,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Remover Curso
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpGet]
         public ActionResult RemoverCurso(int Id)
         {
@@ -47,6 +51,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(curso);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpPost]
         public ActionResult RemoverCurso(Curso curso)
         {
@@ -55,6 +60,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Editar Curso
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpGet]
         public ActionResult EditarCurso(int id)
         {
@@ -63,6 +69,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(curso);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditarCurso([Bind(Include = "Id, Nome, DataDeInicio, DataDeFim, CoordenadorId, SecretariaId, TipoCurso, Periodo, Area")]Curso curso)
@@ -72,12 +79,15 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Cursos");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador })]
         public ActionResult ListarCurso()
         {
             IList<Curso> cursos = cursosDAO.ListarCursos();
             return View(cursos);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria,
+            TipoPerfil.Professor, TipoPerfil.Aluno })]
         public ActionResult VisualizarDetalhes(int id)
         {
             var secretaria = new SecretariasDAO();
@@ -106,6 +116,8 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(curso);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Administrador, TipoPerfil.Secretaria,
+            TipoPerfil.Professor, TipoPerfil.Aluno })]
         public ActionResult Index()
         {
             var cursosDAO = new CursosDAO();

@@ -1,4 +1,6 @@
 ﻿@model IList<Mateus.SistemaAcademico.Models.Disciplina>
+@using Mateus.SistemaAcademico.Models.Enums
+@using Mateus.SistemaAcademico.Models
 
 @{
 
@@ -8,9 +10,21 @@
 
 <h2>Lista de Disciplinas</h2>
 <div class="card-body">
-    <p>
-        <a href="/Disciplinas/AdicionarDisciplina">Cadastrar Disciplina</a>
-    </p>
+
+    @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador)
+    {
+        <p>
+            <a href="/Disciplinas/AdicionarDisciplina">Cadastrar Disciplina</a>
+        </p>
+    }
+
+    @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Secretaria)
+    {
+        <p>
+            <a href="/Disciplinas/AdicionarDisciplina">Cadastrar Disciplina</a>
+        </p>
+    }
+
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
@@ -48,14 +62,38 @@
                                 @disciplinas.CargaHoraria
                             </td>
 
+                            @*Remover Disciplina (Secretaria e Administrador) *@
 
-                            <td>
-                                <a href="/Disciplinas/RemoverDisciplina/@disciplinas.Id">Remover</a>
-                            </td>
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador)
+                            {
+                                <td>
+                                    <a href="/Disciplinas/RemoverDisciplina/@disciplinas.Id">Remover</a>
+                                </td>
+                            }
 
-                            <td>
-                                <a href="/Disciplinas/VisualizarDetalhes/@disciplinas.Id">Detalhes</a>
-                            </td>
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Secretaria)
+                            {
+                                <td>
+                                    <a href="/Disciplinas/RemoverDisciplina/@disciplinas.Id">Remover</a>
+                                </td>
+                            }
+
+                            @*Visualizar detalhes Disciplina (Secretaria e Administrador) *@
+
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador)
+                            {
+                                <td>
+                                    <a href="/Disciplinas/VisualizarDetalhes/@disciplinas.Id">Detalhes</a>
+                                </td>
+                            }
+
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador)
+                            {
+                                <td>
+                                    <a href="/Disciplinas/VisualizarDetalhes/@disciplinas.Id">Detalhes</a>
+                                </td>
+                            }
+
 
                             <td>
                                 <a href="/Disciplinas/EditarDisciplina/@disciplinas.Id">Editar</a>
@@ -67,7 +105,7 @@
             </tbody>
         </table>
         <p>
-            @Html.ActionLink("Voltar", "Index", "Home") 
+            @Html.ActionLink("Voltar", "Index", "Home")
         </p>
     </div>
 </div>

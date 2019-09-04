@@ -1,4 +1,6 @@
 ﻿@model IList<Mateus.SistemaAcademico.Models.Conteudo>
+@using Mateus.SistemaAcademico.Models
+@using Mateus.SistemaAcademico.Models.Enums
 
 @{
 
@@ -8,9 +10,13 @@
 
 <h2>Lista de Conteúdos</h2>
 <div class="card-body">
-    <p>
-        <a href="/Conteudos/AdicionarConteudo">Adicionar Conteúdo</a>
-    </p>
+    @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Professor)
+    {
+        <p>
+            <a href="/Conteudos/AdicionarConteudo">Adicionar Conteúdo</a>
+        </p>
+    }
+
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
@@ -18,8 +24,6 @@
 
                 <tr>
                     <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Tipo de Conteúdos</th>
                     <th>Disciplina</th>
 
                     <th></th>
@@ -42,29 +46,24 @@
                             </td>
 
                             <td>
-                                @conteudo.Descricao
-                            </td>
-
-                            <td>
-                                @conteudo.TipoConteudos
-                            </td>
-
-                            <td>
                                 @conteudo.Disciplina.Nome
                             </td>
 
+                            @if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Professor)
+                            {
+                                <td>
+                                    <a href="/Conteudos/RemoverConteudo/@conteudo.Id">Remover</a>
+                                </td>
 
-                            <td>
-                                <a href="/Conteudos/RemoverConteudo/@conteudo.Id">Remover</a>
-                            </td>
+                                <td>
+                                    <a href="/Conteudos/VisualizarDetalhes/@conteudo.Id">Detalhes</a>
+                                </td>
 
-                            <td>
-                                <a href="/Conteudos/VisualizarDetalhes/@conteudo.Id">Detalhes</a>
-                            </td>
+                                <td>
+                                    <a href="/Conteudos/EditarConteudo/@conteudo.Id">Editar</a>
+                                </td>
+                            }
 
-                            <td>
-                                <a href="/Conteudos/EditarConteudo/@conteudo.Id">Editar</a>
-                            </td>
 
                         </tr>
                     }

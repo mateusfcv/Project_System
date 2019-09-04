@@ -1,4 +1,5 @@
 ﻿using Mateus.SistemaAcademico.Bussines;
+using Mateus.SistemaAcademico.Models.Enums;
 using Mateus.SistemaAcademico.Models.Objects_Value;
 using System;
 using System.Collections.Generic;
@@ -27,15 +28,31 @@ namespace Mateus.SistemaAcademico.Models
 
         }
 
-        public Aluno(string nome, string email, string cpf, DateTime dataDeNascimento, List<Telefone> telefones, List<Endereco> enderecos,
+        public Aluno(string nome, string email, string cpf, DateTime dataDeNascimento, int numeroTel,
+            TipoTelefone tipoTelefone, string cep, string nomeRua, int numero, string complemento, string bairro,
+            string estados, string cidades,
             int responsavelId, Responsavel responsavel, int cursoId, Curso curso, IEnumerable<Nota> notas)
-            :base(nome, email, cpf, dataDeNascimento, telefones, enderecos)
+            :base(nome, email, cpf, dataDeNascimento, numeroTel,
+            tipoTelefone, cep, nomeRua, numero, complemento, bairro,
+            estados, cidades)
         {
             ResponsavelId = responsavelId;
             Responsavel = responsavel;
             CursoId = cursoId;
             Curso = curso;
             Notas = notas;
+        }
+
+        public override bool ValidaData(Pessoa pessoa)
+        {
+            var dataatual = DateTime.Now;
+            int resultado = DateTime.Compare(pessoa.DataDeNascimento, dataatual);
+
+            if (resultado < 0 || resultado == 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }  

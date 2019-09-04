@@ -5,16 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using Mateus.SistemaAcademico.Bussines;
 using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Filtro;
 using Mateus.SistemaAcademico.Models;
 using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
+    [AutorizacaoFilter]
     public class SubstitutivasController : Controller
     {
         // get: substitutivas
         SubstitutivasDAO substitutivasDAO = new SubstitutivasDAO();
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult AdicionarSubstitutivas(Substitutivas substitutivas)
         {
@@ -22,6 +25,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Substitutivas");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult AdicionarSubstitutivas()
         {
@@ -38,6 +42,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Remover Substitutivas
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult RemoverSubstitutivas(int Id)
         {
@@ -45,6 +50,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(substitutivas);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult RemoverSubstitutivas(Substitutivas substitutivas)
         {
@@ -53,6 +59,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Editar Substitutivas
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult EditarSubstitutivas(int id)
         {
@@ -61,6 +68,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(substitutivas);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditarSubstitutivas([Bind(Include = "Id, AlunoId, Nota, DisciplinaId, Data")]Substitutivas substitutivas)
@@ -70,12 +78,14 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Substitutivas");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         public ActionResult ListarSubstitutivas()
         {
             IList<Substitutivas> substitutivas = substitutivasDAO.ListarSubstitutivas();
             return View(substitutivas);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Administrador, TipoPerfil.Aluno })]
         public ActionResult VisualizarDetalhes(int id)
         {
             var alunos = new AlunosDAO();
@@ -97,6 +107,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(substitutivas);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Administrador, TipoPerfil.Aluno })]
         public ActionResult Index()
         {
             var alunos = new AlunosDAO();

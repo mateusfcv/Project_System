@@ -5,16 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using Mateus.SistemaAcademico.Bussines;
 using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Filtro;
 using Mateus.SistemaAcademico.Models;
 using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
+    [AutorizacaoFilter]
     public class ExamesFinaisController : Controller
     {
         // get: exameFinals
         ExamesFinaisDAO exameFinalsDAO = new ExamesFinaisDAO();
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult AdicionarExameFinal(ExameFinal exameFinal)
         {
@@ -22,6 +25,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "ExamesFinais");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult AdicionarExameFinal()
         {
@@ -38,6 +42,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Remover ExameFinal
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult RemoverExameFinal(int Id)
         {
@@ -45,6 +50,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(exameFinal);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult RemoverExameFinal(ExameFinal exameFinal)
         {
@@ -53,6 +59,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Editar ExameFinal
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult EditarExameFinal(int id)
         {
@@ -61,6 +68,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(exameFinal);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditarExameFinal([Bind(Include = "Id, AlunoId, Nota, DisciplinaId, Data")]ExameFinal exameFinal)
@@ -70,12 +78,14 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "ExamesFinais");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         public ActionResult ListarExameFinal()
         {
             IList<ExameFinal> exameFinals = exameFinalsDAO.ListarExamesFinais();
             return View(exameFinals);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Aluno })]
         public ActionResult VisualizarDetalhes(int id)
         {
             var alunos = new AlunosDAO();
@@ -97,6 +107,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(exameFinal);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Aluno })]
         public ActionResult Index()
         {
             var alunos = new AlunosDAO();

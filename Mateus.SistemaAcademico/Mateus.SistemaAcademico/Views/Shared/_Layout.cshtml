@@ -1,74 +1,147 @@
 ﻿@using Mateus.SistemaAcademico.Models
 @using Mateus.SistemaAcademico.Models.Enums
 
-
 <!DOCTYPE html>
+
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Sistema para Faculdades</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>@ViewBag.Title Sistema para Faculdades</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("University System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            @if (Session.Keys.Cast<String>().Any(c => c == "usuarioLogado"))
-            {
-                @*<div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Logout", "Logout", "Login")</li>
-                    </ul>
-                </div>*@
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">University System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador)
-                {
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink("Aluno", "Index", "Alunos")</li>
-                            <li>@Html.ActionLink("Secretaria", "Index", "Secretarias")</li>
-                            <li>@Html.ActionLink("Professor", "Index", "Professores")</li>
-                            <li>@Html.ActionLink("Curso", "Index", "Cursos")</li>
-                            <li>@Html.ActionLink("Disciplina", "Index", "Disciplinas")</li>
-                            <li>@Html.ActionLink("Conteudo", "Index", "Conteudos")</li>
-                            <li>@Html.ActionLink("Frequencia", "Index", "Frequencia")</li>
-                            <li>@Html.ActionLink("Nota", "Index", "Notas")</li>
-                        </ul>
-                    </div>
-                }
-                if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Aluno)
-                {
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink("Disciplina", "Index", "Disciplinas")</li>
-                            <li>@Html.ActionLink("Conteudo", "Index", "Conteudos")</li>
-                            <li>@Html.ActionLink("Frequencia", "Index", "Frequencia")</li>
-                            <li>@Html.ActionLink("Nota", "Index", "Notas")</li>
-                        </ul>
-                    </div>
-                }
-            }
-            else
-            {
-                @*<li>@Html.ActionLink("Logon", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
-            }
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
 
+                @if (Session.Keys.Cast<String>().Any(c => c == "usuarioLogado"))
+                {
+
+                    if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Administrador)
+                    {
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Home/Index">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Alunos/Index">Aluno<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Secretarias/Index">Secretárias<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Professores/Index">Professor<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Cursos/Index">Curso<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Disciplinas/Index">Disciplina<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Conteudos/Index">Conteudo<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Frequencia/Index">Frequencia<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Notas/Index">Nota<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Usuarios/Index">Usuários<span class="sr-only">(current)</span></a>
+                        </li>
+
+
+
+                    }
+
+                    if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Secretaria)
+                    {
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Home/Index">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Alunos/Index">Alunos<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Professores/Index">Professores<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Disciplinas/Index">Disciplinas<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Cursos/Index">Cursos<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Usuarios/Index">Usuários<span class="sr-only">(current)</span></a>
+                        </li>
+                    }
+
+                    if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Aluno)
+                    {
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Home/Index">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Disciplinas/Index">Disciplina<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Conteudos/Index">Conteudo<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Frequencia/Index">Frequencia<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Notas/Index">Nota<span class="sr-only">(current)</span></a>
+                        </li>
+                    }
+
+                    if ((Session["usuarioLogado"] as Usuario).TipoPerfil == TipoPerfil.Professor)
+                    {
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Home/Index">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Disciplinas/Index">Disciplina<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Conteudos/Index">Conteudo<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Frequencia/Index">Frequencia<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Notas/Index">Nota<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Alunos/Index">Alunos<span class="sr-only">(current)</span></a>
+                        </li>
+                    }
+
+                }
+                else
+                {
+                    @*<li>@Html.ActionLink("Logon", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
+                }
+
+            </ul>
             @Html.Partial("_LoginPartial")
+
+
+
         </div>
-    </div>
-    <div class="container body-content">
+    </nav>
+
+    <div class="container body-content" style="margin-top: 30px;">
         @RenderBody()
         <hr />
         <footer>

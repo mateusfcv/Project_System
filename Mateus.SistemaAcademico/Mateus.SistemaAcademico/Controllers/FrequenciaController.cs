@@ -5,16 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using Mateus.SistemaAcademico.Bussines;
 using Mateus.SistemaAcademico.DAO;
+using Mateus.SistemaAcademico.Filtro;
 using Mateus.SistemaAcademico.Models;
 using Mateus.SistemaAcademico.Models.Enums;
 
 namespace Mateus.SistemaAcademico.Controllers
 {
+    [AutorizacaoFilter]
     public class FrequenciaController : Controller
     {
         // get: frequencia
         FrequenciasDAO frequenciaDAO = new FrequenciasDAO();
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult AdicionarFrequencia(Frequencia frequencia)
         {
@@ -22,6 +25,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Frequencia");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult AdicionarFrequencia()
         {
@@ -38,6 +42,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Remover Frequencia
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult RemoverFrequencia(int Id)
         {
@@ -45,6 +50,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(frequencia);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         public ActionResult RemoverFrequencia(Frequencia frequencia)
         {
@@ -53,6 +59,7 @@ namespace Mateus.SistemaAcademico.Controllers
         }
 
         // Editar Frequencia
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpGet]
         public ActionResult EditarFrequencia(int id)
         {
@@ -61,6 +68,7 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(frequencia);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditarFrequencia([Bind(Include = "Id, Data, DisciplinaId, AlunoId, TipoFrequencia")]Frequencia frequencia)
@@ -70,12 +78,14 @@ namespace Mateus.SistemaAcademico.Controllers
             return RedirectToAction("Index", "Frequencia");
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor })]
         public ActionResult ListarFrequencias()
         {
             IList<Frequencia> frequencia = frequenciaDAO.ListarFrequencias();
             return View(frequencia);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Aluno })]
         public ActionResult VisualizarDetalhes(int id)
         {
             var alunos = new AlunosDAO();
@@ -97,6 +107,8 @@ namespace Mateus.SistemaAcademico.Controllers
             return View(frequencia);
         }
 
+        [AutorizacaoFilter(Roles = new TipoPerfil[] { TipoPerfil.Professor, TipoPerfil.Aluno,
+            TipoPerfil.Administrador, TipoPerfil.Secretaria })]
         public ActionResult Index()
         {
             var alunos = new AlunosDAO();
